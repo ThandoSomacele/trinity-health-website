@@ -178,75 +178,148 @@ trinity-health-zambia/
   cd web/app/themes/
   
   # Install Sage theme (this will create trinity-health directory)
+  # ⚠️ TROUBLESHOOTING: If directory exists and not empty, remove it first:
+  # rm -rf trinity-health
   composer create-project roots/sage trinity-health
   
   # Exit container
   exit
   ```
 
-- [ ] **Install Node dependencies and Prettier plugins**:
+- [x] **Configure Database Connection (Critical Setup)**:
   ```bash
-  # From project root, install Node dependencies with correct working directory
-  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install
+  # Ensure .env file has correct ddev database settings
+  # ⚠️ CRITICAL: WordPress defaults to localhost but ddev uses 'db' hostname
+  ```
+  
+  **Required .env configuration**:
+  ```bash
+  DB_NAME='db'
+  DB_USER='db'  
+  DB_PASSWORD='db'
+  DB_HOST='db'    # ⚠️ MUST be 'db', not 'localhost'
+  ```
+
+- [x] **Install WordPress Core (Required Before Theme Activation)**:
+  ```bash
+  # ⚠️ IMPORTANT: Must install WordPress before activating themes
+  ddev wp core install --url="https://trinity-health-website.ddev.site" --title="Trinity Health Website" --admin_user="dev_admin" --admin_password="DevAdmin123!" --admin_email="support@object91.co.za"
+  ```
+
+- [x] **Install Node dependencies and Prettier plugins**:
+  ```bash
+  # ⚠️ CORRECT FLAG: Use --dir (not --workdir) for ddev exec
+  ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install
   
   # Install Prettier plugins for modern Blade formatting
-  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
+  ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
   ```
 
-- [ ] **Build initial assets** (required before accessing site):
+- [x] **Build initial assets** (required before accessing site):
   ```bash
   # Build assets (prevents "Vite manifest not found" error)
-  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm run build
+  ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
   ```
 
-- [ ] **Activate theme in WordPress**:
+- [x] **Activate theme in WordPress**:
   ```bash
   ddev wp theme activate trinity-health
   ```
 
-- [ ] **Start development server (Vite with HMR)**:
+- [x] **Configure Vite Development Environment**:
   ```bash
-  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm run dev
+  # ⚠️ CRITICAL: Create theme-specific .env file for Vite
+  ddev exec nano /var/www/html/web/app/themes/trinity-health/.env
   ```
-
-- [ ] **Verify Sage v11 installation and features**:
-  - [ ] **Version**: Sage v11.0.1 (June 2025)
-  - [ ] **Laravel Integration**: Acorn v5.0.4 with Laravel v12.19.3 packages
-  - [ ] **Build System**: Vite (replaced Bud.js completely)
-  - [ ] **CSS Framework**: Tailwind CSS v4 (automatic theme.json generation)
-  - [ ] **Templating**: Laravel Blade exclusively (.blade.php files)
-  - [ ] **PHP Requirements**: 8.2+ required (88 Composer packages installed)
-  - [ ] **Hot Module Replacement**: Built-in with Vite development server
-  - [ ] **Block Editor**: Enhanced integration with WordPress blocks
-  - [ ] **Asset Building**: Must run `npm run build` before accessing site
-
-#### Common Installation Issues & Solutions
-
-- [ ] **"Installing the project in subdirectory is unsupported" error**:
-  - **Cause**: DDEV restricts `composer create-project` in subdirectories for security
-  - **Solution**: Always use `ddev ssh` method as shown above
-
-- [ ] **"Could not read package.json" error with npm commands**:
-  - **Cause**: npm looking for package.json in wrong directory
-  - **Solution**: Use `--workdir=/var/www/html/web/app/themes/trinity-health` flag
-
-- [ ] **"Vite manifest not found" error when accessing site**:
-  - **Cause**: Assets not built yet
-  - **Solution**: Run `npm run build` before accessing the site
-
-- [ ] **Alternative working directory methods**:
-  ```bash
-  # Method 1: Use --workdir flag (recommended)
-  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install
   
-  # Method 2: SSH into container
-  ddev ssh
-  cd web/app/themes/trinity-health
-  npm install
-  exit
+  **Required theme .env content**:
+  ```bash
+  APP_URL='https://trinity-health-website.ddev.site'
   ```
 
+- [x] **Start development server (Vite with HMR)**:
+  ```bash
+  ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+  ```
+  
+  **Expected Vite output**:
+  ```
+  VITE v6.3.5 ready in 318 ms
+  ➜ Local: http://localhost:5173/app/themes/sage/public/build/
+  ➜ Network: use --host to expose
+  LARAVEL plugin v1.3.0
+  ➜ APP_URL: https://trinity-health-website.ddev.site  # ✅ Should show your URL, not undefined
+  ```
 
+#### Troubleshooting Guide
+
+**🔧 Common Issues & Solutions:**
+
+1. **"Project directory is not empty" Error**:
+   ```bash
+   rm -rf trinity-health
+   composer create-project roots/sage trinity-health
+   ```
+
+2. **Database Connection Errors**:
+   - Check `.env` has `DB_HOST='db'` (not `localhost`)
+   - Verify ddev is running: `ddev status`
+
+3. **"The site you have requested is not installed"**:
+   ```bash
+   ddev wp core install --url="[your-ddev-url]" --title="Site Title" --admin_user="admin" --admin_password="password" --admin_email="admin@example.com"
+   ```
+
+4. **Vite shows "APP_URL: undefined"**:
+   - Create `/var/www/html/web/app/themes/trinity-health/.env`
+   - Add: `APP_URL='https://trinity-health-website.ddev.site'`
+   - Restart Vite with `Ctrl+C` then `npm run dev`
+
+5. **Wrong ddev exec flag**:
+   - Use `--dir` not `--workdir`
+   - Correct: `ddev exec --dir=/path/to/directory command`
+
+- [x] **Verify Sage v11 installation and features**:
+  - [x] **Version**: Sage v11.0.1 (June 2025)
+  - [x] **Laravel Integration**: Acorn v5.0.4 with Laravel v12.19.3 packages
+  - [x] **Build System**: Vite (replaced Bud.js completely)
+  - [x] **CSS Framework**: Tailwind CSS v4 (automatic theme.json generation)
+  - [x] **Templating**: Laravel Blade exclusively (.blade.php files)
+  - [x] **PHP Requirements**: 8.2+ required (88 Composer packages installed)
+  - [x] **Hot Module Replacement**: Built-in with Vite development server
+  - [x] **Block Editor**: Enhanced integration with WordPress blocks
+  - [x] **Asset Building**: Must run `npm run build` before accessing site
+
+#### Command Reference
+
+**Development Workflow**:
+```bash
+# Start development with HMR
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+
+# Build for production
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
+
+# Install new npm packages
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install package-name
+
+# WordPress CLI commands
+ddev wp theme list
+ddev wp theme activate trinity-health
+ddev wp plugin list
+```
+
+**File Structure Check**:
+```
+web/app/themes/trinity-health/
+├── .env                    # ⚠️ Required: APP_URL setting
+├── package.json           # Node dependencies
+├── vite.config.js         # Vite configuration  
+├── composer.json          # PHP dependencies
+├── app/                   # Theme logic
+├── resources/             # Source files (Blade, CSS, JS)
+└── public/                # Built assets
+```
 ### Day 5-7: Content Architecture & Dependencies
 
 #### Essential WordPress Plugins (via Composer)
