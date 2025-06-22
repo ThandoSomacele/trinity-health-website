@@ -167,41 +167,47 @@ trinity-health-zambia/
 
 #### Install Sage v11 Theme (Latest - March 2025)
 
-- [ ] **Enter the DDEV Container - SSH into the DDEV container**:
+- [x] **Enter the DDEV Container - SSH into the DDEV container**:
+
   ```bash
   ddev ssh
   ```
 
-- [ ] **Once inside the container, navigate to themes directory**:
+- [xx] **Once inside the container, navigate to themes directory**:
 
   ```bash
   cd web/app/themes/
   ```
 
-- [ ] **Install Sage v11 theme via Composer**:
+- [xx] **Install Sage v11 theme via Composer**:
 
   ```bash
   composer create-project roots/sage trinity-health
   ```
 
-- [ ] **Navigate to the theme directory (back on your host machine)**:
+- [xx] **Navigate to the theme directory (back on your host machine)**:
 
   ```bash
   cd web/app/themes/trinity-health
   ```
 
-- [ ] **Install Node dependencies (includes Vite build system)**:
+- [xx] **Install Node dependencies (includes Vite build system)**:
 
   ```bash
-# From your current location (trinity-health-website/web/app/themes/trinity-health)
-ddev exec -d /var/www/html/web/app/themes/trinity-health npm install  
-```
 
-- [ ] **Install Prettier plugins for modern Blade formatting**:
+  ```
+
+# From your current location (trinity-health-website/web/app/themes/trinity-health)
+
+ddev exec -d /var/www/html/web/app/themes/trinity-health npm install
+
+````
+
+- [x] **Install Prettier plugins for modern Blade formatting**:
 
   ```bash
   ddev exec npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
-  ```
+````
 
 - [ ] **Start development server (Vite with HMR)**:
 
