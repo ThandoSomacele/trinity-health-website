@@ -165,62 +165,87 @@ trinity-health-zambia/
 
 ### Day 3-4: Sage Theme Framework v11
 
-#### Install Sage v11 Theme (Latest - March 2025)
+#### Install Sage v11 Theme (Latest - Current: v11.0.1)
 
-- [x] **Enter the DDEV Container - SSH into the DDEV container**:
+**Note**: DDEV restricts `composer create-project` in subdirectories for security reasons. We must use `ddev ssh` to install Sage.
 
+- [x] **Install Sage v11 theme via DDEV container**:
   ```bash
+  # SSH into DDEV container
   ddev ssh
-  ```
-
-- [xx] **Once inside the container, navigate to themes directory**:
-
-  ```bash
+  
+  # Navigate to themes directory inside container
   cd web/app/themes/
-  ```
-
-- [xx] **Install Sage v11 theme via Composer**:
-
-  ```bash
+  
+  # Install Sage theme (this will create trinity-health directory)
   composer create-project roots/sage trinity-health
+  
+  # Exit container
+  exit
   ```
 
-- [xx] **Navigate to the theme directory (back on your host machine)**:
-
+- [ ] **Install Node dependencies and Prettier plugins**:
   ```bash
-  cd web/app/themes/trinity-health
+  # From project root, install Node dependencies with correct working directory
+  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install
+  
+  # Install Prettier plugins for modern Blade formatting
+  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
   ```
 
-- [xx] **Install Node dependencies (includes Vite build system)**:
-
+- [ ] **Build initial assets** (required before accessing site):
   ```bash
-
+  # Build assets (prevents "Vite manifest not found" error)
+  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm run build
   ```
 
-# From your current location (trinity-health-website/web/app/themes/trinity-health)
-
-ddev exec -d /var/www/html/web/app/themes/trinity-health npm install
-
-````
-
-- [x] **Install Prettier plugins for modern Blade formatting**:
-
+- [ ] **Activate theme in WordPress**:
   ```bash
-  ddev exec npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
-````
+  ddev wp theme activate trinity-health
+  ```
 
 - [ ] **Start development server (Vite with HMR)**:
-
   ```bash
-  ddev exec npm run dev
+  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm run dev
   ```
 
 - [ ] **Verify Sage v11 installation and features**:
-  - [ ] Build System: Vite (replaced Bud.js)
-  - [ ] CSS Framework: Tailwind CSS v4 (automatic theme.json generation)
-  - [ ] Templating: Laravel Blade exclusively (via Acorn v5)
-  - [ ] Hot Module Replacement: Built-in with Vite
-  - [ ] Block Editor: Enhanced integration with WordPress blocks
+  - [ ] **Version**: Sage v11.0.1 (June 2025)
+  - [ ] **Laravel Integration**: Acorn v5.0.4 with Laravel v12.19.3 packages
+  - [ ] **Build System**: Vite (replaced Bud.js completely)
+  - [ ] **CSS Framework**: Tailwind CSS v4 (automatic theme.json generation)
+  - [ ] **Templating**: Laravel Blade exclusively (.blade.php files)
+  - [ ] **PHP Requirements**: 8.2+ required (88 Composer packages installed)
+  - [ ] **Hot Module Replacement**: Built-in with Vite development server
+  - [ ] **Block Editor**: Enhanced integration with WordPress blocks
+  - [ ] **Asset Building**: Must run `npm run build` before accessing site
+
+#### Common Installation Issues & Solutions
+
+- [ ] **"Installing the project in subdirectory is unsupported" error**:
+  - **Cause**: DDEV restricts `composer create-project` in subdirectories for security
+  - **Solution**: Always use `ddev ssh` method as shown above
+
+- [ ] **"Could not read package.json" error with npm commands**:
+  - **Cause**: npm looking for package.json in wrong directory
+  - **Solution**: Use `--workdir=/var/www/html/web/app/themes/trinity-health` flag
+
+- [ ] **"Vite manifest not found" error when accessing site**:
+  - **Cause**: Assets not built yet
+  - **Solution**: Run `npm run build` before accessing the site
+
+- [ ] **Alternative working directory methods**:
+  ```bash
+  # Method 1: Use --workdir flag (recommended)
+  ddev exec --workdir=/var/www/html/web/app/themes/trinity-health npm install
+  
+  # Method 2: SSH into container
+  ddev ssh
+  cd web/app/themes/trinity-health
+  npm install
+  exit
+  ```
+
 
 ### Day 5-7: Content Architecture & Dependencies
 
