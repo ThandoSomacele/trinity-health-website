@@ -153,3 +153,88 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+/**
+ * Register Trinity Health Custom Post Types
+ */
+add_action('init', function () {
+    // Health Services CPT
+    register_post_type('health_service', [
+        'label' => 'Health Services',
+        'labels' => [
+            'name' => 'Health Services',
+            'singular_name' => 'Health Service',
+            'add_new_item' => 'Add New Health Service',
+            'edit_item' => 'Edit Health Service',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-heart',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'rewrite' => ['slug' => 'health-services'],
+    ]);
+
+    // Audiology Services CPT
+    register_post_type('audiology_service', [
+        'label' => 'Audiology Services',
+        'labels' => [
+            'name' => 'Audiology Services',
+            'singular_name' => 'Audiology Service',
+            'add_new_item' => 'Add New Audiology Service',
+            'edit_item' => 'Edit Audiology Service',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-format-audio',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'rewrite' => ['slug' => 'audiology-services'],
+    ]);
+
+    // Team Members CPT
+    register_post_type('team_member', [
+        'label' => 'Team Members',
+        'labels' => [
+            'name' => 'Team Members',
+            'singular_name' => 'Team Member',
+            'add_new_item' => 'Add New Team Member',
+            'edit_item' => 'Edit Team Member',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-admin-users',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'rewrite' => ['slug' => 'team'],
+    ]);
+
+    // Locations CPT
+    register_post_type('location', [
+        'label' => 'Locations',
+        'labels' => [
+            'name' => 'Locations',
+            'singular_name' => 'Location',
+            'add_new_item' => 'Add New Location',
+            'edit_item' => 'Edit Location',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-location',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'rewrite' => ['slug' => 'locations'],
+    ]);
+
+    // Testimonials CPT
+    register_post_type('testimonial', [
+        'label' => 'Testimonials',
+        'labels' => [
+            'name' => 'Testimonials',
+            'singular_name' => 'Testimonial',
+            'add_new_item' => 'Add New Testimonial',
+            'edit_item' => 'Edit Testimonial',
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-format-quote',
+        'supports' => ['title', 'editor'],
+    ]);
+});

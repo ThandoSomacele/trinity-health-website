@@ -1,0 +1,71 @@
+{
+    "key": "group_service_details",
+    "title": "Service Details",
+    "fields": [
+        {
+            "key": "field_service_description",
+            "label": "Detailed Description",
+            "name": "service_description",
+            "type": "wysiwyg",
+            "required": 1
+        },
+        {
+            "key": "field_service_features",
+            "label": "Key Features",
+            "name": "service_features",
+            "type": "repeater",
+            "sub_fields": [
+                {
+                    "key": "field_feature_text",
+                    "label": "Feature",
+                    "name": "feature_text",
+                    "type": "text"
+                }
+            ],
+            "min": 1,
+            "max": 6
+        },
+        {
+            "key": "field_service_price_zmk",
+            "label": "Price (ZMK)",
+            "name": "service_price_zmk",
+            "type": "number"
+        },
+        {
+            "key": "field_service_duration",
+            "label": "Duration (minutes)",
+            "name": "service_duration",
+            "type": "number"
+        },
+        {
+            "key": "field_service_icon",
+            "label": "Service Icon",
+            "name": "service_icon",
+            "type": "select",
+            "choices": {
+                "heart": "Heart (General Health)",
+                "ear": "Ear (Audiology)",
+                "stethoscope": "Stethoscope (Examination)",
+                "brain": "Brain (Neurological)",
+                "eye": "Eye (Vision)",
+                "tooth": "Tooth (Dental)"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "health_service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "audiology_service"
+            }
+        ]
+    ]
+}

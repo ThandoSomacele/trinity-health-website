@@ -39,11 +39,17 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.8.1",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-theme/twentytwentyfive": "^1.0",
+    "wpackagist-plugin/advanced-custom-fields": "^6.4",
+    "wpackagist-plugin/contact-form-7": "^6.0",
+    "wpackagist-plugin/wp-security-audit-log": "^5.4",
+    "wpackagist-plugin/seo-by-rank-math": "^1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "laravel/pint": "^1.18"
+    "laravel/pint": "^1.18",
+    "wpackagist-plugin/query-monitor": "^3.18",
+    "wpackagist-plugin/debug-bar": "^1.1"
   },
   "config": {
     "optimize-autoloader": true,

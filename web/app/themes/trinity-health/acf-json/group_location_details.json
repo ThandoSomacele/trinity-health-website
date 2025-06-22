@@ -1,0 +1,77 @@
+{
+    "key": "group_location_details",
+    "title": "Location Details",
+    "fields": [
+        {
+            "key": "field_location_address",
+            "label": "Full Address",
+            "name": "location_address",
+            "type": "textarea",
+            "required": 1
+        },
+        {
+            "key": "field_location_phone",
+            "label": "Phone Number",
+            "name": "location_phone",
+            "type": "text",
+            "required": 1
+        },
+        {
+            "key": "field_location_email",
+            "label": "Email Address",
+            "name": "location_email",
+            "type": "email"
+        },
+        {
+            "key": "field_location_hours",
+            "label": "Operating Hours",
+            "name": "location_hours",
+            "type": "repeater",
+            "sub_fields": [
+                {
+                    "key": "field_day",
+                    "label": "Day",
+                    "name": "day",
+                    "type": "select",
+                    "choices": {
+                        "monday": "Monday",
+                        "tuesday": "Tuesday",
+                        "wednesday": "Wednesday",
+                        "thursday": "Thursday",
+                        "friday": "Friday",
+                        "saturday": "Saturday",
+                        "sunday": "Sunday"
+                    }
+                },
+                {
+                    "key": "field_hours",
+                    "label": "Hours",
+                    "name": "hours",
+                    "type": "text",
+                    "placeholder": "8:00 AM - 5:00 PM"
+                }
+            ]
+        },
+        {
+            "key": "field_location_services",
+            "label": "Available Services",
+            "name": "location_services",
+            "type": "checkbox",
+            "choices": {
+                "general_health": "General Health Services",
+                "audiology": "Audiology Services",
+                "consultations": "Consultations",
+                "diagnostics": "Diagnostic Services"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ]
+    ]
+}
