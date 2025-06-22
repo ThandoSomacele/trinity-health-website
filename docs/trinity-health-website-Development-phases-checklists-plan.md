@@ -170,79 +170,90 @@ trinity-health-zambia/
 **Note**: DDEV restricts `composer create-project` in subdirectories for security reasons. We must use `ddev ssh` to install Sage.
 
 - [x] **Install Sage v11 theme via DDEV container**:
+
   ```bash
   # SSH into DDEV container
   ddev ssh
-  
+
   # Navigate to themes directory inside container
   cd web/app/themes/
-  
+
   # Install Sage theme (this will create trinity-health directory)
   # ⚠️ TROUBLESHOOTING: If directory exists and not empty, remove it first:
   # rm -rf trinity-health
   composer create-project roots/sage trinity-health
-  
+
   # Exit container
   exit
   ```
 
 - [x] **Configure Database Connection (Critical Setup)**:
+
   ```bash
   # Ensure .env file has correct ddev database settings
   # ⚠️ CRITICAL: WordPress defaults to localhost but ddev uses 'db' hostname
   ```
-  
+
   **Required .env configuration**:
+
   ```bash
   DB_NAME='db'
-  DB_USER='db'  
+  DB_USER='db'
   DB_PASSWORD='db'
   DB_HOST='db'    # ⚠️ MUST be 'db', not 'localhost'
   ```
 
 - [x] **Install WordPress Core (Required Before Theme Activation)**:
+
   ```bash
   # ⚠️ IMPORTANT: Must install WordPress before activating themes
   ddev wp core install --url="https://trinity-health-website.ddev.site" --title="Trinity Health Website" --admin_user="dev_admin" --admin_password="DevAdmin123!" --admin_email="support@object91.co.za"
   ```
 
 - [x] **Install Node dependencies and Prettier plugins**:
+
   ```bash
   # ⚠️ CORRECT FLAG: Use --dir (not --workdir) for ddev exec
   ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install
-  
+
   # Install Prettier plugins for modern Blade formatting
   ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install --save-dev prettier prettier-plugin-blade prettier-plugin-tailwindcss
   ```
 
 - [x] **Build initial assets** (required before accessing site):
+
   ```bash
   # Build assets (prevents "Vite manifest not found" error)
   ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
   ```
 
 - [x] **Activate theme in WordPress**:
+
   ```bash
   ddev wp theme activate trinity-health
   ```
 
 - [x] **Configure Vite Development Environment**:
+
   ```bash
   # ⚠️ CRITICAL: Create theme-specific .env file for Vite
   ddev exec nano /var/www/html/web/app/themes/trinity-health/.env
   ```
-  
+
   **Required theme .env content**:
+
   ```bash
   APP_URL='https://trinity-health-website.ddev.site'
   ```
 
 - [x] **Start development server (Vite with HMR)**:
+
   ```bash
   ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
   ```
-  
+
   **Expected Vite output**:
+
   ```
   VITE v6.3.5 ready in 318 ms
   ➜ Local: http://localhost:5173/app/themes/sage/public/build/
@@ -256,21 +267,25 @@ trinity-health-zambia/
 **🔧 Common Issues & Solutions:**
 
 1. **"Project directory is not empty" Error**:
+
    ```bash
    rm -rf trinity-health
    composer create-project roots/sage trinity-health
    ```
 
 2. **Database Connection Errors**:
+
    - Check `.env` has `DB_HOST='db'` (not `localhost`)
    - Verify ddev is running: `ddev status`
 
 3. **"The site you have requested is not installed"**:
+
    ```bash
    ddev wp core install --url="[your-ddev-url]" --title="Site Title" --admin_user="admin" --admin_password="password" --admin_email="admin@example.com"
    ```
 
 4. **Vite shows "APP_URL: undefined"**:
+
    - Create `/var/www/html/web/app/themes/trinity-health/.env`
    - Add: `APP_URL='https://trinity-health-website.ddev.site'`
    - Restart Vite with `Ctrl+C` then `npm run dev`
@@ -293,6 +308,7 @@ trinity-health-zambia/
 #### Command Reference
 
 **Development Workflow**:
+
 ```bash
 # Start development with HMR
 ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
@@ -310,30 +326,32 @@ ddev wp plugin list
 ```
 
 **File Structure Check**:
+
 ```
 web/app/themes/trinity-health/
 ├── .env                    # ⚠️ Required: APP_URL setting
 ├── package.json           # Node dependencies
-├── vite.config.js         # Vite configuration  
+├── vite.config.js         # Vite configuration
 ├── composer.json          # PHP dependencies
 ├── app/                   # Theme logic
 ├── resources/             # Source files (Blade, CSS, JS)
 └── public/                # Built assets
 ```
+
 ### Day 5-7: Content Architecture & Dependencies
 
 #### Essential WordPress Plugins (via Composer)
 
-- [ ] **Install core functionality plugins**:
+- [x] **Install core functionality plugins**:
 
   ```bash
   ddev composer require wpackagist-plugin/advanced-custom-fields
-  ddev composer require wpackagist-plugin/yoast-seo
+  ddev composer require wpackagist-plugin/seo-by-rank-math
   ddev composer require wpackagist-plugin/contact-form-7
   ddev composer require wpackagist-plugin/wp-security-audit-log
   ```
 
-- [ ] **Install development plugins**:
+- [x] **Install development plugins**:
   ```bash
   ddev composer require wpackagist-plugin/query-monitor --dev
   ddev composer require wpackagist-plugin/debug-bar --dev
@@ -341,13 +359,13 @@ web/app/themes/trinity-health/
 
 #### Custom Post Types & ACF Fields
 
-- [ ] **Create Custom Post Types**:
+- [x] **Create Custom Post Types**:
 
-  - [ ] Health Services (general medicine)
-  - [ ] Audiology Services (hearing healthcare)
-  - [ ] Team Members (staff profiles)
-  - [ ] Locations (clinic information)
-  - [ ] Testimonials (patient reviews)
+  - [x] Health Services (general medicine)
+  - [x] Audiology Services (hearing healthcare)
+  - [x] Team Members (staff profiles)
+  - [x] Locations (clinic information)
+  - [x] Testimonials (patient reviews)
 
 - [ ] **Create ACF Field Groups**:
   - [ ] Service Details (description, features, pricing, icon)
