@@ -16,6 +16,19 @@ BUILD_DIR="dist-production"
 THEME_NAME="trinity-health"
 WP_VERSION="6.7.1"  # Current WordPress version
 
+# FTP Configuration (set these before running with --deploy)
+# Option 1: Set directly in this script
+FTP_HOST=""           # e.g. "ftp.yourhost.com"
+FTP_USER=""           # e.g. "username@domain.com"
+FTP_PASS=""           # e.g. "your_password"
+FTP_REMOTE_PATH=""    # e.g. "/public_html" or "/wp-content"
+
+# Option 2: Source from external config file (recommended for security)
+# Copy ftp-config.example.sh to ftp-config.sh and configure it
+if [[ -f "ftp-config.sh" ]]; then
+    source ftp-config.sh
+fi
+
 # Functions
 log() {
     echo -e "${BLUE}[BUILD]${NC} $1"
@@ -47,27 +60,32 @@ main() {
     # Build theme assets
     build_theme_assets
     
-    # Create WordPress core structure
-    setup_wordpress_core
-    
     # Convert Sage theme to traditional PHP
     convert_sage_theme
     
     # Copy and configure plugins
     setup_plugins
     
-    # Create production configuration files
-    create_production_configs
-    
     # Copy uploads and content
     copy_content
+    
+    # Export database
+    export_database
     
     # Final verification
     verify_build
     
     success "✅ Production build completed successfully!"
-    log "📁 Build output: $BUILD_DIR/"
-    log "🚀 Ready for deployment to shared hosting"
+    log "📁 Build output: $BUILD_DIR/wp-content/ (upload to your WordPress installation)"
+    log "💾 Database: database-export.sql (with import instructions)"
+    
+    # Deploy if --deploy flag was used
+    if [[ "$DEPLOY_TO_FTP" == "true" ]]; then
+        deploy_to_ftp
+    else
+        log "🚀 Ready for deployment to shared hosting"
+        log "💡 Use --deploy flag to automatically upload to FTP"
+    fi
 }
 
 # Check requirements
@@ -93,6 +111,12 @@ check_requirements() {
     # Check required tools
     command -v curl >/dev/null 2>&1 || error "curl is required"
     command -v unzip >/dev/null 2>&1 || error "unzip is required"
+    
+    # Check FTP tools if deploying
+    if [[ "$DEPLOY_TO_FTP" == "true" ]]; then
+        command -v lftp >/dev/null 2>&1 || error "lftp is required for FTP deployment. Install with: brew install lftp"
+        check_ftp_config
+    fi
     
     success "Requirements check passed"
 }
@@ -152,28 +176,6 @@ build_theme_assets() {
     success "Theme assets ready"
 }
 
-# Setup WordPress core
-setup_wordpress_core() {
-    log "Setting up WordPress core..."
-    
-    # Download WordPress if not cached
-    if [[ ! -f "/tmp/wordpress-${WP_VERSION}.zip" ]]; then
-        log "Downloading WordPress $WP_VERSION..."
-        curl -s -L "https://wordpress.org/wordpress-${WP_VERSION}.zip" -o "/tmp/wordpress-${WP_VERSION}.zip"
-    fi
-    
-    # Extract WordPress
-    log "Extracting WordPress..."
-    cd "$BUILD_DIR"
-    unzip -q "/tmp/wordpress-${WP_VERSION}.zip"
-    
-    # Move WordPress files to root
-    mv wordpress/* .
-    rmdir wordpress
-    
-    cd - >/dev/null
-    success "WordPress core installed"
-}
 
 # Convert Sage theme to traditional PHP
 convert_sage_theme() {
@@ -537,139 +539,6 @@ setup_plugins() {
     success "Plugins copied"
 }
 
-# Create production configuration files
-create_production_configs() {
-    log "Creating production configuration files..."
-    
-    # Create wp-config.php template
-    cat > "$BUILD_DIR/wp-config-template.php" << 'EOF'
-<?php
-/**
- * Trinity Health WordPress Configuration
- * 
- * IMPORTANT: Rename this file to wp-config.php and update the database settings
- */
-
-// ** Database settings - You will need to get this info from your hosting provider ** //
-define('DB_NAME', 'your_database_name');
-define('DB_USER', 'your_database_user');
-define('DB_PASSWORD', 'your_database_password');
-define('DB_HOST', 'localhost');
-define('DB_CHARSET', 'utf8mb4');
-define('DB_COLLATE', '');
-
-// ** Authentication Unique Keys and Salts ** //
-// Generate these at: https://api.wordpress.org/secret-key/1.1/salt/
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-
-// ** WordPress Database Table prefix ** //
-$table_prefix = 'th_';
-
-// ** WordPress debugging ** //
-define('WP_DEBUG', false);
-define('WP_DEBUG_LOG', false);
-define('WP_DEBUG_DISPLAY', false);
-
-// ** Security settings ** //
-define('DISALLOW_FILE_EDIT', true);
-define('DISALLOW_FILE_MODS', true);
-define('FORCE_SSL_ADMIN', true);
-
-// ** WordPress URLs ** //
-define('WP_HOME', 'https://your-domain.com');
-define('WP_SITEURL', 'https://your-domain.com');
-
-// ** That's all, stop editing! Happy publishing. ** //
-if (!defined('ABSPATH')) {
-    define('ABSPATH', __DIR__ . '/');
-}
-
-require_once ABSPATH . 'wp-settings.php';
-EOF
-    
-    # Create .htaccess
-    cat > "$BUILD_DIR/.htaccess" << 'EOF'
-# BEGIN WordPress Security
-<Files wp-config.php>
-order allow,deny
-deny from all
-</Files>
-
-# Block access to sensitive files
-<FilesMatch "\.(log|txt|md|json)$">
-Order allow,deny
-Deny from all
-</FilesMatch>
-
-# Hide version info
-RewriteEngine On
-RewriteRule ^wp-admin/includes/ - [F,L]
-RewriteRule !^wp-includes/ - [S=3]
-RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
-RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
-RewriteRule ^wp-includes/theme-compat/ - [F,L]
-
-# BEGIN WordPress
-# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
-# dynamically generated, and should only be modified via WordPress filters.
-# Any changes to the directives between these markers will be overwritten.
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress
-
-# Security headers
-<IfModule mod_headers.c>
-Header always set X-Content-Type-Options nosniff
-Header always set X-Frame-Options DENY
-Header always set X-XSS-Protection "1; mode=block"
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-</IfModule>
-
-# Gzip compression
-<IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/plain
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE text/xml
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE application/xhtml+xml
-AddOutputFilterByType DEFLATE application/rss+xml
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript
-</IfModule>
-
-# Browser caching
-<IfModule mod_expires.c>
-ExpiresActive on
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/javascript "access plus 1 month"
-ExpiresByType image/png "access plus 1 month"
-ExpiresByType image/jpg "access plus 1 month"
-ExpiresByType image/jpeg "access plus 1 month"
-ExpiresByType image/gif "access plus 1 month"
-ExpiresByType image/svg+xml "access plus 1 month"
-ExpiresByType image/x-icon "access plus 1 year"
-</IfModule>
-EOF
-    
-    success "Configuration files created"
-}
 
 # Copy uploads and content
 copy_content() {
@@ -680,10 +549,101 @@ copy_content() {
         cp -r web/app/uploads "$BUILD_DIR/wp-content/"
     fi
     
+    # Create wp-content structure
+    mkdir -p "$BUILD_DIR/wp-content"
+    
     # Create empty uploads directory if none exists
     mkdir -p "$BUILD_DIR/wp-content/uploads"
     
     success "Content copied"
+}
+
+# Export database
+export_database() {
+    log "Exporting database..."
+    
+    local db_file="$BUILD_DIR/database-export.sql"
+    local import_script="$BUILD_DIR/import-database.txt"
+    
+    # Try DDEV first, then regular WP-CLI
+    local wp_cmd=""
+    if command -v ddev >/dev/null 2>&1 && ddev status >/dev/null 2>&1; then
+        wp_cmd="ddev wp"
+        log "Using DDEV WP-CLI for database export..."
+    elif command -v wp >/dev/null 2>&1 && wp core is-installed 2>/dev/null; then
+        wp_cmd="wp"
+        log "Using WP-CLI for database export..."
+    else
+        warning "WP-CLI not found or WordPress not accessible. Database export skipped."
+        warning "You'll need to export/import the database manually using:"
+        warning "ddev wp db export database-export.sql"
+        warning "Or use your hosting provider's backup tools"
+        return
+    fi
+    
+    # Export database
+    log "Creating database dump..."
+    if $wp_cmd db export "$db_file" 2>/dev/null; then
+        success "Database exported to database-export.sql"
+        
+        # Create import instructions
+        cat > "$import_script" << 'EOF'
+Trinity Health Database Import Instructions
+=========================================
+
+To import the database on your hosting provider:
+
+1. Create a new MySQL database via your hosting control panel
+2. Note down the database credentials:
+   - Database name
+   - Database username  
+   - Database password
+   - Database host (usually 'localhost')
+
+3. Import the database using one of these methods:
+
+   METHOD A: Using phpMyAdmin (most common)
+   ----------------------------------------
+   - Log into your hosting control panel
+   - Open phpMyAdmin
+   - Select your database
+   - Click "Import" tab
+   - Choose file: database-export.sql
+   - Click "Go" to import
+
+   METHOD B: Using command line (if available)
+   ------------------------------------------
+   mysql -h [host] -u [username] -p [database_name] < database-export.sql
+
+   METHOD C: Using hosting file manager
+   ------------------------------------
+   Some hosts provide database import via file manager
+   - Upload database-export.sql to your hosting account
+   - Use hosting control panel database import feature
+
+4. Update wp-config.php with your new database credentials
+
+5. Update site URLs (if domain changed):
+   - Log into WordPress admin
+   - Go to Settings > General
+   - Update "WordPress Address" and "Site Address"
+   
+   OR use WP-CLI if available:
+   wp search-replace 'old-domain.com' 'new-domain.com'
+
+IMPORTANT NOTES:
+- The database file contains all your content, users, and settings
+- Make sure to update wp-config.php with correct database credentials
+- The exported database uses table prefix 'th_' (Trinity Health)
+- If you get "Error establishing database connection", check wp-config.php
+EOF
+        
+        log "Database import instructions saved to import-database.txt"
+    else
+        warning "Database export failed. You'll need to export manually using:"
+        warning "wp db export database-export.sql"
+        warning "Or use your hosting provider's backup tools"
+    fi
 }
 
 # Verify build
@@ -692,14 +652,9 @@ verify_build() {
     
     local errors=0
     
-    # Check WordPress core files
-    if [[ ! -f "$BUILD_DIR/wp-config-template.php" ]]; then
-        error "wp-config-template.php not found"
-        ((errors++))
-    fi
-    
-    if [[ ! -f "$BUILD_DIR/index.php" ]]; then
-        error "WordPress index.php not found"
+    # Check wp-content structure
+    if [[ ! -d "$BUILD_DIR/wp-content" ]]; then
+        error "wp-content directory not found"
         ((errors++))
     fi
     
@@ -726,6 +681,96 @@ verify_build() {
     success "Build verification passed"
 }
 
+# Check FTP configuration
+check_ftp_config() {
+    log "Checking FTP configuration..."
+    
+    if [[ -z "$FTP_HOST" ]]; then
+        error "FTP_HOST not set. Please configure FTP settings in the script."
+    fi
+    
+    if [[ -z "$FTP_USER" ]]; then
+        error "FTP_USER not set. Please configure FTP settings in the script."
+    fi
+    
+    if [[ -z "$FTP_PASS" ]]; then
+        error "FTP_PASS not set. Please configure FTP settings in the script."
+    fi
+    
+    if [[ -z "$FTP_REMOTE_PATH" ]]; then
+        warning "FTP_REMOTE_PATH not set. Will upload to root directory."
+        FTP_REMOTE_PATH="/"
+    fi
+    
+    success "FTP configuration validated"
+}
+
+# Deploy to FTP
+deploy_to_ftp() {
+    log "🚀 Starting FTP deployment..."
+    
+    local local_path="$BUILD_DIR/wp-content"
+    local remote_path="$FTP_REMOTE_PATH"
+    
+    # Ensure remote path ends with wp-content
+    if [[ "$remote_path" != "*wp-content" ]]; then
+        remote_path="$remote_path/wp-content"
+    fi
+    
+    log "Uploading wp-content to $FTP_HOST:$remote_path..."
+    
+    # Create LFTP script for secure transfer
+    local lftp_script="
+        set ssl:verify-certificate false
+        set ftp:ssl-allow false
+        set ftp:passive-mode true
+        open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST
+        lcd $local_path
+        cd $remote_path
+        mirror --reverse --delete --verbose --exclude-glob=.DS_Store --exclude-glob=Thumbs.db .
+        quit
+    "
+    
+    # Execute LFTP transfer
+    if echo "$lftp_script" | lftp 2>/dev/null; then
+        success "✅ FTP deployment completed successfully!"
+        log "📁 Uploaded wp-content to: $FTP_HOST:$remote_path"
+        
+        # Deploy database separately if requested
+        deploy_database_to_ftp
+        
+        log "🎉 Deployment complete! Remember to:"
+        log "   1. Import database-export.sql via hosting control panel"
+        log "   2. Activate trinity-health theme in WordPress admin"
+        log "   3. Update site URLs if domain changed"
+    else
+        error "FTP deployment failed. Please check your credentials and try again."
+    fi
+}
+
+# Deploy database file to FTP
+deploy_database_to_ftp() {
+    log "Uploading database export and instructions..."
+    
+    local db_script="
+        set ssl:verify-certificate false
+        set ftp:ssl-allow false
+        set ftp:passive-mode true
+        open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST
+        lcd $BUILD_DIR
+        cd $FTP_REMOTE_PATH
+        put database-export.sql
+        put import-database.txt
+        quit
+    "
+    
+    if echo "$db_script" | lftp 2>/dev/null; then
+        success "Database files uploaded to hosting account"
+    else
+        warning "Database file upload failed. You can manually upload database-export.sql"
+    fi
+}
+
 # Show usage
 usage() {
     echo "Trinity Health Production Build Script"
@@ -737,23 +782,40 @@ usage() {
     echo ""
     echo "Options:"
     echo "  --help       Show this help message"
+    echo "  --deploy     Build and automatically deploy to FTP server"
+    echo ""
+    echo "FTP Configuration:"
+    echo "  Configure FTP_HOST, FTP_USER, FTP_PASS, and FTP_REMOTE_PATH"
+    echo "  variables in the script before using --deploy option."
     echo ""
     echo "Output:"
-    echo "  $BUILD_DIR/  Traditional WordPress installation"
+    echo "  $BUILD_DIR/wp-content/  WordPress content folder only"
     echo ""
-    echo "After building:"
-    echo "1. Upload $BUILD_DIR/ contents to your hosting provider"
-    echo "2. Rename wp-config-template.php to wp-config.php"
-    echo "3. Update database settings in wp-config.php"
-    echo "4. Run WordPress installation at your-domain.com/wp-admin/install.php"
+    echo "Manual deployment:"
+    echo "1. Upload $BUILD_DIR/wp-content/ to your existing WordPress installation"
+    echo "2. Create database and import database-export.sql (see import-database.txt)"
+    echo "3. Activate the trinity-health theme via WordPress admin"
+    echo "4. Update site URLs if domain changed"
+    echo "5. Test the site functionality"
+    echo ""
+    echo "Automatic deployment (--deploy):"
+    echo "1. Uploads wp-content automatically via FTP"
+    echo "2. Uploads database files for manual import"
+    echo "3. Follow post-deployment instructions"
 }
 
 # Parse command line arguments
+DEPLOY_TO_FTP="false"
+
 while [[ $# -gt 0 ]]; do
     case $1 in
         --help)
             usage
             exit 0
+            ;;
+        --deploy)
+            DEPLOY_TO_FTP="true"
+            shift
             ;;
         *)
             error "Unknown option: $1. Use --help for usage information."
