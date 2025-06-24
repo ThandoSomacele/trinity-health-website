@@ -1,0 +1,94 @@
+{
+    "key": "group_testimonial_data",
+    "title": "Testimonial Data",
+    "fields": [
+        {
+            "key": "field_patient_name",
+            "label": "Patient Name",
+            "name": "patient_name",
+            "type": "text",
+            "required": 1,
+            "placeholder": "e.g., Sarah M. or Anonymous"
+        },
+        {
+            "key": "field_patient_location",
+            "label": "Patient Location",
+            "name": "patient_location",
+            "type": "text",
+            "placeholder": "e.g., Lusaka, Zambia"
+        },
+        {
+            "key": "field_service_received",
+            "label": "Service Received",
+            "name": "service_received",
+            "type": "select",
+            "required": 1,
+            "choices": {
+                "general_health": "General Health Services",
+                "audiology": "Audiology Services",
+                "hearing_assessment": "Hearing Assessment",
+                "hearing_aids": "Hearing Aid Fitting",
+                "consultation": "Medical Consultation",
+                "diagnostic": "Diagnostic Services"
+            }
+        },
+        {
+            "key": "field_testimonial_content",
+            "label": "Testimonial Content",
+            "name": "testimonial_content",
+            "type": "textarea",
+            "required": 1,
+            "rows": 6,
+            "placeholder": "Patient's testimonial about their experience..."
+        },
+        {
+            "key": "field_testimonial_rating",
+            "label": "Rating (out of 5)",
+            "name": "testimonial_rating",
+            "type": "range",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default_value": 5
+        },
+        {
+            "key": "field_testimonial_date",
+            "label": "Date of Service",
+            "name": "testimonial_date",
+            "type": "date_picker",
+            "display_format": "d/m/Y",
+            "return_format": "Y-m-d"
+        },
+        {
+            "key": "field_featured_testimonial",
+            "label": "Featured Testimonial",
+            "name": "featured_testimonial",
+            "type": "true_false",
+            "message": "Display this testimonial prominently on homepage",
+            "default_value": 0
+        },
+        {
+            "key": "field_testimonial_photo",
+            "label": "Patient Photo (Optional)",
+            "name": "testimonial_photo",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "instructions": "Optional patient photo (with consent). Use placeholder if not provided."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}
