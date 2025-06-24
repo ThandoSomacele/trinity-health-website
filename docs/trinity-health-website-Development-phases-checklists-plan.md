@@ -568,45 +568,40 @@ web/app/themes/trinity-health/
 
 - [x] **Verify build output**:
   - [x] `dist-production/` directory created
-  - [x] WordPress core files in root
-  - [x] Traditional wp-content structure
+  - [x] **Modified approach**: wp-content folder only (no WordPress core)
+  - [x] Traditional wp-content structure with themes, plugins, uploads
   - [x] Compiled theme assets
-  - [x] Production wp-config.php template
+  - [x] Database export with import instructions
 
 #### Production Configuration Files
 
-- [ ] **Create production wp-config.php template**:
-
-  ```bash
-  touch config/production-wp-config.template.php
-  ```
-
-- [ ] **Create production .htaccess template**:
-
-  ```bash
-  touch config/production.htaccess
-  ```
-
-- [ ] **Add security configurations to templates**
+- [x] **Production configuration handled by existing WordPress installation**:
+  - [x] Build script creates wp-content folder only
+  - [x] Host's existing WordPress handles core files and configuration
+  - [x] Database export includes all Trinity Health content and settings
 
 #### Deployment Script Setup
 
-- [ ] **Create deploy.sh script**:
+- [x] **FTP deployment integrated into build script**:
+  - [x] Added `--deploy` flag to build-production.sh
+  - [x] LFTP integration for secure file transfer
+  - [x] Automatic wp-content and database upload
+  - [x] FTP configuration via external config file
 
+- [x] **FTP deployment configuration**:
+  - [x] Created `ftp-config.example.sh` template
+  - [x] Added to .gitignore for security
+  - [x] Support for common hosting providers (Afrihost, cPanel, etc.)
+
+- [x] **Usage**:
   ```bash
-  touch deploy.sh
-  chmod +x deploy.sh
+  # Configure FTP credentials
+  cp ftp-config.example.sh ftp-config.sh
+  # Edit ftp-config.sh with your details
+  
+  # Build and deploy automatically
+  source ftp-config.sh && ./build-production.sh --deploy
   ```
-
-- [ ] **Install LFTP for FTP deployment**:
-
-  ```bash
-  brew install lftp
-  ```
-
-- [ ] **Configure deployment script with hosting details**
-
-- [ ] **Test deployment script (to staging if available)**
 
 #### Build Process Implementation
 

@@ -1,61 +1,219 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# Trinity Health Zambia - Website Development
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+Modern WordPress development environment using Bedrock + Sage, with automated build and deployment tools for production hosting.
 
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+## 🏥 Project Overview
 
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
+Trinity Health Zambia is a comprehensive healthcare website built with:
+- **Bedrock** - WordPress boilerplate with Composer dependency management
+- **Sage v11** - Modern WordPress theme framework with Laravel Blade templating
+- **Vite** - Fast build tool with Hot Module Replacement (HMR)
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **DDEV** - Containerized development environment
 
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
+## 🚀 Quick Start
 
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
+### Development Environment
+```bash
+# Start development environment
+ddev start
 
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
+# Install theme dependencies and build assets
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
 
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
+# Start development server with HMR
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+```
 
-## Sponsors
+### Production Deployment
+```bash
+# Configure FTP credentials (one-time setup)
+cp ftp-config.example.sh ftp-config.sh
+# Edit ftp-config.sh with your hosting details
 
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
+# Build and deploy automatically
+source ftp-config.sh && ./build-production.sh --deploy
+```
 
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a>
-</div>
+## 📚 Documentation
 
-## Overview
+| Document | Description |
+|----------|-------------|
+| [**DEPLOYMENT-GUIDE.md**](docs/DEPLOYMENT-GUIDE.md) | Complete deployment documentation |
+| [**QUICK-REFERENCE.md**](docs/QUICK-REFERENCE.md) | Command cheatsheet and quick deploy |
+| [**HOSTING-PROVIDERS.md**](docs/HOSTING-PROVIDERS.md) | Provider-specific configurations |
+| [**Development Tracker**](docs/trinity-health-website-Development-phases-checklists-plan.md) | Project progress and phase tracking |
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+## 🛠️ Build & Deployment Tools
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
+### Build Script (`build-production.sh`)
 
-## Getting Started
+Converts modern development stack to traditional WordPress:
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+```bash
+# Manual build (for FTP/manual upload)
+./build-production.sh
 
-## Stay Connected
+# Automatic build and FTP deployment
+./build-production.sh --deploy
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+# View all options
+./build-production.sh --help
+```
+
+**What it does:**
+- Converts Sage Blade templates → Traditional PHP templates
+- Compiles Vite assets → Production CSS/JS
+- Exports database → SQL file with import instructions  
+- Creates wp-content folder → Ready for upload
+- Optional FTP deployment → Automatic upload to hosting
+
+### FTP Configuration
+
+**Secure method (recommended):**
+```bash
+# Copy and configure FTP credentials
+cp ftp-config.example.sh ftp-config.sh
+# Edit with your hosting details
+```
+
+**Supported hosting providers:**
+- Afrihost, Hetzner, SiteGround, Bluehost, GoDaddy, and more
+- See [HOSTING-PROVIDERS.md](docs/HOSTING-PROVIDERS.md) for specific configurations
+
+## 🏗️ Project Structure
+
+```
+trinity-health-website/
+├── web/                          # Document root
+│   ├── app/                      # WordPress content
+│   │   ├── themes/trinity-health/   # Sage theme
+│   │   ├── plugins/              # Managed plugins
+│   │   └── uploads/              # Media files
+│   └── wp/                       # WordPress core (Composer)
+├── build-production.sh           # Build & deployment script
+├── ftp-config.example.sh         # FTP configuration template
+├── docs/                         # Documentation
+└── dist-production/              # Build output (created by script)
+    ├── wp-content/               # Upload to hosting
+    ├── database-export.sql       # Import via phpMyAdmin
+    └── import-database.txt       # Database import instructions
+```
+
+## 🎯 Development Workflow
+
+### Daily Development
+```bash
+# Start environment
+ddev start
+
+# Start development server with HMR
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+
+# Make changes to:
+# - resources/views/ (Blade templates)
+# - resources/styles/ (CSS/Tailwind)
+# - resources/scripts/ (JavaScript)
+```
+
+### Content Management
+```bash
+# Add new plugins
+ddev composer require wpackagist-plugin/plugin-name
+
+# WordPress CLI commands
+ddev wp theme list
+ddev wp plugin activate plugin-name
+ddev wp db export backup.sql
+```
+
+### Deployment
+```bash
+# Build and deploy changes
+source ftp-config.sh && ./build-production.sh --deploy
+```
+
+## 🔧 Technology Stack
+
+### Development
+- **PHP 8.2+** - Required for Sage v11
+- **Node.js 18+** - For Vite build system
+- **DDEV** - Containerized development environment
+- **Composer** - PHP dependency management
+
+### Frontend
+- **Sage v11** - WordPress theme framework
+- **Laravel Blade** - Template engine
+- **Vite** - Build tool with HMR
+- **Tailwind CSS v4** - Utility-first CSS
+- **JavaScript ES6+** - Modern JavaScript
+
+### Backend
+- **WordPress 6.7.1** - Content management system
+- **Bedrock** - WordPress boilerplate
+- **Advanced Custom Fields** - Custom content fields
+- **Contact Form 7** - Contact forms
+- **Rank Math SEO** - Search engine optimization
+
+## 🏥 Healthcare Features
+
+### Custom Post Types
+- **Health Services** - General medical services
+- **Audiology Services** - Hearing healthcare specialization
+- **Team Members** - Staff profiles and credentials
+- **Locations** - Clinic information (Lusaka & Kitwe)
+- **Testimonials** - Patient reviews and feedback
+
+### Trinity Health Branding
+- **Primary Color:** #880005 (Trinity maroon)
+- **Typography:** Inter font family
+- **Design:** Mayo Clinic inspired healthcare design
+- **Content:** Dr. Alfred Mwamba and Trinity Health messaging
+
+## 🔒 Security Features
+
+- **Bedrock security** - wp-config.php outside document root
+- **Composer-managed plugins** - No admin plugin installations
+- **Environment-based configuration** - Separate dev/production configs
+- **Database security** - Custom table prefix `th_`
+- **SSL enforcement** - HTTPS redirect and secure headers
+- **File permissions** - Proper WordPress file permissions
+
+## 📊 Performance Optimizations
+
+- **Vite build system** - Fast asset compilation and HMR
+- **Tailwind CSS purging** - Removes unused CSS in production
+- **Image optimization** - WebP conversion and lazy loading
+- **Caching headers** - Browser and server-side caching
+- **CDN ready** - Assets optimized for content delivery networks
+
+## 🆘 Support & Troubleshooting
+
+### Common Issues
+- **Requirements check failed** → `ddev start && ddev wp core is-installed`
+- **Theme assets not built** → `npm run build` in theme directory
+- **FTP connection failed** → Check credentials in `ftp-config.sh`
+- **Database import error** → Use phpMyAdmin in hosting control panel
+
+### Getting Help
+1. Check [DEPLOYMENT-GUIDE.md](docs/DEPLOYMENT-GUIDE.md) troubleshooting section
+2. Review error logs in hosting control panel
+3. Test changes locally with DDEV before deploying
+4. Contact hosting provider for server-specific issues
+
+## 📈 Project Status
+
+**Current Phase:** Phase 2B - Build Script for Shared Hosting ✅  
+**Next Phase:** Phase 3 - Theme Development (Mayo Clinic Inspired)
+
+See [Development Tracker](docs/trinity-health-website-Development-phases-checklists-plan.md) for detailed progress.
+
+## 🤝 Contributing
+
+This is a client project for Trinity Health Zambia. Development follows the established Bedrock + Sage workflow with modern WordPress best practices.
+
+---
+
+**Built with ❤️ for Trinity Health Zambia**  
+*Professional healthcare website development using modern WordPress stack*
