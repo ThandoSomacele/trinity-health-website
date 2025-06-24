@@ -36,7 +36,7 @@
       <div class="hidden lg:flex items-center space-x-4">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="bg-[#880005] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#660004] transition-colors duration-200 shadow-sm"
+          class="bg-[#880005] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#660004] hover:text-white transition-colors duration-200 shadow-sm"
         >
           Book Appointment
         </a>
@@ -76,7 +76,7 @@
       <div class="mt-4 px-3">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="block w-full text-center bg-[#880005] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#660004] transition-colors"
+          class="block w-full text-center bg-[#880005] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#660004] hover:text-white transition-colors"
         >
           Book Appointment
         </a>

@@ -108,6 +108,13 @@ a:hover {
   text-underline-offset: 0.2em;
 }
 
+/* Button link styling - no underlines on hover */
+a.inline-flex:hover,
+a[class*="bg-"]:hover,
+button:hover {
+  text-decoration: none;
+}
+
 /* List styling for medical information */
 ul, ol {
   margin-bottom: 1rem;
