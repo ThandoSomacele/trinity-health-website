@@ -1,3 +1,835 @@
+/* Trinity Health Zambia - Sage v11 + Tailwind CSS v4 */
+
+/* Keep Sage v11's Tailwind CSS v4 imports */
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
+
+/* Define Trinity Health colors using Tailwind v4 @theme directive */
+@theme {
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #880005;
+  --color-primary-950: #660004;
+  
+  --color-healthcare-navy: #1e3a8a;
+  --color-healthcare-green: #059669;
+  --color-healthcare-blue: #0284c7;
+  --color-healthcare-orange: #ea580c;
+  
+  --font-family-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* CSS Custom Properties for Trinity Health Brand */
+:root {
+  --trinity-primary: #880005;
+  --trinity-primary-light: #a61a1a;
+  --trinity-primary-dark: #660004;
+  --trinity-healthcare-navy: #1e3a8a;
+  --trinity-healthcare-green: #059669;
+  --trinity-text-primary: #171717;
+  --trinity-text-secondary: #525252;
+  --trinity-background: #fafafa;
+  --trinity-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Base Typography - Healthcare Focus */
+html {
+  font-family: var(--font-family-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: rgb(38 38 38); /* neutral-800 */
+  background-color: rgb(250 250 250); /* neutral-50 */
+  line-height: 1.6;
+}
+
+/* Healthcare-focused heading hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-inter);
+  font-weight: 600;
+  color: rgb(23 23 23); /* neutral-900 */
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; } /* text-4xl */
+h2 { font-size: 1.875rem; } /* text-3xl */
+h3 { font-size: 1.5rem; } /* text-2xl */
+h4 { font-size: 1.25rem; } /* text-xl */
+h5 { font-size: 1.125rem; } /* text-lg */
+h6 { font-size: 1rem; } /* text-base */
+
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; } /* md:text-5xl */
+  h2 { font-size: 2.25rem; } /* md:text-4xl */
+  h3 { font-size: 1.875rem; } /* md:text-3xl */
+  h4 { font-size: 1.5rem; } /* md:text-2xl */
+  h5 { font-size: 1.25rem; } /* md:text-xl */
+  h6 { font-size: 1.125rem; } /* md:text-lg */
+}
+
+/* Medical content readability */
+p {
+  font-size: 1rem;
+  color: rgb(64 64 64); /* neutral-700 */
+  margin-bottom: 1rem;
+  max-width: 65ch; /* Optimal line length for medical content */
+}
+
+/* Professional link styling for healthcare */
+a {
+  color: var(--trinity-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--trinity-primary-light);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.2em;
+}
+
+/* List styling for medical information */
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+ul li {
+  list-style-type: disc;
+  color: rgb(64 64 64);
+  margin-bottom: 0.5rem;
+}
+
+ol li {
+  list-style-type: decimal;
+  color: rgb(64 64 64);
+  margin-bottom: 0.5rem;
+}
+
+/* Trinity Health Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(136, 0, 5, 0.5);
+}
+
+.btn-primary {
+  background-color: var(--trinity-primary);
+  color: white;
+  box-shadow: 0 1px 3px 0 rgba(136, 0, 5, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--trinity-primary-light);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(136, 0, 5, 0.3);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--trinity-primary);
+  border: 2px solid var(--trinity-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(254 242 242); /* primary-50 equivalent */
+  color: var(--trinity-primary);
+  text-decoration: none;
+}
+
+.btn-healthcare {
+  background-color: var(--trinity-healthcare-navy);
+  color: white;
+}
+
+.btn-healthcare:hover {
+  background-color: rgb(30 58 138 / 0.9);
+  color: white;
+  text-decoration: none;
+}
+
+/* Trinity Health Card System */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--trinity-card-shadow);
+  border: 1px solid rgb(229 229 229);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgb(229 229 229);
+  background-color: rgb(250 250 250);
+}
+
+.card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  background-color: rgb(250 250 250);
+  border-top: 1px solid rgb(229 229 229);
+}
+
+/* Medical Service Card */
+.service-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--trinity-card-shadow);
+  border: 1px solid rgb(229 229 229);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: rgb(254 202 202); /* primary-200 equivalent */
+}
+
+.service-card-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--trinity-primary);
+  margin-bottom: 1rem;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(23 23 23);
+  margin-bottom: 0.5rem;
+}
+
+.service-card-description {
+  color: rgb(64 64 64);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Team Member Card */
+.team-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--trinity-card-shadow);
+  border: 1px solid rgb(229 229 229);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.team-card-avatar {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgb(254 226 226); /* primary-100 equivalent */
+}
+
+.team-card-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(23 23 23);
+  margin-bottom: 0.25rem;
+}
+
+.team-card-title {
+  font-size: 0.875rem;
+  color: var(--trinity-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.team-card-credentials {
+  font-size: 0.75rem;
+  color: rgb(82 82 82);
+  margin-bottom: 0.75rem;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--trinity-card-shadow);
+  border: 1px solid rgb(229 229 229);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.testimonial-quote {
+  color: rgb(64 64 64);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(23 23 23);
+}
+
+.testimonial-service {
+  font-size: 0.75rem;
+  color: var(--trinity-primary);
+}
+
+/* Trinity Health Alert System */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  font-size: 0.875rem;
+}
+
+.alert-success {
+  background-color: rgb(240 253 244);
+  border-color: rgb(187 247 208);
+  color: rgb(22 101 52);
+}
+
+.alert-warning {
+  background-color: rgb(255 251 235);
+  border-color: rgb(254 215 170);
+  color: rgb(146 64 14);
+}
+
+.alert-error {
+  background-color: rgb(254 242 242);
+  border-color: rgb(254 202 202);
+  color: rgb(153 27 27);
+}
+
+.alert-info {
+  background-color: rgb(239 246 255);
+  border-color: rgb(191 219 254);
+  color: rgb(30 64 175);
+}
+
+/* Header Navigation */
+.nav-primary {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-primary a {
+  color: rgb(64 64 64);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-primary a:hover {
+  color: var(--trinity-primary);
+}
+
+.nav-primary a.current-menu-item,
+.nav-primary a.current_page_item {
+  color: var(--trinity-primary);
+  border-bottom: 2px solid var(--trinity-primary);
+}
+
+/* Footer Styling */
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(23 23 23);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section a {
+  color: rgb(82 82 82);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--trinity-primary);
+}
+
+/* Healthcare Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(23 23 23);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--trinity-primary);
+  box-shadow: 0 0 0 2px rgba(136, 0, 5, 0.2);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--trinity-primary);
+  box-shadow: 0 0 0 2px rgba(136, 0, 5, 0.2);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  appearance: none;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--trinity-primary);
+  box-shadow: 0 0 0 2px rgba(136, 0, 5, 0.2);
+}
+
+.form-checkbox {
+  height: 1rem;
+  width: 1rem;
+  color: var(--trinity-primary);
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.25rem;
+}
+
+.form-checkbox:focus {
+  box-shadow: 0 0 0 2px rgba(136, 0, 5, 0.2);
+}
+
+/* Page Headers */
+.page-header {
+  padding: 4rem 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, var(--trinity-primary) 0%, var(--trinity-primary-light) 100%);
+}
+
+.page-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-header h1 {
+    font-size: 3rem;
+  }
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: rgb(23 23 23);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: rgb(82 82 82);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Trinity Health Text Colors */
+.text-trinity-primary {
+  color: var(--trinity-primary);
+}
+
+.text-trinity-secondary {
+  color: var(--trinity-text-secondary);
+}
+
+/* Background Gradients */
+.bg-trinity-gradient {
+  background: linear-gradient(135deg, var(--trinity-primary) 0%, var(--trinity-primary-light) 100%);
+}
+
+.bg-healthcare-gradient {
+  background: linear-gradient(135deg, var(--trinity-healthcare-navy) 0%, var(--trinity-healthcare-green) 100%);
+}
+
+/* Accessibility utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Stretched link utility (Bootstrap-style) */
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+/* Flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Spacing utilities */
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+/* Background utilities */
+.bg-white {
+  background-color: white;
+}
+
+.bg-neutral-50 {
+  background-color: rgb(250 250 250);
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* Width utilities */
+.w-full {
+  width: 100%;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Print styles for medical content */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    color: black;
+    background-color: white;
+  }
+
+  .card {
+    border: 1px solid rgb(163 163 163);
+    box-shadow: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
