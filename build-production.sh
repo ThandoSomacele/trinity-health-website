@@ -1,6 +1,6 @@
 #!/bin/bash
-# Trinity Health Zambia - Deployment Script
-# Deploys built WordPress files to shared hosting via FTP/SFTP
+# Trinity Health Zambia - Production Build Script
+# Converts Bedrock + Sage setup to traditional WordPress for shared hosting
 
 set -e  # Exit on any error
 
@@ -13,12 +13,12 @@ NC='\033[0m' # No Color
 
 # Configuration
 BUILD_DIR="dist-production"
-BACKUP_DIR="backups"
-CONFIG_FILE="deploy-config.sh"
+THEME_NAME="trinity-health"
+WP_VERSION="6.7.1"  # Current WordPress version
 
 # Functions
 log() {
-    echo -e "${BLUE}[DEPLOY]${NC} $1"
+    echo -e "${BLUE}[BUILD]${NC} $1"
 }
 
 success() {
@@ -34,371 +34,723 @@ error() {
     exit 1
 }
 
-# Main deployment function
+# Main build function
 main() {
-    log "🚀 Starting Trinity Health deployment..."
+    log "🔨 Starting Trinity Health production build..."
     
-    # Check if build exists
-    check_build_exists
+    # Pre-build checks
+    check_requirements
     
-    # Load or create configuration
-    load_deployment_config
+    # Clean and create build directory
+    setup_build_directory
     
-    # Pre-deployment checks
-    pre_deployment_checks
+    # Build theme assets
+    build_theme_assets
     
-    # Create backup if production exists
-    create_backup
+    # Create WordPress core structure
+    setup_wordpress_core
     
-    # Deploy files
-    deploy_files
+    # Convert Sage theme to traditional PHP
+    convert_sage_theme
     
-    # Post-deployment verification
-    post_deployment_verification
+    # Copy and configure plugins
+    setup_plugins
     
-    success "✅ Deployment completed successfully!"
-    log "🌐 Site should be live at: $SITE_URL"
+    # Create production configuration files
+    create_production_configs
+    
+    # Copy uploads and content
+    copy_content
+    
+    # Final verification
+    verify_build
+    
+    success "✅ Production build completed successfully!"
+    log "📁 Build output: $BUILD_DIR/"
+    log "🚀 Ready for deployment to shared hosting"
 }
 
-# Check if build exists
-check_build_exists() {
-    if [[ ! -d "$BUILD_DIR" ]]; then
-        error "Build directory not found. Run ./build-production.sh first"
+# Check requirements
+check_requirements() {
+    log "Checking build requirements..."
+    
+    # Check if we're in a Bedrock project
+    if [[ ! -f "composer.json" ]] || [[ ! -d "web" ]]; then
+        error "Not a Bedrock project. Run this from the project root."
     fi
     
-    if [[ ! -f "$BUILD_DIR/wp-config.php" ]]; then
-        error "WordPress installation not found in build directory"
+    # Check if Sage theme exists
+    if [[ ! -d "web/app/themes/$THEME_NAME" ]]; then
+        error "Sage theme '$THEME_NAME' not found"
     fi
     
-    success "Build directory verified"
-}
-
-# Load deployment configuration
-load_deployment_config() {
-    if [[ ! -f "$CONFIG_FILE" ]]; then
-        log "Creating deployment configuration..."
-        create_deployment_config
+    # Check if theme assets are built
+    if [[ ! -d "web/app/themes/$THEME_NAME/public/build" ]]; then
+        warning "Theme assets not built. Building now..."
+        build_theme_assets_now
     fi
-    
-    source "$CONFIG_FILE"
-    
-    # Validate configuration
-    if [[ -z "$FTP_HOST" ]] || [[ -z "$FTP_USER" ]] || [[ -z "$SITE_URL" ]]; then
-        error "Deployment configuration incomplete. Please edit $CONFIG_FILE"
-    fi
-    
-    success "Configuration loaded"
-}
-
-# Create deployment configuration
-create_deployment_config() {
-    cat > "$CONFIG_FILE" << 'EOF'
-#!/bin/bash
-# Trinity Health Deployment Configuration
-# Edit these values with your hosting provider details
-
-# FTP/SFTP Configuration
-FTP_HOST="ftp.yourhostingprovider.com"     # Your hosting FTP server
-FTP_USER="your_username"                    # Your FTP username
-FTP_PASS="your_password"                    # Your FTP password (or use key-based auth)
-FTP_PORT="21"                              # FTP port (21 for FTP, 22 for SFTP)
-FTP_PATH="/public_html"                    # Remote path (usually /public_html)
-
-# Protocol: "ftp" or "sftp"
-PROTOCOL="ftp"
-
-# Site Configuration
-SITE_URL="https://trinity-health.co.za"   # Your site URL
-ADMIN_EMAIL="admin@trinity-health.co.za"  # Admin email for notifications
-
-# Backup Configuration
-ENABLE_BACKUP="true"                       # Create backup before deployment
-BACKUP_RETENTION_DAYS="30"                # Keep backups for X days
-
-# Deployment Options
-EXCLUDE_UPLOADS="false"                    # Skip uploads directory (if syncing separately)
-DRY_RUN="false"                           # Set to true to test without actual deployment
-EOF
-
-    warning "Created $CONFIG_FILE - Please edit with your hosting details before running again"
-    exit 0
-}
-
-# Pre-deployment checks
-pre_deployment_checks() {
-    log "Running pre-deployment checks..."
     
     # Check required tools
-    if [[ "$PROTOCOL" == "sftp" ]]; then
-        command -v sftp >/dev/null 2>&1 || error "SFTP not available"
-    else
-        command -v lftp >/dev/null 2>&1 || error "LFTP not available. Install with: brew install lftp"
-    fi
+    command -v curl >/dev/null 2>&1 || error "curl is required"
+    command -v unzip >/dev/null 2>&1 || error "unzip is required"
     
-    # Test connection
-    test_connection
-    
-    success "Pre-deployment checks passed"
+    success "Requirements check passed"
 }
 
-# Test connection
-test_connection() {
-    log "Testing connection to $FTP_HOST..."
+# Build theme assets now if needed
+build_theme_assets_now() {
+    log "Building theme assets..."
+    cd "web/app/themes/$THEME_NAME"
     
-    if [[ "$PROTOCOL" == "sftp" ]]; then
-        # Test SFTP connection
-        echo "ls" | sftp -o ConnectTimeout=10 -P "$FTP_PORT" "$FTP_USER@$FTP_HOST" >/dev/null 2>&1 || error "SFTP connection failed"
-    else
-        # Test FTP connection
-        lftp -c "set ftp:connect-program 'nc -w 10 $FTP_HOST $FTP_PORT'; open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST; ls; quit" >/dev/null 2>&1 || error "FTP connection failed"
+    if [[ ! -f "package.json" ]]; then
+        error "package.json not found in theme directory"
     fi
     
-    success "Connection test successful"
+    # Install dependencies if needed
+    if [[ ! -d "node_modules" ]]; then
+        log "Installing npm dependencies..."
+        npm install
+    fi
+    
+    # Build production assets
+    log "Building production assets..."
+    npm run build
+    
+    cd - >/dev/null
+    success "Theme assets built"
 }
 
-# Create backup
-create_backup() {
-    if [[ "$ENABLE_BACKUP" != "true" ]]; then
+# Setup build directory
+setup_build_directory() {
+    log "Setting up build directory..."
+    
+    # Remove existing build
+    if [[ -d "$BUILD_DIR" ]]; then
+        log "Removing existing build directory..."
+        rm -rf "$BUILD_DIR"
+    fi
+    
+    # Create build directory
+    mkdir -p "$BUILD_DIR"
+    
+    success "Build directory ready"
+}
+
+# Build theme assets
+build_theme_assets() {
+    log "Building theme assets..."
+    
+    cd "web/app/themes/$THEME_NAME"
+    
+    # Ensure we have built assets
+    if [[ ! -d "public/build" ]]; then
+        log "Building theme assets..."
+        npm run build
+    fi
+    
+    cd - >/dev/null
+    success "Theme assets ready"
+}
+
+# Setup WordPress core
+setup_wordpress_core() {
+    log "Setting up WordPress core..."
+    
+    # Download WordPress if not cached
+    if [[ ! -f "/tmp/wordpress-${WP_VERSION}.zip" ]]; then
+        log "Downloading WordPress $WP_VERSION..."
+        curl -s -L "https://wordpress.org/wordpress-${WP_VERSION}.zip" -o "/tmp/wordpress-${WP_VERSION}.zip"
+    fi
+    
+    # Extract WordPress
+    log "Extracting WordPress..."
+    cd "$BUILD_DIR"
+    unzip -q "/tmp/wordpress-${WP_VERSION}.zip"
+    
+    # Move WordPress files to root
+    mv wordpress/* .
+    rmdir wordpress
+    
+    cd - >/dev/null
+    success "WordPress core installed"
+}
+
+# Convert Sage theme to traditional PHP
+convert_sage_theme() {
+    log "Converting Sage theme to traditional WordPress theme..."
+    
+    local theme_src="web/app/themes/$THEME_NAME"
+    local theme_dest="$BUILD_DIR/wp-content/themes/$THEME_NAME"
+    
+    mkdir -p "$theme_dest"
+    
+    # Copy basic theme files
+    cp "$theme_src/style.css" "$theme_dest/"
+    cp "$theme_src/screenshot.png" "$theme_dest/" 2>/dev/null || true
+    cp "$theme_src/functions.php" "$theme_dest/"
+    cp "$theme_src/index.php" "$theme_dest/"
+    
+    # Copy built assets
+    if [[ -d "$theme_src/public/build" ]]; then
+        cp -r "$theme_src/public/build" "$theme_dest/assets"
+    fi
+    
+    # Convert Blade templates to PHP
+    convert_blade_templates "$theme_src" "$theme_dest"
+    
+    # Create traditional template hierarchy
+    create_traditional_templates "$theme_dest"
+    
+    # Update functions.php for traditional hosting
+    update_functions_php "$theme_dest"
+    
+    success "Sage theme converted"
+}
+
+# Convert Blade templates to PHP
+convert_blade_templates() {
+    local src_dir="$1/resources/views"
+    local dest_dir="$2"
+    
+    if [[ ! -d "$src_dir" ]]; then
+        warning "Blade templates directory not found"
         return
     fi
     
-    log "Creating backup of current site..."
+    log "Converting Blade templates..."
     
-    mkdir -p "$BACKUP_DIR"
+    # Create PHP templates from Blade
+    find "$src_dir" -name "*.blade.php" | while read blade_file; do
+        # Get relative path and convert .blade.php to .php (macOS compatible)
+        rel_path="${blade_file#$src_dir/}"
+        php_file="$dest_dir/${rel_path%.blade.php}.php"
+        
+        # Create directory if needed
+        mkdir -p "$(dirname "$php_file")"
+        
+        # Convert Blade syntax to PHP
+        convert_blade_to_php "$blade_file" "$php_file"
+    done
+}
+
+# Convert individual Blade file to PHP
+convert_blade_to_php() {
+    local blade_file="$1"
+    local php_file="$2"
     
-    local backup_name="trinity-health-backup-$(date +%Y%m%d-%H%M%S)"
-    local backup_path="$BACKUP_DIR/$backup_name"
+    # Basic Blade to PHP conversion
+    sed -e 's/@extends(\([^)]*\))/<?php get_header(); ?>/' \
+        -e 's/@section(\([^)]*\))//' \
+        -e 's/@endsection//' \
+        -e 's/@yield(\([^)]*\))/<?php get_template_part(\1); ?>/' \
+        -e 's/@include(\([^)]*\))/<?php get_template_part(\1); ?>/' \
+        -e 's/{{ *\$\([^}]*\) *}}/<?php echo \$\1; ?>/' \
+        -e 's/{!! *\$\([^}]*\) *!!}/<?php echo \$\1; ?>/' \
+        -e 's/@if(\([^)]*\))/<?php if(\1): ?>/' \
+        -e 's/@elseif(\([^)]*\))/<?php elseif(\1): ?>/' \
+        -e 's/@else/<?php else: ?>/' \
+        -e 's/@endif/<?php endif; ?>/' \
+        -e 's/@foreach(\([^)]*\))/<?php foreach(\1): ?>/' \
+        -e 's/@endforeach/<?php endforeach; ?>/' \
+        -e 's/@php/<?php/' \
+        -e 's/@endphp/?>/g' \
+        "$blade_file" > "$php_file"
+}
+
+# Create traditional template hierarchy
+create_traditional_templates() {
+    local theme_dir="$1"
     
-    if [[ "$PROTOCOL" == "sftp" ]]; then
-        create_sftp_backup "$backup_path"
-    else
-        create_ftp_backup "$backup_path"
+    log "Creating traditional template files..."
+    
+    # Create index.php if it doesn't exist
+    if [[ ! -f "$theme_dir/index.php" ]]; then
+        cat > "$theme_dir/index.php" << 'EOF'
+<?php
+/**
+ * The main template file
+ * Trinity Health Theme
+ */
+
+get_header(); ?>
+
+<main id="main" class="main">
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <header class="entry-header">
+                    <h1 class="entry-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h1>
+                </header>
+                
+                <div class="entry-content">
+                    <?php the_content(); ?>
+                </div>
+            </article>
+        <?php endwhile; ?>
+    <?php else : ?>
+        <p><?php _e('Sorry, no posts found.'); ?></p>
+    <?php endif; ?>
+</main>
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+EOF
     fi
     
-    # Clean old backups
-    find "$BACKUP_DIR" -name "trinity-health-backup-*" -mtime +$BACKUP_RETENTION_DAYS -delete 2>/dev/null || true
-    
-    success "Backup created: $backup_path"
-}
+    # Create header.php
+    cat > "$theme_dir/header.php" << 'EOF'
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
-# Create FTP backup
-create_ftp_backup() {
-    local backup_path="$1"
-    mkdir -p "$backup_path"
-    
-    lftp -c "
-        set ftp:list-options -a;
-        open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST;
-        lcd $backup_path;
-        cd $FTP_PATH;
-        mirror --reverse --verbose --exclude-glob .htaccess;
-        quit
-    " 2>/dev/null || warning "Backup failed (site may not exist yet)"
-}
+<div id="app">
+    <header id="masthead" class="site-header">
+        <div class="container">
+            <div class="site-branding">
+                <h1 class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+                </h1>
+            </div>
+            
+            <nav id="site-navigation" class="main-navigation">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary_navigation',
+                    'menu_id'        => 'primary-menu',
+                ));
+                ?>
+            </nav>
+        </div>
+    </header>
 
-# Create SFTP backup
-create_sftp_backup() {
-    local backup_path="$1"
-    mkdir -p "$backup_path"
+    <main id="main" class="main">
+EOF
     
-    sftp -P "$FTP_PORT" "$FTP_USER@$FTP_HOST" << EOF 2>/dev/null || warning "Backup failed (site may not exist yet)"
-cd $FTP_PATH
-get -r * $backup_path/
-quit
+    # Create footer.php
+    cat > "$theme_dir/footer.php" << 'EOF'
+    </main>
+    
+    <footer id="colophon" class="site-footer">
+        <div class="container">
+            <div class="site-info">
+                <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<?php wp_footer(); ?>
+</body>
+</html>
+EOF
+    
+    # Create sidebar.php
+    cat > "$theme_dir/sidebar.php" << 'EOF'
+<aside id="secondary" class="widget-area">
+    <?php if (is_active_sidebar('sidebar-primary')) : ?>
+        <?php dynamic_sidebar('sidebar-primary'); ?>
+    <?php endif; ?>
+</aside>
 EOF
 }
 
-# Deploy files
-deploy_files() {
-    log "Deploying files to $FTP_HOST..."
+# Update functions.php for traditional hosting
+update_functions_php() {
+    local theme_dir="$1"
+    local functions_file="$theme_dir/functions.php"
     
-    if [[ "$DRY_RUN" == "true" ]]; then
-        warning "DRY RUN MODE - No files will be uploaded"
-        return
-    fi
+    log "Updating functions.php for traditional hosting..."
     
-    if [[ "$PROTOCOL" == "sftp" ]]; then
-        deploy_via_sftp
-    else
-        deploy_via_ftp
-    fi
+    # Create a traditional functions.php
+    cat > "$functions_file" << 'EOF'
+<?php
+/**
+ * Trinity Health Theme Functions
+ * Converted from Sage for traditional WordPress hosting
+ */
+
+// Theme setup
+function trinity_health_setup() {
+    // Add theme support
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ));
     
-    success "Files deployed successfully"
+    // Register navigation menus
+    register_nav_menus(array(
+        'primary_navigation' => __('Primary Navigation', 'trinity-health'),
+    ));
+}
+add_action('after_setup_theme', 'trinity_health_setup');
+
+// Enqueue scripts and styles
+function trinity_health_scripts() {
+    // Enqueue compiled CSS
+    wp_enqueue_style('trinity-health-style', get_template_directory_uri() . '/assets/app.css', array(), '1.0.0');
+    
+    // Enqueue compiled JS
+    wp_enqueue_script('trinity-health-script', get_template_directory_uri() . '/assets/app.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'trinity_health_scripts');
+
+// Register widget areas
+function trinity_health_widgets_init() {
+    register_sidebar(array(
+        'name'          => __('Primary Sidebar', 'trinity-health'),
+        'id'            => 'sidebar-primary',
+        'description'   => __('Add widgets here.', 'trinity-health'),
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+    
+    register_sidebar(array(
+        'name'          => __('Footer', 'trinity-health'),
+        'id'            => 'sidebar-footer',
+        'description'   => __('Add footer widgets here.', 'trinity-health'),
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ));
+}
+add_action('widgets_init', 'trinity_health_widgets_init');
+
+// Custom Post Types
+function trinity_health_register_post_types() {
+    // Health Services CPT
+    register_post_type('health_service', array(
+        'label' => 'Health Services',
+        'labels' => array(
+            'name' => 'Health Services',
+            'singular_name' => 'Health Service',
+            'add_new_item' => 'Add New Health Service',
+            'edit_item' => 'Edit Health Service',
+        ),
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-heart',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'rewrite' => array('slug' => 'health-services'),
+    ));
+
+    // Audiology Services CPT
+    register_post_type('audiology_service', array(
+        'label' => 'Audiology Services',
+        'labels' => array(
+            'name' => 'Audiology Services',
+            'singular_name' => 'Audiology Service',
+            'add_new_item' => 'Add New Audiology Service',
+            'edit_item' => 'Edit Audiology Service',
+        ),
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-format-audio',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'rewrite' => array('slug' => 'audiology-services'),
+    ));
+
+    // Team Members CPT
+    register_post_type('team_member', array(
+        'label' => 'Team Members',
+        'labels' => array(
+            'name' => 'Team Members',
+            'singular_name' => 'Team Member',
+            'add_new_item' => 'Add New Team Member',
+            'edit_item' => 'Edit Team Member',
+        ),
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-admin-users',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'rewrite' => array('slug' => 'team'),
+    ));
+
+    // Locations CPT
+    register_post_type('location', array(
+        'label' => 'Locations',
+        'labels' => array(
+            'name' => 'Locations',
+            'singular_name' => 'Location',
+            'add_new_item' => 'Add New Location',
+            'edit_item' => 'Edit Location',
+        ),
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-location',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'rewrite' => array('slug' => 'locations'),
+    ));
+
+    // Testimonials CPT
+    register_post_type('testimonial', array(
+        'label' => 'Testimonials',
+        'labels' => array(
+            'name' => 'Testimonials',
+            'singular_name' => 'Testimonial',
+            'add_new_item' => 'Add New Testimonial',
+            'edit_item' => 'Edit Testimonial',
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-format-quote',
+        'supports' => array('title', 'editor'),
+    ));
+}
+add_action('init', 'trinity_health_register_post_types');
+EOF
 }
 
-# Deploy via FTP
-deploy_via_ftp() {
-    log "Uploading via FTP..."
+# Setup plugins
+setup_plugins() {
+    log "Setting up plugins..."
     
-    # Build exclude list
-    local exclude_opts=""
-    if [[ "$EXCLUDE_UPLOADS" == "true" ]]; then
-        exclude_opts="--exclude-glob wp-content/uploads/"
+    local plugins_dir="$BUILD_DIR/wp-content/plugins"
+    mkdir -p "$plugins_dir"
+    
+    # Copy plugins from Bedrock
+    if [[ -d "web/app/plugins" ]]; then
+        cp -r web/app/plugins/* "$plugins_dir/"
     fi
     
-    lftp -c "
-        set ftp:list-options -a;
-        set ftp:ssl-allow no;
-        set mirror:use-pget-n 5;
-        open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST;
-        lcd $BUILD_DIR;
-        cd $FTP_PATH;
-        mirror --reverse --delete --verbose $exclude_opts --exclude-glob .git/ --exclude-glob node_modules/;
-        quit
-    "
+    # Copy mu-plugins
+    if [[ -d "web/app/mu-plugins" ]]; then
+        cp -r web/app/mu-plugins "$BUILD_DIR/wp-content/"
+    fi
+    
+    success "Plugins copied"
 }
 
-# Deploy via SFTP
-deploy_via_sftp() {
-    log "Uploading via SFTP..."
+# Create production configuration files
+create_production_configs() {
+    log "Creating production configuration files..."
     
-    # Create a temporary script for SFTP commands
-    local sftp_script=$(mktemp)
-    
-    cat > "$sftp_script" << EOF
-cd $FTP_PATH
-put -r $BUILD_DIR/* .
-quit
+    # Create wp-config.php template
+    cat > "$BUILD_DIR/wp-config-template.php" << 'EOF'
+<?php
+/**
+ * Trinity Health WordPress Configuration
+ * 
+ * IMPORTANT: Rename this file to wp-config.php and update the database settings
+ */
+
+// ** Database settings - You will need to get this info from your hosting provider ** //
+define('DB_NAME', 'your_database_name');
+define('DB_USER', 'your_database_user');
+define('DB_PASSWORD', 'your_database_password');
+define('DB_HOST', 'localhost');
+define('DB_CHARSET', 'utf8mb4');
+define('DB_COLLATE', '');
+
+// ** Authentication Unique Keys and Salts ** //
+// Generate these at: https://api.wordpress.org/secret-key/1.1/salt/
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
+
+// ** WordPress Database Table prefix ** //
+$table_prefix = 'th_';
+
+// ** WordPress debugging ** //
+define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', false);
+define('WP_DEBUG_DISPLAY', false);
+
+// ** Security settings ** //
+define('DISALLOW_FILE_EDIT', true);
+define('DISALLOW_FILE_MODS', true);
+define('FORCE_SSL_ADMIN', true);
+
+// ** WordPress URLs ** //
+define('WP_HOME', 'https://your-domain.com');
+define('WP_SITEURL', 'https://your-domain.com');
+
+// ** That's all, stop editing! Happy publishing. ** //
+if (!defined('ABSPATH')) {
+    define('ABSPATH', __DIR__ . '/');
+}
+
+require_once ABSPATH . 'wp-settings.php';
 EOF
     
-    sftp -P "$FTP_PORT" -b "$sftp_script" "$FTP_USER@$FTP_HOST"
-    
-    rm "$sftp_script"
-}
+    # Create .htaccess
+    cat > "$BUILD_DIR/.htaccess" << 'EOF'
+# BEGIN WordPress Security
+<Files wp-config.php>
+order allow,deny
+deny from all
+</Files>
 
-# Post-deployment verification
-post_deployment_verification() {
-    log "Verifying deployment..."
-    
-    # Check if site loads
-    local http_status=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL" || echo "000")
-    
-    if [[ "$http_status" == "200" ]]; then
-        success "Site is loading successfully"
-    elif [[ "$http_status" == "301" ]] || [[ "$http_status" == "302" ]]; then
-        warning "Site is redirecting (status: $http_status)"
-    else
-        warning "Site returned status: $http_status (may need WordPress installation)"
-    fi
-    
-    # Check if wp-admin is accessible
-    local admin_status=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/wp-admin/" || echo "000")
-    
-    if [[ "$admin_status" == "200" ]] || [[ "$admin_status" == "302" ]]; then
-        success "WordPress admin is accessible"
-    else
-        warning "WordPress admin returned status: $admin_status"
-    fi
-    
-    # Generate post-deployment report
-    generate_deployment_report
-}
+# Block access to sensitive files
+<FilesMatch "\.(log|txt|md|json)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
 
-# Generate deployment report
-generate_deployment_report() {
-    local report_file="deployment-report-$(date +%Y%m%d-%H%M%S).txt"
-    
-    cat > "$report_file" << EOF
-Trinity Health Deployment Report
-==============================
-Date: $(date)
-Site URL: $SITE_URL
-FTP Host: $FTP_HOST
-Protocol: $PROTOCOL
+# Hide version info
+RewriteEngine On
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
 
-Deployment Status: SUCCESS
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
 
-Post-Deployment Checklist:
-========================
+# END WordPress
 
-1. WordPress Setup:
-   [ ] Complete WordPress installation at: $SITE_URL/wp-admin/install.php
-   [ ] Create admin user with strong password
-   [ ] Update site title and tagline
+# Security headers
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
 
-2. Theme Configuration:
-   [ ] Verify Trinity Health theme is active
-   [ ] Check homepage displays correctly
-   [ ] Test responsive design on mobile
+# Gzip compression
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
 
-3. Content Setup:
-   [ ] Create primary navigation menu
-   [ ] Add health services pages
-   [ ] Add audiology services pages
-   [ ] Upload team member photos
-   [ ] Configure contact forms
-
-4. SEO & Analytics:
-   [ ] Install and configure SEO plugin
-   [ ] Set up Google Analytics
-   [ ] Submit sitemap to Google Search Console
-   [ ] Verify meta descriptions and titles
-
-5. Security:
-   [ ] Install security plugin
-   [ ] Enable automatic backups
-   [ ] Update all passwords
-   [ ] Enable two-factor authentication
-   [ ] Test SSL certificate
-
-6. Performance:
-   [ ] Install caching plugin
-   [ ] Optimize images
-   [ ] Test page load speeds
-   [ ] Configure CDN (if needed)
-
-7. Testing:
-   [ ] Test all forms and functionality
-   [ ] Check cross-browser compatibility
-   [ ] Verify mobile responsiveness
-   [ ] Test email sending
-
-Contact Information:
-===================
-Technical Support: support@trinity-health.co.za
-Admin Panel: $SITE_URL/wp-admin/
-
-Next Steps:
-==========
-1. Complete WordPress installation
-2. Log in to admin panel and configure
-3. Begin adding content
-4. Test all functionality
-5. Go live!
-
+# Browser caching
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
 EOF
+    
+    success "Configuration files created"
+}
 
-    log "Deployment report saved: $report_file"
+# Copy uploads and content
+copy_content() {
+    log "Copying content and uploads..."
+    
+    # Copy uploads if they exist
+    if [[ -d "web/app/uploads" ]]; then
+        cp -r web/app/uploads "$BUILD_DIR/wp-content/"
+    fi
+    
+    # Create empty uploads directory if none exists
+    mkdir -p "$BUILD_DIR/wp-content/uploads"
+    
+    success "Content copied"
+}
+
+# Verify build
+verify_build() {
+    log "Verifying build output..."
+    
+    local errors=0
+    
+    # Check WordPress core files
+    if [[ ! -f "$BUILD_DIR/wp-config-template.php" ]]; then
+        error "wp-config-template.php not found"
+        ((errors++))
+    fi
+    
+    if [[ ! -f "$BUILD_DIR/index.php" ]]; then
+        error "WordPress index.php not found"
+        ((errors++))
+    fi
+    
+    # Check theme
+    if [[ ! -d "$BUILD_DIR/wp-content/themes/$THEME_NAME" ]]; then
+        error "Theme directory not found"
+        ((errors++))
+    fi
+    
+    if [[ ! -f "$BUILD_DIR/wp-content/themes/$THEME_NAME/style.css" ]]; then
+        error "Theme style.css not found"
+        ((errors++))
+    fi
+    
+    # Check plugins
+    if [[ ! -d "$BUILD_DIR/wp-content/plugins" ]]; then
+        warning "Plugins directory not found"
+    fi
+    
+    if [[ $errors -gt 0 ]]; then
+        error "Build verification failed with $errors errors"
+    fi
+    
+    success "Build verification passed"
 }
 
 # Show usage
 usage() {
-    echo "Trinity Health Deployment Script"
+    echo "Trinity Health Production Build Script"
     echo ""
     echo "Usage: $0 [options]"
     echo ""
+    echo "This script converts your Bedrock + Sage development setup"
+    echo "into a traditional WordPress installation for shared hosting."
+    echo ""
     echo "Options:"
-    echo "  --dry-run    Show what would be deployed without uploading"
-    echo "  --no-backup  Skip backup creation"
     echo "  --help       Show this help message"
     echo ""
-    echo "Before first use:"
-    echo "1. Run ./build-production.sh to create build"
-    echo "2. Edit deploy-config.sh with your hosting details"
-    echo "3. Run $0 to deploy"
+    echo "Output:"
+    echo "  $BUILD_DIR/  Traditional WordPress installation"
+    echo ""
+    echo "After building:"
+    echo "1. Upload $BUILD_DIR/ contents to your hosting provider"
+    echo "2. Rename wp-config-template.php to wp-config.php"
+    echo "3. Update database settings in wp-config.php"
+    echo "4. Run WordPress installation at your-domain.com/wp-admin/install.php"
 }
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --dry-run)
-            DRY_RUN="true"
-            shift
-            ;;
-        --no-backup)
-            ENABLE_BACKUP="false"
-            shift
-            ;;
         --help)
             usage
             exit 0
@@ -409,5 +761,5 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Run the deployment
+# Run the build
 main "$@"
