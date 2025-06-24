@@ -2,12 +2,12 @@
 
 ## Development Strategy Overview
 
-### Modern Development + Budget Hosting Approach
+### Modern Development + Flexible Deployment Approach
 
-**Philosophy**: Professional developer experience with practical, cost-effective deployment  
+**Philosophy**: Professional developer experience with flexible, cost-effective deployment options  
 **Local Development**: Full DDEV + Bedrock + Sage stack (all modern benefits)  
-**Production Deployment**: Build process converts to traditional WordPress for shared hosting  
-**Cost**: Maintain original R1,788/year hosting budget while getting enterprise-grade development workflow
+**Production Deployment**: Choose between modern VPS hosting or traditional shared hosting  
+**Cost**: Enterprise-grade development workflow with deployment options from R780-R1,788/year
 
 ---
 
@@ -112,7 +112,7 @@
 
 #### Install Bedrock via DDEV
 
-- [ ] **Create Bedrock project through DDEV**:
+- [x] **Create Bedrock project through DDEV**:
 
   ```bash
   ddev composer create-project roots/bedrock
@@ -375,11 +375,165 @@ web/app/themes/trinity-health/
 
 ---
 
-## Phase 2: Build & Deployment System (Days 8-14)
+## Phase 2: Production Deployment Strategy (Days 8-14)
 
-### Modern Build Process Architecture
+**Choose Your Deployment Path**: Trinity Health can select between modern self-hosting or traditional shared hosting approaches.
 
-#### Build Script Creation
+---
+
+### **Phase 2A: Self-Hosted VPS Deployment (RECOMMENDED)**
+
+**Benefits**: 56% cost savings (R780 vs R1,788/year), full control, enterprise performance, direct Bedrock deployment  
+**Time Investment**: ~3 hours setup  
+**Technical Requirements**: Basic server management skills
+
+#### VPS Server Setup (30 minutes)
+
+- [ ] **Create Hetzner Cloud account**:
+  - [ ] Visit: https://www.hetzner.com/cloud
+  - [ ] Sign up and verify email
+  - [ ] Create project: "Trinity Health Production"
+
+- [ ] **Deploy CX21 server**:
+  - [ ] Location: Falkenstein, Germany
+  - [ ] Image: Ubuntu 22.04  
+  - [ ] Type: CX21 (2 vCPU, 4GB RAM, 40GB SSD) - €4.51/month
+  - [ ] Name: trinity-health-prod
+
+- [ ] **Initial server configuration**:
+  ```bash
+  ssh root@YOUR_SERVER_IP
+  apt update && apt upgrade -y
+  apt install -y curl wget unzip software-properties-common
+  ```
+
+#### CyberPanel Installation (20 minutes)
+
+- [ ] **Install CyberPanel control panel**:
+  ```bash
+  sh <(curl https://cyberpanel.net/install.sh)
+  ```
+
+- [ ] **Installation options**:
+  - [ ] Select: OpenLiteSpeed (free version)
+  - [ ] Install Memcached: Yes
+  - [ ] Install Redis: Yes  
+  - [ ] Install PowerDNS: No
+  - [ ] Install Rainloop: Yes
+
+- [ ] **Configure firewall**:
+  ```bash
+  ufw allow 8090 && ufw enable
+  ```
+
+- [ ] **Save admin credentials** (shown after installation)
+
+#### Domain & SSL Configuration (30 minutes)
+
+- [ ] **Update DNS records**:
+  ```dns
+  A     @              YOUR_SERVER_IP    300
+  A     www            YOUR_SERVER_IP    300
+  ```
+
+- [ ] **Create website in CyberPanel**:
+  - [ ] Domain: trinity-health.co.za
+  - [ ] PHP: 8.2
+  - [ ] Enable SSL via Let's Encrypt
+
+#### Bedrock WordPress Setup (45 minutes)
+
+- [ ] **Install Composer**:
+  ```bash
+  curl -sS https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
+  chmod +x /usr/local/bin/composer
+  ```
+
+- [ ] **Deploy Bedrock**:
+  ```bash
+  cd /home/trinity-health.co.za/public_html
+  rm -rf *
+  composer create-project roots/bedrock .
+  ```
+
+- [ ] **Configure environment**:
+  - [ ] Copy .env.example to .env
+  - [ ] Set database credentials from CyberPanel
+  - [ ] Set WP_HOME and WP_SITEURL
+  - [ ] Generate security keys: https://roots.io/salts/
+
+- [ ] **Update document root** in CyberPanel to `public_html/web`
+
+#### Sage Theme Installation (30 minutes)
+
+- [ ] **Install Sage theme**:
+  ```bash
+  cd /home/trinity-health.co.za/public_html/web/app/themes
+  composer create-project roots/sage trinity-health
+  cd trinity-health && npm install && npm run build
+  ```
+
+- [ ] **Configure Trinity Health branding**:
+  ```css
+  /* In resources/styles/app.css */
+  :root {
+    --trinity-primary: #880005;
+    --trinity-primary-light: #a61a1a;
+    --trinity-primary-dark: #660004;
+  }
+  ```
+
+- [ ] **Activate theme via WP-CLI**:
+  ```bash
+  wp core install --url="https://trinity-health.co.za" --title="Trinity Health Zambia"
+  wp theme activate trinity-health --allow-root
+  ```
+
+#### Security & Optimization (20 minutes)
+
+- [ ] **Configure automated backups**:
+  - [ ] Daily backups in CyberPanel
+  - [ ] 7-day retention policy
+
+- [ ] **Enable performance optimizations**:
+  - [ ] LSCache in CyberPanel
+  - [ ] Gzip compression
+  - [ ] Browser caching
+
+- [ ] **Setup monitoring**:
+  - [ ] Server resource monitoring
+  - [ ] SSL certificate auto-renewal verification
+
+#### Development Workflow Setup (15 minutes)
+
+- [ ] **Initialize Git repository**:
+  ```bash
+  cd /home/trinity-health.co.za/public_html
+  git init && git add . && git commit -m "Initial Bedrock setup"
+  ```
+
+- [ ] **Create deployment script**:
+  ```bash
+  # Create /home/trinity-health.co.za/deploy.sh
+  #!/bin/bash
+  git pull origin main
+  composer install --no-dev --optimize-autoloader
+  cd web/app/themes/trinity-health && npm ci && npm run build
+  wp cache flush --allow-root
+  ```
+
+**✅ VPS Deployment Complete**: Enterprise hosting at R780/year with full control
+
+---
+
+### **Phase 2B: Build Script for Shared Hosting (ALTERNATIVE)**
+
+**Benefits**: Compatible with existing Afrihost hosting, no server management required  
+**Time Investment**: 2-3 days development  
+**Use Case**: Clients preferring managed hosting or lacking technical expertise
+
+#### Build Script Architecture
 
 - [ ] **Create build-production.sh script**:
 
@@ -388,7 +542,13 @@ web/app/themes/trinity-health/
   chmod +x build-production.sh
   ```
 
-- [ ] **Add build script content** (see full script below)
+- [ ] **Build script converts modern stack to traditional WordPress**:
+  - [ ] Bedrock → Standard WordPress structure
+  - [ ] Sage Blade templates → Traditional PHP files  
+  - [ ] Composer dependencies → Bundled plugins
+  - [ ] Vite assets → Compiled CSS/JS
+
+- [ ] **Add build script content** (comprehensive conversion logic)
 
 - [ ] **Test build script locally**:
 
@@ -437,6 +597,45 @@ web/app/themes/trinity-health/
 - [ ] **Configure deployment script with hosting details**
 
 - [ ] **Test deployment script (to staging if available)**
+
+#### Build Process Implementation
+
+- [ ] **Template Conversion Engine**:
+  - [ ] Parse Blade templates to PHP
+  - [ ] Convert Tailwind classes to inline CSS
+  - [ ] Bundle JavaScript dependencies
+
+- [ ] **Asset Pipeline**:
+  - [ ] Compile Vite assets for production
+  - [ ] Optimize images and media
+  - [ ] Generate traditional WordPress theme structure
+
+- [ ] **Configuration Management**:
+  - [ ] Environment-specific config generation
+  - [ ] Database credential management
+  - [ ] Security key generation
+
+**✅ Build Script Complete**: Shared hosting compatibility maintained
+
+---
+
+### **Phase 2C: Deployment Decision Matrix**
+
+**Choose Phase 2A (VPS) if**:
+- ✅ Want 56% cost savings (R780 vs R1,788/year)
+- ✅ Comfortable with basic server management
+- ✅ Need full control and customization
+- ✅ Want enterprise-grade performance
+- ✅ Plan to scale or add advanced features
+
+**Choose Phase 2B (Build Script) if**:
+- ✅ Prefer managed hosting simplicity  
+- ✅ Want to keep existing Afrihost relationship
+- ✅ Avoid server management responsibilities
+- ✅ Need immediate deployment without server setup
+- ✅ Client specifically requests shared hosting
+
+**Recommendation**: **Phase 2A (VPS)** provides superior value, performance, and future-proofing for Trinity Health
 
 ---
 
@@ -526,86 +725,96 @@ web/app/themes/trinity-health/
 
 - [ ] **Develop About Us section**:
 
-  - [ ] Dr. Mwamba profile and credentials
-  - [ ] Clinic history and mission
-  - [ ] Vision and values
+  - [ ] Dr. Alfred Mwamba biography
+  - [ ] Trinity Health story and mission
+  - [ ] Team member profiles
+  - [ ] Location information (Lusaka & Kitwe)
 
-- [ ] **Build Team section**:
+- [ ] **Build Contact section**:
+  - [ ] Contact forms (Health vs Audiology)
+  - [ ] Location details and maps
+  - [ ] Business hours and contact methods
 
-  - [ ] Staff profiles with credentials
-  - [ ] Specializations and expertise
-  - [ ] Professional photos
+#### Advanced Custom Fields Integration
 
-- [ ] **Create Contact pages**:
+- [ ] **Configure ACF field groups**:
 
-  - [ ] Multiple contact methods
-  - [ ] Location information for both clinics
-  - [ ] Appointment booking integration
+  - [ ] Service fields (description, features, pricing)
+  - [ ] Team member fields (bio, credentials, photo)
+  - [ ] Location fields (address, hours, contact)
+  - [ ] Testimonial fields (content, name, service)
 
-- [ ] **Setup Blog/Resources**:
-  - [ ] Healthcare tips structure
-  - [ ] Clinic updates and news
+- [ ] **Implement field display in Blade templates**:
+  - [ ] Dynamic service information rendering
+  - [ ] Team member profile cards
+  - [ ] Location details with maps
+  - [ ] Testimonial carousel
 
-#### SEO & Performance Optimization
+#### Contact Forms & User Interaction
 
-- [ ] **Performance testing**:
+- [ ] **Setup Contact Form 7**:
 
-  ```bash
-  ddev exec npm run analyze        # Bundle size analysis
-  ```
+  - [ ] Health services inquiry form
+  - [ ] Audiology services inquiry form
+  - [ ] General contact form
 
-- [ ] **SEO setup**:
+- [ ] **Form routing and notifications**:
+  - [ ] Email routing based on form type
+  - [ ] Confirmation messages
+  - [ ] Thank you pages
 
-  ```bash
-  ddev exec wp plugin activate yoast-seo  # SEO optimization
-  ```
+#### SEO & Content Optimization
 
-- [ ] **Image optimization**:
-  ```bash
-  ddev exec wp media regenerate --yes     # Regenerate thumbnails
-  ```
+- [ ] **Configure Rank Math SEO**:
 
-#### Testing Checklist
+  - [ ] Local SEO for Zambian healthcare
+  - [ ] Service-specific meta descriptions
+  - [ ] Schema markup for healthcare providers
+  - [ ] Breadcrumb implementation
 
-- [ ] **Cross-browser compatibility**:
+- [ ] **Content optimization**:
+  - [ ] Zambian healthcare keyword research
+  - [ ] Meta titles and descriptions
+  - [ ] Image alt text and optimization
+  - [ ] Internal linking strategy
 
-  - [ ] Chrome (latest 2 versions)
-  - [ ] Firefox (latest 2 versions)
-  - [ ] Safari (latest 2 versions)
-  - [ ] Edge (latest 2 versions)
+### Quality Assurance & Testing
 
-- [ ] **Mobile responsiveness**:
+#### Cross-Browser & Device Testing
 
-  - [ ] 320px - 768px (Mobile)
-  - [ ] 768px - 1024px (Tablet)
-  - [ ] 1024px+ (Desktop)
+- [ ] **Browser compatibility testing**:
 
-- [ ] **Performance benchmarks**:
+  - [ ] Chrome, Firefox, Safari, Edge
+  - [ ] Mobile Safari (iOS)
+  - [ ] Chrome Mobile (Android)
 
-  - [ ] PageSpeed Insights score 90+
+- [ ] **Device testing**:
+
+  - [ ] Desktop (1920x1080, 1366x768)
+  - [ ] Tablet (768x1024, 1024x768)
+  - [ ] Mobile (375x667, 414x896)
+
+- [ ] **Responsive design verification**:
+  - [ ] Navigation functionality on mobile
+  - [ ] Content readability across devices
+  - [ ] Form usability on small screens
+  - [ ] Image and media responsiveness
+
+#### Performance Testing
+
+- [ ] **Speed optimization**:
+
+  - [ ] Image compression and WebP conversion
+  - [ ] CSS and JavaScript minification
+  - [ ] Lazy loading implementation
+  - [ ] Caching configuration
+
+- [ ] **Performance benchmarking**:
+
+  - [ ] GTmetrix speed testing
+  - [ ] Google PageSpeed Insights
+  - [ ] Pingdom Website Speed Test
   - [ ] Core Web Vitals optimization
-  - [ ] Load time under 3 seconds
-
-- [ ] **Accessibility compliance**:
-
-  - [ ] WCAG 2.1 AA compliance
-  - [ ] Screen reader compatibility
-  - [ ] Keyboard navigation
-  - [ ] Color contrast verification
-
-- [ ] **SEO implementation**:
-
-  - [ ] Meta tags on all pages
-  - [ ] Structured data markup
-  - [ ] XML sitemaps
-  - [ ] OpenGraph tags
-
-- [ ] **Forms functionality**:
-
-  - [ ] Contact forms working
-  - [ ] Appointment request forms
-  - [ ] Form validation
-  - [ ] Spam protection
 
 - [ ] **Load testing**:
   - [ ] Handle expected traffic volume
@@ -639,13 +848,13 @@ web/app/themes/trinity-health/
 - [ ] **Create final production build**:
 
   ```bash
-  ./build-production.sh
+  ./build-production.sh  # If using Phase 2B
   ```
 
 - [ ] **Deploy to staging for client review** (if available):
 
   ```bash
-  ./deploy.sh staging
+  ./deploy.sh staging  # If using Phase 2B
   ```
 
 - [ ] **Client approval checkpoint**:
@@ -657,7 +866,8 @@ web/app/themes/trinity-health/
 
 - [ ] **Deploy to production**:
   ```bash
-  ./deploy.sh production
+  # Phase 2A: Direct deployment on VPS
+  # Phase 2B: ./deploy.sh production
   ```
 
 #### Post-Deployment Verification
@@ -665,7 +875,7 @@ web/app/themes/trinity-health/
 - [ ] **Technical verification**:
 
   ```bash
-  curl -I https://trinity-health.com  # Check headers
+  curl -I https://trinity-health.co.za  # Check headers
   ```
 
 - [ ] **Functionality testing**:
@@ -731,7 +941,7 @@ web/app/themes/trinity-health/
   ddev import-db --file=client-data.sql
 
   # Search and replace URLs
-  ddev wp search-replace 'https://trinity-health.com' 'https://trinity-health-zambia.ddev.site'
+  ddev wp search-replace 'https://trinity-health.co.za' 'https://trinity-health-zambia.ddev.site'
   ```
 
 ---
@@ -741,7 +951,7 @@ web/app/themes/trinity-health/
 ### Backup Strategy
 
 - [ ] **Implement backup procedures**:
-  - [ ] Automated daily backups via hosting provider
+  - [ ] Automated daily backups via hosting provider/VPS
   - [ ] Manual pre-deployment database exports
   - [ ] Code version controlled in Git repository
   - [ ] Media synced to cloud storage (optional)
@@ -749,7 +959,7 @@ web/app/themes/trinity-health/
 ### Troubleshooting Documentation
 
 - [ ] **Document common issues and solutions**:
-  - [ ] White screen debugging (check error logs in cPanel)
+  - [ ] White screen debugging (check error logs)
   - [ ] Plugin conflict resolution (deactivate via FTP/database)
   - [ ] Database issue procedures (restore from backup)
   - [ ] Performance optimization (enable caching, optimize images)
@@ -767,7 +977,8 @@ web/app/themes/trinity-health/
   ddev exec npm update
 
   # Test updates locally, then deploy
-  ./build-production.sh
+  # Phase 2A: Git push + deployment script
+  # Phase 2B: ./build-production.sh && ./deploy.sh production
   ```
 
 ---
@@ -785,8 +996,8 @@ web/app/themes/trinity-health/
 ### Hosting Migration Path
 
 - [ ] **Plan hosting upgrade strategy**:
-  - [ ] Current: Shared hosting with build process
-  - [ ] Growth option: VPS with direct Bedrock deployment
+  - [ ] Current: Flexible deployment (VPS or shared hosting)
+  - [ ] Growth option: VPS scaling or dedicated servers
   - [ ] Scale option: Cloud hosting with CI/CD pipelines
 
 ### Technology Roadmap
@@ -822,8 +1033,24 @@ web/app/themes/trinity-health/
   - [ ] Hosting account handover
   - [ ] Final invoice and payment
 
-**Project Status**: ⏳ In Progress
-**Estimated Completion**: [Add target date]
-**Next Milestone**: [Current phase focus]
+**Project Status**: ⏳ In Progress  
+**Estimated Completion**: [Add target date]  
+**Next Milestone**: Choose deployment strategy (Phase 2A or 2B)
 
-This development strategy provides Trinity Health with a **professional development experience** while maintaining **budget-friendly hosting costs**, ensuring both **immediate success** and **long-term scalability**.x
+---
+
+## Deployment Strategy Summary
+
+### **Phase 2A: VPS Deployment (RECOMMENDED)**
+- **Cost**: R780/year (56% savings)
+- **Setup Time**: ~3 hours
+- **Benefits**: Enterprise performance, full control, direct Bedrock deployment
+- **Best For**: Technical clients, future scalability, cost optimization
+
+### **Phase 2B: Build Script Deployment (ALTERNATIVE)**
+- **Cost**: R1,788/year (existing Afrihost)
+- **Development Time**: 2-3 days
+- **Benefits**: No server management, familiar hosting
+- **Best For**: Non-technical clients, existing hosting relationships
+
+This flexible development strategy provides Trinity Health with **professional development experience** while offering **optimal deployment choices** based on their technical comfort level and business requirements, ensuring both **immediate success** and **long-term scalability**.
