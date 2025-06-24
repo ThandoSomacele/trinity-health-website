@@ -367,11 +367,11 @@ web/app/themes/trinity-health/
   - [x] Locations (clinic information)
   - [x] Testimonials (patient reviews)
 
-- [ ] **Create ACF Field Groups**:
-  - [ ] Service Details (description, features, pricing, icon)
-  - [ ] Team Member Info (bio, credentials, photo, specialties)
-  - [ ] Location Details (address, contact, hours, map)
-  - [ ] Testimonial Data (content, patient name, service type)
+- [x] **Create ACF Field Groups**:
+  - [x] Service Details (description, features, pricing, icon)
+  - [x] Team Member Info (bio, credentials, photo, specialties)
+  - [x] Location Details (address, contact, hours, map)
+  - [x] Testimonial Data (content, patient name, service type)
 
 ---
 
