@@ -26,7 +26,7 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <a 
               href="{{ home_url('/contact') }}" 
-              class="inline-flex items-center justify-center px-8 py-4 bg-trinity-primary text-white font-semibold rounded-lg hover:bg-trinity-primary-dark transition-colors duration-200 shadow-lg hover:shadow-xl"
+              class="inline-flex items-center justify-center px-8 py-4 bg-[#880005] text-white font-semibold rounded-lg hover:bg-[#660004] transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -36,7 +36,7 @@
             
             <a 
               href="{{ home_url('/services') }}" 
-              class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-trinity-primary hover:text-trinity-primary transition-colors duration-200"
+              class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-[#880005] hover:text-[#880005] transition-colors duration-200"
             >
               View Our Services
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,8 +96,8 @@
         
         {{-- General Health Services --}}
         <div class="group bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="bg-trinity-primary/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-trinity-primary/20 transition-colors">
-            <svg class="w-8 h-8 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#880005]/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-[#880005]/20 transition-colors">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </div>
@@ -108,7 +108,7 @@
             Your primary healthcare partner in Zambia.
           </p>
           
-          <a href="{{ home_url('/health-services') }}" class="inline-flex items-center text-trinity-primary font-semibold hover:text-trinity-primary-dark transition-colors">
+          <a href="{{ home_url('/health-services') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -118,8 +118,8 @@
         
         {{-- Audiology Services --}}
         <div class="group bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="bg-trinity-primary/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-trinity-primary/20 transition-colors">
-            <svg class="w-8 h-8 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#880005]/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-[#880005]/20 transition-colors">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
             </svg>
           </div>
@@ -130,7 +130,7 @@
             and comprehensive auditory rehabilitation programs.
           </p>
           
-          <a href="{{ home_url('/audiology-services') }}" class="inline-flex items-center text-trinity-primary font-semibold hover:text-trinity-primary-dark transition-colors">
+          <a href="{{ home_url('/audiology-services') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -140,8 +140,8 @@
         
         {{-- Emergency Care --}}
         <div class="group bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="bg-trinity-primary/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-trinity-primary/20 transition-colors">
-            <svg class="w-8 h-8 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#880005]/10 p-4 rounded-xl w-fit mb-6 group-hover:bg-[#880005]/20 transition-colors">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </div>
@@ -152,7 +152,7 @@
             immediate medical attention for critical health situations.
           </p>
           
-          <a href="{{ home_url('/emergency-care') }}" class="inline-flex items-center text-trinity-primary font-semibold hover:text-trinity-primary-dark transition-colors">
+          <a href="{{ home_url('/emergency-care') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -166,7 +166,7 @@
       <div class="text-center mt-12">
         <a 
           href="{{ home_url('/services') }}" 
-          class="inline-flex items-center px-8 py-4 border-2 border-trinity-primary text-trinity-primary font-semibold rounded-lg hover:bg-trinity-primary hover:text-white transition-all duration-200"
+          class="inline-flex items-center px-8 py-4 border-2 border-[#880005] text-[#880005] font-semibold rounded-lg hover:bg-[#880005] hover:text-white transition-all duration-200"
         >
           View All Services
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,8 +206,8 @@
           
           <div class="space-y-4 mb-8">
             <div class="flex items-start space-x-3">
-              <div class="bg-trinity-primary/10 p-2 rounded-full mt-1">
-                <svg class="w-4 h-4 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -218,8 +218,8 @@
             </div>
             
             <div class="flex items-start space-x-3">
-              <div class="bg-trinity-primary/10 p-2 rounded-full mt-1">
-                <svg class="w-4 h-4 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -230,8 +230,8 @@
             </div>
             
             <div class="flex items-start space-x-3">
-              <div class="bg-trinity-primary/10 p-2 rounded-full mt-1">
-                <svg class="w-4 h-4 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -244,7 +244,7 @@
           
           <a 
             href="{{ home_url('/about') }}" 
-            class="inline-flex items-center px-6 py-3 bg-trinity-primary text-white font-semibold rounded-lg hover:bg-trinity-primary-dark transition-colors duration-200"
+            class="inline-flex items-center px-6 py-3 bg-[#880005] text-white font-semibold rounded-lg hover:bg-[#660004] transition-colors duration-200"
           >
             Learn More About Our Practice
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -257,7 +257,7 @@
   </section>
 
   {{-- Contact CTA Section --}}
-  <section class="py-20 bg-trinity-primary">
+  <section class="py-20 bg-[#880005]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-4xl font-bold text-white mb-6">Ready to Take Care of Your Health?</h2>
       <p class="text-xl text-white/90 mb-8 leading-relaxed">
@@ -268,7 +268,7 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="inline-flex items-center justify-center px-8 py-4 bg-white text-trinity-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#880005] font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -278,7 +278,7 @@
         
         <a 
           href="tel:+260123456789" 
-          class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-trinity-primary transition-colors duration-200"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#880005] transition-colors duration-200"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
