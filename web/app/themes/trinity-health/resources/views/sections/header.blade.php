@@ -12,7 +12,7 @@
             class="h-10 lg:h-12 w-auto"
           >
           <div class="hidden sm:block">
-            <h1 class="text-xl lg:text-2xl font-bold text-trinity-primary">Trinity Health</h1>
+            <h1 class="text-xl lg:text-2xl font-bold text-[#880005]">Trinity Health</h1>
             <p class="text-sm text-gray-600 -mt-1">Zambia</p>
           </div>
         </a>
@@ -26,7 +26,7 @@
             'menu_class' => 'flex items-center space-x-8 text-gray-700 font-medium',
             'echo' => false,
             'container' => false,
-            'link_before' => '<span class="hover:text-trinity-primary transition-colors duration-200">',
+            'link_before' => '<span class="hover:text-[#880005] transition-colors duration-200">',
             'link_after' => '</span>'
           ]) !!}
         </nav>
@@ -36,7 +36,7 @@
       <div class="hidden lg:flex items-center space-x-4">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="bg-trinity-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-trinity-primary-dark transition-colors duration-200 shadow-sm"
+          class="bg-[#880005] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#660004] transition-colors duration-200 shadow-sm"
         >
           Book Appointment
         </a>
@@ -46,7 +46,7 @@
       <div class="lg:hidden">
         <button 
           type="button" 
-          class="mobile-menu-toggle p-2 rounded-md text-gray-600 hover:text-trinity-primary hover:bg-gray-50 transition-colors"
+          class="mobile-menu-toggle p-2 rounded-md text-gray-600 hover:text-[#880005] hover:bg-gray-50 transition-colors"
           aria-expanded="false"
           aria-label="Toggle navigation menu"
         >
@@ -66,7 +66,7 @@
             'menu_class' => 'flex flex-col space-y-3',
             'echo' => false,
             'container' => false,
-            'link_before' => '<span class="block px-3 py-2 text-gray-700 hover:text-trinity-primary hover:bg-gray-50 rounded-md transition-colors">',
+            'link_before' => '<span class="block px-3 py-2 text-gray-700 hover:text-[#880005] hover:bg-gray-50 rounded-md transition-colors">',
             'link_after' => '</span>'
           ]) !!}
         </nav>
@@ -76,7 +76,7 @@
       <div class="mt-4 px-3">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="block w-full text-center bg-trinity-primary text-white px-4 py-3 rounded-lg font-semibold hover:bg-trinity-primary-dark transition-colors"
+          class="block w-full text-center bg-[#880005] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#660004] transition-colors"
         >
           Book Appointment
         </a>
