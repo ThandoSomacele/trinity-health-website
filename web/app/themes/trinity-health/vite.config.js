@@ -5,6 +5,14 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
   base: '/app/themes/trinity-health/public/build/',
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    origin: process.env.DDEV_PRIMARY_URL 
+      ? `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, '')}:5173`
+      : 'http://localhost:5173',
+  },
   plugins: [
     tailwindcss(),
     laravel({
