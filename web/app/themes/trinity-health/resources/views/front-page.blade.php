@@ -46,17 +46,23 @@
           </div>
         </div>
         
-        {{-- Hero Image --}}
+        {{-- Hero Video --}}
         <div class="relative">
-          <div class="bg-gray-200 rounded-2xl aspect-[4/3] flex items-center justify-center">
-            {{-- Placeholder for hero image --}}
-            <div class="text-center text-gray-500">
-              <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16l4-4 4 4m-4-4v12"></path>
-              </svg>
-              <p class="text-lg font-medium">Hero Image</p>
-              <p class="text-sm">Professional medical facility or doctor photo</p>
-            </div>
+          <div class="rounded-2xl aspect-[4/3] overflow-hidden">
+            <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              class="w-full h-full object-cover"
+              aria-label="Trinity Health Zambia medical facility overview"
+            >
+              <source src="/app/uploads/2025/06/hero-montage-video.mp4" type="video/mp4">
+              {{-- Fallback for browsers that don't support video --}}
+              <div class="bg-gray-200 w-full h-full flex items-center justify-center">
+                <p class="text-gray-500">Your browser does not support video playback.</p>
+              </div>
+            </video>
           </div>
           
           {{-- Floating Stats Cards --}}
@@ -184,15 +190,12 @@
         
         {{-- Doctor Image --}}
         <div class="relative">
-          <div class="bg-gray-200 rounded-2xl aspect-[3/4] flex items-center justify-center">
-            {{-- Placeholder for doctor photo --}}
-            <div class="text-center text-gray-500">
-              <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-              </svg>
-              <p class="text-lg font-medium">Dr. Alfred Mwamba</p>
-              <p class="text-sm">Professional headshot photo</p>
-            </div>
+          <div class="rounded-2xl aspect-[3/4] overflow-hidden">
+            <img 
+              src="/app/uploads/2025/06/dr-alfred-mwamba.jpg" 
+              alt="Dr. Alfred Mwamba - Trinity Health Zambia" 
+              class="w-full h-full object-cover"
+            >
           </div>
         </div>
         

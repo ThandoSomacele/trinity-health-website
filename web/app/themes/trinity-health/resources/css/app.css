@@ -103,9 +103,7 @@ a {
 
 a:hover {
   color: var(--trinity-primary-light);
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
 }
 
 /* Button link styling - no underlines on hover */
