@@ -391,3 +391,75 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Mega Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const megaMenuTriggers = document.querySelectorAll('.mega-menu-trigger');
+  
+  megaMenuTriggers.forEach(trigger => {
+    const targetId = trigger.getAttribute('data-target');
+    const megaMenu = document.getElementById(targetId);
+    const parentDiv = trigger.closest('.group');
+    
+    if (megaMenu && parentDiv) {
+      let hoverTimeout;
+      
+      // Show mega menu on hover
+      parentDiv.addEventListener('mouseenter', function() {
+        clearTimeout(hoverTimeout);
+        megaMenu.classList.remove('opacity-0', 'invisible');
+        megaMenu.classList.add('opacity-100', 'visible');
+      });
+      
+      // Hide mega menu on mouse leave with delay
+      parentDiv.addEventListener('mouseleave', function() {
+        hoverTimeout = setTimeout(() => {
+          megaMenu.classList.add('opacity-0', 'invisible');
+          megaMenu.classList.remove('opacity-100', 'visible');
+        }, 150);
+      });
+      
+      // Keep mega menu open when hovering over it
+      megaMenu.addEventListener('mouseenter', function() {
+        clearTimeout(hoverTimeout);
+      });
+      
+      megaMenu.addEventListener('mouseleave', function() {
+        hoverTimeout = setTimeout(() => {
+          megaMenu.classList.add('opacity-0', 'invisible');
+          megaMenu.classList.remove('opacity-100', 'visible');
+        }, 150);
+      });
+      
+      // Keyboard navigation
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const isVisible = megaMenu.classList.contains('opacity-100');
+          
+          if (isVisible) {
+            megaMenu.classList.add('opacity-0', 'invisible');
+            megaMenu.classList.remove('opacity-100', 'visible');
+          } else {
+            megaMenu.classList.remove('opacity-0', 'invisible');
+            megaMenu.classList.add('opacity-100', 'visible');
+          }
+        }
+        
+        if (e.key === 'Escape') {
+          megaMenu.classList.add('opacity-0', 'invisible');
+          megaMenu.classList.remove('opacity-100', 'visible');
+          trigger.focus();
+        }
+      });
+      
+      // Close mega menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!parentDiv.contains(event.target) && !megaMenu.contains(event.target)) {
+          megaMenu.classList.add('opacity-0', 'invisible');
+          megaMenu.classList.remove('opacity-100', 'visible');
+        }
+      });
+    }
+  });
+});
