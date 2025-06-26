@@ -11,9 +11,9 @@
             alt="Trinity Health Zambia" 
             class="h-10 lg:h-12 w-auto"
           >
-          <div class="hidden sm:block">
-            <h1 class="text-xl lg:text-2xl font-bold text-[#880005]">Trinity Health</h1>
-            <p class="text-sm text-gray-600 -mt-1">Zambia</p>
+         <div class="flex flex-col sm:flex">
+            <span class="text-xl lg:text-2xl font-bold text-[#880005]">Trinity Health</span>
+            <span class="text-sm text-gray-600 -mt-1">Zambia</span>
           </div>
         </a>
       </div>
