@@ -87,7 +87,7 @@
                       {{-- Call to Action in Mega Menu --}}
                       <div class="mt-6 p-4 bg-gray-50 rounded-lg">
                         <p class="text-sm text-gray-600 mb-3">Need immediate care?</p>
-                        <a href="{{ home_url('/contact') }}" class="inline-flex items-center px-4 py-2 bg-[#880005] text-white text-sm font-semibold rounded-lg hover:bg-[#660004] hover:text-white transition-colors">
+                        <a href="{{ home_url('/contact') }}" class="btn btn-primary btn-sm">
                           Contact Us Now
                           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -112,7 +112,7 @@
       <div class="hidden lg:flex items-center space-x-4">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="bg-[#880005] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#660004] hover:text-white transition-colors duration-200 shadow-sm"
+          class="btn btn-primary btn-sm"
         >
           Book Appointment
         </a>
@@ -152,7 +152,7 @@
       <div class="mt-4 px-3">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="block w-full text-center bg-[#880005] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#660004] hover:text-white transition-colors"
+          class="btn btn-primary btn-md btn-block"
         >
           Book Appointment
         </a>
