@@ -263,7 +263,7 @@
   <section class="py-20 bg-[#880005]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-4xl font-bold text-white mb-6">Ready to Take Care of Your Health?</h2>
-      <p class="text-xl text-white/90 mb-8 leading-relaxed">
+      <p class="text-xl text-white mb-8 leading-relaxed">
         Schedule your appointment today and experience compassionate, professional healthcare 
         tailored to your needs.
       </p>
