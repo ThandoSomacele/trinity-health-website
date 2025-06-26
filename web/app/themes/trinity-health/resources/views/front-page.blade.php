@@ -26,7 +26,7 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <a 
               href="{{ home_url('/contact') }}" 
-              class="inline-flex items-center justify-center px-8 py-4 bg-[#880005] text-white font-semibold rounded-lg hover:bg-[#660004] hover:text-white transition-colors duration-200 shadow-lg hover:shadow-xl"
+              class="btn btn-primary btn-lg"
             >
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -36,7 +36,7 @@
             
             <a 
               href="{{ home_url('/services') }}" 
-              class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-[#880005] hover:text-[#880005] transition-colors duration-200"
+              class="btn btn-secondary btn-lg"
             >
               View Our Services
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@
             Your primary healthcare partner in Zambia.
           </p>
           
-          <a href="{{ home_url('/health-services') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
+          <a href="{{ home_url('/health-services') }}" class="btn btn-ghost btn-sm">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -136,7 +136,7 @@
             and comprehensive auditory rehabilitation programs.
           </p>
           
-          <a href="{{ home_url('/audiology-services') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
+          <a href="{{ home_url('/audiology-services') }}" class="btn btn-ghost btn-sm">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -158,7 +158,7 @@
             immediate medical attention for critical health situations.
           </p>
           
-          <a href="{{ home_url('/emergency-care') }}" class="inline-flex items-center text-[#880005] font-semibold hover:text-[#660004] transition-colors">
+          <a href="{{ home_url('/emergency-care') }}" class="btn btn-ghost btn-sm">
             Learn More
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -172,7 +172,7 @@
       <div class="text-center mt-12">
         <a 
           href="{{ home_url('/services') }}" 
-          class="inline-flex items-center px-8 py-4 border-2 border-[#880005] text-[#880005] font-semibold rounded-lg hover:bg-[#880005] hover:text-white transition-all duration-200"
+          class="btn btn-secondary btn-lg"
         >
           View All Services
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,7 +247,7 @@
           
           <a 
             href="{{ home_url('/about') }}" 
-            class="inline-flex items-center px-6 py-3 bg-[#880005] text-white font-semibold rounded-lg hover:bg-[#660004] hover:text-white transition-colors duration-200"
+            class="btn btn-primary btn-md"
           >
             Learn More About Our Practice
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -271,7 +271,7 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="{{ home_url('/contact') }}" 
-          class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#880005] font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#880005] transition-colors duration-200"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
