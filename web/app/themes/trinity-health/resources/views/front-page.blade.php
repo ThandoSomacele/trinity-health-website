@@ -6,80 +6,55 @@
 @extends('layouts.app')
 
 @section('content')
-  {{-- Hero Section - Clean and Professional --}}
-  <section class="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        
-        {{-- Hero Content --}}
-        <div class="lg:pr-8">
-          <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Your Health, 
-            <span class="text-trinity-primary">Our Priority</span>
-          </h1>
-          
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            Comprehensive healthcare services in Zambia. From general medicine to specialized audiology care, 
-            Dr. Alfred Mwamba and the Trinity Health team provide compassionate, professional medical care.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a 
-              href="{{ home_url('/contact') }}" 
-              class="btn btn-primary btn-lg"
-            >
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-              Book Appointment
-            </a>
-            
-            <a 
-              href="{{ home_url('/services') }}" 
-              class="btn btn-secondary btn-lg"
-            >
-              View Our Services
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
+  {{-- Hero Section - Award-Winning Minimalist Design --}}
+  <section class="relative min-h-screen overflow-hidden">
+    {{-- Full-Width Video Background --}}
+    <div class="absolute inset-0 z-0">
+      <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        class="w-full h-full object-cover"
+        aria-label="Trinity Health Zambia medical facility overview"
+      >
+        <source src="/app/uploads/2025/06/hero-montage-video.mp4" type="video/mp4">
+        {{-- Fallback background image --}}
+        <div class="bg-gray-200 w-full h-full flex items-center justify-center">
+          <p class="text-gray-500">Your browser does not support video playback.</p>
         </div>
+      </video>
+    </div>
+    
+    {{-- Gradient Overlay for Text Legibility --}}
+    <div class="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent z-10"></div>
+    
+    {{-- Hero Content - Bottom Left Positioned --}}
+    <div class="relative z-20 absolute bottom-0 left-0 p-8 lg:p-16 max-w-2xl">
+      <h1 class="text-4xl lg:text-6xl font-bold text-white leading-tight mb-4">
+        Exceptional Care 
+        <span class="block text-white/90">Starts Here</span>
+      </h1>
+      
+      <p class="text-lg text-white/80 mb-8 font-light">
+        Professional healthcare services in Zambia
+      </p>
+      
+      {{-- CTA Buttons - Equal Width, Reduced Size --}}
+      <div class="btn btn-secondary btn-lg">
+        <a 
+          href="{{ home_url('/contact') }}" 
+          class="flex items-center justify-center px-6 py-3"
+        >
+          Book Appointment
+        </a>
         
-        {{-- Hero Video --}}
-        <div class="relative">
-          <div class="rounded-2xl aspect-[4/3] overflow-hidden">
-            <video 
-              autoplay 
-              muted 
-              loop 
-              playsinline
-              class="w-full h-full object-cover"
-              aria-label="Trinity Health Zambia medical facility overview"
-            >
-              <source src="/app/uploads/2025/06/hero-montage-video.mp4" type="video/mp4">
-              {{-- Fallback for browsers that don't support video --}}
-              <div class="bg-gray-200 w-full h-full flex items-center justify-center">
-                <p class="text-gray-500">Your browser does not support video playback.</p>
-              </div>
-            </video>
-          </div>
-          
-          {{-- Floating Stats Cards --}}
-          <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-            <div class="flex items-center space-x-3">
-              <div class="bg-trinity-primary/10 p-3 rounded-full">
-                <svg class="w-6 h-6 text-trinity-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-              </div>
-              <div>
-                <p class="text-2xl font-bold text-gray-900">1000+</p>
-                <p class="text-sm text-gray-600">Patients Served</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a 
+          href="{{ home_url('/services') }}" 
+          class="flex items-center justify-center px-6 py-3 bg-transparent text-white font-medium rounded-md border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+        >
+          Our Services
+        </a>
       </div>
     </div>
   </section>
