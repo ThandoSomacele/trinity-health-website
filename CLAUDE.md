@@ -82,7 +82,9 @@ source ftp-config.sh && ./build-production.sh --deploy
 - **Brand Colors**: Primary Trinity maroon (#880005), Healthcare Navy (#1e3a8a), Clinical White (#f8f9fa)
 - **Text Color Rule**: ALL text on Trinity brand colors MUST be white (`text-white`)
 - **Icon Color Rule**: ALL service card icons MUST use Trinity brand color (`bg-[#880005]/10` + `text-[#880005]`)
-- **Layout Spacing**: Equal gap spacing between columns/flex items (`gap-16` standard)
+- **Layout Spacing Rules**: 2-col=`gap-12`, 3-col=`gap-8`, 4-col=`gap-8` (MUST match home page exactly)
+- **Language Standard**: ALL content MUST use British English spelling (organisation, specialised, centre, colour, behaviour, etc.)
+- **Content Focus**: Emphasise Trinity Health as an institution, not individual practitioners - hospital-centred messaging
 - **Typography**: Inter font with healthcare-focused hierarchy (h1: 3rem, h2: 2.25rem, body: 1rem)
 - **Components**: Professional button system, card layouts, forms, mega menu navigation
 - **Inspiration**: Mayo Clinic's clean, trustworthy aesthetic adapted for Zambian healthcare context

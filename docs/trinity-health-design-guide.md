@@ -23,12 +23,15 @@
 - **Dark backgrounds** (gray-900, etc.) → Always use `text-white`
 - **Light backgrounds** (white, gray-50) → Use `text-gray-900` or `text-gray-600`
 
-### Layout Spacing Standards
-- **Column Gap Standard**: `gap-16` (64px) for main content columns and flex items
-- **Grid Layouts**: Always use equal gap spacing between columns (2-col, 3-col, 4-col)
-- **Consistent Spacing**: Follow home page patterns with uniform gaps throughout site
+### Layout Spacing Standards (MANDATORY)
+- **2-Column Layouts**: `gap-12` (48px) for main content columns and side-by-side sections
+- **3-Column Layouts**: `gap-8` (32px) for service grids and card layouts
+- **4-Column Layouts**: `gap-8` (32px) for statistics and feature grids
+- **RULE**: ALL layouts MUST match home page spacing patterns exactly
+- **Consistent Spacing**: Follow home page gap values - never deviate from established patterns
 - **Section Padding**: `py-20` (80px) standard for main content sections
 - **Hero Sections**: `py-16` (64px) for balanced top/bottom padding
+- **Internal Elements**: `gap-6` for small stat grids, `gap-4` for button groups
 
 ### Icon Color Standards (MANDATORY)
 - **ALL ICONS MUST USE TRINITY BRAND COLOR ONLY**: `bg-[#880005]/10` + `text-[#880005]`
