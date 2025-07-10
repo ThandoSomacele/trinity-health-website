@@ -125,15 +125,14 @@ Light: White on dark backgrounds - Hero CTAs
 
 ### Image Placeholder Standards
 **Standard UI Image Placeholders** (Industry Best Practice):
-- **Solid grey background**: `bg-gray-400` - Medium grey for professional appearance
-- **Simple white icon**: `text-white/80` with slight transparency
+- **Charcoal grey background**: `bg-slate-700` - Dark charcoal for professional appearance
+- **Small white icon**: `w-10 h-10 text-white` - Clean, minimal size
 - **Icon type**: Standard image placeholder icon (mountain/photo symbol)
-- **Icon size**: 64px (w-16 h-16) for good visibility
-- **Container styling**: `rounded-2xl` to match Trinity Health design language
-- **No additional decorative elements** - Just solid grey block with centered white icon
-- **Standard aspect ratios**: 16:9 for landscapes, 3:4 for portraits, 1:1 for squares
-- **Center alignment**: Simple flex center for icon positioning
-- **No text labels or circles** - Minimal, industry-standard approach
+- **Container styling**: `rounded-2xl overflow-hidden` to match Trinity Health design language
+- **Center alignment**: `flex items-center justify-center` for perfect centering
+- **Standard aspect ratios**: `aspect-[4/3]` for landscapes, `aspect-[3/4]` for portraits, `aspect-square` for squares
+- **No additional decorative elements** - Just charcoal grey block with centered white icon
+- **No text labels or borders** - Minimal, industry-standard approach
 - **Trinity card shadow** for elevation
 - **Hover transform: translateY(-2px)** for interactivity
 - **Icon + Title + Description + Price + CTA** structure
