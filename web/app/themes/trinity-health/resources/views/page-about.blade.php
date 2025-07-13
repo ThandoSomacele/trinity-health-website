@@ -9,8 +9,17 @@
 @while(have_posts())
 @php(the_post())
 
-{{-- Hero Section --}}
-@include('components.hero-section')
+{{-- About Page Header --}}
+<section class="py-20 bg-gradient-to-r from-[#880005] to-[#660004] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold text-white mb-6">{{ get_the_title() }}</h1>
+      <p class="text-xl text-white/90 max-w-3xl mx-auto">
+        Learn about Trinity Health's commitment to providing exceptional healthcare services to the Zambian community.
+      </p>
+    </div>
+  </div>
+</section>
 
 {{-- About Content --}}
 <section class="py-20 bg-white">

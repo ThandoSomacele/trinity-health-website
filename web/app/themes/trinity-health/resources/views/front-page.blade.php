@@ -113,23 +113,25 @@
             $years_exp = $global_stats['years_experience'];
           @endphp
           
-          <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-            <div class="flex items-center space-x-4">
-              @if($display_stat)
-                <div class="text-center">
-                  <p class="text-2xl font-bold text-[#880005]">{{ $display_stat }}</p>
-                  <p class="text-sm text-gray-600">Patients Served</p>
-                </div>
-              @endif
-              
-              @if($years_exp)
-                <div class="text-center border-l border-gray-200 pl-4">
-                  <p class="text-2xl font-bold text-[#880005]">{{ $years_exp }}+</p>
-                  <p class="text-sm text-gray-600">Years Experience</p>
-                </div>
-              @endif
+          @if($display_stat || $years_exp)
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+              <div class="flex items-center space-x-4">
+                @if($display_stat)
+                  <div class="text-center">
+                    <p class="text-2xl font-bold text-[#880005]">{{ $display_stat }}</p>
+                    <p class="text-sm text-gray-600">Patients Served</p>
+                  </div>
+                @endif
+                
+                @if($years_exp)
+                  <div class="text-center border-l border-gray-200 pl-4">
+                    <p class="text-2xl font-bold text-[#880005]">{{ $years_exp }}+</p>
+                    <p class="text-sm text-gray-600">Years Experience</p>
+                  </div>
+                @endif
+              </div>
             </div>
-          </div>
+          @endif
         </div>
         
         {{-- About Content --}}
