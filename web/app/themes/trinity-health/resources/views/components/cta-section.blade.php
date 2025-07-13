@@ -16,10 +16,11 @@
   $primary_cta_url = get_field('cta_primary_url') ?: home_url('/contact');
   $primary_cta_icon = get_field('cta_primary_icon') ?: 'phone';
   
-  // Secondary CTA Button (optional)
+  // Secondary CTA Button (optional) - use global phone if available
   $show_secondary_cta = get_field('show_secondary_cta_button') !== false; // defaults to true
-  $secondary_cta_text = get_field('cta_secondary_text') ?: 'Call: +260 123 456 789';
-  $secondary_cta_url = get_field('cta_secondary_url') ?: 'tel:+260123456789';
+  $global_phone = get_field('global_phone', 'option') ?: '+260 123 456 789';
+  $secondary_cta_text = get_field('cta_secondary_text') ?: 'Call: ' . $global_phone;
+  $secondary_cta_url = get_field('cta_secondary_url') ?: 'tel:' . str_replace([' ', '+'], '', $global_phone);
   $secondary_cta_icon = get_field('cta_secondary_icon') ?: 'mobile';
   
   // Background styles

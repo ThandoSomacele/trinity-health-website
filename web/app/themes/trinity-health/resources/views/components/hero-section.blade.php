@@ -22,8 +22,8 @@
   $secondary_cta_url = get_field('secondary_cta_url') ?: home_url('/services');
   $show_secondary_cta = get_field('show_secondary_cta') !== false; // defaults to true
   
-  // Stats Card - editable
-  $stats_number = get_field('stats_number') ?: '1000+';
+  // Stats Card - editable (try page fields first, then global)
+  $stats_number = get_field('stats_number') ?: get_field('patients_served', 'option') ?: '1000+';
   $stats_label = get_field('stats_label') ?: 'Patients Served';
   $show_stats = get_field('show_stats_card') !== false; // defaults to true
 @endphp
