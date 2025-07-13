@@ -85,6 +85,7 @@ source ftp-config.sh && ./build-production.sh --deploy
 - **Layout Spacing Rules**: 2-col=`gap-12`, 3-col=`gap-8`, 4-col=`gap-8` (MUST match home page exactly)
 - **Language Standard**: ALL content MUST use British English spelling (organisation, specialised, centre, colour, behaviour, etc.)
 - **Content Focus**: Emphasise Trinity Health as an institution, not individual practitioners - hospital-centred messaging
+- **HTML Comments**: NEVER use HTML comments in WordPress post content - they cause rendering issues
 - **Typography**: Inter font with healthcare-focused hierarchy (h1: 3rem, h2: 2.25rem, body: 1rem)
 - **Components**: Professional button system, card layouts, forms, mega menu navigation
 - **Inspiration**: Mayo Clinic's clean, trustworthy aesthetic adapted for Zambian healthcare context
@@ -92,8 +93,9 @@ source ftp-config.sh && ./build-production.sh --deploy
 - **Accessibility**: WCAG 2.1 AA compliance with healthcare-specific considerations
 
 ### Content Structure
-- **Post Types**: Health Services, Audiology Services
-- **Custom Fields**: Service details, pricing, team member info
+- **Post Types**: Health Services, Audiology Services, Team Members, Locations, Testimonials
+- **Flexible Content System**: Component-based with Custom Fields integration
+- **Custom Fields**: Service details, pricing, team member info, page layouts
 - **Navigation**: Professional hospital-style menu system
 - **Pages**: 22+ pages covering all Trinity Health services
 
@@ -101,17 +103,22 @@ source ftp-config.sh && ./build-production.sh --deploy
 - **Modern Build System**: Vite with hot module replacement
 - **Tailwind CSS v4**: Latest version with @theme directive
 - **WordPress Integration**: Seamless theme.json generation
+- **Flexible Content System**: Component-based architecture with Custom Fields
 - **Responsive Design**: Mobile-first approach
 - **Accessibility**: WCAG 2.1 AA compliance focus
 
 ## Important Files
 
 ### Theme Files
-- `web/app/themes/trinity-health/resources/views/front-page.blade.php` - Homepage template
+- `web/app/themes/trinity-health/resources/views/front-page.blade.php` - Homepage template (flexible components)
+- `web/app/themes/trinity-health/resources/views/page.blade.php` - Default page template (flexible components)
+- `web/app/themes/trinity-health/resources/views/template-flexible.blade.php` - Maximum flexibility template
+- `web/app/themes/trinity-health/resources/views/components/` - Reusable content components
 - `web/app/themes/trinity-health/resources/views/partials/header.blade.php` - Header component
 - `web/app/themes/trinity-health/resources/css/app.css` - Main stylesheet (1,144 lines)
 - `web/app/themes/trinity-health/vite.config.js` - Build configuration
 - `web/app/themes/trinity-health/tailwind.config.js` - Tailwind configuration
+- `web/app/themes/trinity-health/app/setup.php` - Custom post types and ACF fields
 
 ### Configuration Files
 - `.env` - Environment variables
@@ -123,6 +130,7 @@ source ftp-config.sh && ./build-production.sh --deploy
 - `docs/DEPLOYMENT-GUIDE.md` - Complete deployment guide
 - `docs/trinity-health-website-Development-phases-checklists-plan.md` - Development roadmap
 - `docs/trinity-health-design-guide.md` - **Design system and UI guidelines** (MUST READ for new pages/layouts)
+- `docs/FLEXIBLE-CONTENT-SYSTEM.md` - **Flexible content management guide** (MUST READ for content editing)
 
 ## Testing & Quality
 - Always test locally with `ddev start` before deployment
@@ -166,11 +174,12 @@ The project supports flexible deployment:
    - Card-based layouts with consistent spacing (24px padding)
    - 80px fixed height navigation with mega menu
 
-3. **Use established component structure**:
+3. **Use flexible component structure**:
    ```php
-   @include('partials.hero', ['type' => 'service', 'background' => $featured_image])
-   @include('partials.service-grid', ['columns' => 3, 'services' => $services])
-   @include('partials.cta-section', ['style' => 'primary', 'background' => 'trinity'])
+   @include('components.hero-section')        // Pulls from Custom Fields
+   @include('components.services-grid')       // Configurable layouts
+   @include('components.content-section')     // Block Editor integration
+   @include('components.cta-section')         // Customizable CTAs
    ```
 
 4. **Content hierarchy for medical pages**:
@@ -199,9 +208,135 @@ The project supports flexible deployment:
    - **Container styling**: `rounded-2xl` corners matching Trinity design
    - **Proper aspect ratios**: 16:9 landscapes, 3:4 portraits, 1:1 squares
 
+## Flexible Content Management System
+
+### Overview
+The Trinity Health website uses a **component-based content system** that separates styling from content. This allows easy content updates via WordPress admin while maintaining consistent Trinity Health branding and design standards.
+
+### Key Benefits
+- ✅ **Consistent Design**: Trinity Health branding applied automatically
+- ✅ **Easy Content Updates**: Edit via WordPress admin interface  
+- ✅ **Block Editor Integration**: Use WordPress visual editor for rich content
+- ✅ **No Code Required**: All editing through familiar WordPress interface
+
+### Available Components
+
+#### 1. Hero Section (`components.hero-section`)
+**Editable via Custom Fields:**
+- Hero title, subtitle, description
+- Video or image media
+- Primary and secondary CTA buttons
+- Stats card (patient numbers, achievements)
+- Background styles
+
+#### 2. Services Grid (`components.services-grid`)
+**Editable via Custom Fields:**
+- Section title and description
+- Grid layout (2, 3, or 4 columns)
+- Custom services OR auto-pull from Custom Post Types
+- Service icons, descriptions, URLs
+- View all services CTA
+
+#### 3. Content Section (`components.content-section`)
+**Combines Custom Fields + Block Editor:**
+- Layout options (full-width, two-column, image-left/right)
+- Featured images with placeholders
+- Background styles (white, gray, Trinity maroon, navy)
+- Features lists with checkmarks
+- Optional CTA buttons
+
+#### 4. About Doctor Section (`components.about-doctor-section`)
+**Editable via Custom Fields:**
+- Doctor name, description, image
+- Qualifications/features list
+- Background styles
+- CTA button configuration
+
+#### 5. Call-to-Action Section (`components.cta-section`)
+**Editable via Custom Fields:**
+- CTA title and description
+- Background styles (Trinity, navy, light, gradient)
+- Primary and secondary buttons
+- Automatic button styling based on background
+
+### Content Editing Workflow
+
+#### For Homepage:
+1. **WordPress Admin** → **Pages** → **Homepage**
+2. **Custom Fields tabs** appear below editor:
+   - **Hero Section**: Edit title, media, buttons
+   - **Services Section**: Configure grid, add services
+   - **About Doctor**: Update profile, features
+   - **Call-to-Action**: Change text, buttons, style
+
+#### For Other Pages:
+1. **WordPress Admin** → **Pages** → **Your Page**
+2. **Choose page template**: Default or Flexible Content Layout
+3. **Custom Fields**: Configure which components to show
+4. **Block Editor**: Write main content
+5. **Custom Fields**: Control layout and design options
+
+#### For Service Pages:
+1. **WordPress Admin** → **Health Services** or **Audiology Services**
+2. **Standard editor** for main content
+3. **Service Details Custom Fields**:
+   - Service icon selection
+   - Pricing (ZMK)
+   - Duration
+   - Feature lists
+
+### Template Options
+
+#### Available Page Templates:
+- **Default Template** (`page.blade.php`): Basic content with optional components
+- **Flexible Content Template** (`template-flexible.blade.php`): Maximum customization
+- **Homepage Template** (`front-page.blade.php`): All components with homepage defaults
+
+#### Component Combinations:
+- **Landing Pages**: Hero + Content + CTA
+- **Service Pages**: Services + Content  
+- **Simple Pages**: Content only
+- **Homepage**: Hero + Services + About + CTA
+
+### Design Standards (Automatically Applied)
+All components automatically follow Trinity Health design standards:
+- **Colors**: Trinity maroon (#880005), Healthcare Navy (#1e3a8a)
+- **Typography**: Inter font with healthcare hierarchy
+- **Spacing**: Consistent grid spacing (gap-8 for 3-col, gap-12 for 2-col)
+- **Icons**: Trinity brand colors with proper contrast
+- **Responsive**: Mobile-first design with proper breakpoints
+
+### Advanced Custom Fields (ACF) Integration
+The system requires the Advanced Custom Fields plugin and includes:
+- **Field Groups**: Pre-configured for each component
+- **Conditional Logic**: Fields show/hide based on selections
+- **Default Values**: Sensible fallbacks for all fields
+- **Data Validation**: Proper field types and restrictions
+
+### Fallback System
+Components gracefully handle missing content:
+- **Default Text**: When Custom Fields are empty
+- **Placeholder Images**: Professional gray blocks with icons
+- **Hidden Sections**: Components don't display without content
+- **Backward Compatibility**: Existing content preserved
+
+### For Developers: Adding New Components
+1. **Create component** in `resources/views/components/`
+2. **Add Custom Fields** in `app/setup.php`
+3. **Include in templates** where needed
+4. **Test fallback behavior** for missing content
+
+### Content Management Best Practices
+1. **Use Block Editor** for main content writing
+2. **Custom Fields** for layout and design options
+3. **Test responsive design** after major changes
+4. **Preview changes** before publishing
+5. **Follow Trinity Health** language standards (British English)
+
 ## Performance Notes
 - Images optimized for web delivery (WebP with fallbacks)
 - CSS/JS minification via Vite
 - Lazy loading for below-fold content
 - Critical CSS inlined for above-fold content
 - Professional caching strategy for production
+- Component-based architecture reduces code duplication
