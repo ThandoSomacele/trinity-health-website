@@ -331,36 +331,19 @@ add_action('init', function () {
 /**
  * Add Trinity Health Options Page to WordPress Admin
  */
-add_action('admin_menu', function () {
-    add_options_page(
-        'Trinity Health Settings',     // Page title
-        'Trinity Health',              // Menu title
-        'manage_options',              // Capability
-        'trinity-health-settings',     // Menu slug
-        'trinity_health_options_page'  // Callback function
-    );
-});
-
-/**
- * Trinity Health Options Page Content
- */
-function trinity_health_options_page() {
-    ?>
-    <div class="wrap">
-        <h1>Trinity Health Global Settings</h1>
-        <p>Configure site-wide settings that appear across all pages and components.</p>
-        
-        <?php
-        // Show ACF fields if available
-        if (function_exists('the_field')) {
-            // This will be populated by ACF
-            echo '<div id="acf-form-data"></div>';
-        } else {
-            echo '<p><strong>Note:</strong> Advanced Custom Fields plugin is required for these settings.</p>';
-        }
-        ?>
-    </div>
-    <?php
+add_action('acf/init', function() {
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page([
+            'page_title' => 'Trinity Health Global Settings',
+            'menu_title' => 'Trinity Health',
+            'menu_slug' => 'trinity-health-settings',
+            'capability' => 'manage_options',
+            'redirect' => false,
+            'icon_url' => 'dashicons-heart',
+            'position' => 30,
+            'description' => 'Configure site-wide settings that appear across all pages and components.',
+        ]);
+    }
 });
 
 /**
