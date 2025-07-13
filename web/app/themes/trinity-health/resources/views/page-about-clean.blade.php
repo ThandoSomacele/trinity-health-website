@@ -1,6 +1,6 @@
 {{--
-  Template Name: About Trinity Health
-  Description: Simple, working about page
+  Template Name: About Trinity Health (Clean)
+  Description: Clean version without complex logic
 --}}
 
 @extends('layouts.app')

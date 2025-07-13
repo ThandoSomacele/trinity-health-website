@@ -64,6 +64,16 @@
         'image' => get_the_post_thumbnail_url(get_the_ID(), 'large')
       ];
       wp_reset_postdata();
+    } else {
+      // Fallback doctor info if no team member posts exist yet
+      $doctor_info = [
+        'name' => 'Dr. Alfred Mwamba',
+        'position' => 'Medical Doctor',
+        'qualifications' => 'MBChB, General Practice',
+        'specialties' => 'Comprehensive healthcare services with a focus on patient-centered care and medical excellence.',
+        'years_experience' => '10',
+        'image' => home_url('/app/uploads/2025/06/dr-alfred-mwamba.jpg')
+      ];
     }
   @endphp
   
