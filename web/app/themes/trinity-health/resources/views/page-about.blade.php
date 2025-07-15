@@ -83,10 +83,22 @@
       
       {{-- About Image --}}
       <div class="relative">
-        <div class="bg-gray-400 aspect-[4/3] rounded-2xl flex items-center justify-center">
-          <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m-2-4h6m-6 0V9a2 2 0 012-2h2a2 2 0 012 2v8m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v16"></path>
-          </svg>
+        {{-- Trinity Health Clinic Image --}}
+        <div class="rounded-2xl aspect-[4/3] overflow-hidden">
+          <img 
+            src="{{ home_url('/app/uploads/2025/06/dr-alfred-mwamba.jpg') }}" 
+            alt="Trinity Health - Professional Healthcare" 
+            class="w-full h-full object-cover"
+          >
+        </div>
+        
+        {{-- Achievement Card --}}
+        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+          <div class="text-center">
+            <p class="text-3xl font-bold text-[#880005]">5+</p>
+            <p class="text-sm text-gray-600">Years Serving</p>
+            <p class="text-sm text-gray-600">Zambia</p>
+          </div>
         </div>
       </div>
       
