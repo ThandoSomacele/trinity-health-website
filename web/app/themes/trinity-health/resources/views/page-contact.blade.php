@@ -10,13 +10,44 @@
 @php(the_post())
 
 {{-- Contact Page Header --}}
-<section class="py-20 bg-gradient-to-r from-[#880005] to-[#660004] relative overflow-hidden">
+<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
+  {{-- Background Pattern --}}
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
+  </div>
+  
+  {{-- Content --}}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center">
-      <h1 class="text-5xl font-bold text-white mb-6">Contact Trinity Health</h1>
-      <p class="text-xl text-white/90 max-w-3xl mx-auto">
+      {{-- Badge --}}
+      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span class="text-white font-medium">Get In Touch</span>
+      </div>
+      
+      {{-- Title --}}
+      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
+        Contact Trinity 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Health</span>
+      </h1>
+      
+      {{-- Description --}}
+      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
         Get in touch with our healthcare team. We're here to help with appointments, questions, and medical consultations.
       </p>
+      
+      {{-- CTA Buttons --}}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="tel:+260123456789" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+          Call Now
+        </a>
+        <a href="mailto:info@trinityhealth.zm" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
+          Send Email
+        </a>
+      </div>
     </div>
   </div>
 </section>

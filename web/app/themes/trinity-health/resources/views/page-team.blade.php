@@ -10,13 +10,44 @@
 @php(the_post())
 
 {{-- Team Page Header --}}
-<section class="py-20 bg-gradient-to-r from-[#880005] to-[#660004] relative overflow-hidden">
+<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
+  {{-- Background Pattern --}}
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
+  </div>
+  
+  {{-- Content --}}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center">
-      <h1 class="text-5xl font-bold text-white mb-6">Meet Our Healthcare Team</h1>
-      <p class="text-xl text-white/90 max-w-3xl mx-auto">
-        Our dedicated healthcare professionals are committed to providing exceptional medical care with expertise, compassion, and integrity.
+      {{-- Badge --}}
+      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <span class="text-white font-medium">Expert Healthcare Team</span>
+      </div>
+      
+      {{-- Title --}}
+      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
+        Our Healthcare 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Team</span>
+      </h1>
+      
+      {{-- Description --}}
+      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
+        Meet our dedicated healthcare professionals committed to providing exceptional medical care with expertise, compassion, and integrity.
       </p>
+      
+      {{-- CTA Buttons --}}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="{{ home_url('/contact') }}" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+          Schedule Consultation
+        </a>
+        <a href="{{ home_url('/services') }}" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
+          Our Services
+        </a>
+      </div>
     </div>
   </div>
 </section>

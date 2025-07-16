@@ -10,13 +10,44 @@
 @php(the_post())
 
 {{-- Patient Care Header --}}
-<section class="py-20 bg-gradient-to-r from-[#880005] to-[#660004] relative overflow-hidden" style="background: linear-gradient(90deg, #880005 0%, #660004 100%);">
+<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
+  {{-- Background Pattern --}}
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
+  </div>
+  
+  {{-- Content --}}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center">
-      <h1 class="text-5xl font-bold mb-6" style="color: white !important;">Patient Care</h1>
-      <p class="text-xl max-w-3xl mx-auto" style="color: rgba(255, 255, 255, 0.9) !important;">
-        Exceptional healthcare experiences centred around your individual needs and comfort.
+      {{-- Badge --}}
+      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+        </svg>
+        <span class="text-white font-medium">Patient-Centered Care</span>
+      </div>
+      
+      {{-- Title --}}
+      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
+        Patient 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Care</span>
+      </h1>
+      
+      {{-- Description --}}
+      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
+        Exceptional healthcare experiences centred around your individual needs, comfort, and well-being at every step of your journey.
       </p>
+      
+      {{-- CTA Buttons --}}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="{{ home_url('/contact') }}" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+          Schedule Appointment
+        </a>
+        <a href="{{ home_url('/services') }}" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
+          Our Services
+        </a>
+      </div>
     </div>
   </div>
 </section>
