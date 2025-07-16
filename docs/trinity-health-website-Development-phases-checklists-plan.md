@@ -734,10 +734,114 @@
   - [ ] Hosting account handover
   - [ ] Final invoice and payment
 
-**Project Status**: ⏳ In Progress  
+**Project Status**: ⏳ In Progress - TRANSITIONING TO CLAUDE WEB PLATFORM  
 **Design Inspiration**: Mayo Clinic - Clean, professional healthcare design  
+**Development Platform**: Transitioning from Claude Code to Claude Web due to slow progress and inaccuracies  
+**Transition Date**: July 16, 2025  
 **Estimated Completion**: [Add target date]  
 **Next Milestone**: Choose deployment strategy (Phase 2A or 2B)
+
+---
+
+## Current Development State (Handoff Documentation)
+
+### **Git Repository Status**
+- **Current Branch**: master
+- **Last Commit**: 6375afb - "Add service and team pages with detailed layouts and content"
+- **Modified Files**: 
+  - `web/app/themes/trinity-health/resources/views/page-about.blade.php` (Modified - audiology icon updated)
+- **Working Directory**: Clean except for about page modifications
+
+### **Development Environment**
+- **DDEV Status**: Should be running (`ddev start`)
+- **Local URL**: `https://trinity-health-zambia.ddev.site`
+- **WordPress Admin**: `/wp-admin` (admin/admin)
+- **Theme Location**: `web/app/themes/trinity-health/`
+
+### **Build Commands That Work**
+```bash
+# Navigate to theme directory
+cd web/app/themes/trinity-health
+
+# Install dependencies (if needed)
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install
+
+# Development build with hot reloading
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+
+# Production build
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
+
+# Lint and typecheck
+ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run lint
+```
+
+### **Immediate Next Tasks (Priority Order)**
+1. **Complete Phase 2A WordPress Admin Customization**:
+   - Install and configure Yoast SEO plugin
+   - Set up custom admin dashboard with Trinity Health branding
+   - Create content editing improvements and custom Gutenberg blocks
+
+2. **Begin Phase 2B Contact & Communication**:
+   - Install Contact Form 7 plugin
+   - Create specialized contact forms (general health, audiology, appointment request)
+   - Set up email routing and SMTP configuration
+
+3. **Content Population**:
+   - Populate the 22 created pages with actual content
+   - Add service descriptions and pricing information
+   - Upload and organize media assets
+
+### **Current File Structure (Key Files)**
+```
+web/app/themes/trinity-health/
+├── resources/views/
+│   ├── front-page.blade.php          # Homepage template
+│   ├── page-about.blade.php          # About page (recently modified)
+│   ├── page.blade.php                # Default page template
+│   ├── template-flexible.blade.php   # Flexible content template
+│   ├── partials/header.blade.php     # Header component
+│   ├── partials/footer.blade.php     # Footer component
+│   └── components/                   # Reusable components
+├── resources/css/app.css             # Main stylesheet (1,144 lines)
+├── app/setup.php                     # Custom post types and ACF fields
+├── vite.config.js                    # Build configuration
+└── tailwind.config.js                # Tailwind configuration
+```
+
+### **Known Issues/Blockers**
+- **Audiology Icon**: Recently updated on about page with custom SVG, working properly
+- **No Critical Blockers**: Development environment is stable
+- **Content Dependency**: Many pages are structured but need content population
+- **Plugin Dependencies**: Some Phase 2B tasks require plugin installations
+
+### **Design Standards to Maintain**
+- **Brand Colors**: Trinity maroon (#880005) primary, white text on brand colors
+- **Icon Colors**: Service card icons use `bg-[#880005]/10` + `text-[#880005]`
+- **Layout Spacing**: 2-col=`gap-12`, 3-col=`gap-8`, 4-col=`gap-8`
+- **Language**: British English spelling throughout
+- **Content Focus**: Institution-focused messaging, not individual practitioners
+- **No HTML Comments**: In WordPress post content (causes rendering issues)
+
+### **Recent Work Context**
+- **Last Session**: Updated audiology icon on about page with custom SVG
+- **Design System**: Fully implemented with Mayo Clinic inspiration
+- **Navigation**: 22-page structure created and menu system implemented
+- **Mobile Experience**: Fully responsive with hamburger menu and touch-friendly interface
+
+### **Deployment Preparation**
+- **Build Script**: `./build-production.sh` available for shared hosting deployment
+- **Environment**: `.env` file configured for development
+- **Database**: Local DDEV database with proper prefix `th_`
+- **Assets**: All media files in `web/app/uploads/2025/06/`
+
+### **Next Developer Quick Start**
+1. Ensure DDEV is running: `ddev start`
+2. Navigate to theme: `cd web/app/themes/trinity-health`
+3. Install dependencies: `ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install`
+4. Start development: `ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev`
+5. Access site: `https://trinity-health-zambia.ddev.site`
+6. Focus on Phase 2A tasks (WordPress admin customization) first
 
 ---
 
