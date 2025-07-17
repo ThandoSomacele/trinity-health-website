@@ -10,44 +10,69 @@
 @php(the_post())
 
 {{-- Audiology Page Header --}}
-<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
-  {{-- Background Pattern --}}
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
-  </div>
+<section class="relative h-screen overflow-hidden bg-[#880005]">
+  {{-- Background Image --}}
+  <div 
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+    style="background-image: url('https://images.unsplash.com/photo-1576669801820-d48ad3f4d0cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=90&auto=webp');"
+  ></div>
+  
+  {{-- Overlay --}}
+  <div class="absolute inset-0 bg-gradient-to-br from-[#880005]/80 via-[#660004]/85 to-[#4a0003]/90"></div>
   
   {{-- Content --}}
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center">
-      {{-- Badge --}}
-      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-        <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="-5.0 -10.0 110.0 135.0">
+  <div class="relative z-10 h-full flex items-center justify-center py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      
+      {{-- Trust Badge --}}
+      <div class="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-md rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-3" fill="currentColor" viewBox="-5.0 -10.0 110.0 135.0" aria-hidden="true">
           <path d="m95.312 23.121c0-10.164-8.2695-18.438-18.438-18.438-2.6016 0-5.0781 0.55078-7.3281 1.5273-2.7891-0.89844-5.8281-1.4297-9.0117-1.5469-0.48047-0.039062-11.688-0.85937-20.613 6.793-6.1289 5.2539-9.6094 13.152-10.352 23.586v11.062l-4.832-11.121c-0.28125-0.64844-0.96875-1.0273-1.6641-0.92188-0.69922 0.10547-1.2422 0.66406-1.3203 1.3672l-2.6289 22.996-3.9336-9.0469c-0.25-0.57031-0.8125-0.94141-1.4336-0.94141h-7.5078c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625h6.4883l5.8477 13.453c0.25 0.57812 0.81641 0.94141 1.4336 0.94141 0.078125 0 0.15625-0.003906 0.23047-0.015625 0.69922-0.10547 1.2422-0.66406 1.3203-1.3672l2.6289-22.996 3.9297 9.0469c0.25 0.57031 0.8125 0.94141 1.4336 0.94141h0.011719v26.891c0 5.4219 3.0508 15.918 14.551 16.855 0.03125 0.003906 0.53125 0.054688 1.3672 0.054688 4.4414 0 18.328-1.4141 21.09-18.754 0.011719-0.070312 0.019531-0.16016 0.019531-0.23047 0.003907-0.15234 0.12109-3.7852 4.4727-6.1914 0.75781-0.51562 18.352-12.707 18.078-33.336 3.7734-3.3789 6.168-8.2695 6.168-13.723z"/>
         </svg>
-        <span class="text-white font-medium">Specialised Hearing Care</span>
+        <span class="text-white font-medium text-sm tracking-wide">Specialised Hearing Care</span>
       </div>
       
-      {{-- Title --}}
-      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
-        Audiology 
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Services</span>
+      {{-- Main Heading --}}
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight mb-8">
+        Audiology Services
       </h1>
       
-      {{-- Description --}}
-      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
-        Professional hearing healthcare services including assessments, hearing aid fittings, and comprehensive ear health care for all ages.
+      {{-- Subheading --}}
+      <p class="text-xl sm:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed max-w-4xl mx-auto mb-12">
+        Professional hearing healthcare services including assessments, hearing aid fittings, and comprehensive ear health care.
       </p>
       
-      {{-- CTA Buttons --}}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-        <a href="{{ home_url('/contact') }}" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
-          Book Hearing Test
-        </a>
-        <a href="{{ home_url('/services') }}" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
-          All Services
-        </a>
+      {{-- Service Metrics --}}
+      <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">Expert</div>
+          <div class="text-white/80 text-sm font-medium">Audiologists</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">Advanced</div>
+          <div class="text-white/80 text-sm font-medium">Equipment</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">All Ages</div>
+          <div class="text-white/80 text-sm font-medium">Care Available</div>
+        </div>
       </div>
+      
+    </div>
+  </div>
+  
+  {{-- Scroll Indicator --}}
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </div>
 </section>

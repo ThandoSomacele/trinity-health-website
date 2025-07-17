@@ -10,139 +10,150 @@
 @php(the_post())
 
 {{-- About Page Header --}}
-<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
-  {{-- Background Pattern --}}
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
-  </div>
+<section class="relative h-screen overflow-hidden bg-[#880005]">
+  {{-- Background Image --}}
+  <div 
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+    style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=90&auto=webp');"
+  ></div>
+  
+  {{-- Overlay --}}
+  <div class="absolute inset-0 bg-gradient-to-br from-[#880005]/80 via-[#660004]/85 to-[#4a0003]/90"></div>
   
   {{-- Content --}}
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center">
-      {{-- Badge --}}
-      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-        <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+  <div class="relative z-10 h-full flex items-center justify-center py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      
+      {{-- Trust Badge --}}
+      <div class="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-md rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
         </svg>
-        <span class="text-white font-medium">Healthcare Excellence</span>
+        <span class="text-white font-medium text-sm tracking-wide">Trusted Healthcare Excellence</span>
       </div>
       
-      {{-- Title --}}
-      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
-        About Trinity 
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Health</span>
+      {{-- Main Heading --}}
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight mb-8">
+        About Trinity Health
       </h1>
       
-      {{-- Description --}}
-      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
-        Discover Trinity Health's commitment to providing exceptional healthcare services to the Zambian community through innovation, compassion, and excellence.
+      {{-- Subheading --}}
+      <p class="text-xl sm:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed max-w-4xl mx-auto mb-12">
+        Exceptional healthcare services for the Zambian community through innovation, compassion, and excellence.
       </p>
       
-      {{-- CTA Buttons --}}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-        <a href="{{ home_url('/services') }}" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
-          Our Services
-        </a>
-        <a href="{{ home_url('/contact') }}" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
-          Get In Touch
-        </a>
+      {{-- Trust Metrics --}}
+      <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">5+</div>
+          <div class="text-white/80 text-sm font-medium">Years Excellence</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">98%</div>
+          <div class="text-white/80 text-sm font-medium">Patient Satisfaction</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">Expert</div>
+          <div class="text-white/80 text-sm font-medium">Healthcare Team</div>
+        </div>
       </div>
+      
+    </div>
+  </div>
+  
+  {{-- Scroll Indicator --}}
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </div>
 </section>
 
-{{-- Mission & Vision Section --}}
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+{{-- Mission & Vision Section: Text-Focused to Avoid Image Stacking --}}
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    
+    {{-- Section Header --}}
+    <div class="text-center mb-20">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Founded with a passion for healthcare excellence and community service.
+      </p>
+    </div>
+    
+    {{-- Mission Content Grid --}}
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 mb-20">
       
-      {{-- Mission Content --}}
-      <div>
-        <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
-        
-        {{-- Mission Content --}}
-        <div class="space-y-6 mb-8">
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              Solving healthcare challenges
-              <span class="block text-[#880005]">one patient at a time</span>
-            </h3>
-            <p class="text-lg text-gray-600">
-              At Trinity Health Zambia, we combine the precision of modern medicine with the warmth of personalised care to serve our community's diverse healthcare needs.
-            </p>
-          </div>
-          
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Transforming healthcare</h3>
-            <p class="text-lg text-gray-600">
-              Trinity Health Zambia was founded with the vision of making exceptional healthcare accessible to all. We believe every person deserves compassionate, professional medical care regardless of their background.
-            </p>
-          </div>
-        </div>
-        
-        {{-- Core Values --}}
-        <div class="space-y-4">
-          <div class="flex items-start space-x-3">
-            <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
-              <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Excellence in Care</h4>
-              <p class="text-gray-600">Providing the highest standard of medical care with attention to detail and patient safety</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start space-x-3">
-            <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
-              <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Patient-Centered Approach</h4>
-              <p class="text-gray-600">Putting patient needs and comfort at the center of everything we do</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start space-x-3">
-            <div class="bg-[#880005]/10 p-2 rounded-full mt-1">
-              <svg class="w-4 h-4 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Community Commitment</h4>
-              <p class="text-gray-600">Contributing to the health and wellness of the Zambian community</p>
-            </div>
-          </div>
+      {{-- Mission Statement --}}
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-3xl font-bold text-gray-900 mb-6">
+            Solving healthcare challenges
+            <span class="block text-[#880005]">one patient at a time</span>
+          </h3>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            At Trinity Health Zambia, we combine the precision of modern medicine with the warmth of personalised care to serve our community's diverse healthcare needs.
+          </p>
         </div>
       </div>
       
-      {{-- About Image --}}
-      <div class="relative h-full">
-        {{-- Trinity Health Clinic Image --}}
-        <div class="rounded-2xl h-full overflow-hidden">
-          <img 
-            src="{{ home_url('/app/uploads/2025/06/dr-alfred-mwamba.jpg') }}" 
-            alt="Trinity Health - Professional Healthcare" 
-            class="w-full h-full object-cover"
-          >
-        </div>
-        
-        {{-- Achievement Card --}}
-        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
-          <div class="text-center">
-            <p class="text-3xl font-bold text-[#880005] leading-none mb-1">5+</p>
-            <p class="text-sm text-gray-600 leading-tight">Years Serving</p>
-            <p class="text-sm text-gray-600 leading-tight">Zambia</p>
-          </div>
+      {{-- Vision Statement --}}
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-3xl font-bold text-gray-900 mb-6">Transforming healthcare</h3>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Trinity Health Zambia was founded with the vision of making exceptional healthcare accessible to all. We believe every person deserves compassionate, professional medical care regardless of their background.
+          </p>
         </div>
       </div>
       
     </div>
+    
+    {{-- Core Values --}}
+    <div class="bg-gray-50 rounded-3xl p-8 lg:p-12">
+      <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-12 text-center">Our Core Values</h3>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-[#880005]/10 p-4 rounded-2xl w-fit mx-auto mb-6">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Excellence in Care</h4>
+          <p class="text-gray-600">Providing the highest standard of medical care with attention to detail and patient safety</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-[#880005]/10 p-4 rounded-2xl w-fit mx-auto mb-6">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Patient-Centered Approach</h4>
+          <p class="text-gray-600">Putting patient needs and comfort at the centre of everything we do</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-[#880005]/10 p-4 rounded-2xl w-fit mx-auto mb-6">
+            <svg class="w-8 h-8 text-[#880005]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Community Commitment</h4>
+          <p class="text-gray-600">Contributing to the health and wellness of the Zambian community</p>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>
 

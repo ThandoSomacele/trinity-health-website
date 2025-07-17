@@ -10,44 +10,69 @@
 @php(the_post())
 
 {{-- Patient Care Header --}}
-<section class="relative py-24 bg-gradient-to-br from-[#880005] via-[#660004] to-[#4a0003] overflow-hidden">
-  {{-- Background Pattern --}}
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-32 -translate-y-32"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full transform -translate-x-20 translate-y-20"></div>
-  </div>
+<section class="relative h-screen overflow-hidden bg-[#880005]">
+  {{-- Background Image --}}
+  <div 
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+    style="background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=90&auto=webp');"
+  ></div>
+  
+  {{-- Overlay --}}
+  <div class="absolute inset-0 bg-gradient-to-br from-[#880005]/80 via-[#660004]/85 to-[#4a0003]/90"></div>
   
   {{-- Content --}}
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center">
-      {{-- Badge --}}
-      <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-        <svg class="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="relative z-10 h-full flex items-center justify-center py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      
+      {{-- Trust Badge --}}
+      <div class="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-md rounded-full mb-8">
+        <svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
         </svg>
-        <span class="text-white font-medium">Patient-Centered Care</span>
+        <span class="text-white font-medium text-sm tracking-wide">Patient-Centered Care</span>
       </div>
       
-      {{-- Title --}}
-      <h1 class="text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
-        Patient 
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Care</span>
+      {{-- Main Heading --}}
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight mb-8">
+        Patient Care
       </h1>
       
-      {{-- Description --}}
-      <p class="text-xl lg:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed">
-        Exceptional healthcare experiences centred around your individual needs, comfort, and well-being at every step of your journey.
+      {{-- Subheading --}}
+      <p class="text-xl sm:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed max-w-4xl mx-auto mb-12">
+        Exceptional healthcare experiences centred around your individual needs and well-being.
       </p>
       
-      {{-- CTA Buttons --}}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-        <a href="{{ home_url('/contact') }}" class="px-8 py-4 bg-white text-[#880005] rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
-          Schedule Appointment
-        </a>
-        <a href="{{ home_url('/services') }}" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#880005] transition-all duration-300">
-          Our Services
-        </a>
+      {{-- Trust Metrics --}}
+      <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">98%</div>
+          <div class="text-white/80 text-sm font-medium">Patient Satisfaction</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">24/7</div>
+          <div class="text-white/80 text-sm font-medium">Care Available</div>
+        </div>
+        
+        <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+        
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-white mb-2">Expert</div>
+          <div class="text-white/80 text-sm font-medium">Medical Team</div>
+        </div>
       </div>
+      
+    </div>
+  </div>
+  
+  {{-- Scroll Indicator --}}
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </div>
 </section>
