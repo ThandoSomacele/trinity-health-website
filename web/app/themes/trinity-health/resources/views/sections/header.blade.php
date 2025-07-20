@@ -87,7 +87,7 @@
                       {{-- Call to Action in Mega Menu --}}
                       <div class="mt-6 p-4 bg-gray-50 rounded-lg">
                         <p class="text-sm text-gray-600 mb-3">Need immediate care?</p>
-                        <a href="{{ home_url('/contact') }}" class="btn btn-primary btn-sm">
+                        <a href="{{ home_url('/contact-2') }}" class="btn btn-primary btn-sm">
                           Contact Us Now
                           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -102,8 +102,8 @@
             </div>
             
             <a href="{{ home_url('/patient-care') }}" class="text-gray-700 font-medium hover:text-[#880005] transition-colors duration-200">Patient Care</a>
-            <a href="{{ home_url('/team') }}" class="text-gray-700 font-medium hover:text-[#880005] transition-colors duration-200">Our Team</a>
-            <a href="{{ home_url('/contact') }}" class="text-gray-700 font-medium hover:text-[#880005] transition-colors duration-200">Contact</a>
+            <a href="{{ home_url('/team-2') }}" class="text-gray-700 font-medium hover:text-[#880005] transition-colors duration-200">Our Team</a>
+            <a href="{{ home_url('/contact-2') }}" class="text-gray-700 font-medium hover:text-[#880005] transition-colors duration-200">Contact</a>
           </div>
         </nav>
       @endif
@@ -111,7 +111,7 @@
       {{-- CTA Button --}}
       <div class="hidden lg:flex items-center space-x-4">
         <a 
-          href="{{ home_url('/contact') }}" 
+          href="{{ home_url('/contact-2') }}" 
           class="btn btn-primary btn-sm"
         >
           Book Appointment
@@ -151,7 +151,7 @@
       {{-- Mobile CTA --}}
       <div class="mt-4 px-3">
         <a 
-          href="{{ home_url('/contact') }}" 
+          href="{{ home_url('/contact-2') }}" 
           class="btn btn-primary btn-md btn-block"
         >
           Book Appointment

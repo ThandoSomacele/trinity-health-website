@@ -214,7 +214,7 @@
             <li>• Tympanometry</li>
             <li>• Otoacoustic emissions</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Book Assessment →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Book Assessment →</a>
         </div>
       </div>
       
@@ -239,7 +239,7 @@
             <li>• Follow-up adjustments</li>
             <li>• Maintenance & repairs</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Learn More →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Learn More →</a>
         </div>
       </div>
       
@@ -264,7 +264,7 @@
             <li>• Infection treatment</li>
             <li>• Hearing protection</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Book Consultation →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Book Consultation →</a>
         </div>
       </div>
       
@@ -289,7 +289,7 @@
             <li>• Pediatric hearing aids</li>
             <li>• School hearing programs</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Learn More →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Learn More →</a>
         </div>
       </div>
       
@@ -314,7 +314,7 @@
             <li>• Hearing protection fitting</li>
             <li>• Workplace consultations</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Corporate Services →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Corporate Services →</a>
         </div>
       </div>
       
@@ -339,7 +339,7 @@
             <li>• Counseling support</li>
             <li>• Management strategies</li>
           </ul>
-          <a href="{{ home_url('/contact') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Get Help →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-[#880005] font-semibold hover:text-[#660004] transition-colors">Get Help →</a>
         </div>
       </div>
       

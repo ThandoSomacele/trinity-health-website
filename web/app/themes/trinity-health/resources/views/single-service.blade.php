@@ -142,7 +142,7 @@
           {{-- Book Appointment Button --}}
           <div class="mt-6 pt-6 border-t border-gray-200">
             <a 
-              href="{{ home_url('/contact') }}" 
+              href="{{ home_url('/contact-2') }}" 
               class="w-full bg-[#880005] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#660004] transition-colors flex items-center justify-center"
             >
               Book Appointment

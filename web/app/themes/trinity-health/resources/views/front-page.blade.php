@@ -18,7 +18,7 @@
         'hero_type' => 'video',
         'hero_video' => '/app/uploads/2025/06/hero-montage-video.mp4',
         'primary_cta_text' => 'Book Appointment',
-        'primary_cta_url' => home_url('/contact'),
+        'primary_cta_url' => home_url('/contact-2'),
         'secondary_cta_text' => 'View Our Services',
         'secondary_cta_url' => home_url('/services'),
         'show_secondary_cta' => true,
@@ -264,7 +264,7 @@
             </a>
             
             <a 
-              href="{{ home_url('/contact') }}" 
+              href="{{ home_url('/contact-2') }}" 
               class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
             >
               <div class="bg-blue-100 p-3 rounded-full mr-4">

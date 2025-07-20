@@ -74,7 +74,7 @@
               </a>
             </li>
             <li>
-              <a href="{{ home_url('/contact') }}" class="text-white hover:text-[#a61a1a] transition-colors">
+              <a href="{{ home_url('/contact-2') }}" class="text-white hover:text-[#a61a1a] transition-colors">
                 Contact Us
               </a>
             </li>

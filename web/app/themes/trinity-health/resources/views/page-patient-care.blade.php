@@ -479,7 +479,7 @@
     </div>
     
     <div class="text-center mt-12">
-      <a href="{{ home_url('/contact') }}" class="bg-white text-[#880005] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+      <a href="{{ home_url('/contact-2') }}" class="bg-white text-[#880005] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
         Schedule an Appointment
       </a>
     </div>

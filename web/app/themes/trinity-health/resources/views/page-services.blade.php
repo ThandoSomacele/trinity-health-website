@@ -201,7 +201,7 @@
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Emergency Care</h3>
           <p class="text-gray-600 mb-4">Immediate medical attention for urgent health conditions and emergencies with 24/7 emergency contact availability.</p>
-          <a href="{{ home_url('/contact') }}" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Emergency Contact →</a>
+          <a href="{{ home_url('/contact-2') }}" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Emergency Contact →</a>
         </div>
       </div>
       

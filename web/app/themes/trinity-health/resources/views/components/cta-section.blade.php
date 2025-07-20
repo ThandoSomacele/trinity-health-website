@@ -13,7 +13,7 @@
   
   // Primary CTA Button
   $primary_cta_text = get_field('cta_primary_text') ?: 'Contact Us Today';
-  $primary_cta_url = get_field('cta_primary_url') ?: home_url('/contact');
+  $primary_cta_url = get_field('cta_primary_url') ?: home_url('/contact-2');
   $primary_cta_icon = get_field('cta_primary_icon') ?: 'phone';
   
   // Secondary CTA Button (optional) - use global phone if available

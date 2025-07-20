@@ -17,7 +17,7 @@
   
   // CTA Buttons - editable via Custom Fields
   $primary_cta_text = get_field('primary_cta_text') ?: 'Book Appointment';
-  $primary_cta_url = get_field('primary_cta_url') ?: home_url('/contact');
+  $primary_cta_url = get_field('primary_cta_url') ?: home_url('/contact-2');
   $secondary_cta_text = get_field('secondary_cta_text') ?: 'View Our Services';
   $secondary_cta_url = get_field('secondary_cta_url') ?: home_url('/services');
   $show_secondary_cta = get_field('show_secondary_cta') !== false; // defaults to true
