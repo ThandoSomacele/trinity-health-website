@@ -1,0 +1,162 @@
+/**
+ * Form Component Styles
+ */
+
+.form-field {
+  margin-bottom: var(--trinity-spacing-md);
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--trinity-spacing-xs);
+    color: var(--trinity-primary-dark);
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: var(--trinity-spacing-sm);
+    border: 2px solid #e5e5e5;
+    border-radius: var(--trinity-radius-md);
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background: white;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--trinity-primary);
+      box-shadow: 0 0 0 3px rgba(136, 0, 5, 0.1);
+    }
+    
+    &:invalid {
+      border-color: #dc2626;
+    }
+    
+    &::placeholder {
+      color: #a3a3a3;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+  
+  .field-help {
+    font-size: 0.875rem;
+    color: #737373;
+    margin-top: var(--trinity-spacing-xs);
+  }
+  
+  .field-error {
+    font-size: 0.875rem;
+    color: #dc2626;
+    margin-top: var(--trinity-spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--trinity-spacing-xs);
+    
+    &::before {
+      content: '⚠';
+    }
+  }
+}
+
+// Checkbox and radio styling
+.form-field--checkbox,
+.form-field--radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--trinity-spacing-sm);
+  
+  input {
+    width: auto;
+    margin-right: var(--trinity-spacing-sm);
+    accent-color: var(--trinity-primary);
+  }
+  
+  label {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
+
+// Contact form specific styles
+.trinity-contact-form {
+  background: white;
+  padding: var(--trinity-spacing-xl);
+  border-radius: var(--trinity-radius-lg);
+  box-shadow: var(--trinity-shadow-lg);
+  
+  .form-title {
+    color: var(--trinity-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--trinity-spacing-lg);
+    text-align: center;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--trinity-spacing-md);
+    
+    @screen md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--trinity-spacing-lg);
+  }
+}
+
+// Form validation states
+.form-field {
+  &.is-valid {
+    input,
+    textarea,
+    select {
+      border-color: var(--trinity-accent);
+    }
+  }
+  
+  &.is-invalid {
+    input,
+    textarea,
+    select {
+      border-color: #dc2626;
+    }
+  }
+}
+
+// Loading state for forms
+.trinity-contact-form.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  
+  .btn {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+  }
+}

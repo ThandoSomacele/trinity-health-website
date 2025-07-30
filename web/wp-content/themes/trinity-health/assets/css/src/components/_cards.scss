@@ -1,0 +1,252 @@
+/**
+ * Card Component Styles
+ */
+
+.card {
+  background: white;
+  border-radius: var(--trinity-radius-lg);
+  box-shadow: var(--trinity-shadow-sm);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    box-shadow: var(--trinity-shadow-lg);
+    transform: translateY(-2px);
+  }
+  
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .card-content {
+    padding: var(--trinity-spacing-lg);
+    
+    .card-title {
+      color: var(--trinity-primary-dark);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--trinity-spacing-sm);
+      line-height: 1.3;
+    }
+    
+    .card-excerpt {
+      color: #525252;
+      line-height: 1.6;
+      margin-bottom: var(--trinity-spacing-md);
+    }
+    
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--trinity-spacing-sm);
+      font-size: 0.875rem;
+      color: #737373;
+      margin-bottom: var(--trinity-spacing-md);
+      
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: var(--trinity-spacing-xs);
+        
+        &::before {
+          content: '•';
+          color: var(--trinity-primary);
+        }
+        
+        &:first-child::before {
+          display: none;
+        }
+      }
+    }
+    
+    .card-actions {
+      display: flex;
+      gap: var(--trinity-spacing-sm);
+      
+      .btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Service card variant
+.card--service {
+  .card-content {
+    text-align: center;
+    
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--trinity-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--trinity-spacing-md);
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// Team member card variant
+.card--team {
+  .card-image {
+    .team-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      padding: var(--trinity-spacing-md);
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+      
+      .social-links {
+        display: flex;
+        gap: var(--trinity-spacing-sm);
+        justify-content: center;
+        
+        a {
+          width: 32px;
+          height: 32px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          transition: all 0.2s ease-in-out;
+          
+          &:hover {
+            background: var(--trinity-primary);
+          }
+        }
+      }
+    }
+  }
+  
+  &:hover .team-overlay {
+    transform: translateY(0);
+  }
+  
+  .card-content {
+    text-align: center;
+    
+    .team-position {
+      color: var(--trinity-primary);
+      font-weight: 500;
+      font-size: 0.875rem;
+      margin-bottom: var(--trinity-spacing-xs);
+    }
+  }
+}
+
+// Testimonial card variant
+.card--testimonial {
+  border-left: 4px solid var(--trinity-primary);
+  
+  .card-content {
+    .testimonial-quote {
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--trinity-primary-dark);
+      margin-bottom: var(--trinity-spacing-md);
+      position: relative;
+      
+      &::before {
+        content: '"';
+        font-size: 3rem;
+        color: var(--trinity-primary);
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        line-height: 1;
+      }
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--trinity-spacing-sm);
+      
+      .author-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .author-info {
+        .author-name {
+          font-weight: 600;
+          color: var(--trinity-primary-dark);
+        }
+        
+        .author-title {
+          font-size: 0.875rem;
+          color: #737373;
+        }
+      }
+    }
+  }
+}
+
+// Card grid layouts
+.card-grid {
+  display: grid;
+  gap: var(--trinity-spacing-lg);
+  
+  &--2col {
+    grid-template-columns: 1fr;
+    
+    @screen md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &--3col {
+    grid-template-columns: 1fr;
+    
+    @screen md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @screen lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &--4col {
+    grid-template-columns: 1fr;
+    
+    @screen sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @screen lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
