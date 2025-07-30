@@ -1,0 +1,60 @@
+/**
+ * Footer Component Styles
+ */
+
+.site-footer {
+  background: var(--trinity-primary-dark);
+  color: white;
+  padding: var(--trinity-spacing-2xl) 0 var(--trinity-spacing-md);
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--trinity-spacing-lg);
+    margin-bottom: var(--trinity-spacing-xl);
+    
+    @screen md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .footer-section {
+    h3 {
+      color: var(--trinity-primary-light);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: var(--trinity-spacing-md);
+    }
+    
+    p, li {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: var(--trinity-spacing-xs);
+      }
+    }
+    
+    a {
+      color: rgba(255, 255, 255, 0.9);
+      transition: color 0.2s ease-in-out;
+      
+      &:hover {
+        color: var(--trinity-primary-light);
+      }
+    }
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: var(--trinity-spacing-md);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+  }
+}

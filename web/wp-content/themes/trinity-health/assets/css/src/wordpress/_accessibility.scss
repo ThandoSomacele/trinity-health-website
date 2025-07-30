@@ -1,0 +1,321 @@
+/**
+ * WordPress Accessibility Styles
+ */
+
+// Screen reader text utility
+.screen-reader-text {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
+  word-wrap: normal !important;
+  
+  &:focus {
+    background-color: #f1f1f1;
+    border-radius: var(--trinity-radius-sm);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: var(--trinity-primary-dark);
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    height: auto !important;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto !important;
+    z-index: 100000;
+  }
+}
+
+// Skip links
+.skip-links {
+  position: absolute;
+  left: -9999px;
+  top: 1.5rem;
+  z-index: 999999;
+  text-decoration: none;
+  
+  &:focus {
+    clip: auto;
+    height: auto;
+    left: 1.5rem;
+    top: 1.5rem;
+    width: auto;
+    z-index: 100000;
+    background: var(--trinity-primary);
+    color: white;
+    padding: var(--trinity-spacing-sm) var(--trinity-spacing-md);
+    border-radius: var(--trinity-radius-md);
+    font-weight: 600;
+    box-shadow: var(--trinity-shadow-lg);
+  }
+}
+
+// Focus styles for better accessibility
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--trinity-primary);
+  outline-offset: 2px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --trinity-primary: #000000;
+    --trinity-primary-light: #333333;
+    --trinity-primary-dark: #000000;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .btn {
+    border-width: 3px;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .hero-scroll-indicator {
+    animation: none;
+  }
+  
+  .carousel-track {
+    transition: none;
+  }
+}
+
+// Large text preferences
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// Print accessibility
+@media print {
+  .skip-links,
+  .screen-reader-text {
+    display: none !important;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+}
+
+// Keyboard navigation improvements
+.menu li a:focus,
+.menu li a:hover {
+  background: rgba(136, 0, 5, 0.1);
+  color: var(--trinity-primary);
+  outline: 2px solid var(--trinity-primary);
+  outline-offset: -2px;
+}
+
+// Form accessibility
+.form-field {
+  label {
+    cursor: pointer;
+    
+    &[for] {
+      // Label is properly associated with form control
+    }
+  }
+  
+  input:invalid,
+  textarea:invalid,
+  select:invalid {
+    border-color: #dc2626;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+  }
+  
+  .field-error {
+    color: #dc2626;
+    font-weight: 600;
+    
+    // Ensure error messages are announced by screen readers
+    &[role="alert"] {
+      live: polite;
+    }
+  }
+}
+
+// Required field indicators
+.required:after {
+  content: " *";
+  color: #dc2626;
+  font-weight: bold;
+}
+
+// Focus indicators for custom interactive elements
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--trinity-primary);
+  outline-offset: 2px;
+  background: rgba(136, 0, 5, 0.1);
+}
+
+.carousel-btn:focus,
+.carousel-dot:focus {
+  outline: 2px solid var(--trinity-primary);
+  outline-offset: 2px;
+}
+
+// Ensure sufficient color contrast
+.hero {
+  .hero-content {
+    // Ensure text has sufficient contrast against background
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// ARIA live regions
+.sr-only[aria-live] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Loading states accessibility
+.loading {
+  &[aria-busy="true"] {
+    // Screen readers will announce loading state
+  }
+  
+  &::after {
+    // Ensure loading animation respects reduced motion
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      content: 'Loading...';
+      position: static;
+      width: auto;
+      height: auto;
+      border: none;
+    }
+  }
+}
+
+// Table accessibility
+.wp-block-table {
+  table {
+    // Ensure tables have proper headers
+    th[scope="col"],
+    th[scope="row"] {
+      // Properly scoped headers for screen readers
+    }
+    
+    caption {
+      font-weight: 600;
+      margin-bottom: var(--trinity-spacing-sm);
+      text-align: left;
+    }
+  }
+}
+
+// Image accessibility
+img {
+  &:not([alt]) {
+    // Images without alt text should be flagged in development
+    @media screen {
+      border: 3px solid red !important;
+    }
+  }
+  
+  &[alt=""] {
+    // Decorative images (empty alt) are properly handled
+  }
+}
+
+// Video accessibility
+video {
+  &:not([controls]) {
+    // Videos should have controls for accessibility
+    @media screen {
+      border: 3px solid orange !important;
+    }
+  }
+}
+
+// Landmark roles styling (for visual debugging)
+@media screen and (min-width: 1400px) {
+  [role="main"]:before,
+  [role="navigation"]:before,
+  [role="banner"]:before,
+  [role="contentinfo"]:before,
+  [role="complementary"]:before {
+    content: attr(role);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: var(--trinity-primary);
+    color: white;
+    padding: 2px 6px;
+    font-size: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    z-index: 1000;
+    display: none; // Only show in development
+  }
+}
+
+// WordPress specific accessibility
+.wp-caption {
+  .wp-caption-text {
+    color: #737373;
+    font-size: 0.875rem;
+    padding: var(--trinity-spacing-xs) 0;
+  }
+}
+
+.gallery-caption {
+  color: #737373;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+// Ensure proper heading hierarchy
+h1 + h3,
+h2 + h4,
+h3 + h5,
+h4 + h6 {
+  // Flag potential heading hierarchy issues
+  @media screen {
+    &::before {
+      content: "⚠ Heading hierarchy issue";
+      display: none; // Only show in development
+      background: orange;
+      color: white;
+      padding: 2px 4px;
+      font-size: 10px;
+    }
+  }
+}

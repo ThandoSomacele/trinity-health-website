@@ -1,0 +1,80 @@
+# WordPress Core Files
+web/wp-admin/
+web/wp-includes/
+web/wp-*.php
+web/index.php
+web/license.txt
+web/readme.html
+web/xmlrpc.php
+
+# WordPress Configuration
+web/wp-config.php
+web/.htaccess
+
+# Content - Track themes, ignore everything else
+web/wp-content/*
+!web/wp-content/themes/
+web/wp-content/themes/*
+!web/wp-content/themes/trinity-health/
+
+# Uploads and cache
+web/wp-content/uploads/
+web/wp-content/cache/
+web/wp-content/upgrade/
+
+# Plugin exceptions - track specific plugins if needed
+# !web/wp-content/plugins/your-custom-plugin/
+
+# Node.js dependencies and build
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+web/wp-content/themes/trinity-health/build/
+web/wp-content/themes/trinity-health/node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Development files
+*.log
+*.tmp
+*.temp
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# DDEV
+.ddev/.homeadditions/
+.ddev/db_snapshots/
+.ddev/mutagen/
+
+# WP-CLI
+wp-cli.local.yml
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# FTP Configuration (sensitive)
+ftp-config.sh
+
+# Backup directories
+*-backup/
+backup-*/
+
+# Temporary WordPress files
+web/wp-content/debug.log

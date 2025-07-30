@@ -1,0 +1,43 @@
+/**
+ * Header Component Styles
+ */
+
+.site-header {
+  background: white;
+  box-shadow: var(--trinity-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--trinity-spacing-md);
+    
+    @screen lg {
+      padding: var(--trinity-spacing-lg) var(--trinity-spacing-lg);
+    }
+  }
+  
+  .site-logo {
+    display: flex;
+    align-items: center;
+    
+    img {
+      height: 48px;
+      width: auto;
+      
+      @screen md {
+        height: 56px;
+      }
+    }
+    
+    .logo-text {
+      margin-left: var(--trinity-spacing-sm);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--trinity-primary);
+    }
+  }
+}
