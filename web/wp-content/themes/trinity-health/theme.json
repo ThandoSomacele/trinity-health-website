@@ -181,6 +181,27 @@
             }
           ]
         }
+      },
+      "core/quote": {
+        "border": {
+          "color": "var(--wp--preset--color--trinity-primary)",
+          "style": "solid",
+          "width": "0 0 0 4px"
+        },
+        "spacing": {
+          "padding": {
+            "left": "1.5rem"
+          }
+        }
+      },
+      "core/pullquote": {
+        "color": {
+          "background": "var(--wp--preset--color--trinity-primary)",
+          "text": "var(--wp--preset--color--white)"
+        },
+        "spacing": {
+          "padding": "2rem"
+        }
       }
     }
   },
