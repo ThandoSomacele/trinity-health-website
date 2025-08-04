@@ -72,13 +72,13 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-// if (getenv('IS_DDEV_PROJECT') == 'true') {
-define('WP_DEBUG', true);
-define('WP_DEBUG_LOG', true);
-define('WP_DEBUG_DISPLAY', false);
-// } else {
-//     define('WP_DEBUG', false);
-// }
+if (getenv('IS_DDEV_PROJECT') == 'true') {
+    defined('WP_DEBUG') || define('WP_DEBUG', true);
+    defined('WP_DEBUG_LOG') || define('WP_DEBUG_LOG', true);
+    defined('WP_DEBUG_DISPLAY') || define('WP_DEBUG_DISPLAY', true);
+} else {
+    defined('WP_DEBUG') || define('WP_DEBUG', false);
+}
 
 /**
  * Trinity Health specific configurations
