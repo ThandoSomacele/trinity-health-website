@@ -10,7 +10,7 @@
                 <div class="mb-6">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
                         <div class="w-8 h-8 mr-3 flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M17 9h-4V5c0-.6-.4-1-1-1s-1 .4-1 1v4H7c-.6 0-1 .4-1 1s.4 1 1 1h4v4c0 .6.4 1 1 1s1-.4 1-1v-4h4c.6 0 1-.4 1-1s-.4-1-1-1z"/>
                                 <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
                             </svg>
@@ -79,14 +79,14 @@
                 <h3 class="text-trinity-gold text-lg font-semibold mb-4"><?php esc_html_e('Contact Details', 'trinity-health'); ?></h3>
                 <div class="space-y-3 text-sm">
                     <div class="flex items-start">
-                        <svg class="w-4 h-4 mt-1 mr-3 text-trinity-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-3 h-3 mt-1 mr-3 text-trinity-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                         </svg>
                         <span class="text-gray-300"><?php echo esc_html(get_theme_mod('trinity_health_address', 'Jl. Raya Kuta No.70, Kuta')); ?></span>
                     </div>
                     
                     <div class="flex items-center">
-                        <svg class="w-4 h-4 mr-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-3 h-3 mr-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                         </svg>
@@ -96,7 +96,7 @@
                     </div>
                     
                     <div class="flex items-center">
-                        <svg class="w-4 h-4 mr-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-3 h-3 mr-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                         </svg>
                         <a href="tel:<?php echo esc_attr(get_theme_mod('trinity_health_phone', '+01 547 547 5478')); ?>" class="text-gray-300 hover:text-trinity-gold-light transition-colors">
@@ -105,7 +105,7 @@
                     </div>
                     
                     <div class="flex items-start">
-                        <svg class="w-4 h-4 mt-1 mr-3 text-trinity-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-3 h-3 mt-1 mr-3 text-trinity-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
                         </svg>
                         <span class="text-gray-300"><?php echo esc_html(get_theme_mod('trinity_health_hours', '8 AM - 5 PM, Monday - Saturday')); ?></span>
