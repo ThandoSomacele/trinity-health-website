@@ -12,11 +12,14 @@ module.exports = {
     extend: {
       colors: {
         'trinity': {
-          'primary': '#880005',
-          'primary-light': '#a50006',
-          'primary-dark': '#650004',
+          'primary': '#2B5B4A', // Dark green from design
+          'primary-light': '#387A63',
+          'primary-dark': '#1F4135',
           'secondary': '#2563eb',
           'accent': '#16a34a',
+          'maroon': '#880005', // Original Trinity Health brand color
+          'maroon-light': '#a50006',
+          'maroon-dark': '#650004',
         },
         'neutral': {
           50: '#fafafa',

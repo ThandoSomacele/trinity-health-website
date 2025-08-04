@@ -3,41 +3,72 @@
  */
 
 .site-header {
-  background: white;
-  box-shadow: var(--trinity-shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
   
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--trinity-spacing-md);
+  // Mobile menu toggle functionality
+  .mobile-menu-toggle {
+    @apply p-2 text-white hover:text-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-green-900 transition-colors;
     
-    @screen lg {
-      padding: var(--trinity-spacing-lg) var(--trinity-spacing-lg);
+    &[aria-expanded="true"] + .mobile-menu {
+      @apply block;
     }
   }
   
-  .site-logo {
-    display: flex;
-    align-items: center;
+  .mobile-menu {
+    @apply lg:hidden;
     
-    img {
-      height: 48px;
-      width: auto;
-      
-      @screen md {
-        height: 56px;
-      }
-    }
-    
-    .logo-text {
-      margin-left: var(--trinity-spacing-sm);
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--trinity-primary);
+    a {
+      @apply block py-2 px-4 text-white hover:text-orange-300 hover:bg-green-700 transition-colors;
     }
   }
+  
+  // Navigation menu styling
+  .main-navigation {
+    ul {
+      @apply list-none m-0 p-0;
+    }
+    
+    li {
+      @apply relative;
+      
+      a {
+        @apply text-white hover:text-orange-300 transition-colors duration-300 px-4 py-2 flex items-center;
+        
+        // Dropdown indicator
+        &.has-children::after {
+          content: '▼';
+          @apply ml-1 text-xs;
+        }
+      }
+      
+      // Dropdown menus
+      ul.sub-menu {
+        @apply absolute top-full left-0 bg-trinity-primary-dark shadow-lg rounded-md py-2 min-w-48 hidden;
+        
+        li {
+          @apply w-full;
+          
+          a {
+            @apply px-4 py-3 hover:bg-green-700;
+          }
+        }
+      }
+      
+      &:hover > ul.sub-menu {
+        @apply block;
+      }
+    }
+  }
+  
+  // Book appointment button
+  .book-appointment-btn {
+    @apply inline-flex items-center justify-center font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+}
+
+// Skip links for accessibility
+.skip-links {
+  @apply absolute left-0 top-0 z-50 bg-trinity-primary text-white px-4 py-2 transform -translate-y-full focus:translate-y-0 transition-transform;
 }
