@@ -12,7 +12,7 @@
         @apply mb-2;
         
         a {
-          @apply block text-gray-300 hover:text-orange-300 transition-colors duration-300 text-sm;
+          @apply block text-gray-300 hover:text-trinity-gold-light transition-colors duration-300 text-sm;
         }
       }
     }
@@ -24,15 +24,15 @@
       @apply flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-600 rounded-l-md text-white placeholder-gray-400;
       
       &:focus {
-        @apply outline-none ring-2 ring-orange-400 border-transparent;
+        @apply outline-none ring-2 ring-trinity-gold border-transparent;
       }
     }
     
     button[type="submit"] {
-      @apply px-4 py-2 text-sm bg-orange-400 hover:bg-orange-500 text-white rounded-r-md font-medium transition-colors duration-300;
+      @apply px-4 py-2 text-sm bg-trinity-gold hover:bg-trinity-gold-dark text-white rounded-r-md font-medium transition-colors duration-300;
       
       &:focus {
-        @apply outline-none ring-2 ring-orange-400 ring-offset-2 ring-offset-green-900;
+        @apply outline-none ring-2 ring-trinity-gold ring-offset-2 ring-offset-trinity-maroon;
       }
     }
   }

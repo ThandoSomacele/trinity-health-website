@@ -9,7 +9,7 @@
   
   // Mobile menu toggle functionality
   .mobile-menu-toggle {
-    @apply p-2 text-white hover:text-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-green-900 transition-colors;
+    @apply p-2 text-white hover:text-trinity-gold-light focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:ring-offset-2 focus:ring-offset-green-900 transition-colors;
     
     &[aria-expanded="true"] + .mobile-menu {
       @apply block;
@@ -20,7 +20,7 @@
     @apply lg:hidden;
     
     a {
-      @apply block py-2 px-4 text-white hover:text-orange-300 hover:bg-green-700 transition-colors;
+      @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-green-700 transition-colors;
     }
   }
   
@@ -33,18 +33,18 @@
         @apply relative;
         
         a {
-          @apply text-white hover:text-orange-300 transition-colors duration-300 px-2 py-2 font-medium text-base;
+          @apply text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base;
         }
         
         // Dropdown menus
         ul.sub-menu {
-          @apply absolute top-full left-0 bg-trinity-primary-dark shadow-lg rounded-md py-2 min-w-48 hidden;
+          @apply absolute top-full left-0 bg-trinity-maroon-dark shadow-lg rounded-md py-2 min-w-48 hidden;
           
           li {
             @apply w-full;
             
             a {
-              @apply px-4 py-3 hover:bg-green-700 text-sm;
+              @apply px-4 py-3 hover:bg-trinity-maroon-light text-sm;
             }
           }
         }
@@ -63,7 +63,7 @@
       
       li {
         a {
-          @apply block py-2 px-4 text-white hover:text-orange-300 hover:bg-green-700 transition-colors;
+          @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-trinity-maroon-light transition-colors;
         }
       }
     }

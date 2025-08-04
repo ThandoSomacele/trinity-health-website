@@ -13,7 +13,7 @@
 
 <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
-<header class="site-header bg-trinity-primary" role="banner">
+<header class="site-header bg-trinity-maroon" role="banner">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
             <!-- Logo Section -->
@@ -21,7 +21,7 @@
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="flex items-center text-white hover:text-orange-300 transition-colors">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
                         <!-- Medical Cross Icon - Exact match to design -->
                         <div class="w-10 h-10 mr-3 flex items-center justify-center">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@
                 
                 <!-- Book Appointment Button -->
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" 
-                   class="book-appointment-btn bg-transparent border-2 border-orange-400 text-orange-400 px-4 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition-all duration-300 inline-flex items-center ml-4">
+                   class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-lg hover:bg-trinity-gold hover:text-white transition-all duration-300 inline-flex items-center ml-4">
                     <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                     </svg>
@@ -68,7 +68,7 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu lg:hidden hidden">
-            <div class="py-4 border-t border-green-600">
+            <div class="py-4 border-t border-trinity-maroon-light">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
@@ -80,7 +80,7 @@
                 ?>
                 <div class="px-4 pt-4">
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" 
-                       class="block w-full text-center bg-transparent border-2 border-orange-400 text-orange-400 px-6 py-3 rounded-lg hover:bg-orange-400 hover:text-white transition-all duration-300">
+                       class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-lg hover:bg-trinity-gold hover:text-white transition-all duration-300">
                         <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                     </a>
                 </div>

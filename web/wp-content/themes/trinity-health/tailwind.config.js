@@ -20,6 +20,9 @@ module.exports = {
           'maroon': '#880005', // Original Trinity Health brand color
           'maroon-light': '#a50006',
           'maroon-dark': '#650004',
+          'gold': '#D4AF37', // Gold accent color that complements maroon
+          'gold-light': '#F4D03F', // Light gold
+          'gold-dark': '#B8860B', // Dark goldenrod
         },
         'neutral': {
           50: '#fafafa',
