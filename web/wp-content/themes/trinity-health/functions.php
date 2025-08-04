@@ -17,6 +17,28 @@ define('TRINITY_THEME_URL', get_template_directory_uri());
 define('TRINITY_THEME_PATH', get_template_directory());
 
 /**
+ * Get Trinity Health logo based on background type
+ * 
+ * @param string $background_type 'dark' for dark backgrounds, 'light' for light backgrounds
+ * @return string Logo image HTML
+ */
+function trinity_health_get_logo($background_type = 'dark') {
+    $logo_path = get_template_directory_uri() . '/assets/images/';
+    
+    if ($background_type === 'dark') {
+        // Use white logo for dark backgrounds (maroon header/footer)
+        $logo_src = $logo_path . 'trinity-logo-white.png';
+        $alt_text = get_bloginfo('name') . ' - White Logo';
+    } else {
+        // Use original logo for light backgrounds
+        $logo_src = $logo_path . 'trinity-logo.jpg';
+        $alt_text = get_bloginfo('name') . ' - Logo';
+    }
+    
+    return '<img src="' . esc_url($logo_src) . '" alt="' . esc_attr($alt_text) . '" class="max-w-full max-h-full w-12 h-12 object-contain">';
+}
+
+/**
  * Include theme setup files
  * 
  * All major theme functionality is separated into include files

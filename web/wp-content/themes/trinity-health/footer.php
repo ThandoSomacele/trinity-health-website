@@ -9,11 +9,8 @@
                 <!-- Logo -->
                 <div class="mb-6">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
-                        <div class="w-8 h-8 mr-3 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17 9h-4V5c0-.6-.4-1-1-1s-1 .4-1 1v4H7c-.6 0-1 .4-1 1s.4 1 1 1h4v4c0 .6.4 1 1 1s1-.4 1-1v-4h4c.6 0 1-.4 1-1s-.4-1-1-1z"/>
-                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
-                            </svg>
+                        <div class="w-10 h-10 mr-3 flex items-center justify-center">
+                            <?php echo trinity_health_get_logo('dark'); ?>
                         </div>
                         <span class="text-xl font-semibold"><?php bloginfo('name'); ?></span>
                     </a>

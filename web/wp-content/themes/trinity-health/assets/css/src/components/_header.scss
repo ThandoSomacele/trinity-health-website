@@ -2,6 +2,17 @@
  * Header Component Styles
  */
 
+// Trinity Health Logo styling
+.site-logo {
+  img {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    object-fit: contain;
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
