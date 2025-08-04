@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -19,19 +20,19 @@ if (file_exists(__DIR__ . '/wp-config-ddev.php')) {
 if (getenv('IS_DDEV_PROJECT') == 'true') {
     /** The name of the database for WordPress */
     defined('DB_NAME') || define('DB_NAME', 'db');
-    
+
     /** MySQL database username */
     defined('DB_USER') || define('DB_USER', 'db');
-    
+
     /** MySQL database password */
     defined('DB_PASSWORD') || define('DB_PASSWORD', 'db');
-    
+
     /** MySQL hostname */
     defined('DB_HOST') || define('DB_HOST', 'ddev-trinity-health-website-db');
-    
+
     /** WP_HOME URL */
     defined('WP_HOME') || define('WP_HOME', 'https://trinity-health-website.ddev.site');
-    
+
     /** WP_SITEURL location - Traditional WordPress structure */
     defined('WP_SITEURL') || define('WP_SITEURL', WP_HOME);
 } else {
@@ -71,13 +72,13 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-if (getenv('IS_DDEV_PROJECT') == 'true') {
-    define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
-    define('WP_DEBUG_DISPLAY', false);
-} else {
-    define('WP_DEBUG', false);
-}
+// if (getenv('IS_DDEV_PROJECT') == 'true') {
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+// } else {
+//     define('WP_DEBUG', false);
+// }
 
 /**
  * Trinity Health specific configurations
