@@ -76,15 +76,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
-  // Purge unused styles in production
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      './*.php',
-      './inc/**/*.php',
-      './template-parts/**/*.php',
-      './templates/**/*.php',
-      './assets/js/src/**/*.js',
-    ],
-  },
 }

@@ -26,38 +26,45 @@
   
   // Navigation menu styling
   .main-navigation {
-    ul {
-      @apply list-none m-0 p-0;
-    }
-    
-    li {
-      @apply relative;
+    .nav-menu {
+      @apply flex items-center space-x-6 list-none m-0 p-0;
       
-      a {
-        @apply text-white hover:text-orange-300 transition-colors duration-300 px-4 py-2 flex items-center;
+      li {
+        @apply relative;
         
-        // Dropdown indicator
-        &.has-children::after {
-          content: '▼';
-          @apply ml-1 text-xs;
+        a {
+          @apply text-white hover:text-orange-300 transition-colors duration-300 px-2 py-2 font-medium text-base;
         }
-      }
-      
-      // Dropdown menus
-      ul.sub-menu {
-        @apply absolute top-full left-0 bg-trinity-primary-dark shadow-lg rounded-md py-2 min-w-48 hidden;
         
-        li {
-          @apply w-full;
+        // Dropdown menus
+        ul.sub-menu {
+          @apply absolute top-full left-0 bg-trinity-primary-dark shadow-lg rounded-md py-2 min-w-48 hidden;
           
-          a {
-            @apply px-4 py-3 hover:bg-green-700;
+          li {
+            @apply w-full;
+            
+            a {
+              @apply px-4 py-3 hover:bg-green-700 text-sm;
+            }
           }
         }
+        
+        &:hover > ul.sub-menu {
+          @apply block;
+        }
       }
+    }
+  }
+  
+  // Mobile navigation
+  .mobile-menu {
+    .mobile-nav-menu {
+      @apply list-none m-0 p-0;
       
-      &:hover > ul.sub-menu {
-        @apply block;
+      li {
+        a {
+          @apply block py-2 px-4 text-white hover:text-orange-300 hover:bg-green-700 transition-colors;
+        }
       }
     }
   }

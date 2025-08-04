@@ -405,7 +405,7 @@
 }
 
 // Responsive adjustments
-@screen max-md {
+@media (max-width: 767px) {
   .testimonials-carousel .testimonials-track .testimonial {
     margin-right: 0;
   }

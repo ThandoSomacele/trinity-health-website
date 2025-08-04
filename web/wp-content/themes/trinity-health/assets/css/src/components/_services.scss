@@ -286,7 +286,7 @@
       height: 2px;
       background: var(--trinity-primary);
       
-      @screen max-md {
+      @media (max-width: 767px) {
         display: none;
       }
     }

@@ -63,23 +63,15 @@
             <!-- Quick Links -->
             <div class="footer-section">
                 <h3 class="text-orange-400 text-lg font-semibold mb-4"><?php esc_html_e('Quick Links', 'trinity-health'); ?></h3>
-                <div class="space-y-2 text-sm">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="block text-gray-300 hover:text-orange-300 transition-colors">
-                        <?php esc_html_e('Home', 'trinity-health'); ?>
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="block text-gray-300 hover:text-orange-300 transition-colors">
-                        <?php esc_html_e('About Us', 'trinity-health'); ?>
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('doctors'))); ?>" class="block text-gray-300 hover:text-orange-300 transition-colors">
-                        <?php esc_html_e('Doctors', 'trinity-health'); ?>
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" class="block text-gray-300 hover:text-orange-300 transition-colors">
-                        <?php esc_html_e('Services', 'trinity-health'); ?>
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="block text-gray-300 hover:text-orange-300 transition-colors">
-                        <?php esc_html_e('Contact Us', 'trinity-health'); ?>
-                    </a>
-                </div>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer',
+                    'menu_class'     => 'footer-nav-menu',
+                    'container'      => false,
+                    'fallback_cb'    => 'trinity_health_footer_menu_fallback',
+                    'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                ));
+                ?>
             </div>
 
             <!-- Contact Details -->
