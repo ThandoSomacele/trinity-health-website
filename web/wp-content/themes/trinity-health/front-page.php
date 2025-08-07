@@ -54,17 +54,17 @@ get_header(); ?>
             <div class="relative">
                 <!-- Decorative dots pattern -->
                 <div class="relative inset-0">
-                    <div class="absolute top-16 left-1/3 transform -translate-x-1/3 grid grid-cols-12 gap-2 opacity-40">
+                    <div class="absolute top-8 md:top-16 left-1/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
                         <?php for ($i = 0; $i < 264; $i++): ?>
                             <div class="w-1 h-1 bg-white rounded-full"></div>
                         <?php endfor; ?>
                     </div>
                 </div>
 
-                <div class="relative z-10 flex gap-x-14 items-center justify-start">
+                <div class="relative z-10 flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
                     <!-- Left Circle - Main Doctor Image -->
                     <div class="relative">
-                        <div class="w-52 h-96 rounded-full overflow-hidden bg-white">
+                        <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/home-hero-1.png"
                                 alt="Professional Female Doctor"
                                 class="w-full h-full object-cover">
@@ -72,11 +72,11 @@ get_header(); ?>
                     </div>
 
                     <!-- Right Oval - Healthcare Team Image -->
-                    <div class="relative right-0 top-12">
-                        <div class="w-52 h-96 rounded-full overflow-hidden bg-white">
+                    <div class="relative sm:top-6 lg:top-12">
+                        <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/home-hero-2.png"
                                 alt="Healthcare Team"
-                                class="w-full h-full object-cover ">
+                                class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
