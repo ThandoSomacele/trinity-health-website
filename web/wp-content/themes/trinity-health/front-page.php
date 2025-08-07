@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Trinity Health Homepage Template
  * 
@@ -14,29 +15,36 @@ get_header(); ?>
             <!-- Hero Content -->
             <div class="text-white space-y-8">
                 <div class="space-y-2">
-                    <p class="text-trinity-gold text-lg font-medium tracking-wide uppercase">
+                    <p class="text-white text-lg font-medium tracking-wide uppercase">
                         WE TAKE CARE OF YOUR HEALTH
                     </p>
-                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
-                        We Are Providing 
-                        <span class="text-trinity-gold">Best & Affordable</span>
-                        Health Care.
+                    <h1 class="text-trinity-gold text-4xl lg:text-6xl font-bold leading-tight">
+                        We Are Providing Best & Affordable Health Care.
                     </h1>
                 </div>
-                <p class="text-xl text-gray-200 leading-relaxed max-w-lg">
-                    We are always fully focused on helping your health care with personal approach. 
-                    In our General practice, our dedicated team of doctors provides comprehensive health care services.
+                <p class="text-lg text-white leading-relaxed max-w-lg">
+                    Our goal is to deliver the highest quality healthcare services.
+                    We believe that everyone deserves access to excellent medical care without compromising on quality.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 pt-4">
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" 
-                       class="bg-trinity-gold text-white px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 text-center text-lg">
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
+                        class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center">
+                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
+                            <!-- Heroicons: arrow-right (mini) -->
+                            <svg class="w-3 h-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
                         Read More
                     </a>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" 
-                       class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center text-lg inline-flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M8 5v10l7-5-7-5z"/>
-                        </svg>
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
+                        class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center mr-2">
+                            <!-- Heroicons: play (mini) -->
+                            <svg class="w-6 h-6 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                            </svg>
+                        </div>
                         Watch Video
                     </a>
                 </div>
@@ -44,27 +52,31 @@ get_header(); ?>
 
             <!-- Hero Images -->
             <div class="relative">
-                <!-- Background Pattern -->
-                <div class="absolute inset-0 bg-gradient-to-br from-trinity-gold/10 via-transparent to-transparent">
-                    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);"></div>
+                <!-- Decorative dots pattern -->
+                <div class="relative inset-0">
+                    <div class="absolute top-16 left-1/3 transform -translate-x-1/3 grid grid-cols-12 gap-2 opacity-40">
+                        <?php for ($i = 0; $i < 264; $i++): ?>
+                            <div class="w-1 h-1 bg-white rounded-full"></div>
+                        <?php endfor; ?>
+                    </div>
                 </div>
-                
-                <div class="relative z-10 space-y-8">
-                    <!-- Main Doctor Image -->
+
+                <div class="relative z-10 flex gap-x-14 items-center justify-start">
+                    <!-- Left Circle - Main Doctor Image -->
                     <div class="relative">
-                        <div class="w-80 h-80 rounded-full overflow-hidden bg-white p-2 mx-auto">
-                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                 alt="Professional Female Doctor" 
-                                 class="w-full h-full object-cover rounded-full">
+                        <div class="w-52 h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/home-hero-1.png"
+                                alt="Professional Female Doctor"
+                                class="w-full h-full object-cover">
                         </div>
                     </div>
-                    
-                    <!-- Secondary Healthcare Team Image -->
-                    <div class="absolute top-8 -right-8 lg:right-8">
-                        <div class="w-48 h-32 rounded-2xl overflow-hidden bg-white p-2">
-                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                 alt="Healthcare Team" 
-                                 class="w-full h-full object-cover rounded-xl">
+
+                    <!-- Right Oval - Healthcare Team Image -->
+                    <div class="relative right-0 top-12">
+                        <div class="w-52 h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/home-hero-2.png"
+                                alt="Healthcare Team"
+                                class="w-full h-full object-cover ">
                         </div>
                     </div>
                 </div>
@@ -82,10 +94,10 @@ get_header(); ?>
                 <div class="relative z-10">
                     <h3 class="text-2xl font-bold mb-4 leading-tight">Don't Hesitate To Contact Us.</h3>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" 
-                       class="bg-white text-trinity-gold px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                        class="bg-white text-trinity-gold px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                         </svg>
                         Book Appointment
                     </a>
@@ -99,7 +111,7 @@ get_header(); ?>
                 <div class="relative z-10">
                     <div class="w-16 h-16 bg-trinity-gold rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
                         </svg>
                     </div>
                     <div class="text-4xl font-bold mb-2">24</div>
@@ -114,7 +126,7 @@ get_header(); ?>
                 <div class="relative z-10">
                     <div class="w-16 h-16 bg-trinity-gold rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
                     </div>
                     <div class="text-4xl font-bold mb-2">15+</div>
@@ -140,21 +152,21 @@ get_header(); ?>
                         <div class="absolute bottom-8 right-8 w-24 h-24 border border-white rounded-full"></div>
                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white rounded-full"></div>
                     </div>
-                    
+
                     <!-- Main Healthcare Image -->
                     <div class="relative z-10">
                         <div class="bg-white rounded-2xl p-6 mb-6">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="Healthcare Professional Consultation" 
-                                 class="w-full h-64 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Healthcare Professional Consultation"
+                                class="w-full h-64 object-cover rounded-xl">
                         </div>
-                        
+
                         <!-- Floating Stats -->
                         <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
                             <div class="flex items-center space-x-3">
                                 <div class="w-12 h-12 bg-trinity-gold rounded-full flex items-center justify-center">
                                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -163,12 +175,12 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Secondary Image -->
                         <div class="absolute -top-8 -right-8 w-32 h-32 rounded-2xl overflow-hidden bg-white p-2">
-                            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                                 alt="Medical Equipment" 
-                                 class="w-full h-full object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Medical Equipment"
+                                class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
@@ -179,21 +191,21 @@ get_header(); ?>
                 <div class="space-y-8">
                     <div>
                         <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                            Our Best Services & 
-                            <span class="text-trinity-gold">Popular Treatment</span> 
+                            Our Best Services &
+                            <span class="text-trinity-gold">Popular Treatment</span>
                             Here.
                         </h2>
                         <p class="text-xl text-gray-600 leading-relaxed">
                             We offer state-of-the-art medical treatments and popular treatments. Here are some of our best services that we provide for our patients with care and precision.
                         </p>
                     </div>
-                    
+
                     <!-- Service List -->
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                 <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </div>
                             <div>
@@ -204,7 +216,7 @@ get_header(); ?>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                 <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </div>
                             <div>
@@ -215,7 +227,7 @@ get_header(); ?>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                 <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </div>
                             <div>
@@ -226,11 +238,11 @@ get_header(); ?>
                     </ul>
 
                     <div class="pt-4">
-                        <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" 
-                           class="bg-trinity-gold text-white px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
+                        <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
+                            class="bg-trinity-gold text-white px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
@@ -257,7 +269,7 @@ get_header(); ?>
             <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Dental Care</h3>
@@ -271,7 +283,7 @@ get_header(); ?>
             <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Laboratory Service</h3>
@@ -285,8 +297,8 @@ get_header(); ?>
             <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Patient Comfort</h3>
@@ -307,7 +319,7 @@ get_header(); ?>
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
                         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                         </svg>
                     </div>
                     <span class="text-trinity-gold font-semibold text-lg">APPOINTMENTS</span>
@@ -316,12 +328,12 @@ get_header(); ?>
                 <p class="text-gray-200 mb-8 leading-relaxed">
                     Book your appointment today and experience quality healthcare services with our qualified medical professionals.
                 </p>
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" 
-                   class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                    class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Book Appointment
                 </a>
             </div>
-            
+
             <div class="text-center">
                 <div class="bg-white rounded-lg p-8 shadow-xl">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to get started?</h3>
@@ -352,7 +364,7 @@ get_header(); ?>
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Book An Appointment</h3>
@@ -363,7 +375,7 @@ get_header(); ?>
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Conduct Checkup</h3>
@@ -374,8 +386,8 @@ get_header(); ?>
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Perform Treatment</h3>
@@ -386,8 +398,8 @@ get_header(); ?>
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
-                        <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/>
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Prescribe & Payment</h3>
@@ -422,7 +434,7 @@ get_header(); ?>
                 <h2 class="text-4xl font-bold text-gray-900 mb-6">
                     Consultations with Qualified doctors
                 </h2>
-                
+
                 <div class="space-y-6 mb-8">
                     <div class="flex items-start">
                         <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1">
@@ -455,8 +467,8 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>" 
-                   class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>"
+                    class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Meet Our Team
                 </a>
             </div>
@@ -609,14 +621,14 @@ get_header(); ?>
                     <div class="space-y-4">
                         <div class="flex items-center justify-center">
                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                             </svg>
                             <span>+260 XXX XXX XXX</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
                             <span>info@trinityhealth.zm</span>
                         </div>

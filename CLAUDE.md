@@ -59,6 +59,7 @@ Modern healthcare website for Trinity Health Zambia built with traditional WordP
 - Remember we are using DDEV to run the site so we can use `ddev exec wp` for WP-CLI commands in the container
 - Use `ddev npm` for Node.js/npm commands in the development environment
 - Theme located at `wp-content/themes/trinity-health`
+- Remember whatever design you are provided with for this project keep to our matching or corresponding brand colors do not use the design colors.
 
 ## Technology Stack
 - **CMS**: WordPress Core (latest stable)
@@ -128,6 +129,24 @@ wp-content/themes/trinity-health/
 - **Template Hierarchy**: WordPress template system with modern PHP
 - **Hooks & Filters**: WordPress APIs for customization
 - **Enqueue System**: Proper asset loading with wp_enqueue_scripts
+
+## Icon Library Usage
+
+**Recommended Approach**: Use an icon library instead of creating custom SVGs for consistency and maintainability.
+
+**Suggested Icon Libraries:**
+- **Heroicons** (preferred): https://heroicons.com/ - Clean, modern icons from Tailwind CSS creators
+- **Lucide**: https://lucide.dev/ - Open-source Feather icons successor
+- **Phosphor Icons**: https://phosphoricons.com/ - Flexible icon family
+
+**Hero Button Icons Used:**
+- Read More button: Arrow right icon (→)
+- Watch Video button: Play circle icon (▶)
+
+**Implementation:**
+- Install via CDN or npm package
+- Use consistent icon sizing (w-5 h-5 for buttons, w-6 h-6 for larger elements)
+- Maintain brand color consistency (Trinity maroon/gold theme)
 
 ## important-instruction-reminders
 Do what has been asked; nothing more, nothing less.
