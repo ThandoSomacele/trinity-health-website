@@ -46,11 +46,21 @@ ssh-copy-id your-username@your-staging-server.com
 
 ## Deployment Options
 
+⚠️ **Important:** Always run deployment scripts from the Trinity Health project root directory (where the `web/` folder is located).
+
+```bash
+# Navigate to project root first
+cd /path/to/trinity-health-website
+
+# Verify you're in the correct directory
+ls -la web/
+```
+
 ### Option 1: FTP Deployment
 Best for shared hosting providers:
 
 ```bash
-# From project root
+# IMPORTANT: Run from project root directory
 ./deploy-staging.sh
 
 # Or using npm from theme directory
@@ -62,7 +72,7 @@ npm run deploy:staging
 Best for VPS/dedicated servers with SSH access:
 
 ```bash
-# From project root
+# IMPORTANT: Run from project root directory
 ./deploy-staging-rsync.sh
 
 # Or using npm from theme directory

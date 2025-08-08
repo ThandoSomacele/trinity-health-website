@@ -21,21 +21,48 @@ NC='\033[0m' # No Color
 echo -e "${GREEN}🚀 Trinity Health - Staging Deployment${NC}"
 echo "=================================="
 
+# Get the absolute path to the project root
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$PROJECT_ROOT"
+
+echo "Project root: $PROJECT_ROOT"
+echo "Current directory: $(pwd)"
+
+# Check if we're in the project root directory
+if [ ! -d "web" ]; then
+    echo -e "${RED}❌ Error: 'web' directory not found${NC}"
+    echo "Please ensure this script is in the Trinity Health project root directory"
+    echo "Current directory: $(pwd)"
+    ls -la
+    exit 1
+fi
+
 # Check if .env file exists for FTP credentials
 if [ ! -f .env ]; then
     echo -e "${RED}❌ .env file not found${NC}"
-    echo "Please create a .env file with:"
-    echo "STAGING_HOST=your-staging-server.com"
-    echo "STAGING_USER=your-ftp-username"
-    echo "STAGING_PASS=your-ftp-password"
+    echo "Please create a .env file with your staging server details"
+    echo "Copy .env.example to .env and update with your credentials"
     exit 1
 fi
 
 # Source environment variables
 source .env
 
+# Validate required environment variables
+if [ -z "$STAGING_HOST" ] || [ -z "$STAGING_USER" ] || [ -z "$STAGING_PASS" ] || [ -z "$STAGING_PATH" ]; then
+    echo -e "${RED}❌ Missing required environment variables${NC}"
+    echo "Please ensure your .env file contains:"
+    echo "  STAGING_HOST=ftp.object91.co.za"
+    echo "  STAGING_USER=dev@object91.co.za" 
+    echo "  STAGING_PASS=your-password"
+    echo "  STAGING_PATH=/staging.object91.co.za"
+    exit 1
+fi
+
 echo -e "${YELLOW}📦 Building theme assets...${NC}"
-cd $LOCAL_THEME_PATH
+THEME_PATH="$PROJECT_ROOT/$LOCAL_THEME_PATH"
+echo "Theme path: $THEME_PATH"
+cd "$THEME_PATH"
 
 # Install dependencies if node_modules doesn't exist
 if [ ! -d "node_modules" ]; then
@@ -46,16 +73,20 @@ fi
 # Build production assets
 npm run build
 
-cd ../../..
+# Return to project root
+cd "$PROJECT_ROOT"
 
 echo -e "${GREEN}✅ Assets built successfully${NC}"
 
 echo -e "${YELLOW}📁 Preparing files for deployment...${NC}"
 
 # Create temporary deployment directory
-DEPLOY_TEMP="deploy-temp"
-rm -rf $DEPLOY_TEMP
-mkdir -p $DEPLOY_TEMP
+DEPLOY_TEMP="$PROJECT_ROOT/deploy-temp"
+rm -rf "$DEPLOY_TEMP"
+mkdir -p "$DEPLOY_TEMP"
+
+echo "Deployment temp directory: $DEPLOY_TEMP"
+echo "Copying from: $PROJECT_ROOT/web/"
 
 # Copy WordPress core files (excluding uploads and cache)
 echo "Copying WordPress files..."
@@ -66,13 +97,16 @@ rsync -av --exclude='wp-content/uploads/' \
           --exclude='node_modules/' \
           --exclude='.git/' \
           --exclude='debug.log' \
-          web/ $DEPLOY_TEMP/
+          "$PROJECT_ROOT/web/" "$DEPLOY_TEMP/"
 
 echo -e "${YELLOW}🌐 Deploying to staging server...${NC}"
 
 # FTP deployment using lftp
+echo "Deploying from: $DEPLOY_TEMP"
+echo "Deploying to: $STAGING_HOST:$STAGING_PATH"
 lftp -c "
 set ftp:ssl-allow no;
+set ftp:port ${STAGING_PORT:-21};
 open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST;
 lcd $DEPLOY_TEMP;
 cd $STAGING_PATH;
@@ -82,29 +116,35 @@ mirror --reverse --delete --verbose --exclude-glob=wp-config.php --exclude-glob=
 echo -e "${YELLOW}📸 Deploying uploads folder...${NC}"
 
 # Deploy uploads folder separately (without --delete to preserve existing uploads)
-if [ -d "$UPLOADS_PATH" ]; then
+UPLOADS_FULL_PATH="$PROJECT_ROOT/$UPLOADS_PATH"
+if [ -d "$UPLOADS_FULL_PATH" ]; then
+    echo "Uploading media from: $UPLOADS_FULL_PATH"
     lftp -c "
     set ftp:ssl-allow no;
+    set ftp:port ${STAGING_PORT:-21};
     open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST;
-    lcd $UPLOADS_PATH;
+    lcd $UPLOADS_FULL_PATH;
     cd $STAGING_PATH/wp-content/uploads;
     mirror --reverse --verbose
     "
 else
-    echo -e "${YELLOW}⚠️  Uploads folder not found, skipping...${NC}"
+    echo -e "${YELLOW}⚠️  Uploads folder not found at $UPLOADS_FULL_PATH, skipping...${NC}"
 fi
 
 # Cleanup
 echo -e "${YELLOW}🧹 Cleaning up...${NC}"
-rm -rf $DEPLOY_TEMP
+rm -rf "$DEPLOY_TEMP"
 
 echo -e "${GREEN}✅ Deployment completed successfully!${NC}"
-echo -e "${GREEN}🎉 Your site is now live at: https://$STAGING_HOST${NC}"
+
+# Construct the site URL based on staging path
+SITE_URL="https://staging.object91.co.za"
+echo -e "${GREEN}🎉 Your site should be live at: $SITE_URL${NC}"
 
 # Optional: Run a quick health check
 echo -e "${YELLOW}🔍 Running health check...${NC}"
-if curl -s --head "$STAGING_HOST" | head -n 1 | grep -q "200 OK"; then
+if curl -s --head --max-time 10 "$SITE_URL" | head -n 1 | grep -q -E "(200|301|302)"; then
     echo -e "${GREEN}✅ Site is responding correctly${NC}"
 else
-    echo -e "${YELLOW}⚠️  Site health check failed - please verify manually${NC}"
+    echo -e "${YELLOW}⚠️  Site health check inconclusive - please verify manually at: $SITE_URL${NC}"
 fi
