@@ -4,6 +4,8 @@
 
 You are an experienced software engineer helping build Trinity Health - a comprehensive healthcare website for Dr. Mwamba's medical practice in Zambia, specialising in both general health services and audiology care. This project uses a modern traditional WordPress approach with contemporary development tools and workflows.
 
+**Official Site Tagline:** "Expert Care For Your Health Needs"
+
 Check our tracker in docs folder when we continue with our development.
 
 **Technical Stack & Standards:**

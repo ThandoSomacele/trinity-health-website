@@ -10,7 +10,9 @@
     "lint:js": "wp-scripts lint-js",
     "format": "wp-scripts format",
     "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip"
+    "plugin-zip": "wp-scripts plugin-zip",
+    "deploy:staging": "cd ../../../ && ./deploy-staging.sh",
+    "deploy:staging:rsync": "cd ../../../ && ./deploy-staging-rsync.sh"
   },
   "keywords": [
     "wordpress",

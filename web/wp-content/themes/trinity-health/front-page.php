@@ -19,7 +19,7 @@ get_header(); ?>
                         WE TAKE CARE OF YOUR HEALTH
                     </p>
                     <h1 class="text-trinity-gold text-4xl lg:text-6xl font-bold leading-tight">
-                        We Are Providing Best & Affordable Health Care.
+                        Expert Care For Your Health Needs
                     </h1>
                 </div>
                 <p class="text-lg text-white leading-relaxed max-w-lg">
@@ -352,7 +352,7 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                A Comprehensive Directory For Your Health Care.
+                Expert Care For Your Health Needs
             </h2>
             <p class="text-gray-600 max-w-3xl mx-auto">
                 We have integrated and interactive map where you can find healthcare providers, specialists, and medical facilities, ensuring easy access to quality care wherever you are.

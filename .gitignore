@@ -1,4 +1,4 @@
-# WordPress Core Files
+# WordPress Core Files (ignore all core files and updates)
 web/wp-admin/
 web/wp-includes/
 web/wp-*.php
@@ -6,6 +6,13 @@ web/index.php
 web/license.txt
 web/readme.html
 web/xmlrpc.php
+
+# Ignore all WordPress core files and directories
+web/wp-admin/**
+web/wp-includes/**
+
+# WordPress Core Updates and Automatic Files
+web/wp-config-sample.php
 
 # WordPress Configuration
 web/wp-config.php
@@ -21,6 +28,13 @@ web/wp-content/themes/*
 web/wp-content/uploads/
 web/wp-content/cache/
 web/wp-content/upgrade/
+web/wp-content/upgrade-temp-backup/
+
+# Plugin files (ignore all plugin updates and changes)
+web/wp-content/plugins/
+web/wp-content/plugins/**
+web/wp-content/mu-plugins/
+web/wp-content/mu-plugins/**
 
 # Plugin exceptions - track specific plugins if needed
 # !web/wp-content/plugins/your-custom-plugin/
@@ -78,3 +92,17 @@ backup-*/
 
 # Temporary WordPress files
 web/wp-content/debug.log
+web/wp-content/db.php
+web/wp-content/object-cache.php
+web/wp-content/advanced-cache.php
+web/wp-content/wp-cache-config.php
+
+# WordPress automatic updates and backups
+web/wp-content/upgrade/
+web/wp-content/upgrade-temp-backup/
+web/wp-content/backups/
+
+# WordPress language files (unless custom)
+web/wp-content/languages/
+web/wp-content/languages/plugins/
+web/wp-content/languages/themes/

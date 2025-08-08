@@ -18,7 +18,7 @@
                 
                 <!-- Description -->
                 <p class="text-gray-300 mb-6 text-sm leading-relaxed">
-                    <?php echo esc_html(get_theme_mod('trinity_health_footer_description', 'Our family-centred approach to healthcare ensures that each member of your family receives personalised attention.')); ?>
+                    <?php echo esc_html(get_theme_mod('trinity_health_footer_description', 'Expert Care For Your Health Needs - Professional medical services with personalised attention for every patient.')); ?>
                 </p>
                 
                 <!-- Social Links -->
