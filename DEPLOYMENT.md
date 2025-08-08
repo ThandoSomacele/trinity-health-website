@@ -151,13 +151,57 @@ After deployment, your staging server should have:
 - Consider using SSH keys instead of passwords for RSYNC deployment
 - Regularly update your staging server's WordPress core and plugins
 
+## Database Deployment
+
+The Trinity Health website requires both file and database deployment. For comprehensive database deployment procedures, see [DATABASE-DEPLOYMENT.md](./DATABASE-DEPLOYMENT.md).
+
+### Quick Database Operations
+
+**Export local database:**
+```bash
+./scripts/db-export.sh --full          # Full database export
+./scripts/db-export.sh --content-only  # Content only (posts, pages, media)
+```
+
+**Import to staging:**
+```bash
+./scripts/db-import.sh staging                    # Import latest backup
+./scripts/db-import.sh staging --content-only    # Import only content
+```
+
+**Sync databases:**
+```bash
+./scripts/db-sync.sh staging              # Local → Staging
+./scripts/db-sync.sh production --source=staging  # Staging → Production
+```
+
+### Complete Deployment Workflow
+
+For a full site deployment (files + database):
+
+1. **Deploy Files:**
+   ```bash
+   ./deploy-staging.sh         # or ./deploy-staging-rsync.sh
+   ```
+
+2. **Deploy Database:**
+   ```bash
+   ./scripts/db-sync.sh staging
+   ```
+
+3. **Verify Deployment:**
+   - Check site loads correctly
+   - Verify URLs are updated
+   - Test core functionality
+
 ## Next Steps
 
 After successful deployment:
 1. Test your staging site thoroughly
-2. Update any absolute URLs in the database if needed
+2. Verify database URLs are correctly updated (handled automatically)
 3. Configure any staging-specific plugins or settings
 4. Set up automated backups for your staging environment
+5. Review database deployment logs for any issues
 
 ## Support
 
