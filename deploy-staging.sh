@@ -82,8 +82,15 @@ echo -e "${YELLOW}📁 Preparing files for deployment...${NC}"
 
 # Create temporary deployment directory
 DEPLOY_TEMP="$PROJECT_ROOT/deploy-temp"
+echo "Cleaning and creating deployment directory: $DEPLOY_TEMP"
 rm -rf "$DEPLOY_TEMP"
 mkdir -p "$DEPLOY_TEMP"
+
+# Verify we have a clean deployment directory
+if [ "$(find "$DEPLOY_TEMP" -type f | wc -l | xargs)" -ne 0 ]; then
+    echo -e "${RED}❌ Error: Deployment directory is not clean after creation${NC}"
+    exit 1
+fi
 
 echo "Deployment temp directory: $DEPLOY_TEMP"
 echo "Copying from: $PROJECT_ROOT/web/"
@@ -95,35 +102,78 @@ if [ ! -f "$PROJECT_ROOT/web/wp-config-sample.php" ] && [ ! -f "$PROJECT_ROOT/we
     exit 1
 fi
 
-# Copy ONLY WordPress files from web/ directory
-echo "Copying WordPress files from web/ directory..."
+# Copy ONLY our custom theme and essential WordPress config files
+echo "Copying Trinity Health theme and essential files..."
 if [ ! -d "$PROJECT_ROOT/web" ]; then
     echo -e "${RED}❌ Error: web/ directory not found at $PROJECT_ROOT/web${NC}"
     exit 1
 fi
 
-rsync -av --exclude='wp-content/uploads/' \
-          --exclude='wp-content/cache/' \
-          --exclude='wp-content/upgrade/' \
-          --exclude='wp-content/upgrade-temp-backup/' \
-          --exclude='wp-content/themes/*/node_modules/' \
-          --exclude='wp-content/themes/*/src/' \
-          --exclude='wp-content/themes/*/package.json' \
-          --exclude='wp-content/themes/*/package-lock.json' \
-          --exclude='wp-content/themes/*/webpack.config.js' \
-          --exclude='wp-content/themes/*/tailwind.config.js' \
-          --exclude='node_modules/' \
+# Create the basic WordPress structure in deploy temp
+mkdir -p "$DEPLOY_TEMP/wp-content/themes"
+
+# Copy our custom theme (built assets only, exclude all development files)
+if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health" ]; then
+    echo "Copying Trinity Health custom theme..."
+    
+    # Verify node_modules won't be copied
+    if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health/node_modules" ]; then
+        echo "Found node_modules in theme - excluding from deployment"
+    fi
+    
+    rsync -av --exclude='node_modules' \
+              --exclude='node_modules/*' \
+              --exclude='node_modules/**' \
+              --exclude='src/' \
+              --exclude='package.json' \
+              --exclude='package-lock.json' \
+              --exclude='webpack.config.js' \
+              --exclude='tailwind.config.js' \
+              --exclude='postcss.config.js' \
+              --exclude='.git/' \
+              --exclude='*.log' \
+              "$PROJECT_ROOT/web/wp-content/themes/trinity-health/" "$DEPLOY_TEMP/wp-content/themes/trinity-health/"
+              
+    # Double-check no node_modules was copied
+    if [ -d "$DEPLOY_TEMP/wp-content/themes/trinity-health/node_modules" ]; then
+        echo -e "${RED}❌ ERROR: node_modules was copied to deployment! Removing...${NC}"
+        rm -rf "$DEPLOY_TEMP/wp-content/themes/trinity-health/node_modules"
+    fi
+else
+    echo -e "${RED}❌ Error: Trinity Health theme not found at web/wp-content/themes/trinity-health${NC}"
+    exit 1
+fi
+
+# Copy WordPress core files from web/ directory only
+echo "Copying WordPress core files..."
+rsync -av --exclude='wp-content/' \
+          --exclude='wp-config.php' \
+          --exclude='.htaccess' \
+          --exclude='deploy-temp/' \
           --exclude='.git/' \
           --exclude='debug.log' \
+          --exclude='.DS_Store' \
+          --exclude='.gitignore' \
           "$PROJECT_ROOT/web/" "$DEPLOY_TEMP/"
+
+# Copy wp-content structure (excluding uploads, plugins, and our theme which we already copied)
+mkdir -p "$DEPLOY_TEMP/wp-content/plugins"
+echo "# Plugin directory - plugins should be managed separately" > "$DEPLOY_TEMP/wp-content/plugins/.gitkeep"
 
 # Show what's actually being deployed for verification
 echo -e "${YELLOW}📋 Files prepared for deployment:${NC}"
-echo "Deployment directory contents:"
-ls -la "$DEPLOY_TEMP/"
+echo "Deployment directory structure:"
+tree "$DEPLOY_TEMP/" -L 3 2>/dev/null || find "$DEPLOY_TEMP/" -type d | head -20
+echo ""
+echo "Trinity Health theme contents:"
+ls -la "$DEPLOY_TEMP/wp-content/themes/trinity-health/" 2>/dev/null || echo "Theme directory not found"
 echo ""
 echo "Total deployment size:"
 du -sh "$DEPLOY_TEMP/"
+
+# Count files being deployed
+TOTAL_FILES=$(find "$DEPLOY_TEMP/" -type f | wc -l | xargs)
+echo "Total files: $TOTAL_FILES"
 
 # Verify no unwanted files are included
 if [ -d "$DEPLOY_TEMP/node_modules" ]; then
@@ -132,23 +182,52 @@ if [ -d "$DEPLOY_TEMP/node_modules" ]; then
 fi
 
 if [ -f "$DEPLOY_TEMP/package.json" ]; then
-    echo -e "${RED}❌ WARNING: package.json found in deployment - this shouldn't happen!${NC}"
+    echo -e "${RED}❌ WARNING: package.json found in deployment root - this shouldn't happen!${NC}"
     exit 1
 fi
+
+# Check if any development files slipped through
+DEV_FILES=$(find "$DEPLOY_TEMP/" -name "package.json" -o -name "node_modules" -o -name ".git" | wc -l | xargs)
+if [ "$DEV_FILES" -gt 0 ]; then
+    echo -e "${RED}❌ WARNING: $DEV_FILES development files found in deployment!${NC}"
+    find "$DEPLOY_TEMP/" -name "package.json" -o -name "node_modules" -o -name ".git"
+    exit 1
+fi
+
+echo -e "${GREEN}✅ Deployment package verified clean${NC}"
 
 echo -e "${YELLOW}🌐 Deploying to staging server...${NC}"
 
 # FTP deployment using lftp
 echo "Deploying from: $DEPLOY_TEMP"
 echo "Deploying to: $STAGING_HOST:$STAGING_PATH"
+
+# Verify deploy temp directory exists and has content
+if [ ! -d "$DEPLOY_TEMP" ]; then
+    echo -e "${RED}❌ Error: Deploy temp directory not found at $DEPLOY_TEMP${NC}"
+    exit 1
+fi
+
+echo "Contents of deploy directory before upload:"
+find "$DEPLOY_TEMP" -maxdepth 2 -type f | head -10
+
+# Change to deployment directory and run lftp from there
+cd "$DEPLOY_TEMP"
+echo "Current directory: $(pwd)"
+echo "Local files to upload:"
+find . -type f | head -5
+
 lftp -c "
 set ftp:ssl-allow no;
 set ftp:port ${STAGING_PORT:-21};
 open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST;
-lcd $DEPLOY_TEMP;
 cd $STAGING_PATH;
-mirror --reverse --delete --verbose --exclude-glob=wp-config.php --exclude-glob=.htaccess
+pwd;
+mirror --reverse --delete --verbose --exclude-glob=wp-config.php --exclude-glob=.htaccess .
 "
+
+# Return to project root
+cd "$PROJECT_ROOT"
 
 echo -e "${YELLOW}📸 Deploying uploads folder...${NC}"
 
