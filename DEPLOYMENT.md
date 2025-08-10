@@ -61,12 +61,19 @@ Best for shared hosting providers:
 
 ```bash
 # IMPORTANT: Run from project root directory
-./deploy-staging.sh
+./deploy-staging.sh                    # Standard deployment (sync changes)
+./deploy-staging.sh --fresh            # Fresh deployment (overwrite all files)
 
 # Or using npm from theme directory
 cd web/wp-content/themes/trinity-health
 npm run deploy:staging
 ```
+
+**Fresh Deployment (`--fresh` flag):**
+- Removes existing WordPress core files from staging server
+- Uploads all WordPress files from scratch
+- Useful for resolving wp-admin access issues or corrupted files
+- ⚠️ **Warning**: Overwrites ALL WordPress core files on staging server
 
 ### Option 2: SSH/RSYNC Deployment
 Best for VPS/dedicated servers with SSH access:
@@ -132,6 +139,11 @@ npm run deploy:staging:rsync
 - Check your staging server's `wp-config.php`
 - Verify database connection settings
 - Check server error logs
+
+**wp-admin redirect loops or access issues:**
+- Use `./deploy-staging.sh --fresh` to deploy fresh WordPress files
+- Ensure database URLs are correct (use `--for-staging` export)
+- Check wp-config.php has correct `WP_HOME` and `WP_SITEURL` values
 
 **Uploads not syncing:**
 - Verify the uploads folder exists locally
@@ -206,7 +218,9 @@ For a full site deployment (files + database):
 
 1. **Deploy Files:**
    ```bash
-   ./deploy-staging.sh         # or ./deploy-staging-rsync.sh
+   ./deploy-staging.sh                    # Standard deployment
+   ./deploy-staging.sh --fresh            # Fresh deployment (if needed)
+   # or ./deploy-staging-rsync.sh
    ```
 
 2. **Deploy Database:**

@@ -18,8 +18,43 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${GREEN}🚀 Trinity Health - Staging Deployment${NC}"
-echo "=================================="
+# Parse command line arguments
+FRESH_DEPLOY=false
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --fresh)
+            FRESH_DEPLOY=true
+            shift
+            ;;
+        --help)
+            echo "Usage: $0 [OPTIONS]"
+            echo ""
+            echo "Options:"
+            echo "  --fresh    Perform fresh deployment (overwrite all staging files)"
+            echo "  --help     Show this help message"
+            echo ""
+            echo "Examples:"
+            echo "  $0                # Normal deployment (sync changes)"
+            echo "  $0 --fresh        # Fresh deployment (overwrite everything)"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use --help for usage information"
+            exit 1
+            ;;
+    esac
+done
+
+if [ "$FRESH_DEPLOY" = true ]; then
+    echo -e "${GREEN}🚀 Trinity Health - FRESH Staging Deployment${NC}"
+    echo "=============================================="
+    echo -e "${YELLOW}⚠️  WARNING: This will overwrite ALL files on staging server${NC}"
+else
+    echo -e "${GREEN}🚀 Trinity Health - Staging Deployment${NC}"
+    echo "=================================="
+fi
 
 # Get the absolute path to the project root
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -207,16 +242,16 @@ cat > "$DEPLOY_TEMP/wp-config.php" << EOF
  */
 
 // ** Database settings ** //
-define('DB_NAME', '$STAGING_DB_NAME');
-define('DB_USER', '$STAGING_DB_USER');
-define('DB_PASSWORD', '$STAGING_DB_PASS');
-define('DB_HOST', '$STAGING_DB_HOST');
+define('DB_NAME', '${STAGING_DB_NAME}');
+define('DB_USER', '${STAGING_DB_USER}');
+define('DB_PASSWORD', '${STAGING_DB_PASS}');
+define('DB_HOST', '${STAGING_DB_HOST}');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 // ** Site URLs ** //
-define('WP_HOME', '$STAGING_SITE_URL');
-define('WP_SITEURL', '$STAGING_SITE_URL');
+define('WP_HOME', '${STAGING_SITE_URL}');
+define('WP_SITEURL', '${STAGING_SITE_URL}');
 
 // ** WordPress Security Keys ** //
 // These should be unique for each environment
@@ -304,13 +339,39 @@ fi
 
 echo -e "${GREEN}✅ Safety checks passed - deploying WordPress files only${NC}"
 
-lftp -c "
-set ftp:ssl-allow no;
-open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
-cd $STAGING_PATH;
-pwd;
-mirror --reverse --delete --verbose --exclude-glob=.htaccess .
-"
+if [ "$FRESH_DEPLOY" = true ]; then
+    echo -e "${YELLOW}🔥 Performing FRESH deployment - removing existing files first${NC}"
+    
+    # Fresh deployment: Remove WordPress core directories first, then upload
+    lftp -c "
+    set ftp:ssl-allow no;
+    open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
+    cd $STAGING_PATH;
+    pwd;
+    echo 'Removing existing WordPress core files for fresh deployment...';
+    rm -rf wp-admin;
+    rm -rf wp-includes;
+    rm -f wp-*.php;
+    rm -f index.php;
+    rm -f xmlrpc.php;
+    rm -f license.txt;
+    rm -f readme.html;
+    echo 'Uploading fresh WordPress files...';
+    mirror --reverse --verbose --exclude-glob=.htaccess .;
+    echo 'Fresh deployment completed';
+    "
+else
+    echo -e "${GREEN}📦 Performing standard deployment - syncing changes${NC}"
+    
+    # Standard deployment: Sync changes only
+    lftp -c "
+    set ftp:ssl-allow no;
+    open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
+    cd $STAGING_PATH;
+    pwd;
+    mirror --reverse --delete --verbose --exclude-glob=.htaccess .
+    "
+fi
 
 # Return to project root
 cd "$PROJECT_ROOT"
