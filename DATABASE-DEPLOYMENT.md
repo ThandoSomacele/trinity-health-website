@@ -8,6 +8,7 @@ This guide explains how to deploy and manage the database for your Trinity Healt
 
 When setting up a new environment (staging/production) for the first time:
 
+#### Option A: Command Line (Terminal/SSH Access)
 ```bash
 # Export from local development
 ./scripts/db-export.sh
@@ -16,6 +17,14 @@ When setting up a new environment (staging/production) for the first time:
 ./scripts/db-import.sh staging
 # or
 ./scripts/db-import.sh production
+```
+
+#### Option B: Shared Hosting (phpMyAdmin Access Only)
+```bash
+# 1. Upload database file to server
+./scripts/db-import-remote.sh staging ./backups/database/trinity-health-backup.sql.gz
+
+# 2. Complete import manually via phpMyAdmin (see section below)
 ```
 
 ### 2. Content Updates (Ongoing)
@@ -232,6 +241,153 @@ wp db optimize
 # Search for common issues
 wp db query "SELECT * FROM wp_options WHERE option_name IN ('home', 'siteurl')"
 ```
+
+## Shared Hosting Database Deployment (phpMyAdmin)
+
+For hosting providers without terminal/SSH access, use phpMyAdmin for database management.
+
+### Prerequisites
+- Access to cPanel or hosting control panel
+- phpMyAdmin available in hosting control panel
+- Database file uploaded to server (via `db-import-remote.sh` script)
+
+### Step-by-Step phpMyAdmin Import
+
+#### 1. Upload Database File to Server
+```bash
+# Upload database file using our remote import script
+./scripts/db-import-remote.sh staging ./backups/database/trinity-health-backup.sql.gz
+```
+
+This uploads the database file to your staging server at `/staging.object91.co.za/`
+
+#### 2. Download Database File from Server
+1. **Log into cPanel**
+2. **Open File Manager**
+3. **Navigate to** your staging path (e.g., `/staging.object91.co.za/`)
+4. **Find your uploaded database file** (e.g., `trinity-health-backup.sql.gz`)
+5. **Download to your computer** (right-click → Download)
+
+#### 3. Import via phpMyAdmin
+1. **Open phpMyAdmin** from cPanel
+2. **Select target database** (e.g., `objecxuk_wp106` for staging)
+3. **Click "Import" tab**
+4. **Choose File:** Select your downloaded database file
+5. **Important Settings:**
+   - Format: SQL
+   - Character set: utf8_general_ci
+   - Compression: Auto-detect (.gz files supported)
+6. **Click "Go"** to start import
+
+#### 4. Update URLs via phpMyAdmin SQL
+After successful import, update WordPress URLs:
+
+1. **Click "SQL" tab** in phpMyAdmin
+2. **Paste and execute this SQL:**
+
+```sql
+-- Update WordPress site URLs
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'home';
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'siteurl';
+
+-- Update URLs in post content
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'https://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://localhost:8000', 'https://staging.object91.co.za');
+
+-- Update URLs in post excerpts
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'https://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://localhost:8000', 'https://staging.object91.co.za');
+```
+
+3. **Replace URLs** with your actual target environment URL
+4. **Click "Go"** to execute SQL
+
+#### 5. Verify Import Success
+1. **Visit your staging site** (e.g., https://staging.object91.co.za)
+2. **Check WordPress admin** (add `/wp-admin/` to your URL)
+3. **Test key functionality:** navigation, images, forms
+4. **Verify URLs** in posts and pages are correct
+
+### phpMyAdmin Limitations and Workarounds
+
+#### File Size Limitations
+Most shared hosting has upload limits (typically 50MB-500MB):
+
+**Solution for Large Databases:**
+```bash
+# Split large database into smaller files
+split -l 50000 large-database.sql database-part-
+```
+
+Import each part separately in phpMyAdmin.
+
+#### Import Timeout Issues
+For very large databases that timeout:
+
+**Solution:**
+1. **Increase PHP limits** via `.htaccess` in your web root:
+```apache
+php_value max_execution_time 600
+php_value memory_limit 512M
+php_value post_max_size 500M
+php_value upload_max_filesize 500M
+```
+
+2. **Use phpMyAdmin in smaller chunks**
+3. **Contact hosting provider** for temporary limit increases
+
+#### Alternative: Database Restore from Backup
+If phpMyAdmin import fails:
+1. **Use hosting backup restore feature** (if available)
+2. **Contact hosting support** for manual database import
+3. **Use staging → production database copy** via hosting tools
+
+### Environment-Specific phpMyAdmin Workflows
+
+#### Development to Staging
+```sql
+-- Staging-specific URLs (update as needed)
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name IN ('home', 'siteurl');
+```
+
+#### Staging to Production
+```sql
+-- Production-specific URLs (update as needed)
+UPDATE wp_options SET option_value = 'https://trinityhealth.co.zm' WHERE option_name IN ('home', 'siteurl');
+```
+
+### Troubleshooting phpMyAdmin Issues
+
+#### Error: "File too large"
+- Split database file into smaller parts
+- Compress using gzip (.gz extension)
+- Ask hosting provider to increase limits
+
+#### Error: "Incorrect format parameter"
+- Ensure file is valid SQL format
+- Check file extension matches content (.sql, .sql.gz)
+- Try uploading uncompressed .sql file
+
+#### Error: "MySQL server has gone away"
+- Database too large for server limits
+- Split import into smaller chunks
+- Contact hosting provider for assistance
+
+#### URLs not updating after import
+- Clear WordPress caches
+- Check .htaccess file for redirects
+- Verify SSL settings in WordPress
+
+### Best Practices for phpMyAdmin Deployment
+
+1. **Always backup** target database before import
+2. **Test with small database** first to verify process
+3. **Document your specific hosting requirements** (file limits, timeout settings)
+4. **Keep database exports compressed** to save upload time
+5. **Verify all URLs updated** after import
+6. **Clear all caches** after successful import
 
 ## Integration with File Deployment
 

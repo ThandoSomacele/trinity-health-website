@@ -204,10 +204,17 @@ put \"$IMPORT_SCRIPT\" -o \"remote-import.sh\";
 
 # Note: This requires SSH access to execute the script
 print_warning "Database file and import script uploaded to staging server."
-print_warning "To complete the import, you need to:"
-print_warning "1. Log into your staging server via cPanel File Manager or SSH"
+print_warning "To complete the import, you have two options:"
+print_warning ""
+print_warning "Option A - SSH/Terminal Access:"
+print_warning "1. SSH into your staging server"
 print_warning "2. Navigate to $SERVER_PATH"
 print_warning "3. Run: bash remote-import.sh"
+print_warning ""
+print_warning "Option B - Shared Hosting (phpMyAdmin):"
+print_warning "1. See DATABASE-DEPLOYMENT.md section 'Shared Hosting Database Deployment'"
+print_warning "2. Download database file from File Manager"
+print_warning "3. Import via phpMyAdmin with URL replacement SQL"
 
 # Cleanup local temp file
 rm -f "$IMPORT_SCRIPT"
