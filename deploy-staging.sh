@@ -191,9 +191,16 @@ rsync -av --exclude='wp-content/' \
           --exclude='.gitignore' \
           "$PROJECT_ROOT/web/" "$DEPLOY_TEMP/"
 
-# Copy wp-content structure (excluding uploads, plugins, and our theme which we already copied)
-mkdir -p "$DEPLOY_TEMP/wp-content/plugins"
-echo "# Plugin directory - plugins should be managed separately" > "$DEPLOY_TEMP/wp-content/plugins/.gitkeep"
+# Copy plugins directory  
+echo "Copying WordPress plugins..."
+if [ -d "$PROJECT_ROOT/web/wp-content/plugins" ] && [ "$(ls -A "$PROJECT_ROOT/web/wp-content/plugins" 2>/dev/null)" ]; then
+    rsync -av --exclude='node_modules' "$PROJECT_ROOT/web/wp-content/plugins/" "$DEPLOY_TEMP/wp-content/plugins/"
+    echo "✅ Plugins copied successfully"
+else
+    mkdir -p "$DEPLOY_TEMP/wp-content/plugins"
+    echo "# Plugin directory - plugins should be managed separately" > "$DEPLOY_TEMP/wp-content/plugins/.gitkeep"
+    echo "⚠️ No plugins found to copy"
+fi
 
 # Show what's actually being deployed for verification
 echo -e "${YELLOW}📋 Files prepared for deployment:${NC}"
@@ -353,7 +360,7 @@ cd $STAGING_PATH;
 echo 'Setting WordPress core file permissions...';
 chmod -R 644 wp-admin wp-includes;
 chmod 755 wp-admin wp-includes;
-find wp-admin wp-includes -type d -name '*' -exec chmod 755 {} + 2>/dev/null || echo 'Directory permissions set via alternative method';
+chmod -R 755 wp-admin wp-includes 2>/dev/null || echo 'Directory permissions set via alternative method';
 "
 
 if [ "$FRESH_DEPLOY" = true ]; then
@@ -408,7 +415,7 @@ if [ -d "$UPLOADS_FULL_PATH" ] && [ "$(ls -A "$UPLOADS_FULL_PATH" 2>/dev/null)" 
     mirror --reverse --verbose --only-newer;
     echo 'Fixing file permissions for web accessibility...';
     chmod -R 644 .;
-    find . -type d -exec chmod 755 {} \;
+    chmod -R 755 . 2>/dev/null || echo 'Upload directory permissions set';
     "
 else
     echo -e "${YELLOW}⚠️  Uploads folder not found or empty at $UPLOADS_FULL_PATH, skipping...${NC}"
