@@ -175,8 +175,12 @@ echo "[INFO] Updating site URLs to \$SITE_URL..."
 mysql -h"\$DB_HOST" -u"\$DB_USER" -p"\$DB_PASS" "\$DB_NAME" <<SQL
 UPDATE wp_options SET option_value = '\$SITE_URL' WHERE option_name = 'home';
 UPDATE wp_options SET option_value = '\$SITE_URL' WHERE option_name = 'siteurl';
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'https://trinity-health-website.ddev.site', '\$SITE_URL');
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://trinity-health-website.ddev.site', '\$SITE_URL');
 UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://localhost:8000', '\$SITE_URL');
 UPDATE wp_posts SET post_content = REPLACE(post_content, 'https://localhost:8000', '\$SITE_URL');
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'https://trinity-health-website.ddev.site', '\$SITE_URL');
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://trinity-health-website.ddev.site', '\$SITE_URL');
 UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://localhost:8000', '\$SITE_URL');
 UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'https://localhost:8000', '\$SITE_URL');
 SQL

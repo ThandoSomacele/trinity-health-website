@@ -219,8 +219,7 @@ find . -type f | head -5
 
 lftp -c "
 set ftp:ssl-allow no;
-set ftp:port ${STAGING_PORT:-21};
-open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST;
+open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
 cd $STAGING_PATH;
 pwd;
 mirror --reverse --delete --verbose --exclude-glob=wp-config.php --exclude-glob=.htaccess .
@@ -237,9 +236,9 @@ if [ -d "$UPLOADS_FULL_PATH" ]; then
     echo "Uploading media from: $UPLOADS_FULL_PATH"
     lftp -c "
     set ftp:ssl-allow no;
-    set ftp:port ${STAGING_PORT:-21};
-    open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST;
+    open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
     lcd $UPLOADS_FULL_PATH;
+    mkdir -p $STAGING_PATH/wp-content/uploads;
     cd $STAGING_PATH/wp-content/uploads;
     mirror --reverse --verbose
     "
