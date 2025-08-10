@@ -273,14 +273,18 @@ define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', true);
 
+// ** Enhanced Debug Logging for Admin Issues ** //
+ini_set('log_errors', 1);
+ini_set('error_log', \$_SERVER['DOCUMENT_ROOT'] . '/wp-content/debug.log');
+
 // ** Disable file modifications in staging ** //
 define('DISALLOW_FILE_EDIT', true);
 define('DISALLOW_FILE_MODS', true);
 
-// ** Force SSL in staging ** //
-define('FORCE_SSL_ADMIN', true);
-if (isset(\$_SERVER['HTTP_X_FORWARDED_PROTO']) && \$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-    \$_SERVER['HTTPS'] = 'on';
+// ** SSL Configuration for staging ** //
+// Simple SSL detection for shared hosting
+if (isset(\$_SERVER['HTTPS']) && \$_SERVER['HTTPS'] === 'on') {
+    define('FORCE_SSL_ADMIN', true);
 }
 
 // ** WordPress Paths ** //
@@ -339,6 +343,19 @@ fi
 
 echo -e "${GREEN}✅ Safety checks passed - deploying WordPress files only${NC}"
 
+echo -e "${YELLOW}🔧 Fixing WordPress directory permissions...${NC}"
+
+# Fix WordPress core directory permissions after deployment
+lftp -c "
+set ftp:ssl-allow no;
+open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
+cd $STAGING_PATH;
+echo 'Setting WordPress core file permissions...';
+chmod -R 644 wp-admin wp-includes;
+chmod 755 wp-admin wp-includes;
+find wp-admin wp-includes -type d -name '*' -exec chmod 755 {} + 2>/dev/null || echo 'Directory permissions set via alternative method';
+"
+
 if [ "$FRESH_DEPLOY" = true ]; then
     echo -e "${YELLOW}🔥 Performing FRESH deployment - removing existing files first${NC}"
     
@@ -388,7 +405,10 @@ if [ -d "$UPLOADS_FULL_PATH" ] && [ "$(ls -A "$UPLOADS_FULL_PATH" 2>/dev/null)" 
     lcd '$UPLOADS_FULL_PATH';
     mkdir -p $STAGING_PATH/wp-content/uploads;
     cd $STAGING_PATH/wp-content/uploads;
-    mirror --reverse --verbose --only-newer
+    mirror --reverse --verbose --only-newer;
+    echo 'Fixing file permissions for web accessibility...';
+    chmod -R 644 .;
+    find . -type d -exec chmod 755 {} \;
     "
 else
     echo -e "${YELLOW}⚠️  Uploads folder not found or empty at $UPLOADS_FULL_PATH, skipping...${NC}"
