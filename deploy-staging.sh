@@ -196,6 +196,69 @@ fi
 
 echo -e "${GREEN}✅ Deployment package verified clean${NC}"
 
+echo -e "${YELLOW}🔧 Creating staging wp-config.php...${NC}"
+
+# Generate wp-config.php for staging environment
+cat > "$DEPLOY_TEMP/wp-config.php" << EOF
+<?php
+/**
+ * WordPress Configuration - Staging Environment
+ * Generated automatically by deploy-staging.sh
+ */
+
+// ** Database settings ** //
+define('DB_NAME', '$STAGING_DB_NAME');
+define('DB_USER', '$STAGING_DB_USER');
+define('DB_PASSWORD', '$STAGING_DB_PASS');
+define('DB_HOST', '$STAGING_DB_HOST');
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+
+// ** Site URLs ** //
+define('WP_HOME', '$STAGING_SITE_URL');
+define('WP_SITEURL', '$STAGING_SITE_URL');
+
+// ** WordPress Security Keys ** //
+// These should be unique for each environment
+define('AUTH_KEY',         'staging-$(openssl rand -hex 16)');
+define('SECURE_AUTH_KEY',  'staging-$(openssl rand -hex 16)');
+define('LOGGED_IN_KEY',    'staging-$(openssl rand -hex 16)');
+define('NONCE_KEY',        'staging-$(openssl rand -hex 16)');
+define('AUTH_SALT',        'staging-$(openssl rand -hex 16)');
+define('SECURE_AUTH_SALT', 'staging-$(openssl rand -hex 16)');
+define('LOGGED_IN_SALT',   'staging-$(openssl rand -hex 16)');
+define('NONCE_SALT',       'staging-$(openssl rand -hex 16)');
+
+// ** WordPress Database Table prefix ** //
+\$table_prefix = 'wp_';
+
+// ** WordPress Environment ** //
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+define('SCRIPT_DEBUG', true);
+
+// ** Disable file modifications in staging ** //
+define('DISALLOW_FILE_EDIT', true);
+define('DISALLOW_FILE_MODS', true);
+
+// ** Force SSL in staging ** //
+define('FORCE_SSL_ADMIN', true);
+if (isset(\$_SERVER['HTTP_X_FORWARDED_PROTO']) && \$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    \$_SERVER['HTTPS'] = 'on';
+}
+
+// ** WordPress Paths ** //
+if (!defined('ABSPATH')) {
+    define('ABSPATH', __DIR__ . '/');
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
+EOF
+
+echo -e "${GREEN}✅ Created wp-config.php for staging environment${NC}"
+
 echo -e "${YELLOW}🌐 Deploying to staging server...${NC}"
 
 # FTP deployment using lftp
@@ -211,18 +274,42 @@ fi
 echo "Contents of deploy directory before upload:"
 find "$DEPLOY_TEMP" -maxdepth 2 -type f | head -10
 
+# Verify we're in the correct deployment directory
+if [ ! -d "$DEPLOY_TEMP" ]; then
+    echo -e "${RED}❌ Error: Deploy temp directory not found at $DEPLOY_TEMP${NC}"
+    exit 1
+fi
+
 # Change to deployment directory and run lftp from there
 cd "$DEPLOY_TEMP"
 echo "Current directory: $(pwd)"
-echo "Local files to upload:"
-find . -type f | head -5
+echo "Local files to upload (first 5):"
+find . -maxdepth 1 -type f | head -5
+
+# Verify we're NOT in the project root (safety check)
+if [ "$(pwd)" = "$PROJECT_ROOT" ]; then
+    echo -e "${RED}❌ SAFETY CHECK FAILED: Still in project root directory!${NC}"
+    echo -e "${RED}This would upload all project files. Aborting deployment.${NC}"
+    exit 1
+fi
+
+# Verify we have WordPress files in current directory
+if [ ! -f "index.php" ] || [ ! -d "wp-admin" ] || [ ! -d "wp-includes" ]; then
+    echo -e "${RED}❌ Error: WordPress core files not found in deploy directory${NC}"
+    echo "Current directory: $(pwd)"
+    echo "Contents:"
+    ls -la
+    exit 1
+fi
+
+echo -e "${GREEN}✅ Safety checks passed - deploying WordPress files only${NC}"
 
 lftp -c "
 set ftp:ssl-allow no;
 open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
 cd $STAGING_PATH;
 pwd;
-mirror --reverse --delete --verbose --exclude-glob=wp-config.php --exclude-glob=.htaccess .
+mirror --reverse --delete --verbose --exclude-glob=.htaccess .
 "
 
 # Return to project root
@@ -232,18 +319,18 @@ echo -e "${YELLOW}📸 Deploying uploads folder...${NC}"
 
 # Deploy uploads folder separately (without --delete to preserve existing uploads)
 UPLOADS_FULL_PATH="$PROJECT_ROOT/$UPLOADS_PATH"
-if [ -d "$UPLOADS_FULL_PATH" ]; then
+if [ -d "$UPLOADS_FULL_PATH" ] && [ "$(ls -A "$UPLOADS_FULL_PATH" 2>/dev/null)" ]; then
     echo "Uploading media from: $UPLOADS_FULL_PATH"
     lftp -c "
     set ftp:ssl-allow no;
     open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST:${STAGING_PORT:-21};
-    lcd $UPLOADS_FULL_PATH;
+    lcd '$UPLOADS_FULL_PATH';
     mkdir -p $STAGING_PATH/wp-content/uploads;
     cd $STAGING_PATH/wp-content/uploads;
-    mirror --reverse --verbose
+    mirror --reverse --verbose --only-newer
     "
 else
-    echo -e "${YELLOW}⚠️  Uploads folder not found at $UPLOADS_FULL_PATH, skipping...${NC}"
+    echo -e "${YELLOW}⚠️  Uploads folder not found or empty at $UPLOADS_FULL_PATH, skipping...${NC}"
 fi
 
 # Cleanup

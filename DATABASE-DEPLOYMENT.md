@@ -290,15 +290,21 @@ After successful import, update WordPress URLs:
 UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'home';
 UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'siteurl';
 
+-- Fix placeholder URLs (if database was sanitized)
+UPDATE wp_options SET option_value = REPLACE(option_value, '{{SITE_URL}}:33001/wp', 'https://staging.object91.co.za');
+UPDATE wp_options SET option_value = REPLACE(option_value, '{{SITE_URL}}', 'https://staging.object91.co.za');
+
 -- Update URLs in post content
 UPDATE wp_posts SET post_content = REPLACE(post_content, 'https://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
 UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
 UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://localhost:8000', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_content = REPLACE(post_content, '{{SITE_URL}}', 'https://staging.object91.co.za');
 
 -- Update URLs in post excerpts
 UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'https://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
 UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://trinity-health-website.ddev.site', 'https://staging.object91.co.za');
 UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, 'http://localhost:8000', 'https://staging.object91.co.za');
+UPDATE wp_posts SET post_excerpt = REPLACE(post_excerpt, '{{SITE_URL}}', 'https://staging.object91.co.za');
 ```
 
 3. **Replace URLs** with your actual target environment URL
@@ -379,6 +385,95 @@ UPDATE wp_options SET option_value = 'https://trinityhealth.co.zm' WHERE option_
 - Clear WordPress caches
 - Check .htaccess file for redirects
 - Verify SSL settings in WordPress
+
+#### Error: Site URLs show "{{SITE_URL}}" placeholders
+This happens when the sanitized database export wasn't properly processed during import.
+
+**Symptoms:**
+- Site redirects to URLs containing `{{SITE_URL}}`
+- URLs show `{{SITE_URL}}:33001/wp` or similar
+- Site appears broken or redirects incorrectly
+
+**Fix in phpMyAdmin:**
+1. **Check current URLs:**
+```sql
+SELECT option_name, option_value FROM wp_options WHERE option_name IN ('home', 'siteurl');
+```
+
+2. **Update with correct staging URLs:**
+```sql
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'home';
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'siteurl';
+```
+
+3. **Check for remaining placeholder URLs:**
+```sql
+SELECT option_name, option_value FROM wp_options WHERE option_value LIKE '%{{SITE_URL}}%';
+```
+
+4. **Replace any remaining placeholders:**
+```sql
+UPDATE wp_options SET option_value = REPLACE(option_value, '{{SITE_URL}}:33001/wp', 'https://staging.object91.co.za');
+UPDATE wp_options SET option_value = REPLACE(option_value, '{{SITE_URL}}', 'https://staging.object91.co.za');
+```
+
+**For Production Environment:**
+Replace `https://staging.object91.co.za` with `https://trinityhealth.co.zm`
+
+#### Error: wp-admin is unreachable (404 or redirect loops)
+Common issue when WordPress can't find admin files or has incorrect URL configuration.
+
+**Symptoms:**
+- `/wp-admin/` returns 404 Not Found
+- `/wp-admin/` redirects in endless loops
+- Can access front-end but not admin area
+
+**Troubleshooting Steps:**
+
+1. **Verify wp-admin files exist on server:**
+   Check in cPanel File Manager that `/staging.object91.co.za/wp-admin/` directory exists with files
+
+2. **Check .htaccess file:**
+   Create or update `.htaccess` in website root:
+```apache
+# BEGIN WordPress
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+# END WordPress
+```
+
+3. **Verify database URLs are correct:**
+```sql
+SELECT option_name, option_value FROM wp_options WHERE option_name IN ('home', 'siteurl');
+```
+Both should show: `https://staging.object91.co.za` (no trailing slash)
+
+4. **Check wp-config.php has correct paths:**
+   Ensure these lines are in wp-config.php:
+```php
+define('WP_HOME','https://staging.object91.co.za');
+define('WP_SITEURL','https://staging.object91.co.za');
+```
+
+5. **Test direct login URL:**
+   Try: `https://staging.object91.co.za/wp-login.php`
+
+6. **Force WordPress to recognize admin:**
+```sql
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'home';
+UPDATE wp_options SET option_value = 'https://staging.object91.co.za' WHERE option_name = 'siteurl';
+```
+
+7. **Clear any caching:**
+   If hosting has caching, clear it via hosting control panel
+
+**Alternative access methods:**
+- Try: `https://staging.object91.co.za/wp-login.php` (direct login)
+- Check if SSL redirects are working: try `http://staging.object91.co.za/wp-admin/`
 
 ### Best Practices for phpMyAdmin Deployment
 

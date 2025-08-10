@@ -168,10 +168,25 @@ The Trinity Health website requires both file and database deployment. For compr
 ### Quick Database Operations
 
 **Export local database:**
+
+⚠️ **CRITICAL: Use environment-specific export commands to avoid URL placeholder issues!**
+
 ```bash
-./scripts/db-export.sh --full          # Full database export
-./scripts/db-export.sh --content-only  # Content only (posts, pages, media)
+# For staging deployment (URLs automatically replaced)
+./scripts/db-export.sh --for-staging
+
+# For production deployment (URLs automatically replaced)
+./scripts/db-export.sh --for-production
+
+# Generic exports with placeholders (requires manual URL replacement)
+./scripts/db-export.sh --full          # Full database export with placeholders
+./scripts/db-export.sh --content-only  # Content only with placeholders
 ```
+
+**⚠️ Important Notes:**
+- **Always use `--for-staging` when exporting for staging** to avoid `{{SITE_URL}}` placeholder issues
+- Generic exports create placeholders that must be manually replaced in phpMyAdmin
+- Environment-specific exports are ready for immediate import
 
 **Import to staging:**
 ```bash
@@ -196,7 +211,12 @@ For a full site deployment (files + database):
 
 2. **Deploy Database:**
    ```bash
+   # Option A: Direct sync (requires terminal access)
    ./scripts/db-sync.sh staging
+   
+   # Option B: Manual import via phpMyAdmin (shared hosting)
+   ./scripts/db-export.sh --for-staging    # Export with staging URLs
+   # Then import the .gz file via phpMyAdmin
    ```
 
 3. **Verify Deployment:**
@@ -207,6 +227,7 @@ For a full site deployment (files + database):
 ## Next Steps
 
 After successful deployment:
+
 1. Test your staging site thoroughly
 2. Verify database URLs are correctly updated (handled automatically)
 3. Configure any staging-specific plugins or settings
@@ -216,6 +237,7 @@ After successful deployment:
 ## Support
 
 For deployment issues specific to Trinity Health project:
+
 - Check the project's main documentation
 - Verify your DDEV local environment is working properly
 - Test the build process locally before deploying
