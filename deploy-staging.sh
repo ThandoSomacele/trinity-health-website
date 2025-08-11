@@ -289,10 +289,19 @@ define('DISALLOW_FILE_EDIT', true);
 define('DISALLOW_FILE_MODS', true);
 
 // ** SSL Configuration for staging ** //
-// Simple SSL detection for shared hosting
-if (isset(\$_SERVER['HTTPS']) && \$_SERVER['HTTPS'] === 'on') {
+// Comprehensive SSL detection for shared hosting
+if (
+    (!empty(\$_SERVER['HTTPS']) && \$_SERVER['HTTPS'] !== 'off') ||
+    (!empty(\$_SERVER['HTTP_X_FORWARDED_PROTO']) && \$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+    (!empty(\$_SERVER['HTTP_X_FORWARDED_SSL']) && \$_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
+    (\$_SERVER['SERVER_PORT'] == 443)
+) {
+    \$_SERVER['HTTPS'] = 'on';
     define('FORCE_SSL_ADMIN', true);
 }
+
+// Force HTTPS URLs in WordPress
+define('FORCE_SSL', true);
 
 // ** WordPress Paths ** //
 if (!defined('ABSPATH')) {
@@ -304,6 +313,86 @@ require_once ABSPATH . 'wp-settings.php';
 EOF
 
 echo -e "${GREEN}✅ Created wp-config.php for staging environment${NC}"
+
+echo -e "${YELLOW}🔧 Creating .htaccess file for SSL and WordPress...${NC}"
+
+# Generate .htaccess file for staging environment
+cat > "$DEPLOY_TEMP/.htaccess" << 'EOF'
+# Trinity Health Staging - WordPress & SSL Configuration
+# Generated automatically by deploy-staging.sh
+
+# Force HTTPS redirect
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_X_FORWARDED_PROTO} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Security headers
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options SAMEORIGIN
+Header always set X-XSS-Protection "1; mode=block"
+
+# Allow access to WordPress core files and plugins
+<Files ~ "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Files>
+
+# Allow access to wp-includes and wp-content directories
+<Directory "wp-includes">
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Directory>
+
+<Directory "wp-content">
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Directory>
+
+# WordPress pretty permalinks
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Enable browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+EOF
+
+echo -e "${GREEN}✅ Created .htaccess file for staging environment${NC}"
 
 echo -e "${YELLOW}🌐 Deploying to staging server...${NC}"
 
