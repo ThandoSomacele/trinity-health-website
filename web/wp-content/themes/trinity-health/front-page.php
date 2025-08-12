@@ -11,28 +11,28 @@ get_header(); ?>
 <!-- Hero Section -->
 <section class="hero-section bg-trinity-maroon py-20 lg:py-32 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <!-- Hero Content -->
-            <div class="text-white space-y-8">
+            <div class="text-white space-y-6 md:space-y-8">
                 <div class="space-y-2">
-                    <p class="text-white text-lg font-medium tracking-wide uppercase">
+                    <p class="text-white text-base md:text-lg font-medium tracking-wide uppercase">
                         WE TAKE CARE OF YOUR HEALTH
                     </p>
-                    <h1 class="text-trinity-gold text-4xl lg:text-6xl font-bold leading-tight">
+                    <h1 class="text-trinity-gold text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
                         Expert Care For Your Health Needs
                     </h1>
                 </div>
-                <p class="text-lg text-white leading-relaxed max-w-lg">
+                <p class="text-base md:text-lg text-white leading-relaxed max-w-lg">
                     Our goal is to deliver the highest quality healthcare services.
                     We believe that everyone deserves access to excellent medical care without compromising on quality.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
-                        class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center">
-                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
-                            <!-- Heroicons: arrow-right (mini) -->
-                            <svg class="w-3 h-3 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                        class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center group">
+                        <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-2 group-hover:bg-trinity-maroon transition-colors duration-300">
+                            <!-- Heroicons: arrow-right (mini) with stroke -->
+                            <svg class="w-3 h-3 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10m0 0l-4-4m4 4l-4 4" />
                             </svg>
                         </div>
                         Read More
