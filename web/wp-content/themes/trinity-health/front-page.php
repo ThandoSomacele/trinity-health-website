@@ -31,9 +31,7 @@ get_header(); ?>
                         class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center group">
                         <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-2 group-hover:bg-trinity-maroon transition-colors duration-300">
                             <!-- Heroicons: arrow-right (mini) with stroke -->
-                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
+                            <i data-lucide="arrow-right" class="w-3 h-3 text-white"></i>
                         </div>
                         Read More
                     </a>
@@ -41,9 +39,7 @@ get_header(); ?>
                         class="group border-2 border-transparent text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 rounded-full flex items-center justify-center mr-2">
                             <!-- Heroicons: play (mini) -->
-                            <svg class="w-6 h-6 text-white group-hover:text-trinity-maroon transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                            </svg>
+                            <i data-lucide="play" class="w-6 h-6 text-white group-hover:text-trinity-maroon transition-all duration-300"></i>
                         </div>
                         Watch Video
                     </a>
@@ -90,15 +86,13 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
             <!-- Don't Hesitate Card -->
-            <div class="bg-trinity-gold text-black p-8 relative overflow-hidden">
+            <div class="bg-trinity-gold text-gray-900 p-8 relative overflow-hidden">
                 <div class="relative z-10">
-                    <p class="text-2xl text-black mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</p>
+                    <h2 class="text-2xl text-gray-900 mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</h2>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                        class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
+                        class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
                         Book Appointment
                     </a>
                 </div>
@@ -110,13 +104,11 @@ get_header(); ?>
             <div class="bg-trinity-maroon text-white p-8 text-left relative overflow-hidden">
                 <div class="relative z-10">
 
-                    <svg class="w-8 h-8 text-white mb-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                    </svg>
+                    <i data-lucide="clock" class="w-8 h-8 text-white mb-4"></i>
 
                     <div class="text-4xl font-bold mb-2">24</div>
                     <div class="text-trinity-gold font-semibold text-lg mb-2">Hour Service</div>
-                    <p class="text-sm opacity-80">Emergency care available round the clock for your health needs</p>
+                    <p class="text-md opacity-80">Emergency care available round the clock for your health needs</p>
                 </div>
                 <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-trinity-gold/10 rounded-full"></div>
             </div>
@@ -125,13 +117,11 @@ get_header(); ?>
             <div class="bg-trinity-maroon text-white p-8 text-left relative overflow-hidden">
                 <div class="relative z-10">
 
-                    <svg class="w-8 h-8 text-white mb-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                    </svg>
+                    <i data-lucide="users" class="w-8 h-8 text-white mb-4"></i>
 
                     <div class="text-4xl font-bold mb-2">15+</div>
                     <div class="text-trinity-gold font-semibold text-lg mb-2">Expert Doctors</div>
-                    <p class="text-sm opacity-80">Qualified healthcare professionals ready to serve you</p>
+                    <p class="text-md opacity-80">Qualified healthcare professionals ready to serve you</p>
                 </div>
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-trinity-gold/10 rounded-full"></div>
             </div>
@@ -145,42 +135,50 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Services Image -->
             <div class="relative order-2 lg:order-1">
-                <div class="bg-trinity-maroon rounded-3xl p-8 relative overflow-hidden">
-                    <!-- Background Pattern -->
-                    <div class="absolute inset-0 opacity-10">
-                        <div class="absolute top-8 left-8 w-32 h-32 border border-white rounded-full"></div>
-                        <div class="absolute bottom-8 right-8 w-24 h-24 border border-white rounded-full"></div>
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white rounded-full"></div>
+                <div class="relative">
+                    <!-- Dotted Pattern Background -->
+                    <div class="absolute top-12 left-20 grid grid-cols-10 gap-1 opacity-60">
+                        <?php for ($i = 0; $i < 100; $i++) : ?>
+                            <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+                        <?php endfor; ?>
                     </div>
 
-                    <!-- Main Healthcare Image -->
-                    <div class="relative z-10">
-                        <div class="bg-white rounded-2xl p-6 mb-6">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Healthcare Professional Consultation"
-                                class="w-full h-64 object-cover rounded-xl">
-                        </div>
+                    <!-- Background Shape -->
+                    <div class="absolute -top-4 -left-4 w-80 h-80 bg-gray-200 rounded-full opacity-50"></div>
 
-                        <!-- Floating Stats -->
-                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-12 h-12 bg-trinity-gold rounded-full flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-gray-900">120+</div>
-                                    <div class="text-sm text-gray-600">Happy Patients</div>
+                    <!-- Main Doctor Image (Large Rounded) -->
+                    <div class="relative z-10 mb-8">
+                        <div class="w-80 h-96 rounded-full overflow-hidden bg-white p-4 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Doctor with mask working"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Top Right Image (Team Discussion) -->
+                    <div class="absolute top-8 right-0 z-20">
+                        <div class="w-64 h-40 rounded-3xl overflow-hidden bg-white p-2 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Medical team discussion"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right Image (Watch Video) -->
+                    <div class="absolute bottom-0 right-8 z-20">
+                        <div class="relative w-56 h-32 rounded-3xl overflow-hidden bg-white p-2 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Healthcare team collaboration"
+                                class="w-full h-full object-cover rounded-2xl">
+                            <!-- Watch Video Overlay -->
+                            <div class="absolute inset-2 bg-black bg-opacity-50 rounded-2xl flex items-center justify-center">
+                                <div class="flex items-center text-white">
+                                    <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-2">
+                                        <i data-lucide="play" class="w-4 h-4 text-white"></i>
+                                    </div>
+                                    <span class="text-sm font-medium">Watch Video</span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Secondary Image -->
-                        <div class="absolute -top-8 -right-8 w-32 h-32 rounded-2xl overflow-hidden bg-white p-2">
-                            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                                alt="Medical Equipment"
-                                class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
@@ -190,10 +188,11 @@ get_header(); ?>
             <div class="order-1 lg:order-2">
                 <div class="space-y-8">
                     <div>
-                        <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                            Our Best Services &
-                            <span class="text-trinity-gold">Popular Treatment</span>
-                            Here.
+                        <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-wide uppercase mb-2">
+                            ABOUT TRINITY HEALTH
+                        </p>
+                        <h2 class="text-5xl lg:text-6xl font-bold text-trinity-primary-dark mb-6 leading-tight">
+                            Our Best Services & Popular Treatment Here.
                         </h2>
                         <p class="text-xl text-gray-600 leading-relaxed">
                             We offer state-of-the-art medical treatments and popular treatments. Here are some of our best services that we provide for our patients with care and precision.
@@ -204,9 +203,7 @@ get_header(); ?>
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
+                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">General Health Checkups</h4>
@@ -215,9 +212,7 @@ get_header(); ?>
                         </li>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
+                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Heart Patient Improvement</h4>
@@ -226,9 +221,7 @@ get_header(); ?>
                         </li>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
+                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Blood Test Treatment</h4>
@@ -239,11 +232,9 @@ get_header(); ?>
 
                     <div class="pt-4">
                         <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
-                            class="bg-trinity-gold text-black px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
+                            class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
-                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -253,59 +244,93 @@ get_header(); ?>
 </section>
 
 <!-- Service Cards Section -->
-<section class="py-16 bg-gray-50">
+<section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                We're Providing Best Services.
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Our comprehensive healthcare services are designed to meet all your medical needs with the highest quality care.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service Card 1 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+            <!-- Left Section - Title -->
+            <div class="lg:col-span-1">
+                <div class="space-y-4">
+                    <p class="text-base text-orange-400 md:text-lg font-medium tracking-wide uppercase">
+                        MEDICAL SERVICES
+                    </p>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        We're Providing Best Services.
+                    </h2>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Dental Care</h3>
-                <p class="text-gray-600 mb-6">Complete dental care services including checkups, cleanings, and treatments.</p>
-                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
-                    Learn More →
-                </a>
             </div>
 
-            <!-- Service Card 2 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Laboratory Service</h3>
-                <p class="text-gray-600 mb-6">Comprehensive lab testing services with accurate and timely results.</p>
-                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
-                    Learn More →
-                </a>
-            </div>
+            <!-- Right Section - Service Cards -->
+            <div class="lg:col-span-2">
+                <!-- Top Row - 2 Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Eye Care -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="mb-6">
+                            <i data-lucide="eye" class="w-12 h-12 text-gray-800"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Eye Care</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">We understand the importance of clear vision and its impact on your.</p>
+                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
 
-            <!-- Service Card 3 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
-                    </svg>
+                    <!-- Medical Checkup -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="mb-6">
+                            <i data-lucide="stethoscope" class="w-12 h-12 text-gray-800"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Medical Checkup</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">During your medical checkup, our skilled healthcare professionals.</p>
+                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Patient Comfort</h3>
-                <p class="text-gray-600 mb-6">Ensuring patient comfort and care throughout their healthcare journey.</p>
-                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
-                    Learn More →
-                </a>
+
+                <!-- Bottom Row - 3 Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Dental Care -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="mb-6">
+                            <i data-lucide="smile" class="w-12 h-12 text-gray-800"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Dental Care</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">We are passionate about providing top-notch dental care to help you.</p>
+                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Laboratory Service -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="mb-6">
+                            <i data-lucide="heart-pulse" class="w-12 h-12 text-gray-800"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Laboratory Service</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">We understand the critical role that accurate diagnostics play in guiding.</p>
+                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Patient-Centered -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="mb-6">
+                            <i data-lucide="microscope" class="w-12 h-12 text-gray-800"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Patient-Centered</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Hospitals, or clinics with positive reviews and ratings from patients.</p>
+                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -324,12 +349,12 @@ get_header(); ?>
                     </div>
                     <span class="text-trinity-gold font-semibold text-lg">APPOINTMENTS</span>
                 </div>
-                <h2 class="text-4xl font-bold mb-6">Open For Appointments</h2>
+                <h2 class="text-4xl text-white font-bold mb-6">Open For Appointments</h2>
                 <p class="text-gray-200 mb-8 leading-relaxed">
                     Book your appointment today and experience quality healthcare services with our qualified medical professionals.
                 </p>
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                    class="bg-trinity-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Book Appointment
                 </a>
             </div>
@@ -423,7 +448,7 @@ get_header(); ?>
                     <div class="text-2xl font-bold">100+</div>
                     <div class="text-sm">Satisfied Patients</div>
                 </div>
-                <div class="absolute top-4 right-4 bg-trinity-gold text-black p-4 rounded-lg">
+                <div class="absolute top-4 right-4 bg-trinity-gold text-gray-900 p-4 rounded-lg">
                     <div class="text-2xl font-bold">15+</div>
                     <div class="text-sm">Expert Doctors</div>
                 </div>
@@ -468,7 +493,7 @@ get_header(); ?>
                 </div>
 
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>"
-                    class="bg-trinity-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Meet Our Team
                 </a>
             </div>
@@ -607,7 +632,7 @@ get_header(); ?>
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold"></textarea>
-                    <button type="submit" class="bg-trinity-gold text-black px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
+                    <button type="submit" class="bg-trinity-gold text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
                         Send Message
                     </button>
                 </form>

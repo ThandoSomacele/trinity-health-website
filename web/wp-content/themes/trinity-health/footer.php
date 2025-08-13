@@ -151,6 +151,11 @@
 
 <?php wp_footer(); ?>
 
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+
 </body>
 
 </html>
