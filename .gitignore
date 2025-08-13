@@ -22,7 +22,7 @@ web/.htaccess
 web/wp-content/*
 !web/wp-content/themes/
 web/wp-content/themes/*
-!web/wp-content/themes/trinity-health/
+!web/wp-content/themes/trinity-health-theme/
 
 # Uploads and cache
 web/wp-content/uploads/
@@ -46,8 +46,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build outputs
-web/wp-content/themes/trinity-health/build/
-web/wp-content/themes/trinity-health/node_modules/
+web/wp-content/themes/trinity-health-theme/build/
+web/wp-content/themes/trinity-health-theme/node_modules/
 
 # Environment files
 .env

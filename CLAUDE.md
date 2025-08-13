@@ -31,7 +31,7 @@ Check our tracker in docs folder when we continue with our development.
 
 **Application Architecture:**
 - DDEV local development environment
-- Traditional WordPress file structure with wp-content/themes/trinity-health
+- Traditional WordPress file structure with wp-content/themes/trinity-health-theme
 - wp-scripts build system with Webpack configuration
 - Advanced Custom Fields (ACF) for structured content (services, team, locations)
 - Custom Post Types for health services and audiology services
@@ -60,7 +60,7 @@ Modern healthcare website for Trinity Health Zambia built with traditional WordP
 ## Development Memories
 - Remember we are using DDEV to run the site so we can use `ddev exec wp` for WP-CLI commands in the container
 - Use `ddev npm` for Node.js/npm commands in the development environment
-- Theme located at `wp-content/themes/trinity-health`
+- Theme located at `wp-content/themes/trinity-health-theme`
 - Remember whatever design you are provided with for this project keep to our matching or corresponding brand colors do not use the design colors.
 
 ## Technology Stack
@@ -75,7 +75,7 @@ Modern healthcare website for Trinity Health Zambia built with traditional WordP
 
 ## File Structure
 ```
-wp-content/themes/trinity-health/
+wp-content/themes/trinity-health-theme/
 ├── assets/
 │   ├── css/
 │   │   ├── src/
@@ -110,7 +110,7 @@ wp-content/themes/trinity-health/
 - `ddev npm run build` - Build production assets
 - `ddev npm run start` - Start development build with watch
 - `ddev exec wp plugin list` - List WordPress plugins
-- `ddev exec wp theme activate trinity-health` - Activate our theme
+- `ddev exec wp theme activate trinity-health-theme` - Activate our theme
 
 ## Content Structure
 - **Custom Post Types**: Health Services, Audiology Services, Team Members

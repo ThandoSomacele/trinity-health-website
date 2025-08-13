@@ -203,7 +203,7 @@ get_header(); ?>
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-black"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">General Health Checkups</h4>
@@ -250,7 +250,7 @@ get_header(); ?>
             <!-- Left Section - Title -->
             <div class="lg:col-span-1">
                 <div class="space-y-4">
-                    <p class="text-base text-orange-400 md:text-lg font-medium tracking-wide uppercase">
+                    <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-wide uppercase">
                         MEDICAL SERVICES
                     </p>
                     <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
