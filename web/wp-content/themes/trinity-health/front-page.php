@@ -88,11 +88,11 @@ get_header(); ?>
 <!-- Stats & Appointment Section -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
             <!-- Don't Hesitate Card -->
-            <div class="bg-trinity-gold text-white p-8 rounded-2xl relative overflow-hidden">
+            <div class="bg-trinity-gold text-white p-8 relative overflow-hidden">
                 <div class="relative z-10">
-                    <h3 class="text-2xl font-bold mb-4 leading-tight">Don't Hesitate To Contact Us.</h3>
+                    <p class="text-2xl text-white mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</p>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
                         class="bg-white text-trinity-gold px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
@@ -107,13 +107,13 @@ get_header(); ?>
             </div>
 
             <!-- Stats Card 1 -->
-            <div class="bg-trinity-maroon text-white p-8 rounded-2xl text-center relative overflow-hidden">
+            <div class="bg-trinity-maroon text-white p-8 text-left relative overflow-hidden">
                 <div class="relative z-10">
-                    <div class="w-16 h-16 bg-trinity-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
+
+                    <svg class="w-8 h-8 text-white mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+
                     <div class="text-4xl font-bold mb-2">24</div>
                     <div class="text-trinity-gold font-semibold text-lg mb-2">Hour Service</div>
                     <p class="text-sm opacity-80">Emergency care available round the clock for your health needs</p>
@@ -122,13 +122,13 @@ get_header(); ?>
             </div>
 
             <!-- Stats Card 2 -->
-            <div class="bg-trinity-maroon text-white p-8 rounded-2xl text-center relative overflow-hidden">
+            <div class="bg-trinity-maroon text-white p-8 text-left relative overflow-hidden">
                 <div class="relative z-10">
-                    <div class="w-16 h-16 bg-trinity-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                    </div>
+
+                    <svg class="w-8 h-8 text-white mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                    </svg>
+
                     <div class="text-4xl font-bold mb-2">15+</div>
                     <div class="text-trinity-gold font-semibold text-lg mb-2">Expert Doctors</div>
                     <p class="text-sm opacity-80">Qualified healthcare professionals ready to serve you</p>
