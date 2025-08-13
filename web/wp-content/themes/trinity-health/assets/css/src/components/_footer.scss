@@ -20,41 +20,41 @@
   .footer-section {
     .footer-nav-menu {
       @apply list-none m-0 p-0;
-      
+
       li {
         @apply mb-2;
-        
+
         a {
-          @apply block text-gray-300 hover:text-trinity-gold-light transition-colors duration-300 text-sm;
+          @apply block text-gray-100 hover:text-trinity-gold-light transition-colors duration-300 text-sm;
         }
       }
     }
   }
-  
+
   // Newsletter form styling
   .newsletter-form {
-    input[type="email"] {
-      @apply flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-600 rounded-l-md text-white placeholder-gray-400;
-      
+    input[type='email'] {
+      @apply flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-100 rounded-l-md text-white placeholder-gray-200;
+
       &:focus {
         @apply outline-none ring-2 ring-trinity-gold border-transparent;
       }
     }
-    
-    button[type="submit"] {
-      @apply px-4 py-2 text-sm bg-trinity-gold hover:bg-trinity-gold-dark text-white rounded-r-md font-medium transition-colors duration-300;
-      
+
+    button[type='submit'] {
+      @apply px-4 py-2 text-sm bg-trinity-gold hover:bg-trinity-gold-dark text-black rounded-r-md font-medium transition-colors duration-300;
+
       &:focus {
         @apply outline-none ring-2 ring-trinity-gold ring-offset-2 ring-offset-trinity-maroon;
       }
     }
   }
-  
+
   // Social media links
   .social-links {
     a {
       @apply inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300;
-      
+
       &:hover {
         @apply transform scale-110;
       }

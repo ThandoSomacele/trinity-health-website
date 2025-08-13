@@ -16,7 +16,7 @@ get_header(); ?>
             <div class="text-white space-y-6 md:space-y-8">
                 <div class="space-y-2">
                     <p class="text-white text-base md:text-lg font-medium tracking-wide uppercase">
-                        WE TAKE CARE OF YOUR HEALTH
+                        WELCOME TO TRINITY HEALTH
                     </p>
                     <h1 class="text-trinity-gold text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
                         Expert Care For Your Health Needs
@@ -31,17 +31,17 @@ get_header(); ?>
                         class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center group">
                         <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-2 group-hover:bg-trinity-maroon transition-colors duration-300">
                             <!-- Heroicons: arrow-right (mini) with stroke -->
-                            <svg class="w-3 h-3 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10m0 0l-4-4m4 4l-4 4" />
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </div>
                         Read More
                     </a>
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
-                        class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
+                        class="group border-2 border-transparent text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 rounded-full flex items-center justify-center mr-2">
                             <!-- Heroicons: play (mini) -->
-                            <svg class="w-6 h-6 text-trinity-gold" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-6 h-6 text-white group-hover:text-trinity-maroon transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                             </svg>
                         </div>
@@ -90,12 +90,12 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
             <!-- Don't Hesitate Card -->
-            <div class="bg-trinity-gold text-white p-8 relative overflow-hidden">
+            <div class="bg-trinity-gold text-black p-8 relative overflow-hidden">
                 <div class="relative z-10">
-                    <p class="text-2xl text-white mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</p>
+                    <p class="text-2xl text-black mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</p>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                        class="bg-white text-trinity-gold px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
+                        class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                         </svg>
@@ -239,7 +239,7 @@ get_header(); ?>
 
                     <div class="pt-4">
                         <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
-                            class="bg-trinity-gold text-white px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
+                            class="bg-trinity-gold text-black px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -329,7 +329,7 @@ get_header(); ?>
                     Book your appointment today and experience quality healthcare services with our qualified medical professionals.
                 </p>
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                    class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Book Appointment
                 </a>
             </div>
@@ -423,7 +423,7 @@ get_header(); ?>
                     <div class="text-2xl font-bold">100+</div>
                     <div class="text-sm">Satisfied Patients</div>
                 </div>
-                <div class="absolute top-4 right-4 bg-trinity-gold text-white p-4 rounded-lg">
+                <div class="absolute top-4 right-4 bg-trinity-gold text-black p-4 rounded-lg">
                     <div class="text-2xl font-bold">15+</div>
                     <div class="text-sm">Expert Doctors</div>
                 </div>
@@ -468,7 +468,7 @@ get_header(); ?>
                 </div>
 
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>"
-                    class="bg-trinity-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Meet Our Team
                 </a>
             </div>
@@ -607,7 +607,7 @@ get_header(); ?>
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold"></textarea>
-                    <button type="submit" class="bg-trinity-gold text-white px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
+                    <button type="submit" class="bg-trinity-gold text-black px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
                         Send Message
                     </button>
                 </form>

@@ -12,17 +12,18 @@ module.exports = {
     extend: {
       colors: {
         'trinity': {
-          'primary': '#2B5B4A', // Dark green from design
-          'primary-light': '#387A63',
-          'primary-dark': '#1F4135',
+          'primary': '#A31D1D', // Modern flat maroon - main brand color
+          'primary-light': '#E5D0AC', // Warm accent for hover states and highlights
+          'primary-dark': '#6D2323', // Deep maroon for emphasis and contrast
+          'background': '#FEF9E1', // Warm cream background
           'secondary': '#2563eb',
           'accent': '#16a34a',
-          'maroon': '#880005', // Original Trinity Health brand color
-          'maroon-light': '#a50006',
-          'maroon-dark': '#650004',
-          'gold': '#D4AF37', // Gold accent color that complements maroon
-          'gold-light': '#F4D03F', // Light gold
-          'gold-dark': '#B8860B', // Dark goldenrod
+          'maroon': '#A31D1D', // Updated Trinity Health brand color (flat UI)
+          'maroon-light': '#E5D0AC', // Light warm accent
+          'maroon-dark': '#6D2323', // Dark maroon
+          'gold': '#E5D0AC', // Updated gold to match new warm palette
+          'gold-light': '#FEF9E1', // Light cream
+          'gold-dark': '#D4B896', // Medium warm tone
         },
         'neutral': {
           50: '#fafafa',
