@@ -50,10 +50,8 @@
 
                     <!-- Book Appointment Button -->
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                        class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-lg hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center ml-4">
-                        <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-                        </svg>
+                        class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center ml-4">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
                         <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                     </a>
                 </nav>
@@ -61,9 +59,7 @@
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle lg:hidden text-white p-2" aria-controls="primary-menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e('Menu', 'trinity-health'); ?></span>
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
 
@@ -81,7 +77,7 @@
                     ?>
                     <div class="px-4 pt-4">
                         <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                            class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-lg hover:bg-trinity-gold hover:text-black transition-all duration-300">
+                            class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300">
                             <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                         </a>
                     </div>

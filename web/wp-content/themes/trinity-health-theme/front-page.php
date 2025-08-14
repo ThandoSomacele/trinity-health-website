@@ -27,19 +27,19 @@ get_header(); ?>
                     We believe that everyone deserves access to excellent medical care without compromising on quality.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <!-- Primary CTA Button -->
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
-                        class="bg-transparent text-trinity-gold border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-light transition-all duration-300 text-center inline-flex items-center justify-center group">
-                        <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-2 group-hover:bg-trinity-maroon transition-colors duration-300">
-                            <!-- Heroicons: arrow-right (mini) with stroke -->
-                            <i data-lucide="arrow-right" class="w-3 h-3 text-white"></i>
+                        class="group/read bg-trinity-gold text-trinity-maroon border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold group-hover/read:bg-transparent group-hover/read:text-trinity-gold transition-all duration-300 text-center inline-flex items-center justify-center">
+                        <div class="w-6 h-6 bg-trinity-maroon rounded-full flex items-center justify-center mr-2 group-hover/read:bg-trinity-gold transition-colors duration-300">
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-trinity-gold group-hover/read:text-trinity-maroon"></i>
                         </div>
                         Read More
                     </a>
+                    <!-- Secondary CTA Button -->
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
-                        class="group border-2 border-transparent text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
-                        <div class="w-6 h-6 rounded-full flex items-center justify-center mr-2">
-                            <!-- Heroicons: play (mini) -->
-                            <i data-lucide="play" class="w-6 h-6 text-white group-hover:text-trinity-maroon transition-all duration-300"></i>
+                        class="group/video bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold group-hover/video:bg-white group-hover/video:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
+                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2 group-hover/video:bg-trinity-maroon transition-colors duration-300">
+                            <i data-lucide="play" class="w-5 h-5 text-trinity-maroon group-hover/video:text-white"></i>
                         </div>
                         Watch Video
                     </a>
@@ -270,7 +270,7 @@ get_header(); ?>
                         </div>
                         <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Eye Care</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">We understand the importance of clear vision and its impact on your.</p>
-                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
@@ -283,7 +283,7 @@ get_header(); ?>
                         </div>
                         <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Medical Checkup</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">During your medical checkup, our skilled healthcare professionals.</p>
-                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
@@ -303,7 +303,7 @@ get_header(); ?>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Dental Care</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">We are passionate about providing top-notch dental care to help you.</p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -316,7 +316,7 @@ get_header(); ?>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Service</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">We understand the critical role that accurate diagnostics play in guiding.</p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -329,7 +329,7 @@ get_header(); ?>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Patient-Centered</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">Hospitals, or clinics with positive reviews and ratings from patients.</p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -341,25 +341,26 @@ get_header(); ?>
 <!-- Appointment CTA Section -->
 <section class="py-16 bg-trinity-primary">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div class="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+            <div class="lg:col-span-6 flex gap-x-4">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
+                    <div class="w-20 h-20 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
+                        <i data-lucide="calendar" class="w-12 h-12 text-gray-800"></i>
                     </div>
-                    <span class="text-trinity-gold font-semibold text-lg">APPOINTMENTS</span>
                 </div>
-                <h2 class="text-4xl text-white font-bold mb-6">Open For Appointments</h2>
-                <p class="text-gray-200 mb-8 leading-relaxed">
-                    Book your appointment today and experience quality healthcare services with our qualified medical professionals.
-                </p>
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Open For Appointments</h2>
+                    <p class="text-gray-200 mb-8 leading-relaxed">
+                        Book your appointment today and experience quality healthcare services with our qualified medical professionals.
+                    </p>
+                </div>
             </div>
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
-                Book Appointment
-            </a>
+            <div class="lg:col-span-3 flex justify-center col-end-10">
+                <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                    class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    Book Appointment
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -367,11 +368,16 @@ get_header(); ?>
 <!-- Directory Section -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                Expert Care For Your Health Needs
-            </h2>
-            <p class="text-gray-600 max-w-3xl mx-auto">
+        <div class="text-left mb-12 flex justify-between items-center">
+            <div class="w-full md:w-2/5">
+                <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
+                    HOW WE WORK
+                </p>
+                <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight ">
+                    A Comprehensive Directory for Your Healthcare Services
+                </h2>
+            </div>
+            <p class="text-gray-600 max-w-3xl mx-auto w-full md:w-1/2">
                 We have integrated and interactive map where you can find healthcare providers, specialists, and medical facilities, ensuring easy access to quality care wherever you are.
             </p>
         </div>
@@ -380,47 +386,33 @@ get_header(); ?>
             <!-- Directory Item 1 -->
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
+                    <i data-lucide="calendar" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Book An Appointment</h3>
-                <p class="text-gray-600 text-sm">Schedule your visit with our specialists</p>
+                <p class="text-lg font-bold text-gray-800 mb-2">Book An Appointment</p>
             </div>
 
             <!-- Directory Item 2 -->
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+                    <i data-lucide="stethoscope" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Conduct Checkup</h3>
-                <p class="text-gray-600 text-sm">Comprehensive health examinations</p>
+                <p class="text-lg font-bold text-gray-800 mb-2">Conduct Checkup</p>
             </div>
 
             <!-- Directory Item 3 -->
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
-                    </svg>
+                    <i data-lucide="activity" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Perform Treatment</h3>
-                <p class="text-gray-600 text-sm">Advanced medical treatments</p>
+                <p class="text-lg font-bold text-gray-800 mb-2">Perform Treatment</p>
             </div>
 
             <!-- Directory Item 4 -->
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
-                        <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
-                    </svg>
+                    <i data-lucide="credit-card" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Prescribe & Payment</h3>
-                <p class="text-gray-600 text-sm">Medicine prescription and billing</p>
+                <p class="text-lg font-bold text-gray-800 mb-2">Prescribe & Payment</p>
             </div>
         </div>
     </div>
@@ -484,10 +476,7 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>"
-                    class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
-                    Meet Our Team
-                </a>
+
             </div>
         </div>
     </div>
@@ -624,7 +613,7 @@ get_header(); ?>
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold"></textarea>
-                    <button type="submit" class="bg-trinity-gold text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
+                    <button type="submit" class="bg-trinity-gold text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
                         Send Message
                     </button>
                 </form>
@@ -637,16 +626,11 @@ get_header(); ?>
                     <p class="mb-6">We're here to help you with any questions or concerns about your health.</p>
                     <div class="space-y-4">
                         <div class="flex items-center justify-center">
-                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                            </svg>
+                            <i data-lucide="phone" class="w-6 h-6 mr-3"></i>
                             <span>+260 XXX XXX XXX</span>
                         </div>
                         <div class="flex items-center justify-center">
-                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
+                            <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
                             <span>info@trinityhealth.zm</span>
                         </div>
                     </div>
