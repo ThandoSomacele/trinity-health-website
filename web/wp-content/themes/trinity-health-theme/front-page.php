@@ -15,7 +15,7 @@ get_header(); ?>
             <!-- Hero Content -->
             <div class="text-white space-y-6 md:space-y-8">
                 <div class="space-y-2">
-                    <p class="text-white text-base md:text-lg font-medium tracking-wide uppercase">
+                    <p class="text-white text-base md:text-lg font-medium tracking-widest uppercase">
                         WELCOME TO TRINITY HEALTH
                     </p>
                     <h1 class="text-trinity-gold text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
@@ -86,12 +86,12 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
             <!-- Don't Hesitate Card -->
-            <div class="bg-trinity-gold text-gray-900 p-8 relative overflow-hidden">
+            <div class="bg-trinity-gold text-gray-800 p-8 relative overflow-hidden">
                 <div class="relative z-10">
-                    <h2 class="text-2xl text-gray-900 mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</h2>
+                    <h2 class="text-2xl text-gray-800 mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</h2>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                        class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
+                        class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
                         <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
                         Book Appointment
                     </a>
@@ -188,7 +188,7 @@ get_header(); ?>
             <div class="order-1 lg:order-2">
                 <div class="space-y-8">
                     <div>
-                        <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-wide uppercase mb-2">
+                        <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
                             ABOUT TRINITY HEALTH
                         </p>
                         <h2 class="text-5xl lg:text-6xl font-bold text-trinity-primary-dark mb-6 leading-tight">
@@ -203,28 +203,28 @@ get_header(); ?>
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-black"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-1">General Health Checkups</h4>
+                                <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">General Health Checkups</h4>
                                 <p class="text-gray-600">Comprehensive health examinations and preventive care services</p>
                             </div>
                         </li>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-1">Heart Patient Improvement</h4>
+                                <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">Heart Patient Improvement</h4>
                                 <p class="text-gray-600">Specialized cardiovascular care and heart health management</p>
                             </div>
                         </li>
                         <li class="flex items-start">
                             <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-1">Blood Test Treatment</h4>
+                                <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">Blood Test Treatment</h4>
                                 <p class="text-gray-600">Advanced laboratory testing and diagnostic services</p>
                             </div>
                         </li>
@@ -232,7 +232,7 @@ get_header(); ?>
 
                     <div class="pt-4">
                         <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
-                            class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
+                            class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
                         </a>
@@ -250,10 +250,10 @@ get_header(); ?>
             <!-- Left Section - Title -->
             <div class="lg:col-span-1">
                 <div class="space-y-4">
-                    <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-wide uppercase">
+                    <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase">
                         MEDICAL SERVICES
                     </p>
-                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
                         We're Providing Best Services.
                     </h2>
                 </div>
@@ -264,73 +264,75 @@ get_header(); ?>
                 <!-- Top Row - 2 Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <!-- Eye Care -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                         <div class="mb-6">
-                            <i data-lucide="eye" class="w-12 h-12 text-gray-800"></i>
+                            <i data-lucide="eye" class="w-12 h-12 text-trinity-maroon-dark"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Eye Care</h3>
+                        <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Eye Care</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">We understand the importance of clear vision and its impact on your.</p>
-                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
 
                     <!-- Medical Checkup -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                         <div class="mb-6">
-                            <i data-lucide="stethoscope" class="w-12 h-12 text-gray-800"></i>
+                            <i data-lucide="stethoscope" class="w-12 h-12 text-trinity-maroon-dark"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Medical Checkup</h3>
+                        <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Medical Checkup</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">During your medical checkup, our skilled healthcare professionals.</p>
-                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Bottom Row - 3 Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Dental Care -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="mb-6">
-                            <i data-lucide="smile" class="w-12 h-12 text-gray-800"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Dental Care</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">We are passionate about providing top-notch dental care to help you.</p>
-                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
-                            Read More
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
 
-                    <!-- Laboratory Service -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="mb-6">
-                            <i data-lucide="heart-pulse" class="w-12 h-12 text-gray-800"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Laboratory Service</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">We understand the critical role that accurate diagnostics play in guiding.</p>
-                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
-                            Read More
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
+            </div>
 
-                    <!-- Patient-Centered -->
-                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="mb-6">
-                            <i data-lucide="microscope" class="w-12 h-12 text-gray-800"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Patient-Centered</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">Hospitals, or clinics with positive reviews and ratings from patients.</p>
-                        <a href="#" class="w-full bg-orange-300 hover:bg-orange-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
-                            Read More
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
+        </div>
+        <!-- Bottom Row - 3 Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Dental Care -->
+            <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-6">
+                    <i data-lucide="smile" class="w-12 h-12 text-trinity-maroon-dark"></i>
                 </div>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Dental Care</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">We are passionate about providing top-notch dental care to help you.</p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Laboratory Service -->
+            <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-6">
+                    <i data-lucide="heart-pulse" class="w-12 h-12 text-trinity-maroon-dark"></i>
+                </div>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Service</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">We understand the critical role that accurate diagnostics play in guiding.</p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Patient-Centered -->
+            <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-6">
+                    <i data-lucide="microscope" class="w-12 h-12 text-trinity-maroon-dark"></i>
+                </div>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Patient-Centered</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">Hospitals, or clinics with positive reviews and ratings from patients.</p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -340,7 +342,7 @@ get_header(); ?>
 <section class="py-16 bg-trinity-primary">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-white">
+            <div>
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
                         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -353,21 +355,11 @@ get_header(); ?>
                 <p class="text-gray-200 mb-8 leading-relaxed">
                     Book your appointment today and experience quality healthcare services with our qualified medical professionals.
                 </p>
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                    class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
-                    Book Appointment
-                </a>
             </div>
-
-            <div class="text-center">
-                <div class="bg-white rounded-lg p-8 shadow-xl">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to get started?</h3>
-                    <p class="text-gray-600 mb-6">Contact us today to schedule your appointment</p>
-                    <div class="text-trinity-gold font-bold text-3xl">
-                        +260 XXX XXX XXX
-                    </div>
-                </div>
-            </div>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                Book Appointment
+            </a>
         </div>
     </div>
 </section>
@@ -376,7 +368,7 @@ get_header(); ?>
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
                 Expert Care For Your Health Needs
             </h2>
             <p class="text-gray-600 max-w-3xl mx-auto">
@@ -392,7 +384,7 @@ get_header(); ?>
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Book An Appointment</h3>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Book An Appointment</h3>
                 <p class="text-gray-600 text-sm">Schedule your visit with our specialists</p>
             </div>
 
@@ -403,7 +395,7 @@ get_header(); ?>
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Conduct Checkup</h3>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Conduct Checkup</h3>
                 <p class="text-gray-600 text-sm">Comprehensive health examinations</p>
             </div>
 
@@ -415,7 +407,7 @@ get_header(); ?>
                         <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Perform Treatment</h3>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Perform Treatment</h3>
                 <p class="text-gray-600 text-sm">Advanced medical treatments</p>
             </div>
 
@@ -427,7 +419,7 @@ get_header(); ?>
                         <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Prescribe & Payment</h3>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Prescribe & Payment</h3>
                 <p class="text-gray-600 text-sm">Medicine prescription and billing</p>
             </div>
         </div>
@@ -448,7 +440,7 @@ get_header(); ?>
                     <div class="text-2xl font-bold">100+</div>
                     <div class="text-sm">Satisfied Patients</div>
                 </div>
-                <div class="absolute top-4 right-4 bg-trinity-gold text-gray-900 p-4 rounded-lg">
+                <div class="absolute top-4 right-4 bg-trinity-gold text-gray-800 p-4 rounded-lg">
                     <div class="text-2xl font-bold">15+</div>
                     <div class="text-sm">Expert Doctors</div>
                 </div>
@@ -456,7 +448,7 @@ get_header(); ?>
 
             <!-- Team Content -->
             <div>
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">
                     Consultations with Qualified doctors
                 </h2>
 
@@ -466,7 +458,7 @@ get_header(); ?>
                             <span class="text-white text-sm">✓</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 mb-1">Are telemedicine consultations available?</h4>
+                            <h4 class="font-semibold text-gray-800 mb-1">Are telemedicine consultations available?</h4>
                             <p class="text-gray-600 text-sm">Yes, we offer virtual consultations for your convenience and safety.</p>
                         </div>
                     </div>
@@ -476,7 +468,7 @@ get_header(); ?>
                             <span class="text-white text-sm">✓</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 mb-1">Do you accept health insurance?</h4>
+                            <h4 class="font-semibold text-gray-800 mb-1">Do you accept health insurance?</h4>
                             <p class="text-gray-600 text-sm">We accept most major health insurance plans and offer payment options.</p>
                         </div>
                     </div>
@@ -486,14 +478,14 @@ get_header(); ?>
                             <span class="text-white text-sm">✓</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 mb-1">How much does a consultation cost?</h4>
+                            <h4 class="font-semibold text-gray-800 mb-1">How much does a consultation cost?</h4>
                             <p class="text-gray-600 text-sm">Consultation fees vary by service. Contact us for detailed pricing information.</p>
                         </div>
                     </div>
                 </div>
 
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>"
-                    class="bg-trinity-gold text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
                     Meet Our Team
                 </a>
             </div>
@@ -517,7 +509,7 @@ get_header(); ?>
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-900">Mary Johnson</h4>
+                        <h4 class="font-bold text-gray-800">Mary Johnson</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -531,7 +523,7 @@ get_header(); ?>
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-900">John Doe</h4>
+                        <h4 class="font-bold text-gray-800">John Doe</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -545,7 +537,7 @@ get_header(); ?>
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-900">Robert Lee</h4>
+                        <h4 class="font-bold text-gray-800">Robert Lee</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -561,7 +553,7 @@ get_header(); ?>
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
                 Latest News & Articles.
             </h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
@@ -577,7 +569,7 @@ get_header(); ?>
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Best Hygiene Options For Healthy Living</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Best Hygiene Options For Healthy Living</h3>
                     <p class="text-gray-600 text-sm mb-4">Learn about the best hygiene practices that can significantly improve your overall health and wellbeing...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
                         Read More →
@@ -592,7 +584,7 @@ get_header(); ?>
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">The Importance of Regular Health Checkups</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">The Importance of Regular Health Checkups</h3>
                     <p class="text-gray-600 text-sm mb-4">Discover why regular health screenings are crucial for early detection and prevention of diseases...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
                         Read More →
@@ -607,7 +599,7 @@ get_header(); ?>
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Nutrition Guide for Heart Patients</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrition Guide for Heart Patients</h3>
                     <p class="text-gray-600 text-sm mb-4">A comprehensive guide to heart-healthy nutrition that can help improve cardiovascular health...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
                         Read More →
@@ -624,7 +616,7 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Contact Form -->
             <div class="bg-white rounded-lg p-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Form.</h3>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Form.</h3>
                 <form class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
@@ -632,7 +624,7 @@ get_header(); ?>
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold"></textarea>
-                    <button type="submit" class="bg-trinity-gold text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
+                    <button type="submit" class="bg-trinity-gold text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
                         Send Message
                     </button>
                 </form>
