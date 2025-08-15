@@ -50,7 +50,7 @@ get_header(); ?>
             <div class="relative">
                 <!-- Decorative dots pattern -->
                 <div class="relative inset-0">
-                    <div class="absolute top-8 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
+                    <div class="absolute top-8 md:top-16 left-2/4 md:left-2/4 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
                         <?php for ($i = 0; $i < 264; $i++): ?>
                             <div class="w-1 h-1 bg-white rounded-full"></div>
                         <?php endfor; ?>
@@ -58,16 +58,16 @@ get_header(); ?>
                 </div>
 
                 <div class="relative z-10 flex gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
-                    <!-- Left Circle - Main Doctor Image -->
+                    <!-- Left Circle Image -->
                     <div class="relative lg:-top-12">
-                        <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                        <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-64 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
                                 alt="Professional Female Doctor"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
 
-                    <!-- Right Oval - Healthcare Team Image -->
+                    <!-- Right Oval Image -->
                     <div class="relative top-12">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
@@ -146,7 +146,7 @@ get_header(); ?>
 
                 <div class="relative z-10 flex gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
                     <!-- Left Circle Image -->
-                    <div class="relative sm:top-3 lg:top-18">
+                    <div class="relative top-6">
                         <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
                                 alt="Professional Female Doctor"
@@ -155,7 +155,7 @@ get_header(); ?>
                     </div>
 
                     <!-- Right Oval Image -->
-                    <div class="relative sm:-top-10 lg:-top-18">
+                    <div class="relative -top-10">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
                             <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
                                 alt="Healthcare Team"
@@ -227,9 +227,9 @@ get_header(); ?>
 <!-- Service Cards Section -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
             <!-- Left Section - Title -->
-            <div class="lg:col-span-1">
+            <div class="lg:col-span-1 flex items-center">
                 <div class="space-y-4">
                     <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase">
                         MEDICAL SERVICES
@@ -654,12 +654,12 @@ get_header(); ?>
             <!-- Article 3 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="h-48 bg-white flex items-center justify-center rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Audiology Services" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrition Guide for Heart Patients</h3>
-                    <p class="text-gray-600 text-sm mb-4">A comprehensive guide to heart-healthy nutrition that can help improve cardiovascular health...</p>
+                    <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Audiology</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding Hearing Health and Audiology Services</h3>
+                    <p class="text-gray-600 text-sm mb-4">Learn about our comprehensive audiology services including hearing tests, hearing aid fittings, and hearing health maintenance...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
                         Read More →
                     </a>
@@ -709,12 +709,12 @@ get_header(); ?>
                     <div class="swiper-slide">
                         <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="h-48 bg-white flex items-center justify-center rounded-lg">
-                                <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                                <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Audiology Services" class="rounded-lg w-full h-full object-cover">
                             </div>
                             <div class="p-6">
-                                <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrition Guide for Heart Patients</h3>
-                                <p class="text-gray-600 text-sm mb-4">A comprehensive guide to heart-healthy nutrition that can help improve cardiovascular health...</p>
+                                <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Audiology</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding Hearing Health and Audiology Services</h3>
+                                <p class="text-gray-600 text-sm mb-4">Learn about our comprehensive audiology services including hearing tests, hearing aid fittings, and hearing health maintenance...</p>
                                 <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
                                     Read More →
                                 </a>
