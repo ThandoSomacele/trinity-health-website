@@ -137,7 +137,7 @@ get_header(); ?>
             <div class="relative">
                 <!-- Decorative dots pattern -->
                 <div class="relative inset-0">
-                    <div class="absolute top-3 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
+                    <div class="absolute top-4 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
                         <?php for ($i = 0; $i < 264; $i++): ?>
                             <div class="w-1 h-1 bg-trinity-maroon rounded-full"></div>
                         <?php endfor; ?>
@@ -320,25 +320,25 @@ get_header(); ?>
 </section>
 
 <!-- Appointment CTA Section -->
-<section class="py-16 bg-trinity-primary">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
-            <div class="lg:col-span-6 flex gap-x-4">
-                <div class="flex flex-col lg:flex-row items-center mb-6">
-                    <div class="w-20 h-20 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
-                        <i data-lucide="calendar" class="w-12 h-12 text-gray-800"></i>
+<section class="py-12 lg:py-16 bg-trinity-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-12 items-center">
+            <div class="col-span-1 lg:col-span-6 flex flex-col sm:flex-row gap-4 sm:gap-x-4">
+                <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-6">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-trinity-gold rounded-lg flex items-center justify-center">
+                        <i data-lucide="calendar" class="w-8 h-8 sm:w-12 sm:h-12 text-gray-800"></i>
                     </div>
                 </div>
-                <div>
-                    <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Open For Appointments</h2>
-                    <p class="text-gray-200 mb-8 leading-relaxed">
+                <div class="text-center sm:text-left">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-4 lg:mb-6">Open For Appointments</h2>
+                    <p class="text-gray-200 mb-6 lg:mb-8 leading-relaxed text-sm sm:text-base">
                         Book your appointment today and experience quality healthcare services with our qualified medical professionals.
                     </p>
                 </div>
             </div>
-            <div class="lg:col-span-3 flex justify-center col-end-10">
+            <div class="col-span-1 lg:col-span-3 flex justify-center lg:col-end-10">
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                    class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block">
+                    class="bg-trinity-gold text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block text-sm sm:text-base">
                     Book Appointment
                 </a>
             </div>
@@ -349,7 +349,7 @@ get_header(); ?>
 <!-- Directory Section -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-left mb-12 flex justify-between items-center">
+        <div class="text-left mb-12 flex flex-col lg:flex-row justify-between items-center">
             <div class="w-full md:w-2/5">
                 <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
                     HOW WE WORK
@@ -363,13 +363,13 @@ get_header(); ?>
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Directory Item 1 -->
             <div class="text-center">
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="calendar" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <p class="text-lg font-bold text-gray-800 mb-2">Book An Appointment</p>
+                <p class="text-md md:text-lg font-bold text-gray-800 mb-2">Book An Appointment</p>
             </div>
 
             <!-- Directory Item 2 -->
@@ -377,7 +377,7 @@ get_header(); ?>
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="stethoscope" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <p class="text-lg font-bold text-gray-800 mb-2">Conduct Checkup</p>
+                <p class="text-md md:text-lg font-bold text-gray-800 mb-2">Conduct Checkup</p>
             </div>
 
             <!-- Directory Item 3 -->
@@ -385,7 +385,7 @@ get_header(); ?>
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="activity" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <p class="text-lg font-bold text-gray-800 mb-2">Perform Treatment</p>
+                <p class="text-md md:text-lg font-bold text-gray-800 mb-2">Perform Treatment</p>
             </div>
 
             <!-- Directory Item 4 -->
@@ -393,7 +393,7 @@ get_header(); ?>
                 <div class="w-16 h-16 bg-trinity-gold rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="credit-card" class="w-8 h-8 text-gray-800"></i>
                 </div>
-                <p class="text-lg font-bold text-gray-800 mb-2">Prescribe & Payment</p>
+                <p class="text-md md:text-lg font-bold text-gray-800 mb-2">Prescribe & Payment</p>
             </div>
         </div>
     </div>
