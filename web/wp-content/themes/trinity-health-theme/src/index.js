@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForms();
     initFAQAccordion();
     initTestimonialsSwiper();
+    initArticlesSwiper();
 });
 
 /**
@@ -212,6 +213,57 @@ function initTestimonialsSwiper() {
         }
     } else if (!swiperContainer) {
         console.log('Testimonials swiper container not found');
+    } else {
+        console.error('Swiper library not loaded');
+    }
+}
+
+/**
+ * Initialize Articles Swiper Carousel (Mobile Only)
+ */
+function initArticlesSwiper() {
+    const swiperContainer = document.querySelector('.articles-swiper');
+    
+    if (swiperContainer && typeof Swiper !== 'undefined') {
+        console.log('Initializing articles swiper...');
+        
+        try {
+            new Swiper('.articles-swiper', {
+                // Basic configuration
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                
+                // Center the slides
+                centeredSlides: true,
+                
+                // Navigation arrows with custom classes
+                navigation: {
+                    nextEl: '.articles-next',
+                    prevEl: '.articles-prev',
+                },
+                
+                // Effects
+                effect: 'slide',
+                
+                // Accessibility
+                a11y: {
+                    enabled: true,
+                    prevSlideMessage: 'Previous article',
+                    nextSlideMessage: 'Next article',
+                },
+            });
+            
+            console.log('Articles swiper initialized successfully');
+        } catch (error) {
+            console.error('Error initializing articles swiper:', error);
+        }
+    } else if (!swiperContainer) {
+        console.log('Articles swiper container not found');
     } else {
         console.error('Swiper library not loaded');
     }

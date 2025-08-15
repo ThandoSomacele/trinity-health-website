@@ -504,7 +504,7 @@ get_header(); ?>
 
 <!-- Testimonials Section -->
 <section class="py-16 bg-trinity-primary h-100">
-    <div class="max-w-7xl mx-auto px-6 relative pb-16">
+    <div class="max-w-7xl mx-auto px-6 relative pb-10">
         <div class="text-left mb-12">
             <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
                 TESTIMONIALS
@@ -619,7 +619,8 @@ get_header(); ?>
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Articles Container - Grid on desktop, Swiper on mobile -->
+        <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Article 1 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="h-48 bg-white flex items-center justify-center rounded-lg">
@@ -664,6 +665,70 @@ get_header(); ?>
                     </a>
                 </div>
             </article>
+        </div>
+
+        <!-- Articles Swiper - Mobile Only -->
+        <div class="block md:hidden">
+            <div class="swiper articles-swiper relative">
+                <div class="swiper-wrapper">
+                    <!-- Article 1 -->
+                    <div class="swiper-slide">
+                        <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="h-48 bg-white flex items-center justify-center rounded-lg">
+                                <img src="/wp-content/uploads/2025/08/patient-care.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Best Hygiene Options For Healthy Living</h3>
+                                <p class="text-gray-600 text-sm mb-4">Learn about the best hygiene practices that can significantly improve your overall health and wellbeing...</p>
+                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
+                                    Read More →
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="swiper-slide">
+                        <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="h-48 bg-white flex items-center justify-center rounded-lg">
+                                <img src="/wp-content/uploads/2025/08/hospital-waiting-africa.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">The Importance of Regular Health Checkups</h3>
+                                <p class="text-gray-600 text-sm mb-4">Discover why regular health screenings are crucial for early detection and prevention of diseases...</p>
+                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
+                                    Read More →
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="swiper-slide">
+                        <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="h-48 bg-white flex items-center justify-center rounded-lg">
+                                <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrition Guide for Heart Patients</h3>
+                                <p class="text-gray-600 text-sm mb-4">A comprehensive guide to heart-healthy nutrition that can help improve cardiovascular health...</p>
+                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
+                                    Read More →
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation buttons for mobile articles -->
+            <div class="flex justify-end space-x-2 mt-6">
+                <div class="swiper-button-prev articles-prev !text-white !w-10 !h-10 !mt-0 !relative !top-0 !left-0 !right-0 !transform-none after:!text-xl after:!font-black bg-trinity-gold rounded-full shadow-md hover:shadow-xl transition-shadow cursor-pointer"></div>
+                <div class="swiper-button-next articles-next !text-white !w-10 !h-10 !mt-0 !relative !top-0 !left-0 !right-0 !transform-none after:!text-xl after:!font-black bg-trinity-gold rounded-full shadow-md hover:shadow-xl transition-shadow cursor-pointer"></div>
+            </div>
         </div>
     </div>
 </section>
