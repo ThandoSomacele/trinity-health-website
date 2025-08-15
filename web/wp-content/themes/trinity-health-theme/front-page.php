@@ -244,13 +244,13 @@ get_header(); ?>
             <div class="lg:col-span-2">
                 <!-- Top Row - 2 Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <!-- Eye Care -->
+                    <!-- Audiology Services -->
                     <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                         <div class="mb-6">
-                            <i data-lucide="eye" class="w-12 h-12 text-trinity-maroon-dark"></i>
+                            <i data-lucide="ear" class="w-12 h-12 text-trinity-maroon-dark"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Eye Care</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">We understand the importance of clear vision and its impact on your.</p>
+                        <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Audiology Services</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Professional hearing health services including comprehensive tests and hearing aid fittings.</p>
                         <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -263,7 +263,7 @@ get_header(); ?>
                             <i data-lucide="stethoscope" class="w-12 h-12 text-trinity-maroon-dark"></i>
                         </div>
                         <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Medical Checkup</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">During your medical checkup, our skilled healthcare professionals.</p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Thorough medical checkups with skilled healthcare professionals to monitor and maintain your health.</p>
                         <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -277,18 +277,32 @@ get_header(); ?>
         </div>
         <!-- Bottom Row - 3 Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Eye Care -->
+            <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-6">
+                    <i data-lucide="eye" class="w-12 h-12 text-trinity-maroon-dark"></i>
+                </div>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Eye Care</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">Comprehensive eye care services to maintain and improve your vision health and quality of life.</p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
             <!-- Dental Care -->
             <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                 <div class="mb-6">
                     <i data-lucide="smile" class="w-12 h-12 text-trinity-maroon-dark"></i>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Dental Care</h3>
-                <p class="text-gray-600 mb-8 leading-relaxed">We are passionate about providing top-notch dental care to help you.</p>
+                <p class="text-gray-600 mb-8 leading-relaxed">Complete dental care services to maintain healthy teeth and gums for your overall wellbeing.</p>
                 <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
+
 
             <!-- Laboratory Service -->
             <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
@@ -296,20 +310,7 @@ get_header(); ?>
                     <i data-lucide="heart-pulse" class="w-12 h-12 text-trinity-maroon-dark"></i>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Service</h3>
-                <p class="text-gray-600 mb-8 leading-relaxed">We understand the critical role that accurate diagnostics play in guiding.</p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
-            </div>
-
-            <!-- Patient-Centered -->
-            <div class="bg-white  p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-                <div class="mb-6">
-                    <i data-lucide="microscope" class="w-12 h-12 text-trinity-maroon-dark"></i>
-                </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Patient-Centered</h3>
-                <p class="text-gray-600 mb-8 leading-relaxed">Hospitals, or clinics with positive reviews and ratings from patients.</p>
+                <p class="text-gray-600 mb-8 leading-relaxed">Advanced laboratory services providing accurate diagnostic testing to guide effective treatment plans.</p>
                 <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
