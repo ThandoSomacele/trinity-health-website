@@ -36,13 +36,13 @@ get_header(); ?>
                         Read More
                     </a>
                     <!-- Secondary CTA Button -->
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
+                    <!-- <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
                         class="group/video bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold group-hover/video:bg-white group-hover/video:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2 group-hover/video:bg-trinity-maroon transition-colors duration-300">
                             <i data-lucide="play" class="w-5 h-5 text-trinity-maroon group-hover/video:text-white"></i>
                         </div>
                         Watch Video
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -50,27 +50,27 @@ get_header(); ?>
             <div class="relative">
                 <!-- Decorative dots pattern -->
                 <div class="relative inset-0">
-                    <div class="absolute top-8 md:top-16 left-1/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
+                    <div class="absolute top-8 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
                         <?php for ($i = 0; $i < 264; $i++): ?>
                             <div class="w-1 h-1 bg-white rounded-full"></div>
                         <?php endfor; ?>
                     </div>
                 </div>
 
-                <div class="relative z-10 flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
+                <div class="relative z-10 flex gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
                     <!-- Left Circle - Main Doctor Image -->
-                    <div class="relative">
-                        <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/home-hero-1.webp"
+                    <div class="relative lg:-top-12">
+                        <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
                                 alt="Professional Female Doctor"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
 
                     <!-- Right Oval - Healthcare Team Image -->
-                    <div class="relative sm:top-6 lg:top-12">
+                    <div class="relative top-12">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                            <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
                                 alt="Healthcare Team"
                                 class="w-full h-full object-cover">
                         </div>
@@ -134,51 +134,32 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Services Image -->
-            <div class="relative order-2 lg:order-1">
-                <div class="relative">
-                    <!-- Dotted Pattern Background -->
-                    <div class="absolute top-12 left-20 grid grid-cols-10 gap-1 opacity-60">
-                        <?php for ($i = 0; $i < 100; $i++) : ?>
-                            <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div class="relative">
+                <!-- Decorative dots pattern -->
+                <div class="relative inset-0">
+                    <div class="absolute top-3 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
+                        <?php for ($i = 0; $i < 264; $i++): ?>
+                            <div class="w-1 h-1 bg-trinity-maroon rounded-full"></div>
                         <?php endfor; ?>
                     </div>
+                </div>
 
-                    <!-- Background Shape -->
-                    <div class="absolute -top-4 -left-4 w-80 h-80 bg-gray-200 rounded-full opacity-50"></div>
-
-                    <!-- Main Doctor Image (Large Rounded) -->
-                    <div class="relative z-10 mb-8">
-                        <div class="w-80 h-96 rounded-full overflow-hidden bg-white p-4 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Doctor with mask working"
-                                class="w-full h-full object-cover rounded-full">
+                <div class="relative z-10 flex gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
+                    <!-- Left Circle Image -->
+                    <div class="relative sm:top-3 lg:top-18">
+                        <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                                alt="Professional Female Doctor"
+                                class="w-full h-full object-cover">
                         </div>
                     </div>
 
-                    <!-- Top Right Image (Team Discussion) -->
-                    <div class="absolute top-8 right-0 z-20">
-                        <div class="w-64 h-40 rounded-3xl overflow-hidden bg-white p-2 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                alt="Medical team discussion"
-                                class="w-full h-full object-cover rounded-2xl">
-                        </div>
-                    </div>
-
-                    <!-- Bottom Right Image (Watch Video) -->
-                    <div class="absolute bottom-0 right-8 z-20">
-                        <div class="relative w-56 h-32 rounded-3xl overflow-hidden bg-white p-2 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                                alt="Healthcare team collaboration"
-                                class="w-full h-full object-cover rounded-2xl">
-                            <!-- Watch Video Overlay -->
-                            <div class="absolute inset-2 bg-black bg-opacity-50 rounded-2xl flex items-center justify-center">
-                                <div class="flex items-center text-white">
-                                    <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-2">
-                                        <i data-lucide="play" class="w-4 h-4 text-white"></i>
-                                    </div>
-                                    <span class="text-sm font-medium">Watch Video</span>
-                                </div>
-                            </div>
+                    <!-- Right Oval Image -->
+                    <div class="relative sm:-top-10 lg:-top-18">
+                        <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                                alt="Healthcare Team"
+                                class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -343,7 +324,7 @@ get_header(); ?>
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
             <div class="lg:col-span-6 flex gap-x-4">
-                <div class="flex items-center mb-6">
+                <div class="flex flex-col lg:flex-row items-center mb-6">
                     <div class="w-20 h-20 bg-trinity-gold rounded-lg flex items-center justify-center mr-4">
                         <i data-lucide="calendar" class="w-12 h-12 text-gray-800"></i>
                     </div>
@@ -595,7 +576,7 @@ get_header(); ?>
             <!-- Article 1 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="h-48 bg-white flex items-center justify-center rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/patient-care.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
@@ -610,7 +591,7 @@ get_header(); ?>
             <!-- Article 2 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="h-48 bg-white flex items-center justify-center rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/hospital-waiting-africa.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
@@ -625,7 +606,7 @@ get_header(); ?>
             <!-- Article 3 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="h-48 bg-white flex items-center justify-center rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/doctors-meeting.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
@@ -641,10 +622,10 @@ get_header(); ?>
 </section>
 
 <!-- Contact CTA Section -->
-<section class="py-16 bg-cover bg-center relative" style="background-image: url('/wp-content/uploads/2025/08/home-hero-1.webp')">
+<section class="pt-56 bg-cover bg-center relative" style="background-image: url('/wp-content/uploads/2025/08/home-hero-1.webp')">
     <!-- Dark overlay for better text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10 bottom-0 mb-16">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 bottom-0 ">
         <div class="text-center mb-12">
             <p class="text-base text-white md:text-lg font-medium tracking-widest uppercase mb-2">
                 FILL THE FORM
@@ -655,8 +636,9 @@ get_header(); ?>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 items-center">
             <!-- Contact Form -->
-            <div class="bg-trinity-gold text-center p-8 lg:col-span-1 h-full">
+            <div class="bg-white text-center p-8 lg:col-span-1 h-full">
                 <!-- Contact info placeholder -->
+                <img src="/wp-content/uploads/2025/08/Sandy_Bus-07_Single-01-scaled.jpg" alt="Contact Icon" class="w-100 h-100 mx-auto object-contain">
                 <p class="text-2xl text-gray-800 mb-4 leading-tight">Make an <strong>Appointment</strong> & Take Care of Your Healthy Life</p>
 
             </div>
@@ -664,7 +646,7 @@ get_header(); ?>
                 <form class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 placeholder-opacity-50">
                         <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
-                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10">
+                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50"></textarea>
