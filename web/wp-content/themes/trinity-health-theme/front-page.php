@@ -664,7 +664,7 @@ get_header(); ?>
                 <form class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 placeholder-opacity-50">
                         <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
-                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
+                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10">
                     </div>
                     <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
                     <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50"></textarea>
