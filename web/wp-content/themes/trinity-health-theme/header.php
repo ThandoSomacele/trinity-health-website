@@ -25,7 +25,7 @@
                     <?php if (has_custom_logo()) : ?>
                         <?php the_custom_logo(); ?>
                     <?php else : ?>
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
+                        <a href="#" rel="home" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
                             <!-- Trinity Health Logo - White version for maroon background -->
                             <div class="w-12 h-12 mr-3 flex items-center justify-center">
                                 <?php echo trinity_health_get_logo('dark'); ?>
@@ -49,7 +49,7 @@
                     ?>
 
                     <!-- Book Appointment Button -->
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                    <a href="#"
                         class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center ml-4">
                         <i data-lucide="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
                         <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
@@ -76,7 +76,7 @@
                     ));
                     ?>
                     <div class="px-4 pt-4">
-                        <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                        <a href="#"
                             class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300">
                             <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                         </a>

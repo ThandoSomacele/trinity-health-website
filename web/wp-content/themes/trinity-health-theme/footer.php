@@ -8,7 +8,7 @@
             <div class="footer-section">
                 <!-- Logo -->
                 <div class="mb-6">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
+                    <a href="#" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
                         <div class="w-10 h-10 mr-3 flex items-center justify-center">
                             <?php echo trinity_health_get_logo('dark'); ?>
                         </div>
@@ -23,23 +23,23 @@
 
                 <!-- Social Links -->
                 <div class="flex space-x-3">
-                    <a href="<?php echo esc_url(get_theme_mod('trinity_health_linkedin_url', '#')); ?>" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
 
-                    <a href="<?php echo esc_url(get_theme_mod('trinity_health_youtube_url', '#')); ?>" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="youtube" class="w-5 h-5"></i>
                     </a>
 
-                    <a href="<?php echo esc_url(get_theme_mod('trinity_health_twitter_url', '#')); ?>" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="twitter" class="w-5 h-5"></i>
                     </a>
 
-                    <a href="<?php echo esc_url(get_theme_mod('trinity_health_instagram_url', '#')); ?>" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="instagram" class="w-5 h-5"></i>
                     </a>
 
-                    <a href="<?php echo esc_url(get_theme_mod('trinity_health_facebook_url', '#')); ?>" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="facebook" class="w-5 h-5"></i>
                     </a>
                 </div>

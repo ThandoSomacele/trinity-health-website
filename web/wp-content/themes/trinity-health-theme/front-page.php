@@ -28,7 +28,7 @@ get_header(); ?>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <!-- Primary CTA Button -->
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
+                    <a href="#"
                         class="group/read bg-trinity-gold text-trinity-maroon border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-transparent hover:text-trinity-gold-dark transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 bg-trinity-maroon rounded-full flex items-center justify-center mr-2 group-hover/read:bg-trinity-gold-dark transition-all duration-300">
                             <i data-lucide="arrow-right" class="w-4 h-4 text-trinity-gold group-hover/read:text-trinity-maroon transition-all duration-300"></i>
@@ -90,7 +90,7 @@ get_header(); ?>
                 <div class="relative z-10">
                     <h2 class="text-2xl text-gray-800 mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</h2>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                    <a href="#"
                         class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
                         <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
                         Book Appointment
@@ -212,7 +212,7 @@ get_header(); ?>
                     </ul>
 
                     <div class="pt-4">
-                        <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>"
+                        <a href="#"
                             class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
@@ -371,7 +371,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-3 flex justify-center lg:col-end-10">
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
+                <a href="#"
                     class="bg-trinity-gold text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block text-sm sm:text-base">
                     Book Appointment
                 </a>
