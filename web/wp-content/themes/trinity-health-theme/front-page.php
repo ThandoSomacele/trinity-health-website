@@ -622,7 +622,7 @@ get_header(); ?>
 </section>
 
 <!-- Contact CTA Section -->
-<section class="pt-56 bg-cover bg-center relative" style="background-image: url('/wp-content/uploads/2025/08/home-hero-1.webp')">
+<section class="pt-16 lg:pt-56 bg-cover bg-center relative" style="background-image: url('/wp-content/uploads/2025/08/home-hero-1.webp')">
     <!-- Dark overlay for better text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10 bottom-0 ">
@@ -638,11 +638,11 @@ get_header(); ?>
             <!-- Contact Form -->
             <div class="bg-white text-center p-8 lg:col-span-1 h-full">
                 <!-- Contact info placeholder -->
-                <img src="/wp-content/uploads/2025/08/Sandy_Bus-07_Single-01-scaled.jpg" alt="Contact Icon" class="w-100 h-100 mx-auto object-contain">
+                <img src="/wp-content/uploads/2025/08/Sandy_Bus-07_Single-01-scaled.jpg" alt="Contact Icon" class="w-52 h-52 lg:w-100 lg:h-100 mx-auto object-contain">
                 <p class="text-2xl text-gray-800 mb-4 leading-tight">Make an <strong>Appointment</strong> & Take Care of Your Healthy Life</p>
 
             </div>
-            <div class="bg-trinity-maroon p-28 lg:col-span-2 h-full">
+            <div class="bg-trinity-maroon p-6 lg:p-28 lg:col-span-2 h-full">
                 <form class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 placeholder-opacity-50">
                         <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
