@@ -61,7 +61,7 @@ get_header(); ?>
                     <!-- Left Circle - Main Doctor Image -->
                     <div class="relative">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/home-hero-1.png"
+                            <img src="/wp-content/uploads/2025/08/home-hero-1.webp"
                                 alt="Professional Female Doctor"
                                 class="w-full h-full object-cover">
                         </div>
@@ -70,7 +70,7 @@ get_header(); ?>
                     <!-- Right Oval - Healthcare Team Image -->
                     <div class="relative sm:top-6 lg:top-12">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/home-hero-2.png"
+                            <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
                                 alt="Healthcare Team"
                                 class="w-full h-full object-cover">
                         </div>
@@ -185,14 +185,14 @@ get_header(); ?>
             </div>
 
             <!-- Services Content -->
-            <div class="order-1 lg:order-2">
+            <div class="lg:order-2">
                 <div class="space-y-8">
                     <div>
                         <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
                             ABOUT TRINITY HEALTH
                         </p>
-                        <h2 class="text-5xl lg:text-6xl font-bold text-trinity-primary-dark mb-6 leading-tight">
-                            Our Best Services & Popular Treatment Here.
+                        <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
+                            Our Best Services & Popular Treatment Here
                         </h2>
                         <p class="text-xl text-gray-600 leading-relaxed">
                             We offer state-of-the-art medical treatments and popular treatments. Here are some of our best services that we provide for our patients with care and precision.
@@ -254,7 +254,7 @@ get_header(); ?>
                         MEDICAL SERVICES
                     </p>
                     <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
-                        We're Providing Best Services.
+                        We're Providing Best Services
                     </h2>
                 </div>
             </div>
@@ -373,7 +373,7 @@ get_header(); ?>
                 <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
                     HOW WE WORK
                 </p>
-                <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight ">
+                <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
                     A Comprehensive Directory for Your Healthcare Services
                 </h2>
             </div>
@@ -420,58 +420,97 @@ get_header(); ?>
 
 <!-- Team/Consultations Section -->
 <section class="py-16">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="max-w-7xl mx-auto px-6 pb-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <!-- Team Image -->
             <div class="relative">
-                <div class="bg-gray-300 rounded-lg h-96 flex items-center justify-center">
-                    <span class="text-gray-600">Team of Doctors Image</span>
+                <div class="bg-gray-300  h-96 flex items-center justify-center">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
+                        alt="Healthcare Team"
+                        class="w-full h-full object-cover">
                 </div>
                 <!-- Stats Overlay -->
-                <div class="absolute bottom-4 left-4 bg-trinity-primary text-white p-4 rounded-lg">
-                    <div class="text-2xl font-bold">100+</div>
-                    <div class="text-sm">Satisfied Patients</div>
-                </div>
-                <div class="absolute top-4 right-4 bg-trinity-gold text-gray-800 p-4 rounded-lg">
-                    <div class="text-2xl font-bold">15+</div>
-                    <div class="text-sm">Expert Doctors</div>
+                <div class="absolute right-0 -bottom-10 flex">
+                    <div class="bg-trinity-primary text-white p-4 ">
+                        <div class="text-2xl font-bold">100+</div>
+                        <div class="text-sm">Satisfied Patients</div>
+                    </div>
+                    <div class="bg-trinity-gold text-gray-800 p-4">
+                        <div class="text-2xl font-bold">15+</div>
+                        <div class="text-sm">Expert Doctors</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Team Content -->
+            <!-- Team Content - FAQ Accordion -->
             <div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">
-                    Consultations with Qualified doctors
+                <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
+                    FAQs
+                </p>
+                <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
+                    Consultations with Qualified Doctors
                 </h2>
 
-                <div class="space-y-6 mb-8">
-                    <div class="flex items-start">
-                        <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1">
-                            <span class="text-white text-sm">✓</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-1">Are telemedicine consultations available?</h4>
-                            <p class="text-gray-600 text-sm">Yes, we offer virtual consultations for your convenience and safety.</p>
+
+
+                <div class="accordion-container space-y-4 mb-8" id="faq-accordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="ac border border-white rounded-lg">
+                        <h3 class="ac-header">
+                            <button type="button" class="ac-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                                <span class="font-semibold text-gray-800">Are telemedicine consultations available?</span>
+
+                            </button>
+                        </h3>
+                        <div class="ac-panel">
+                            <div class="ac-text px-6 pb-4">
+                                <p class="text-gray-600">Yes, we offer virtual consultations for your convenience and safety. Our telemedicine platform allows you to consult with our qualified doctors from the comfort of your home, making healthcare more accessible for you and your family.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex items-start">
-                        <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1">
-                            <span class="text-white text-sm">✓</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-1">Do you accept health insurance?</h4>
-                            <p class="text-gray-600 text-sm">We accept most major health insurance plans and offer payment options.</p>
+                    <!-- FAQ Item 2 -->
+                    <div class="ac border border-white rounded-lg">
+                        <h3 class="ac-header">
+                            <button type="button" class="ac-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                                <span class="font-semibold text-gray-800">Do you accept health insurance?</span>
+
+                            </button>
+                        </h3>
+                        <div class="ac-panel">
+                            <div class="ac-text px-6 pb-4">
+                                <p class="text-gray-600">We accept most major health insurance plans and offer flexible payment options. Our billing team works with you to understand your coverage and ensure you receive the care you need. Please contact us to verify your specific insurance plan.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex items-start">
-                        <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1">
-                            <span class="text-white text-sm">✓</span>
+                    <!-- FAQ Item 3 -->
+                    <div class="ac border border-white rounded-lg">
+                        <h3 class="ac-header">
+                            <button type="button" class="ac-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                                <span class="font-semibold text-gray-800">How much does a consultation cost?</span>
+
+                            </button>
+                        </h3>
+                        <div class="ac-panel">
+                            <div class="ac-text px-6 pb-4">
+                                <p class="text-gray-600">Consultation fees vary by service type and duration. We offer transparent pricing with no hidden costs. Contact our office for detailed pricing information or to discuss payment plans that work best for your healthcare needs.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-1">How much does a consultation cost?</h4>
-                            <p class="text-gray-600 text-sm">Consultation fees vary by service. Contact us for detailed pricing information.</p>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="ac border border-white rounded-lg">
+                        <h3 class="ac-header">
+                            <button type="button" class="ac-trigger w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                                <span class="font-semibold text-gray-800">What are your operating hours?</span>
+
+                            </button>
+                        </h3>
+                        <div class="ac-panel">
+                            <div class="ac-text px-6 pb-4">
+                                <p class="text-gray-600">We are open Monday through Saturday from 8:00 AM to 6:00 PM. Emergency services are available 24/7. For urgent care outside regular hours, please call our emergency line for immediate assistance.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -483,22 +522,24 @@ get_header(); ?>
 </section>
 
 <!-- Testimonials Section -->
-<section class="py-16 bg-trinity-primary">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <span class="text-trinity-gold font-semibold text-lg mb-2 block">TESTIMONIALS</span>
-            <h2 class="text-4xl font-bold text-white mb-4">
-                What Patients Say About Us.
+<section class="py-16 bg-trinity-primary h-100">
+    <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-left mb-12">
+            <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
+                TESTIMONIALS
+            </p>
+            <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                What Patients Say About Us
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg">
+            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-800">Mary Johnson</h4>
+                        <h4 class="font-bold text-gray-800 mb-1">Mary Johnson</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -508,11 +549,11 @@ get_header(); ?>
             </div>
 
             <!-- Testimonial 2 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg">
+            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-800">John Doe</h4>
+                        <h4 class="font-bold text-gray-800 mb-1">John Doe</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -522,11 +563,11 @@ get_header(); ?>
             </div>
 
             <!-- Testimonial 3 -->
-            <div class="bg-white rounded-lg p-8 shadow-lg">
+            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                        <h4 class="font-bold text-gray-800">Robert Lee</h4>
+                        <h4 class="font-bold text-gray-800 mb-1">Robert Lee</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
                     </div>
                 </div>
@@ -539,25 +580,25 @@ get_header(); ?>
 </section>
 
 <!-- News & Articles Section -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 pt-48">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                Latest News & Articles.
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Stay updated with the latest healthcare news, medical breakthroughs, and health tips from our expert team.
+        <div class="text-left mb-12">
+            <p class="text-base text-trinity-gold-dark md:text-lg font-medium tracking-widest uppercase mb-2">
+                FAQs
             </p>
+            <h2 class="text-4xl lg:text-5xl font-bold text-trinity-maroon-dark leading-tight">
+                Latest News & Articles
+            </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Article 1 -->
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center">
-                    <span class="text-gray-600">Article Image</span>
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <div class="text-trinity-gold text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
+                    <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Best Hygiene Options For Healthy Living</h3>
                     <p class="text-gray-600 text-sm mb-4">Learn about the best hygiene practices that can significantly improve your overall health and wellbeing...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
@@ -567,12 +608,12 @@ get_header(); ?>
             </article>
 
             <!-- Article 2 -->
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center">
-                    <span class="text-gray-600">Article Image</span>
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <div class="text-trinity-gold text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
+                    <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">The Importance of Regular Health Checkups</h3>
                     <p class="text-gray-600 text-sm mb-4">Discover why regular health screenings are crucial for early detection and prevention of diseases...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
@@ -582,12 +623,12 @@ get_header(); ?>
             </article>
 
             <!-- Article 3 -->
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center">
-                    <span class="text-gray-600">Article Image</span>
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <div class="text-trinity-gold text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
+                    <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Wellness</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrition Guide for Heart Patients</h3>
                     <p class="text-gray-600 text-sm mb-4">A comprehensive guide to heart-healthy nutrition that can help improve cardiovascular health...</p>
                     <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors">
@@ -602,9 +643,20 @@ get_header(); ?>
 <!-- Contact CTA Section -->
 <section class="py-16 bg-trinity-primary">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center mb-12">
+            <p class="text-base text-white md:text-lg font-medium tracking-widest uppercase mb-2">
+                FILL THE FORM
+            </p>
+            <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                Contact Form
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 items-center">
             <!-- Contact Form -->
-            <div class="bg-white rounded-lg p-8">
+            <div class="bg-white rounded-lg p-8 lg:col-span-1">
+                <!-- Contact info placeholder -->
+            </div>
+            <div class="bg-white rounded-lg p-8  lg:col-span-2">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Form.</h3>
                 <form class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -619,23 +671,7 @@ get_header(); ?>
                 </form>
             </div>
 
-            <!-- Contact Info -->
-            <div class="text-white">
-                <div class="bg-trinity-gold rounded-lg p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-4">Get In Touch</h3>
-                    <p class="mb-6">We're here to help you with any questions or concerns about your health.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center">
-                            <i data-lucide="phone" class="w-6 h-6 mr-3"></i>
-                            <span>+260 XXX XXX XXX</span>
-                        </div>
-                        <div class="flex items-center justify-center">
-                            <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
-                            <span>info@trinityhealth.zm</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
