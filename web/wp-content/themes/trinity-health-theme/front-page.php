@@ -514,48 +514,96 @@ get_header(); ?>
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 mb-1">Mary Johnson</h4>
-                        <p class="text-gray-600 text-sm">Patient</p>
+        <!-- Swiper Container -->
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Mary Johnson</h4>
+                                <p class="text-gray-600 text-sm">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "Exceptional care and professional service. The doctors are knowledgeable and caring. I highly recommend Trinity Health for anyone seeking quality healthcare."
+                        </p>
                     </div>
                 </div>
-                <p class="text-gray-700 leading-relaxed">
-                    "Exceptional care and professional service. The doctors are knowledgeable and caring. I highly recommend Trinity Health for anyone seeking quality healthcare."
-                </p>
-            </div>
 
-            <!-- Testimonial 2 -->
-            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 mb-1">John Doe</h4>
-                        <p class="text-gray-600 text-sm">Patient</p>
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">John Doe</h4>
+                                <p class="text-gray-600 text-sm">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "Great experience with Trinity Health. Professional staff, clean facilities, and excellent medical care. They truly care about their patients' wellbeing."
+                        </p>
                     </div>
                 </div>
-                <p class="text-gray-700 leading-relaxed">
-                    "Great experience with Trinity Health. Professional staff, clean facilities, and excellent medical care. They truly care about their patients' wellbeing."
-                </p>
-            </div>
 
-            <!-- Testimonial 3 -->
-            <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 mb-1">Robert Lee</h4>
-                        <p class="text-gray-600 text-sm">Patient</p>
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Robert Lee</h4>
+                                <p class="text-gray-600 text-sm">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "Outstanding healthcare services with a personal touch. The medical team is highly skilled and the facilities are top-notch. Very satisfied with my experience."
+                        </p>
                     </div>
                 </div>
-                <p class="text-gray-700 leading-relaxed">
-                    "Outstanding healthcare services with a personal touch. The medical team is highly skilled and the facilities are top-notch. Very satisfied with my experience."
-                </p>
+
+                <!-- Testimonial 4 -->
+                <div class="swiper-slide">
+                    <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Sarah Williams</h4>
+                                <p class="text-gray-600 text-sm">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "Trinity Health provides comprehensive care with compassionate staff. The appointment scheduling is convenient and the doctors take time to listen and explain everything clearly."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="swiper-slide">
+                    <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Michael Brown</h4>
+                                <p class="text-gray-600 text-sm">Patient</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "Impressed with the level of care and attention to detail. The medical team is professional and the facilities are modern and well-maintained. Highly recommend!"
+                        </p>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next !text-trinity-gold !top-1/2 !right-4 !w-12 !h-12 !mt-0 after:!text-2xl"></div>
+            <div class="swiper-button-prev !text-trinity-gold !top-1/2 !left-4 !w-12 !h-12 !mt-0 after:!text-2xl"></div>
+            
+            <!-- Pagination dots -->
+            <div class="swiper-pagination !bottom-4"></div>
         </div>
     </div>
 </section>

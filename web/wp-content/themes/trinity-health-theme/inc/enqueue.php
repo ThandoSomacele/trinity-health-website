@@ -34,11 +34,28 @@ function trinity_health_enqueue_assets() {
         $asset['version']
     );
     
+    // Enqueue Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11.0.0'
+    );
+    
+    // Enqueue Swiper JavaScript
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11.0.0',
+        true
+    );
+    
     // Enqueue main JavaScript
     wp_enqueue_script(
         'trinity-health-script',
         TRINITY_THEME_URL . '/build/index.js',
-        $asset['dependencies'],
+        array_merge($asset['dependencies'], array('swiper-js')),
         $asset['version'],
         true
     );
