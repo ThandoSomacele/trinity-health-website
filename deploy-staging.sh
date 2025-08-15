@@ -9,7 +9,7 @@ set -e  # Exit on any error
 STAGING_HOST="your-staging-server.com"
 STAGING_USER="your-ftp-username"
 STAGING_PATH="/public_html"  # Remote path on staging server
-LOCAL_THEME_PATH="web/wp-content/themes/trinity-health"
+LOCAL_THEME_PATH="web/wp-content/themes/trinity-health-theme"
 UPLOADS_PATH="web/wp-content/uploads"
 
 # Colors for output
@@ -148,11 +148,11 @@ fi
 mkdir -p "$DEPLOY_TEMP/wp-content/themes"
 
 # Copy our custom theme (built assets only, exclude all development files)
-if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health" ]; then
+if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health-theme" ]; then
     echo "Copying Trinity Health custom theme..."
     
     # Verify node_modules won't be copied
-    if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health/node_modules" ]; then
+    if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health-theme/node_modules" ]; then
         echo "Found node_modules in theme - excluding from deployment"
     fi
     
@@ -167,15 +167,15 @@ if [ -d "$PROJECT_ROOT/web/wp-content/themes/trinity-health" ]; then
               --exclude='postcss.config.js' \
               --exclude='.git/' \
               --exclude='*.log' \
-              "$PROJECT_ROOT/web/wp-content/themes/trinity-health/" "$DEPLOY_TEMP/wp-content/themes/trinity-health/"
+              "$PROJECT_ROOT/web/wp-content/themes/trinity-health-theme/" "$DEPLOY_TEMP/wp-content/themes/trinity-health-theme/"
               
     # Double-check no node_modules was copied
-    if [ -d "$DEPLOY_TEMP/wp-content/themes/trinity-health/node_modules" ]; then
+    if [ -d "$DEPLOY_TEMP/wp-content/themes/trinity-health-theme/node_modules" ]; then
         echo -e "${RED}❌ ERROR: node_modules was copied to deployment! Removing...${NC}"
-        rm -rf "$DEPLOY_TEMP/wp-content/themes/trinity-health/node_modules"
+        rm -rf "$DEPLOY_TEMP/wp-content/themes/trinity-health-theme/node_modules"
     fi
 else
-    echo -e "${RED}❌ Error: Trinity Health theme not found at web/wp-content/themes/trinity-health${NC}"
+    echo -e "${RED}❌ Error: Trinity Health theme not found at web/wp-content/themes/trinity-health-theme${NC}"
     exit 1
 fi
 
@@ -208,7 +208,7 @@ echo "Deployment directory structure:"
 tree "$DEPLOY_TEMP/" -L 3 2>/dev/null || find "$DEPLOY_TEMP/" -type d | head -20
 echo ""
 echo "Trinity Health theme contents:"
-ls -la "$DEPLOY_TEMP/wp-content/themes/trinity-health/" 2>/dev/null || echo "Theme directory not found"
+ls -la "$DEPLOY_TEMP/wp-content/themes/trinity-health-theme/" 2>/dev/null || echo "Theme directory not found"
 echo ""
 echo "Total deployment size:"
 du -sh "$DEPLOY_TEMP/"
