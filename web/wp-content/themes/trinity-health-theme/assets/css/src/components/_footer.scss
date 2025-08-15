@@ -34,7 +34,7 @@
   // Newsletter form styling
   .newsletter-form {
     input[type='email'] {
-      @apply flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-100 rounded-l-md text-white placeholder-gray-200;
+      @apply flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-100 rounded-l-md text-white;
 
       &:focus {
         @apply outline-none ring-2 ring-trinity-gold border-transparent;

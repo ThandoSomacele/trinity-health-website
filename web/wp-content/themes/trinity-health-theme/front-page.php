@@ -424,7 +424,7 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <!-- Team Image -->
             <div class="relative">
-                <div class="bg-gray-300  h-96 flex items-center justify-center">
+                <div class="bg-white  h-96 flex items-center justify-center">
                     <img src="/wp-content/uploads/2025/08/docters-team.webp"
                         alt="Healthcare Team"
                         class="w-full h-full object-cover">
@@ -537,7 +537,7 @@ get_header(); ?>
             <!-- Testimonial 1 -->
             <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
                     <div>
                         <h4 class="font-bold text-gray-800 mb-1">Mary Johnson</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
@@ -551,7 +551,7 @@ get_header(); ?>
             <!-- Testimonial 2 -->
             <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
                     <div>
                         <h4 class="font-bold text-gray-800 mb-1">John Doe</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
@@ -565,7 +565,7 @@ get_header(); ?>
             <!-- Testimonial 3 -->
             <div class="bg-white border-2 border-trinity-gold p-8 shadow-lg relative">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
                     <div>
                         <h4 class="font-bold text-gray-800 mb-1">Robert Lee</h4>
                         <p class="text-gray-600 text-sm">Patient</p>
@@ -594,7 +594,7 @@ get_header(); ?>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Article 1 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                <div class="h-48 bg-white flex items-center justify-center rounded-lg">
                     <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
@@ -609,7 +609,7 @@ get_header(); ?>
 
             <!-- Article 2 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                <div class="h-48 bg-white flex items-center justify-center rounded-lg">
                     <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
@@ -624,7 +624,7 @@ get_header(); ?>
 
             <!-- Article 3 -->
             <article class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 bg-gray-300 flex items-center justify-center rounded-lg">
+                <div class="h-48 bg-white flex items-center justify-center rounded-lg">
                     <img src="/wp-content/uploads/2025/08/docters-team.webp" alt="Article Image" class="rounded-lg w-full h-full object-cover">
                 </div>
                 <div class="p-6">
@@ -641,8 +641,10 @@ get_header(); ?>
 </section>
 
 <!-- Contact CTA Section -->
-<section class="py-16 bg-trinity-primary">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="py-16 bg-cover bg-center relative" style="background-image: url('/wp-content/uploads/2025/08/home-hero-1.webp')">
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 bottom-0 mb-16">
         <div class="text-center mb-12">
             <p class="text-base text-white md:text-lg font-medium tracking-widest uppercase mb-2">
                 FILL THE FORM
@@ -653,18 +655,19 @@ get_header(); ?>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 items-center">
             <!-- Contact Form -->
-            <div class="bg-white rounded-lg p-8 lg:col-span-1">
+            <div class="bg-trinity-gold text-center p-8 lg:col-span-1 h-full">
                 <!-- Contact info placeholder -->
+                <p class="text-2xl text-gray-800 mb-4 leading-tight">Make an <strong>Appointment</strong> & Take Care of Your Healthy Life</p>
+
             </div>
-            <div class="bg-white rounded-lg p-8  lg:col-span-2">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Form.</h3>
+            <div class="bg-trinity-maroon p-28 lg:col-span-2 h-full">
                 <form class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
-                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 placeholder-opacity-10">
+                        <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10">
+                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10">
                     </div>
-                    <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold">
-                    <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold"></textarea>
+                    <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10">
+                    <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-10"></textarea>
                     <button type="submit" class="bg-trinity-gold text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
                         Send Message
                     </button>
