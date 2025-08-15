@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initContactForms();
     initFAQAccordion();
+    initTestimonialsSwiper();
 });
 
 /**
@@ -141,5 +142,77 @@ function initFAQAccordion() {
         }
     } else {
         console.log('Accordion container not found');
+    }
+}
+
+/**
+ * Initialize Testimonials Swiper Carousel
+ */
+function initTestimonialsSwiper() {
+    const swiperContainer = document.querySelector('.testimonials-swiper');
+    
+    if (swiperContainer && typeof Swiper !== 'undefined') {
+        console.log('Initializing testimonials swiper...');
+        
+        try {
+            new Swiper('.testimonials-swiper', {
+                // Basic configuration
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                
+                // Responsive breakpoints
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 24,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 32,
+                    },
+                },
+                
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Pagination dots
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                
+                // Effects
+                effect: 'slide',
+                
+                // Accessibility
+                a11y: {
+                    enabled: true,
+                    prevSlideMessage: 'Previous testimonial',
+                    nextSlideMessage: 'Next testimonial',
+                    paginationBulletMessage: 'Go to testimonial {{index}}',
+                },
+            });
+            
+            console.log('Testimonials swiper initialized successfully');
+        } catch (error) {
+            console.error('Error initializing testimonials swiper:', error);
+        }
+    } else if (!swiperContainer) {
+        console.log('Testimonials swiper container not found');
+    } else {
+        console.error('Swiper library not loaded');
     }
 }
