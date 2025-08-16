@@ -34,29 +34,72 @@ function trinity_health_enqueue_assets() {
         $asset['version']
     );
     
-    // Swiper is now bundled locally with webpack, no CDN needed
+    // Enqueue Swiper CSS from CDN
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11.0.0'
+    );
     
-    // Enqueue main JavaScript (now includes Swiper locally)
+    // Enqueue Swiper JavaScript from CDN with proper loading
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11.0.0',
+        true
+    );
+    
+    // Enqueue main JavaScript with Swiper dependency
     wp_enqueue_script(
         'trinity-health-script',
         TRINITY_THEME_URL . '/build/index.js',
-        $asset['dependencies'],
+        array_merge($asset['dependencies'], array('swiper-js')),
         $asset['version'],
         true
     );
     
-    // Add mobile debugging script
+    // Add improved mobile-compatible script loading
     wp_add_inline_script('trinity-health-script', '
-        // Mobile debugging and cache busting
-        console.log("Trinity Health mobile debugging active");
-        console.log("User agent:", navigator.userAgent);
-        console.log("Screen size:", window.innerWidth + "x" + window.innerHeight);
-        console.log("Touch support:", "ontouchstart" in window);
+        // Enhanced mobile debugging
+        console.log("Trinity Health theme loading - User agent:", navigator.userAgent);
+        console.log("Screen dimensions:", window.innerWidth + "x" + window.innerHeight);
+        console.log("Touch support available:", "ontouchstart" in window);
         
-        // Force reload on mobile if needed (cache busting)
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            console.log("Mobile device detected - ensuring fresh script execution");
+        // Check for Swiper availability with retry mechanism
+        let swiperCheckCount = 0;
+        const maxRetries = 10;
+        
+        function checkSwiperAndInit() {
+            swiperCheckCount++;
+            console.log("Checking for Swiper... attempt", swiperCheckCount);
+            
+            if (typeof Swiper !== "undefined") {
+                console.log("Swiper detected! Initializing components...");
+                
+                // Re-initialize any components that were waiting
+                if (window.needsTestimonialsSwiper && window.initTestimonialsSwiper) {
+                    console.log("Retrying testimonials swiper...");
+                    window.initTestimonialsSwiper();
+                }
+                if (window.needsArticlesSwiper && window.initArticlesSwiper) {
+                    console.log("Retrying articles swiper...");
+                    window.initArticlesSwiper();
+                }
+                return true;
+            } else if (swiperCheckCount < maxRetries) {
+                console.log("Swiper not ready yet, retrying in 500ms...");
+                setTimeout(checkSwiperAndInit, 500);
+                return false;
+            } else {
+                console.error("Swiper failed to load after", maxRetries, "attempts");
+                return false;
+            }
         }
+        
+        // Start checking after a brief delay
+        setTimeout(checkSwiperAndInit, 1000);
     ', 'before');
     
     // Localize script for AJAX

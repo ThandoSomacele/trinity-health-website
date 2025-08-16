@@ -11,60 +11,25 @@ import '../assets/css/src/index.scss';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
-// Import Swiper locally instead of CDN for better mobile compatibility
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 // Mobile device detection
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 }
 
-// Mobile-specific touch event polyfill
+// Simplified mobile touch support to avoid conflicts
 function addMobileTouchSupport() {
     if (isMobile()) {
-        console.log('Adding mobile touch support...');
+        console.log('Adding simplified mobile touch support...');
         
-        // Add touch-action CSS to prevent scroll blocking
+        // Basic mobile optimizations without interfering with Swiper
         document.documentElement.style.touchAction = 'manipulation';
         
-        // Force reflow for iOS Safari
-        document.documentElement.offsetHeight;
-        
-        // Add passive event listeners for better performance
-        const swiperContainers = document.querySelectorAll('.testimonials-swiper, .articles-swiper');
-        swiperContainers.forEach(container => {
-            container.style.touchAction = 'pan-y';
-            container.style.webkitUserSelect = 'none';
-            container.style.userSelect = 'none';
-            
-            // Force hardware acceleration
-            container.style.transform = 'translateZ(0)';
-            container.style.webkitTransform = 'translateZ(0)';
-            
-            container.addEventListener('touchstart', function() {
-                console.log('Mobile touch start on swiper container');
-            }, { passive: true });
-            
-            // Prevent default touch behaviors that might interfere
-            container.addEventListener('touchmove', function() {
-                // Allow swiper to handle touch move
-            }, { passive: true });
-        });
-        
-        // Improve accordion touch handling
+        // Improve accordion touch handling only
         const accordionTriggers = document.querySelectorAll('.ac-trigger');
         accordionTriggers.forEach(trigger => {
-            // Add mobile-friendly tap handling
             trigger.style.cursor = 'pointer';
             trigger.style.touchAction = 'manipulation';
             trigger.style.webkitTapHighlightColor = 'rgba(0,0,0,0.1)';
-            
-            // Force hardware acceleration
-            trigger.style.transform = 'translateZ(0)';
-            trigger.style.webkitTransform = 'translateZ(0)';
             
             // Add visual feedback for touch
             trigger.addEventListener('touchstart', function() {
@@ -76,13 +41,12 @@ function addMobileTouchSupport() {
                 this.style.opacity = '1';
             }, { passive: true });
             
-            // Ensure click events work on mobile
             trigger.addEventListener('click', function() {
                 console.log('Accordion trigger clicked on mobile');
             });
         });
         
-        console.log('Mobile touch support added successfully');
+        console.log('Mobile touch support added for accordion only');
     }
 }
 
@@ -263,8 +227,7 @@ function initFAQAccordion() {
 function initTestimonialsSwiper() {
     const swiperContainer = document.querySelector('.testimonials-swiper');
     
-    // Swiper is now imported locally, so it's always available
-    if (swiperContainer) {
+    if (swiperContainer && typeof Swiper !== 'undefined') {
         console.log('Initializing testimonials swiper...');
         
         try {
@@ -276,47 +239,17 @@ function initTestimonialsSwiper() {
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
                 },
-                
-                // Mobile-specific settings
-                touchRatio: 1,
-                touchAngle: 45,
-                grabCursor: true,
-                centeredSlides: false,
-                
-                // Touch/swipe settings for mobile
-                touchEventsTarget: 'container',
-                simulateTouch: true,
-                allowTouchMove: true,
-                touchMoveStopPropagation: false,
-                
-                // Mobile browser compatibility
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
                 
                 // Responsive breakpoints
                 breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 15,
-                        touchRatio: 1.5,
-                    },
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                        touchRatio: 1.2,
-                    },
                     768: {
                         slidesPerView: 2,
                         spaceBetween: 24,
-                        touchRatio: 1,
                     },
                     1024: {
                         slidesPerView: 3,
                         spaceBetween: 32,
-                        touchRatio: 1,
                     },
                 },
                 
@@ -324,48 +257,26 @@ function initTestimonialsSwiper() {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
-                    disabledClass: 'swiper-button-disabled',
                 },
                 
                 // Pagination dots
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                    dynamicBullets: true,
-                    bulletClass: 'swiper-pagination-bullet',
-                    bulletActiveClass: 'swiper-pagination-bullet-active',
                 },
                 
-                // Effects
-                effect: 'slide',
+                // Enable touch for mobile
+                simulateTouch: true,
+                touchRatio: 1,
+                grabCursor: true,
                 
-                // Accessibility
-                a11y: {
-                    enabled: true,
-                    prevSlideMessage: 'Previous testimonial',
-                    nextSlideMessage: 'Next testimonial',
-                    paginationBulletMessage: 'Go to testimonial {{index}}',
-                },
-                
-                // Mobile-specific events
+                // Events for debugging
                 on: {
                     init: function() {
-                        console.log('Testimonials Swiper initialized on mobile');
-                    },
-                    touchStart: function() {
-                        console.log('Touch start detected');
-                    },
-                    touchEnd: function() {
-                        console.log('Touch end detected');
+                        console.log('Testimonials Swiper initialized successfully');
                     },
                     slideChange: function() {
-                        // Pause autoplay briefly on manual swipe
-                        if (this.autoplay && this.autoplay.running) {
-                            this.autoplay.stop();
-                            setTimeout(() => {
-                                this.autoplay.start();
-                            }, 3000);
-                        }
+                        console.log('Testimonials slide changed');
                     }
                 }
             });
@@ -374,8 +285,11 @@ function initTestimonialsSwiper() {
         } catch (error) {
             console.error('Error initializing testimonials swiper:', error);
         }
-    } else {
+    } else if (!swiperContainer) {
         console.log('Testimonials swiper container not found');
+    } else {
+        console.error('Swiper library not loaded - will retry when available');
+        window.needsTestimonialsSwiper = true;
     }
 }
 
@@ -385,8 +299,7 @@ function initTestimonialsSwiper() {
 function initArticlesSwiper() {
     const swiperContainer = document.querySelector('.articles-swiper');
     
-    // Swiper is now imported locally, so it's always available
-    if (swiperContainer) {
+    if (swiperContainer && typeof Swiper !== 'undefined') {
         console.log('Initializing articles swiper...');
         
         try {
@@ -395,83 +308,30 @@ function initArticlesSwiper() {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 loop: true,
+                centeredSlides: true,
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
                 },
                 
-                // Center the slides
-                centeredSlides: true,
-                
-                // Mobile-specific settings
-                touchRatio: 1.2,
-                touchAngle: 45,
-                grabCursor: true,
-                
-                // Touch/swipe settings for mobile
-                touchEventsTarget: 'container',
-                simulateTouch: true,
-                allowTouchMove: true,
-                touchMoveStopPropagation: false,
-                
-                // Mobile browser compatibility
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                
-                // Mobile responsive
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 15,
-                        touchRatio: 1.5,
-                        centeredSlides: true,
-                    },
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                        touchRatio: 1.2,
-                        centeredSlides: true,
-                    },
-                },
-                
-                // Navigation arrows with custom classes
+                // Navigation arrows with custom classes (matching HTML)
                 navigation: {
                     nextEl: '.articles-next',
                     prevEl: '.articles-prev',
-                    disabledClass: 'swiper-button-disabled',
                 },
                 
-                // Effects
-                effect: 'slide',
+                // Enable touch for mobile
+                simulateTouch: true,
+                touchRatio: 1,
+                grabCursor: true,
                 
-                // Accessibility
-                a11y: {
-                    enabled: true,
-                    prevSlideMessage: 'Previous article',
-                    nextSlideMessage: 'Next article',
-                },
-                
-                // Mobile-specific events
+                // Events for debugging
                 on: {
                     init: function() {
-                        console.log('Articles Swiper initialized on mobile');
-                    },
-                    touchStart: function() {
-                        console.log('Articles touch start detected');
-                    },
-                    touchEnd: function() {
-                        console.log('Articles touch end detected');
+                        console.log('Articles Swiper initialized successfully');
                     },
                     slideChange: function() {
-                        // Pause autoplay briefly on manual swipe
-                        if (this.autoplay && this.autoplay.running) {
-                            this.autoplay.stop();
-                            setTimeout(() => {
-                                this.autoplay.start();
-                            }, 3000);
-                        }
+                        console.log('Articles slide changed');
                     }
                 }
             });
@@ -480,7 +340,10 @@ function initArticlesSwiper() {
         } catch (error) {
             console.error('Error initializing articles swiper:', error);
         }
-    } else {
+    } else if (!swiperContainer) {
         console.log('Articles swiper container not found');
+    } else {
+        console.error('Swiper library not loaded - will retry when available');
+        window.needsArticlesSwiper = true;
     }
 }
