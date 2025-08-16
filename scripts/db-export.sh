@@ -152,12 +152,18 @@ BACKUP_PATH="$BACKUP_DIR/$FILENAME"
 # Function to export database using DDEV
 export_with_ddev() {
     if [ "$EXPORT_TYPE" = "content" ]; then
-        # Content-only export (specific tables)
-        TABLES=$(ddev mysql -e "SHOW TABLES LIKE 'wp_posts'; SHOW TABLES LIKE 'wp_postmeta'; SHOW TABLES LIKE 'wp_terms'; SHOW TABLES LIKE 'wp_term%'; SHOW TABLES LIKE 'wp_comments'; SHOW TABLES LIKE 'wp_commentmeta';" -s | tr '\n' ' ')
-        ddev export-db --file="$BACKUP_PATH" --gzip=false
+        # Content-only export (specific tables) - export directly to backup path
+        ddev exec wp db export "$BACKUP_PATH" \
+            --skip-lock-tables \
+            --single-transaction \
+            --add-drop-table \
+            --tables="wp_posts,wp_postmeta,wp_terms,wp_termmeta,wp_term_relationships,wp_term_taxonomy,wp_comments,wp_commentmeta"
     else
-        # Full export
-        ddev export-db --file="$BACKUP_PATH" --gzip=false
+        # Full export with staging-compatible options - export directly to backup path
+        ddev exec wp db export "$BACKUP_PATH" \
+            --skip-lock-tables \
+            --single-transaction \
+            --add-drop-table
     fi
 }
 
@@ -196,13 +202,26 @@ else
     export_with_mysql
 fi
 
-# Check if export was successful
-if [ ! -f "$BACKUP_PATH" ] || [ ! -s "$BACKUP_PATH" ]; then
-    print_error "Database export failed or resulted in empty file"
+# Check if export was successful - find the most recent SQL file (excluding .gz files)
+sleep 1  # Brief wait for file system sync
+LATEST_SQL=$(ls -t "$BACKUP_DIR"/*.sql 2>/dev/null | grep -v "\.gz$" | head -1)
+if [ -n "$LATEST_SQL" ] && [ -f "$LATEST_SQL" ] && [ -s "$LATEST_SQL" ]; then
+    BACKUP_PATH="$LATEST_SQL"
+    print_success "Database exported to: $BACKUP_PATH"
+else
+    print_error "Database export failed - file not found or empty"
     exit 1
 fi
 
-print_success "Database exported to: $BACKUP_PATH"
+# Clean MySQL-specific syntax for staging compatibility
+print_status "Cleaning MySQL syntax for staging compatibility..."
+if [ -f "$BACKUP_PATH" ]; then
+    # Remove MySQL version-specific comments that cause issues on shared hosting
+    sed -i.mysql_clean 's/\/\*![0-9]* \(.*\) \*\//\1/g' "$BACKUP_PATH"
+    # Clean up backup file
+    rm "${BACKUP_PATH}.mysql_clean" 2>/dev/null || true
+    print_success "MySQL syntax cleaned for staging compatibility"
+fi
 
 # Sanitize the export if requested
 if [ "$SANITIZE" = true ]; then
