@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initArticlesSwiper();
 });
 
+// Make Swiper functions globally available for fallback scenarios
+window.initTestimonialsSwiper = initTestimonialsSwiper;
+window.initArticlesSwiper = initArticlesSwiper;
+
 /**
  * Mobile menu functionality
  */
@@ -152,7 +156,9 @@ function initFAQAccordion() {
 function initTestimonialsSwiper() {
     const swiperContainer = document.querySelector('.testimonials-swiper');
     
-    if (swiperContainer && typeof Swiper !== 'undefined') {
+    // Check if Swiper is available with retry mechanism
+    if (swiperContainer) {
+        if (typeof Swiper !== 'undefined') {
         console.log('Initializing testimonials swiper...');
         
         try {
@@ -211,10 +217,13 @@ function initTestimonialsSwiper() {
         } catch (error) {
             console.error('Error initializing testimonials swiper:', error);
         }
-    } else if (!swiperContainer) {
-        console.log('Testimonials swiper container not found');
+        } else {
+            console.warn('Swiper library not available for testimonials. Will retry when loaded.');
+            // Set a flag that this needs initialization
+            window.needsTestimonialsSwiper = true;
+        }
     } else {
-        console.error('Swiper library not loaded');
+        console.log('Testimonials swiper container not found');
     }
 }
 
@@ -224,7 +233,9 @@ function initTestimonialsSwiper() {
 function initArticlesSwiper() {
     const swiperContainer = document.querySelector('.articles-swiper');
     
-    if (swiperContainer && typeof Swiper !== 'undefined') {
+    // Check if Swiper is available with retry mechanism
+    if (swiperContainer) {
+        if (typeof Swiper !== 'undefined') {
         console.log('Initializing articles swiper...');
         
         try {
@@ -262,9 +273,12 @@ function initArticlesSwiper() {
         } catch (error) {
             console.error('Error initializing articles swiper:', error);
         }
-    } else if (!swiperContainer) {
-        console.log('Articles swiper container not found');
+        } else {
+            console.warn('Swiper library not available for articles. Will retry when loaded.');
+            // Set a flag that this needs initialization
+            window.needsArticlesSwiper = true;
+        }
     } else {
-        console.error('Swiper library not loaded');
+        console.log('Articles swiper container not found');
     }
 }
