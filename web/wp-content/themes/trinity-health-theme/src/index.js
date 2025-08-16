@@ -11,6 +11,12 @@ import '../assets/css/src/index.scss';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
+// Import Swiper locally instead of CDN for better mobile compatibility
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Mobile device detection
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
@@ -19,15 +25,32 @@ function isMobile() {
 // Mobile-specific touch event polyfill
 function addMobileTouchSupport() {
     if (isMobile()) {
+        console.log('Adding mobile touch support...');
+        
         // Add touch-action CSS to prevent scroll blocking
         document.documentElement.style.touchAction = 'manipulation';
+        
+        // Force reflow for iOS Safari
+        document.documentElement.offsetHeight;
         
         // Add passive event listeners for better performance
         const swiperContainers = document.querySelectorAll('.testimonials-swiper, .articles-swiper');
         swiperContainers.forEach(container => {
             container.style.touchAction = 'pan-y';
+            container.style.webkitUserSelect = 'none';
+            container.style.userSelect = 'none';
+            
+            // Force hardware acceleration
+            container.style.transform = 'translateZ(0)';
+            container.style.webkitTransform = 'translateZ(0)';
+            
             container.addEventListener('touchstart', function() {
                 console.log('Mobile touch start on swiper container');
+            }, { passive: true });
+            
+            // Prevent default touch behaviors that might interfere
+            container.addEventListener('touchmove', function() {
+                // Allow swiper to handle touch move
             }, { passive: true });
         });
         
@@ -37,18 +60,29 @@ function addMobileTouchSupport() {
             // Add mobile-friendly tap handling
             trigger.style.cursor = 'pointer';
             trigger.style.touchAction = 'manipulation';
+            trigger.style.webkitTapHighlightColor = 'rgba(0,0,0,0.1)';
+            
+            // Force hardware acceleration
+            trigger.style.transform = 'translateZ(0)';
+            trigger.style.webkitTransform = 'translateZ(0)';
             
             // Add visual feedback for touch
             trigger.addEventListener('touchstart', function() {
                 this.style.opacity = '0.7';
+                console.log('Accordion trigger touched');
             }, { passive: true });
             
             trigger.addEventListener('touchend', function() {
                 this.style.opacity = '1';
             }, { passive: true });
+            
+            // Ensure click events work on mobile
+            trigger.addEventListener('click', function() {
+                console.log('Accordion trigger clicked on mobile');
+            });
         });
         
-        console.log('Mobile touch support added');
+        console.log('Mobile touch support added successfully');
     }
 }
 
@@ -229,9 +263,8 @@ function initFAQAccordion() {
 function initTestimonialsSwiper() {
     const swiperContainer = document.querySelector('.testimonials-swiper');
     
-    // Check if Swiper is available with retry mechanism
+    // Swiper is now imported locally, so it's always available
     if (swiperContainer) {
-        if (typeof Swiper !== 'undefined') {
         console.log('Initializing testimonials swiper...');
         
         try {
@@ -341,11 +374,6 @@ function initTestimonialsSwiper() {
         } catch (error) {
             console.error('Error initializing testimonials swiper:', error);
         }
-        } else {
-            console.warn('Swiper library not available for testimonials. Will retry when loaded.');
-            // Set a flag that this needs initialization
-            window.needsTestimonialsSwiper = true;
-        }
     } else {
         console.log('Testimonials swiper container not found');
     }
@@ -357,9 +385,8 @@ function initTestimonialsSwiper() {
 function initArticlesSwiper() {
     const swiperContainer = document.querySelector('.articles-swiper');
     
-    // Check if Swiper is available with retry mechanism
+    // Swiper is now imported locally, so it's always available
     if (swiperContainer) {
-        if (typeof Swiper !== 'undefined') {
         console.log('Initializing articles swiper...');
         
         try {
@@ -452,11 +479,6 @@ function initArticlesSwiper() {
             console.log('Articles swiper initialized successfully');
         } catch (error) {
             console.error('Error initializing articles swiper:', error);
-        }
-        } else {
-            console.warn('Swiper library not available for articles. Will retry when loaded.');
-            // Set a flag that this needs initialization
-            window.needsArticlesSwiper = true;
         }
     } else {
         console.log('Articles swiper container not found');

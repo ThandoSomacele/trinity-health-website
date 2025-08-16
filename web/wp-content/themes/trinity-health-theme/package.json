@@ -43,7 +43,8 @@
   "dependencies": {
     "accordion-js": "^3.4.1",
     "chokidar": "^4.0.3",
-    "heroicons": "^2.2.0"
+    "heroicons": "^2.2.0",
+    "swiper": "^11.2.10"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

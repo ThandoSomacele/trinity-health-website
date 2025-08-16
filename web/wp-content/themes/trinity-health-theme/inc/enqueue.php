@@ -34,57 +34,29 @@ function trinity_health_enqueue_assets() {
         $asset['version']
     );
     
-    // Enqueue Swiper CSS
-    wp_enqueue_style(
-        'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
-        array(),
-        '11.0.0'
-    );
+    // Swiper is now bundled locally with webpack, no CDN needed
     
-    // Enqueue Swiper JavaScript
-    wp_enqueue_script(
-        'swiper-js',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
-        array(),
-        '11.0.0',
-        true
-    );
-    
-    // Enqueue main JavaScript with proper dependencies
+    // Enqueue main JavaScript (now includes Swiper locally)
     wp_enqueue_script(
         'trinity-health-script',
         TRINITY_THEME_URL . '/build/index.js',
-        array_merge($asset['dependencies'], array('swiper-js')),
+        $asset['dependencies'],
         $asset['version'],
         true
     );
     
-    // Add script dependency check for staging
+    // Add mobile debugging script
     wp_add_inline_script('trinity-health-script', '
-        // Check if Swiper loaded properly after a brief delay
-        setTimeout(function() {
-            if (typeof Swiper === "undefined") {
-                console.error("Swiper library not loaded properly. Loading fallback...");
-                // Fallback CDN load
-                var swiperScript = document.createElement("script");
-                swiperScript.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-                swiperScript.onload = function() {
-                    console.log("Swiper loaded via fallback CDN");
-                    // Re-initialize components that were waiting
-                    if (window.needsTestimonialsSwiper && window.initTestimonialsSwiper) {
-                        window.initTestimonialsSwiper();
-                    }
-                    if (window.needsArticlesSwiper && window.initArticlesSwiper) {
-                        window.initArticlesSwiper();
-                    }
-                };
-                swiperScript.onerror = function() {
-                    console.error("Failed to load Swiper even from fallback CDN");
-                };
-                document.head.appendChild(swiperScript);
-            }
-        }, 1000);
+        // Mobile debugging and cache busting
+        console.log("Trinity Health mobile debugging active");
+        console.log("User agent:", navigator.userAgent);
+        console.log("Screen size:", window.innerWidth + "x" + window.innerHeight);
+        console.log("Touch support:", "ontouchstart" in window);
+        
+        // Force reload on mobile if needed (cache busting)
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            console.log("Mobile device detected - ensuring fresh script execution");
+        }
     ', 'before');
     
     // Localize script for AJAX
