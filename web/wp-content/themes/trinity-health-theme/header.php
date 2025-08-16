@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    
+
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
@@ -18,7 +18,7 @@
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
     <header class="site-header bg-trinity-maroon border-b-[1px] border-white border-opacity-15" role="banner">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6 py-2">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Section -->
                 <div class="site-logo flex items-center">
@@ -27,7 +27,7 @@
                     <?php else : ?>
                         <a href="#" rel="home" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
                             <!-- Trinity Health Logo - White version for maroon background -->
-                            <div class="w-12 h-12 mr-3 flex items-center justify-center">
+                            <div class="w-16 h-16 mr-3 flex items-center justify-center">
                                 <?php echo trinity_health_get_logo('dark'); ?>
                             </div>
                             <span class="text-xl font-semibold"><?php bloginfo('name'); ?></span>
