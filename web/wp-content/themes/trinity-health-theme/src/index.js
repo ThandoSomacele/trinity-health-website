@@ -170,17 +170,32 @@ function initFAQAccordion() {
         console.log('Initializing accordion...', accordionContainer);
         
         try {
-            new Accordion('#faq-accordion', {
+            const accordionInstance = new Accordion('#faq-accordion', {
+                // Basic configuration - all panels start collapsed by default
                 duration: 300,
                 ariaEnabled: true,
                 collapse: true,
                 showMultiple: false,
+                
+                // Ensure all panels start collapsed (empty array = all closed)
+                openOnInit: [],
+                
                 // Mobile-friendly settings
                 triggerClass: 'ac-trigger',
                 panelClass: 'ac-panel',
                 activeClass: 'is-active',
+                
+                // Enhanced mobile support
+                beforeOpen: function() {
+                    console.log('About to open accordion panel');
+                    if (isMobile()) {
+                        console.log('Mobile accordion interaction detected');
+                    }
+                },
+                
                 onOpen: function(currentElement) {
                     console.log('Accordion opened:', currentElement);
+                    
                     // Change icon to minus when opened
                     const icon = currentElement.querySelector('[data-lucide]');
                     if (icon) {
@@ -190,18 +205,31 @@ function initFAQAccordion() {
                         }
                     }
                     
-                    // Mobile-specific: Scroll to accordion item
-                    if (window.innerWidth <= 768) {
+                    // Mobile-specific: Enhanced scroll behavior
+                    if (isMobile()) {
                         setTimeout(() => {
-                            currentElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'nearest'
-                            });
-                        }, 100);
+                            const rect = currentElement.getBoundingClientRect();
+                            const viewportHeight = window.innerHeight;
+                            
+                            // Only scroll if the element is not fully visible
+                            if (rect.bottom > viewportHeight || rect.top < 0) {
+                                currentElement.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'nearest',
+                                    inline: 'nearest'
+                                });
+                            }
+                        }, 150); // Slightly longer delay for mobile
                     }
                 },
+                
+                beforeClose: function() {
+                    console.log('About to close accordion panel');
+                },
+                
                 onClose: function(currentElement) {
                     console.log('Accordion closed:', currentElement);
+                    
                     // Change icon to plus when closed
                     const icon = currentElement.querySelector('[data-lucide]');
                     if (icon) {
@@ -212,7 +240,39 @@ function initFAQAccordion() {
                     }
                 }
             });
-            console.log('Accordion initialized successfully');
+            
+            // Explicitly ensure all panels are closed after initialization
+            setTimeout(() => {
+                const allPanels = document.querySelectorAll('#faq-accordion .ac-panel');
+                const allTriggers = document.querySelectorAll('#faq-accordion .ac-trigger');
+                
+                console.log(`Found ${allPanels.length} accordion panels`);
+                
+                // Force close any panels that might be open
+                allPanels.forEach((panel, index) => {
+                    if (panel.style.height !== '0px' && panel.style.height !== '') {
+                        console.log(`Closing panel ${index} that was unexpectedly open`);
+                        panel.style.height = '0px';
+                        panel.parentElement.classList.remove('is-active');
+                    }
+                });
+                
+                // Ensure all triggers show plus icons
+                allTriggers.forEach((trigger, index) => {
+                    const icon = trigger.querySelector('[data-lucide]');
+                    if (icon && icon.getAttribute('data-lucide') !== 'plus') {
+                        console.log(`Setting trigger ${index} icon to plus`);
+                        icon.setAttribute('data-lucide', 'plus');
+                        if (window.lucide) {
+                            window.lucide.createIcons();
+                        }
+                    }
+                });
+                
+                console.log('All accordion panels confirmed closed');
+            }, 100);
+            
+            console.log('Accordion initialized successfully - all panels collapsed by default');
         } catch (error) {
             console.error('Error initializing accordion:', error);
         }
@@ -236,13 +296,41 @@ function initTestimonialsSwiper() {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 loop: true,
+                
+                // Autoplay with mobile-friendly settings
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    waitForTransition: true,
                 },
+                
+                // Mobile-optimized touch settings (from official docs)
+                simulateTouch: true,
+                touchRatio: 1,
+                touchAngle: 45,
+                threshold: 5,
+                touchStartPreventDefault: true,
+                touchMoveStopPropagation: false,
+                touchReleaseOnEdges: true,
+                passiveListeners: true,
+                resistance: true,
+                resistanceRatio: 0.85,
+                
+                // Mobile performance optimizations
+                grabCursor: true,
+                watchSlidesProgress: true,
+                watchSlidesVisibility: true,
+                
+                // Speed and easing for smooth mobile experience
+                speed: 300,
                 
                 // Responsive breakpoints
                 breakpoints: {
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                    },
                     768: {
                         slidesPerView: 2,
                         spaceBetween: 24,
@@ -263,20 +351,35 @@ function initTestimonialsSwiper() {
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
+                    dynamicBullets: true,
                 },
                 
-                // Enable touch for mobile
-                simulateTouch: true,
-                touchRatio: 1,
-                grabCursor: true,
-                
-                // Events for debugging
+                // Mobile-specific events and debugging
                 on: {
                     init: function() {
-                        console.log('Testimonials Swiper initialized successfully');
+                        console.log('Testimonials Swiper initialized with mobile optimizations');
+                        if (isMobile()) {
+                            console.log('Mobile device detected - touch interactions enabled');
+                        }
+                    },
+                    touchStart: function() {
+                        if (isMobile()) {
+                            console.log('Touch start on testimonials swiper');
+                        }
+                    },
+                    touchEnd: function() {
+                        if (isMobile()) {
+                            console.log('Touch end on testimonials swiper');
+                        }
                     },
                     slideChange: function() {
-                        console.log('Testimonials slide changed');
+                        console.log('Testimonials slide changed to:', this.activeIndex);
+                    },
+                    autoplayStart: function() {
+                        console.log('Testimonials autoplay started');
+                    },
+                    autoplayStop: function() {
+                        console.log('Testimonials autoplay stopped');
                     }
                 }
             });
@@ -309,10 +412,34 @@ function initArticlesSwiper() {
                 spaceBetween: 20,
                 loop: true,
                 centeredSlides: true,
+                
+                // Autoplay with mobile-friendly settings
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    waitForTransition: true,
                 },
+                
+                // Mobile-optimized touch settings (from official docs)
+                simulateTouch: true,
+                touchRatio: 1,
+                touchAngle: 45,
+                threshold: 5,
+                touchStartPreventDefault: true,
+                touchMoveStopPropagation: false,
+                touchReleaseOnEdges: true,
+                passiveListeners: true,
+                resistance: true,
+                resistanceRatio: 0.85,
+                
+                // Mobile performance optimizations
+                grabCursor: true,
+                watchSlidesProgress: true,
+                watchSlidesVisibility: true,
+                
+                // Speed and easing for smooth mobile experience
+                speed: 300,
                 
                 // Navigation arrows with custom classes (matching HTML)
                 navigation: {
@@ -320,18 +447,32 @@ function initArticlesSwiper() {
                     prevEl: '.articles-prev',
                 },
                 
-                // Enable touch for mobile
-                simulateTouch: true,
-                touchRatio: 1,
-                grabCursor: true,
-                
-                // Events for debugging
+                // Mobile-specific events and debugging
                 on: {
                     init: function() {
-                        console.log('Articles Swiper initialized successfully');
+                        console.log('Articles Swiper initialized with mobile optimizations');
+                        if (isMobile()) {
+                            console.log('Mobile device detected - touch interactions enabled');
+                        }
+                    },
+                    touchStart: function() {
+                        if (isMobile()) {
+                            console.log('Touch start on articles swiper');
+                        }
+                    },
+                    touchEnd: function() {
+                        if (isMobile()) {
+                            console.log('Touch end on articles swiper');
+                        }
                     },
                     slideChange: function() {
-                        console.log('Articles slide changed');
+                        console.log('Articles slide changed to:', this.activeIndex);
+                    },
+                    autoplayStart: function() {
+                        console.log('Articles autoplay started');
+                    },
+                    autoplayStop: function() {
+                        console.log('Articles autoplay stopped');
                     }
                 }
             });
