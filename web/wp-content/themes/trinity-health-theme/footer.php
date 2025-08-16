@@ -39,7 +39,7 @@
                         <i data-lucide="instagram" class="w-5 h-5"></i>
                     </a>
 
-                    <a href="#" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
+                    <a href="https://www.facebook.com/TrinityHealthZambia" class="text-trinity-gold hover:text-trinity-gold-light transition-colors" target="_blank" rel="noopener">
                         <i data-lucide="facebook" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -65,26 +65,26 @@
                 <div class="space-y-3 text-sm">
                     <div class="flex items-start">
                         <i data-lucide="map-pin" class="w-3 h-3 mt-1 mr-3 text-trinity-gold flex-shrink-0"></i>
-                        <span class="text-gray-100"><?php echo esc_html(get_theme_mod('trinity_health_address', 'Jl. Raya Kuta No.70, Kuta')); ?></span>
+                        <span class="text-gray-100"><?php echo esc_html(get_theme_mod('trinity_health_address', '4 Suez Road, Lusaka, Zambia')); ?></span>
                     </div>
 
                     <div class="flex items-center">
                         <i data-lucide="mail" class="w-3 h-3 mr-3 text-trinity-gold"></i>
-                        <a href="mailto:<?php echo esc_attr(get_theme_mod('trinity_health_email', 'healthcare@gmail.com')); ?>" class="text-gray-100 hover:text-trinity-gold-light transition-colors">
-                            <?php echo esc_html(get_theme_mod('trinity_health_email', 'healthcare@gmail.com')); ?>
+                        <a href="mailto:<?php echo esc_attr(get_theme_mod('trinity_health_email', 'info@trinityhealth.co.zm')); ?>" class="text-gray-100 hover:text-trinity-gold-light transition-colors">
+                            <?php echo esc_html(get_theme_mod('trinity_health_email', 'info@trinityhealth.co.zm')); ?>
                         </a>
                     </div>
 
                     <div class="flex items-center">
                         <i data-lucide="phone" class="w-3 h-3 mr-3 text-trinity-gold"></i>
-                        <a href="tel:<?php echo esc_attr(get_theme_mod('trinity_health_phone', '+01 547 547 5478')); ?>" class="text-gray-100 hover:text-trinity-gold-light transition-colors">
-                            <?php echo esc_html(get_theme_mod('trinity_health_phone', '+01 547 547 5478')); ?>
+                        <a href="tel:<?php echo esc_attr(get_theme_mod('trinity_health_phone', '260955333007')); ?>" class="text-gray-100 hover:text-trinity-gold-light transition-colors">
+                            <?php echo esc_html(get_theme_mod('trinity_health_phone', '+260 955 333 007')); ?>
                         </a>
                     </div>
 
                     <div class="flex items-start">
                         <i data-lucide="clock" class="w-3 h-3 mt-1 mr-3 text-trinity-gold flex-shrink-0"></i>
-                        <span class="text-gray-100"><?php echo esc_html(get_theme_mod('trinity_health_hours', '8 AM - 5 PM, Monday - Saturday')); ?></span>
+                        <span class="text-gray-100"><?php echo esc_html(get_theme_mod('trinity_health_hours', 'Always Open')); ?></span>
                     </div>
                 </div>
             </div>
