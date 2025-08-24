@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addMobileTouchSupport();
     
     // Initialize theme functionality
-    initMobileMenu();
+    // NOTE: Mobile menu is handled by dedicated navigation.js file to avoid conflicts
     initSmoothScrolling();
     initContactForms();
     initFAQAccordion();
@@ -85,41 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.initTestimonialsSwiper = initTestimonialsSwiper;
 window.initArticlesSwiper = initArticlesSwiper;
 
-/**
- * Mobile menu functionality
- */
-function initMobileMenu() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', function() {
-            // Toggle the hidden class instead of active
-            mobileMenu.classList.toggle('hidden');
-            
-            // Update aria-expanded based on visibility
-            const isExpanded = !mobileMenu.classList.contains('hidden');
-            menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Close mobile menu on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.focus();
-            }
-        });
-    }
-}
+// Mobile menu functionality removed - handled by dedicated navigation.js file
 
 /**
  * Smooth scrolling for anchor links

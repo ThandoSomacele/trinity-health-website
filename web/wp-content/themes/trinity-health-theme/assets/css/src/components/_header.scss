@@ -20,18 +20,35 @@
   
   // Mobile menu toggle functionality
   .mobile-menu-toggle {
-    @apply p-2 text-white hover:text-trinity-gold-light focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:ring-offset-2 focus:ring-offset-green-900 transition-colors;
+    @apply p-2 text-white hover:text-trinity-gold-light focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:ring-offset-2 focus:ring-offset-trinity-maroon transition-colors;
     
-    &[aria-expanded="true"] + .mobile-menu {
-      @apply block;
+    // Ensure child elements don't block clicks
+    * {
+      pointer-events: none;
     }
   }
   
+  // Mobile menu - JavaScript controls visibility via .hidden class
   .mobile-menu {
-    @apply lg:hidden;
+    transition: all 0.3s ease-in-out;
+    
+    // Hide on large screens regardless of .hidden class
+    @screen lg {
+      display: none !important;
+    }
+    
+    // When hidden class is present, hide the menu
+    &.hidden {
+      display: none !important;
+    }
+    
+    // When hidden class is removed, show as block
+    &:not(.hidden) {
+      display: block !important;
+    }
     
     a {
-      @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-green-700 transition-colors;
+      @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-trinity-maroon-light transition-colors;
     }
   }
   

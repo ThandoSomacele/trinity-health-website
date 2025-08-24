@@ -86,6 +86,11 @@
     display: none;
   }
   
+  // Ensure child elements don't block clicks
+  * {
+    pointer-events: none;
+  }
+  
   span {
     width: 24px;
     height: 2px;
@@ -109,9 +114,8 @@
   }
 }
 
-// Mobile menu
+// Mobile menu - controlled by JavaScript toggling .hidden class
 .mobile-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -119,13 +123,21 @@
   background: white;
   box-shadow: var(--trinity-shadow-lg);
   padding: var(--trinity-spacing-md);
+  transition: all 0.3s ease-in-out;
   
+  // Always hide on large screens
   @screen lg {
     display: none !important;
   }
   
-  &.active {
-    display: block;
+  // Hide when .hidden class is present
+  &.hidden {
+    display: none !important;
+  }
+  
+  // Show when .hidden class is removed
+  &:not(.hidden) {
+    display: block !important;
   }
   
   .menu {

@@ -9,6 +9,153 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
+    <!-- Mobile Menu Styles -->
+    <style>
+        /* Mobile menu visibility and transitions */
+        .mobile-menu {
+            background: #880005 !important; /* Trinity maroon */
+            background-color: #880005 !important;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .mobile-menu > div {
+            background: #880005 !important; /* Trinity maroon */
+            background-color: #880005 !important;
+        }
+        
+        .mobile-menu.hidden {
+            display: none !important;
+        }
+        
+        .mobile-menu:not(.hidden) {
+            display: block !important;
+            animation: slideDown 0.4s ease-in-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        /* Prevent clicks on icon children */
+        .mobile-menu-toggle * {
+            pointer-events: none;
+        }
+        
+        /* Mobile menu link styles */
+        .mobile-nav-menu {
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+        }
+        
+        .mobile-nav-menu li {
+            border-bottom: 1px solid rgba(229, 208, 172, 0.2) !important; /* Trinity gold with opacity */
+            background: transparent !important;
+        }
+        
+        .mobile-nav-menu li:last-child {
+            border-bottom: none !important;
+        }
+        
+        .mobile-nav-menu li a {
+            display: block !important;
+            padding: 12px 16px !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            background: transparent !important;
+        }
+        
+        .mobile-nav-menu li a:hover,
+        .mobile-nav-menu li a:focus {
+            background: rgba(229, 208, 172, 0.1) !important; /* Trinity gold hover */
+            color: #E5D0AC !important; /* Trinity gold */
+            padding-left: 24px !important;
+        }
+        
+        /* Mobile Book Appointment button */
+        .mobile-menu .book-appointment-btn {
+            margin: 16px !important;
+            display: block !important;
+            text-align: center !important;
+            background: transparent !important;
+            border: 2px solid #E5D0AC !important;
+            color: #E5D0AC !important;
+            padding: 12px 24px !important;
+            border-radius: 9999px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+        
+        .mobile-menu .book-appointment-btn:hover,
+        .mobile-menu .book-appointment-btn:focus {
+            background: #E5D0AC !important;
+            color: #880005 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(229, 208, 172, 0.3) !important;
+        }
+        
+        .mobile-menu .book-appointment-btn i {
+            color: inherit !important;
+        }
+        
+        /* Submenu styles for mobile */
+        .mobile-nav-menu .sub-menu {
+            margin-left: 20px;
+            border-left: 2px solid rgba(229, 208, 172, 0.2);
+        }
+        
+        .mobile-nav-menu .sub-menu li a {
+            font-size: 14px;
+            padding: 10px 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .mobile-nav-menu .sub-menu li a:hover {
+            color: #E5D0AC;
+        }
+        
+        /* Current page indicator */
+        .mobile-nav-menu .current-menu-item > a {
+            color: #E5D0AC !important;
+            background: rgba(229, 208, 172, 0.1) !important;
+        }
+        
+        /* Override any conflicting Tailwind classes */
+        .mobile-menu * {
+            color: inherit;
+        }
+        
+        .mobile-menu .bg-white,
+        .mobile-menu .bg-gray-50,
+        .mobile-menu .bg-gray-100 {
+            background: transparent !important;
+        }
+        
+        .mobile-menu .text-gray-600,
+        .mobile-menu .text-gray-800,
+        .mobile-menu .text-black {
+            color: #ffffff !important;
+        }
+    </style>
+
     <?php wp_head(); ?>
 </head>
 

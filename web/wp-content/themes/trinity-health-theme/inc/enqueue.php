@@ -51,6 +51,15 @@ function trinity_health_enqueue_assets() {
         true
     );
     
+    // Enqueue navigation JavaScript
+    wp_enqueue_script(
+        'trinity-health-navigation',
+        TRINITY_THEME_URL . '/assets/js/src/navigation.js',
+        array(),
+        TRINITY_THEME_VERSION,
+        true
+    );
+    
     // Enqueue main JavaScript with Swiper dependency
     wp_enqueue_script(
         'trinity-health-script',

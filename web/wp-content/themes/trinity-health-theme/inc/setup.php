@@ -148,19 +148,31 @@ function trinity_health_custom_logo_setup() {
 
     add_theme_support('custom-logo', $defaults);
 }
-add_action('after_setup_theme', 'trinity_health_custom_logo_setup');
 
 /**
- * Menu fallback functions
+ * Fallback menu for primary navigation
  */
 function trinity_health_primary_menu_fallback() {
-    echo '<ul class="menu">';
-    echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'trinity-health') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/about')) . '">' . esc_html__('About', 'trinity-health') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/services')) . '">' . esc_html__('Services', 'trinity-health') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/contact')) . '">' . esc_html__('Contact', 'trinity-health') . '</a></li>';
-    echo '</ul>';
+    ?>
+    <ul class="nav-menu flex items-center space-x-6">
+        <li><a href="<?php echo esc_url(home_url('/')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Home', 'trinity-health'); ?></a></li>
+        <li><a href="<?php echo esc_url(home_url('/about')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('About', 'trinity-health'); ?></a></li>
+        <li class="menu-item-has-children">
+            <a href="<?php echo esc_url(home_url('/services')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Services', 'trinity-health'); ?></a>
+            <ul class="sub-menu">
+                <li><a href="<?php echo esc_url(home_url('/services/general-health')); ?>"><?php esc_html_e('General Health', 'trinity-health'); ?></a></li>
+                <li><a href="<?php echo esc_url(home_url('/services/audiology')); ?>"><?php esc_html_e('Audiology', 'trinity-health'); ?></a></li>
+                <li><a href="<?php echo esc_url(home_url('/services/dental-care')); ?>"><?php esc_html_e('Dental Care', 'trinity-health'); ?></a></li>
+                <li><a href="<?php echo esc_url(home_url('/services/eye-care')); ?>"><?php esc_html_e('Eye Care', 'trinity-health'); ?></a></li>
+                <li><a href="<?php echo esc_url(home_url('/services/laboratory')); ?>"><?php esc_html_e('Laboratory', 'trinity-health'); ?></a></li>
+            </ul>
+        </li>
+        <li><a href="<?php echo esc_url(home_url('/team')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Our Team', 'trinity-health'); ?></a></li>
+        <li><a href="<?php echo esc_url(home_url('/contact')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Contact', 'trinity-health'); ?></a></li>
+    </ul>
+    <?php
 }
+add_action('after_setup_theme', 'trinity_health_custom_logo_setup');
 
 function trinity_health_footer_menu_fallback() {
     echo '<ul>';
