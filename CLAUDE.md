@@ -155,3 +155,60 @@ Do what has been asked; nothing more, nothing less.
 NEVER create files unless they're absolutely necessary for achieving your goal.
 ALWAYS prefer editing an existing file to creating a new one.
 NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+
+## Visual Development
+
+## Design Principles
+- Comprehensive design checklist in `/context/design-principles.md`
+- Brand style guide in `/context/style-guide.md`
+- Design review agent configuration in `/context/design-review-agent.md`
+- When making visual (front-end, UI/UX) changes, always refer to these files for guidance
+
+### Quick Visual Check
+IMMEDIATELY after implementing any front-end change:
+1. **Identify what changed** - Review the modified components/pages
+2. **Navigate to affected pages** - Use `mcp_playwright_browser_navigate` to visit each changed view
+3. **Verify design compliance** - Compare against `/context/design-principles.md` and `/context/style-guide.md`
+4. **Validate feature implementation** - Ensure the change fulfills the user's specific request
+5. **Check acceptance criteria** - Review any provided context or requirements
+6. **Capture evidence** - Take full page screenshot at desktop viewport (1440px) of each changed view
+7. **Check for errors** - Run `mcp_playwright_browser_console_messages`
+
+This verification ensures changes meet design standards and user requirements.
+
+### Comprehensive Design Review
+Invoke the `@agent-design-review` subagent for thorough design validation when:
+- Completing significant UI/UX features
+- Before finalizing PRs with visual changes
+- Needing comprehensive accessibility and responsiveness testing
+
+### shadcn/ui Components
+- Modern component library built on Radix UI primitives
+- Tailwind CSS with SCSS variables for theming
+- Lucide icons throughout
+
+### Key Features
+
+- Dashboard for event management
+- Content moderation tools
+- Export functionality
+- Credits system
+- Multi-tenant architecture with organization support
+
+### Git Commit Guidelines
+
+- Please use Conventional Commits formatting for git commits.
+- Please use Conventional Branch naming (prefix-based branch naming convention)
+- Please do not mention yourself (Claude) as a co-author when committing, or include any links to Claude Code
+
+### Guidance Memories
+
+- Please ask for clarification upfront, upon the initial prompts, when you need more direction.
+
+### Linting and Code Quality
+
+- Please run `npm run lint` after completing large additions or refactors to ensure adherence to syntactic best practices
+
+### CLI Tooling Memories
+
+- Please use the `gh` CLI tool when appropriate, create issues, open pull requests, read comments, etc.

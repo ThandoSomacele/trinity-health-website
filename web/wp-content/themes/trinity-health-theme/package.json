@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "wp-scripts build",
-    "start": "concurrently \"ddev npm run dev\" \"npm run browser-sync\" \"node watch-and-reload.js\"",
-    "dev": "wp-scripts start",
-    "browser-sync": "browser-sync start --config bs-config.js",
-    "start:basic": "wp-scripts start",
+    "start": "wp-scripts start",
+    "start:hot": "wp-scripts start --hot",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "format": "wp-scripts format",
@@ -32,18 +30,15 @@
     "@tailwindcss/typography": "^0.5.10",
     "@wordpress/scripts": "^28.6.0",
     "autoprefixer": "^10.4.0",
-    "browser-sync": "^3.0.4",
-    "browser-sync-webpack-plugin": "^2.4.0",
-    "chokidar-cli": "^3.0.0",
-    "concurrently": "^9.2.0",
+    "playwright": "^1.55.0",
     "postcss": "^8.4.0",
     "sass": "^1.70.0",
     "tailwindcss": "^3.4.0"
   },
   "dependencies": {
     "accordion-js": "^3.4.1",
-    "chokidar": "^4.0.3",
-    "heroicons": "^2.2.0"
+    "heroicons": "^2.2.0",
+    "puppeteer": "^24.17.0"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
