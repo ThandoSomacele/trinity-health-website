@@ -50,7 +50,7 @@
             top: 100%;
             left: 0;
             min-width: 200px;
-            background: #ffffff;
+            background: #880005;  /* Trinity maroon background */
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             opacity: 0;
@@ -74,15 +74,15 @@
         .nav-menu .sub-menu li a {
             display: block;
             padding: 0.5rem 1rem;
-            color: #374151;
+            color: #ffffff !important;  /* White text by default (on maroon bg) */
             text-decoration: none;
             font-size: 0.875rem;
             transition: all 0.2s ease;
         }
         
         .nav-menu .sub-menu li a:hover {
-            background: #f3f4f6;
-            color: #880005;
+            background: #E5D0AC !important;  /* Trinity gold light */
+            color: #374151 !important;  /* Dark gray text on hover */
             padding-left: 1.5rem;
         }
         
