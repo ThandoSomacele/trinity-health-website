@@ -9,6 +9,85 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
+    <!-- Navigation and Mobile Menu Styles -->
+    <style>
+        /* Desktop Navigation Styles */
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu > li {
+            position: relative;
+        }
+        
+        .nav-menu > li > a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border-radius: 0.375rem;
+        }
+        
+        .nav-menu > li > a:hover {
+            background: rgba(229, 208, 172, 0.1);
+            color: #E5D0AC;
+        }
+        
+        .nav-menu > li.current-menu-item > a,
+        .nav-menu > li.current_page_item > a {
+            background: rgba(229, 208, 172, 0.1);
+            color: #E5D0AC;
+        }
+        
+        /* Dropdown Menu Styles */
+        .nav-menu .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu li:hover > .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .nav-menu .sub-menu li {
+            list-style: none;
+        }
+        
+        .nav-menu .sub-menu li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-menu .sub-menu li a:hover {
+            background: #f3f4f6;
+            color: #880005;
+            padding-left: 1.5rem;
+        }
+        
+    </style>
+    
     <!-- Mobile Menu Styles -->
     <style>
         /* Mobile menu visibility and transitions */
@@ -164,15 +243,15 @@
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
-    <header class="site-header bg-trinity-maroon border-b-[1px] border-white border-opacity-15" role="banner">
-        <div class="max-w-7xl mx-auto px-6 py-2">
-            <div class="flex items-center justify-between h-16">
+    <header class="site-header bg-trinity-maroon" role="banner">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo Section -->
                 <div class="site-logo flex items-center">
                     <?php if (has_custom_logo()) : ?>
                         <?php the_custom_logo(); ?>
                     <?php else : ?>
-                        <a href="#" rel="home" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="flex items-center text-white hover:text-trinity-gold transition-colors">
                             <!-- Trinity Health Logo - White version for maroon background -->
                             <div class="w-16 h-16 mr-3 flex items-center justify-center">
                                 <?php echo trinity_health_get_logo('dark'); ?>
@@ -183,12 +262,12 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <nav class="main-navigation hidden lg:flex items-center space-x-8" role="navigation" aria-label="<?php esc_attr_e('Primary Menu', 'trinity-health'); ?>">
+                <nav class="main-navigation hidden lg:flex items-center space-x-2" role="navigation" aria-label="<?php esc_attr_e('Primary Menu', 'trinity-health'); ?>">
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
                         'menu_id'        => 'primary-menu',
-                        'menu_class'     => 'nav-menu flex items-center space-x-6',
+                        'menu_class'     => 'nav-menu flex items-center space-x-1',
                         'container'      => false,
                         'fallback_cb'    => 'trinity_health_primary_menu_fallback',
                         'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -196,7 +275,7 @@
                     ?>
 
                     <!-- Book Appointment Button -->
-                    <a href="#"
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
                         class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center ml-4">
                         <i data-lucide="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
                         <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
@@ -204,9 +283,9 @@
                 </nav>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle lg:hidden text-white p-2" aria-controls="primary-menu" aria-expanded="false">
+                <button class="mobile-menu-toggle lg:hidden text-white p-2 hover:text-trinity-gold transition-colors" aria-controls="primary-menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e('Menu', 'trinity-health'); ?></span>
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                    <i data-lucide="menu" class="w-7 h-7"></i>
                 </button>
             </div>
 

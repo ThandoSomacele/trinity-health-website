@@ -167,7 +167,13 @@ function trinity_health_primary_menu_fallback() {
                 <li><a href="<?php echo esc_url(home_url('/services/laboratory')); ?>"><?php esc_html_e('Laboratory', 'trinity-health'); ?></a></li>
             </ul>
         </li>
-        <li><a href="<?php echo esc_url(home_url('/team')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Our Team', 'trinity-health'); ?></a></li>
+        <li class="menu-item-has-children">
+            <a href="#" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Our Team', 'trinity-health'); ?></a>
+            <ul class="sub-menu">
+                <li><a href="<?php echo esc_url(home_url('/staff')); ?>"><?php esc_html_e('Staff', 'trinity-health'); ?></a></li>
+                <li><a href="<?php echo esc_url(home_url('/careers')); ?>"><?php esc_html_e('Careers', 'trinity-health'); ?></a></li>
+            </ul>
+        </li>
         <li><a href="<?php echo esc_url(home_url('/contact')); ?>" class="text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base"><?php esc_html_e('Contact', 'trinity-health'); ?></a></li>
     </ul>
     <?php
