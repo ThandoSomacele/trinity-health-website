@@ -84,151 +84,181 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- Improving The Quality Of Your Life Through Better Health -->
+<section class="py-16 lg:py-20" style="background-color: #1B5E5F;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Image -->
+            <div>
+                <img src="/wp-content/uploads/2025/08/hospital-waiting-africa.webp" alt="Medical professional using microscope" class="rounded-lg w-full">
+            </div>
+
+            <!-- Right Side - Content -->
+            <div class="text-white">
+                <p class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-300">WHO WE ARE</p>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight" style="color: #F4B5A0;">
+                    Improving The Quality Of<br/>Your Life Through Better<br/>Health.
+                </h2>
+                <p class="text-gray-200 mb-8 leading-relaxed">
+                    We offer a wide range of comprehensive healthcare services to address all aspects of your health. From preventive care and health screenings to specialized treatments and chronic disease management.
+                </p>
+                <button class="inline-flex items-center space-x-3 text-white hover:text-trinity-gold transition-colors group">
+                    <span class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center group-hover:border-trinity-gold transition-colors">
+                        <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+                    </span>
+                    <span class="font-medium">Play Video</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- We Are A Progressive Medical Clinic -->
-<section class="py-16 lg:py-20 bg-gray-50">
+<section class="py-20 lg:py-24" style="background-color: #FDF4F0;">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-left mb-12">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                We Are A Progressive<br/>Medical Clinic
+            <p class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #F4B5A0;">TOP SERVICES</p>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+                We Are a Progressive<br/>Medical Clinic.
             </h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Healthcare Professionals -->
-            <div class="text-left">
-                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-6">
-                    <i data-lucide="users" class="w-12 h-12 text-trinity-maroon"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+            <!-- Modern Laboratory -->
+            <div>
+                <div class="mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#F4B5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5V2"/>
+                        <path d="M8.5 2h7"/>
+                        <path d="M14.5 8h-5"/>
+                        <path d="M9 16a5 5 0 0 0-7 0"/>
+                        <line x1="15" y1="16" x2="22" y2="16"/>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare<br/>Professionals</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Our team of experienced doctors and medical staff are dedicated to providing the highest quality care.
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Modern Laboratory</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Our laboratory is equipped with the latest diagnostic equipment and automation systems, ensuring precise.
                 </p>
+                <a href="#" class="inline-flex items-center text-gray-700 font-medium hover:text-trinity-maroon transition-colors">
+                    Read More 
+                    <span class="ml-2 w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
             </div>
 
-            <!-- Medical Excellence -->
-            <div class="text-left">
-                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-6">
-                    <i data-lucide="award" class="w-12 h-12 text-trinity-maroon"></i>
+            <!-- Experienced Doctors -->
+            <div>
+                <div class="mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#F4B5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4"/>
+                        <path d="M16 2v4"/>
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <path d="M3 10h18"/>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Medical<br/>Excellence</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    We maintain the highest standards of medical practice and continuously update our knowledge and skills.
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Experienced Doctors</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    We take pride in our team of experienced doctors who are at the forefront of delivering exceptional.
                 </p>
+                <a href="#" class="inline-flex items-center text-gray-700 font-medium hover:text-trinity-maroon transition-colors">
+                    Read More 
+                    <span class="ml-2 w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
             </div>
 
-            <!-- Latest Technology -->
-            <div class="text-left">
-                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-6">
-                    <i data-lucide="cpu" class="w-12 h-12 text-trinity-maroon"></i>
+            <!-- Experienced Doctors (duplicate as shown in design) -->
+            <div>
+                <div class="mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#F4B5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Latest<br/>Technology</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Our facilities feature state-of-the-art medical equipment for accurate diagnosis and treatment.
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Experienced Doctors</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    We take pride in our team of experienced doctors who are at the forefront of delivering exceptional.
                 </p>
+                <a href="#" class="inline-flex items-center text-gray-700 font-medium hover:text-trinity-maroon transition-colors">
+                    Read More 
+                    <span class="ml-2 w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- We Provide All Aspects Of Medical Practice -->
-<section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-left mb-12">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                We Provide All Aspects Of Medical Practice<br/>
-                For Your Whole Family!
+<section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                We Provide All Aspects Of Medical Practice For<br/>Your Whole Family!
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <!-- Left Side - Services List -->
-            <div class="space-y-8">
-                <!-- Row 1 -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Healthcare Professionals</h4>
-                            <p class="text-sm text-gray-600">Expert medical team</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Medical Excellence</h4>
-                            <p class="text-sm text-gray-600">Quality healthcare services</p>
-                        </div>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-6 max-w-5xl mx-auto">
+            <!-- Service Items with Check Icons -->
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                 </div>
-
-                <!-- Row 2 -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Latest Technology</h4>
-                            <p class="text-sm text-gray-600">Modern equipment</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Personalized Treatment</h4>
-                            <p class="text-sm text-gray-600">Tailored care plans</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Info -->
-                <div class="pt-4">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Our comprehensive healthcare services are designed to meet the unique needs of every family member, from newborns to seniors.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        We offer preventive care, acute illness treatment, chronic disease management, and specialized services all under one roof.
-                    </p>
-                </div>
+                <span class="font-medium text-gray-800">Healthcare Professionals</span>
             </div>
-
-            <!-- Right Side - Service Cards Grid -->
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-gray-50 rounded-xl p-6 text-left hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-trinity-maroon/10 rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="heart" class="w-8 h-8 text-trinity-maroon"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-sm">Healthcare<br/>Professionals</h4>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                 </div>
-
-                <div class="bg-gray-50 rounded-xl p-6 text-left hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-trinity-maroon/10 rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-trinity-maroon"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-sm">Medical<br/>Excellence</h4>
+                <span class="font-medium text-gray-800">Medical Excellence</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                 </div>
-
-                <div class="bg-gray-50 rounded-xl p-6 text-left hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-trinity-maroon/10 rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="microscope" class="w-8 h-8 text-trinity-maroon"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-sm">Latest<br/>Technology</h4>
+                <span class="font-medium text-gray-800">Latest Technology</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                 </div>
-
-                <div class="bg-gray-50 rounded-xl p-6 text-left hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-trinity-maroon/10 rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="user-check" class="w-8 h-8 text-trinity-maroon"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-sm">Personalized<br/>Treatment</h4>
+                <span class="font-medium text-gray-800">Personalized Treatment</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                 </div>
+                <span class="font-medium text-gray-800">Emergency Services</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="font-medium text-gray-800">Preventive Care</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="font-medium text-gray-800">Health Screenings</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-trinity-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="font-medium text-gray-800">Family Medicine</span>
             </div>
         </div>
     </div>
