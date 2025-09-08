@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Services
  * 
@@ -7,18 +8,84 @@
 
 get_header(); ?>
 
+<style>
+    /* Letter spacing animation */
+    @keyframes letterSpacing {
+        0% {
+            opacity: 0;
+            transform: translateX(-10px);
+            letter-spacing: -0.5em;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+            letter-spacing: normal;
+        }
+    }
+
+    .animate-letter-spacing {
+        animation: letterSpacing 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animation-delay-100 {
+        animation-delay: 0.1s;
+    }
+
+    .animation-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animation-delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .animation-delay-500 {
+        animation-delay: 0.5s;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 0.6s;
+    }
+
+    .animation-delay-700 {
+        animation-delay: 0.7s;
+    }
+
+    .animation-delay-800 {
+        animation-delay: 0.8s;
+    }
+
+    /* Content container fix */
+    .content-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    @media (min-width: 1280px) {
+        .content-container {
+            padding: 0 2rem;
+        }
+    }
+</style>
+
 <!-- Page Hero Section with Animated Typography -->
 <section class="relative bg-trinity-maroon py-24 lg:py-32 overflow-hidden">
     <!-- Subtle gradient overlay for depth -->
     <div class="absolute inset-0 bg-gradient-to-br from-trinity-maroon via-trinity-maroon to-trinity-maroon-dark opacity-90"></div>
-    
+
     <!-- Decorative circles pattern -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full"></div>
         <div class="absolute top-1/2 -right-32 w-96 h-96 bg-white/5 rounded-full"></div>
         <div class="absolute -bottom-20 left-1/3 w-80 h-80 bg-white/5 rounded-full"></div>
     </div>
-    
+
     <div class="content-container relative z-10">
         <div class="text-center">
             <!-- Animated Title with Letter Spacing -->
@@ -32,7 +99,7 @@ get_header(); ?>
                 <span class="inline-block animate-letter-spacing animation-delay-600">e</span>
                 <span class="inline-block animate-letter-spacing animation-delay-700">s</span>
             </h1>
-            
+
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/80">
                 <a href="<?php echo home_url(); ?>" class="hover:text-trinity-gold transition-colors">Home</a>
@@ -48,6 +115,7 @@ get_header(); ?>
     <div class="content-container">
         <!-- Section Title - Left Aligned like Homepage -->
         <div class="mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Services</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-4">
                 <span class="inline-block animate-letter-spacing">P</span>
                 <span class="inline-block animate-letter-spacing animation-delay-100">r</span>
@@ -112,14 +180,14 @@ get_header(); ?>
 
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Cardiology Clinic -->
+            <!-- Audiology Services - First Service -->
             <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
                 <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="heart" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+                    <i data-lucide="ear" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Cardiology Clinic</h3>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Audiology Services</h3>
                 <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Comprehensive heart health services including diagnostics, treatment, and preventive care for all cardiovascular conditions.
+                    Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
                 </p>
                 <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
@@ -209,6 +277,7 @@ get_header(); ?>
 <section class="py-16 lg:py-20 bg-gray-50">
     <div class="content-container">
         <div class="mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Why Choose Us</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
                 <span class="inline-block animate-letter-spacing">W</span>
                 <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
@@ -290,10 +359,97 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- We Provide All Aspects Section -->
+<section class="py-20 bg-white">
+    <div class="content-container">
+        <div class="mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Caring For The Health Of You And Your Family.</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
+                We Provide All Aspects Of Medical Practice For Your Whole Family.
+            </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Welcome to Trinity Health, where we offer comprehensive medical care tailored to every member of your family.</h3>
+                <p class="text-gray-600 mb-6">Our dedicated team of healthcare professionals is committed to providing you and your loved ones with personalized and compassionate healthcare services. We understand the importance of family health.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700">Family-Centered Care</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700">Preventive Services</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700">Vaccinations and Immunizations</span>
+                    </li>
+                </ul>
+                <a href="<?php echo home_url('/contact'); ?>" class="inline-flex items-center mt-6 bg-trinity-gold text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-colors">
+                    Get Started
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Patient Information</h4>
+                            <p class="text-gray-600 text-sm">I hereby give consent to and its healthcare professionals to provide medical treatment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Emergency Contact</h4>
+                            <p class="text-gray-600 text-sm">This application form is for informational purposes only and does not guarantee.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Medical History</h4>
+                            <p class="text-gray-600 text-sm">Our medical history is a vital piece of information that provides healthcare.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Meet Our Doctors Section -->
 <section class="py-16 lg:py-20 bg-white">
     <div class="content-container">
         <div class="mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Best Doctor</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                 <span class="inline-block animate-letter-spacing">M</span>
                 <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
@@ -324,6 +480,7 @@ get_header(); ?>
 <section class="py-16 lg:py-20 bg-gray-50">
     <div class="content-container">
         <div class="mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Facilities</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                 <span class="inline-block animate-letter-spacing">O</span>
                 <span class="inline-block animate-letter-spacing animation-delay-100">u</span>
@@ -360,24 +517,24 @@ get_header(); ?>
             <!-- Infrastructure Images -->
             <div class="grid grid-cols-2 gap-4">
                 <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/medical-facility.webp" 
-                         alt="Medical Facility" 
-                         class="w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                        alt="Medical Facility"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/examination-room.webp" 
-                         alt="Examination Room" 
-                         class="w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
+                        alt="Examination Room"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/waiting-area.webp" 
-                         alt="Waiting Area" 
-                         class="w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                        alt="Waiting Area"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/laboratory.webp" 
-                         alt="Laboratory" 
-                         class="w-full h-full object-cover">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
+                        alt="Laboratory"
+                        class="w-full h-full object-cover">
                 </div>
             </div>
 
@@ -389,14 +546,14 @@ get_header(); ?>
                         Our medical center features modern examination rooms, advanced diagnostic equipment, and comfortable patient areas designed to make your visit as pleasant as possible.
                     </p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Patient-Centered Approach</h3>
                     <p class="text-gray-600 leading-relaxed mb-4">
                         We believe in treating every patient with dignity, respect, and compassion. Our team takes the time to listen to your concerns and develop treatment plans tailored to your specific needs.
                     </p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Continuous Excellence</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -500,11 +657,14 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Decorative element -->
             <div class="absolute -top-20 -right-20 w-64 h-64 bg-trinity-gold/20 rounded-full"></div>
         </div>
     </div>
 </section>
+
+<!-- Include Appointment CTA Template Part -->
+<?php get_template_part('template-parts/sections/appointment-cta'); ?>
 
 <?php get_footer(); ?>

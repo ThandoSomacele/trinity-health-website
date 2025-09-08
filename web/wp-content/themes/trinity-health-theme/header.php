@@ -258,7 +258,7 @@
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
-    <header class="site-header bg-trinity-maroon shadow-lge" role="banner">
+    <header class="site-header bg-trinity-maroon shadow-lg" role="banner">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Section -->

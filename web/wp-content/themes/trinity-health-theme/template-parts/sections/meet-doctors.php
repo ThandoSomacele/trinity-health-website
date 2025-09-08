@@ -19,10 +19,27 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Doctor 1 -->
+            <!-- Doctor 1 - Founder -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/pro-1.webp"
+                    <img src="/wp-content/uploads/2025/06/dr-alfred-mwamba.jpg"
+                        alt="Dr. Alfred Mwamba - Founder"
+                        class="w-full h-64 object-cover object-top"
+                        onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/doctor-hearing-aid.webp';">
+                </div>
+                <div class="py-4">
+                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Alfred Mwamba</h3>
+                    <p class="text-sm text-trinity-maroon mb-2">Founder & Lead Audiologist</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        First Audiologist in Zambia. Pioneer in hearing healthcare.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="bg-white group transition-all duration-300">
+                <div class="relative overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
                         alt="Dr. Mubanga Mwila"
                         class="w-full h-64 object-cover object-top">
                 </div>
@@ -35,26 +52,10 @@
                 </div>
             </div>
 
-            <!-- Doctor 2 -->
-            <div class="bg-white group transition-all duration-300">
-                <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/pro-2.webp"
-                        alt="Dr. Sarah Johnson"
-                        class="w-full h-64 object-cover object-top">
-                </div>
-                <div class="py-4">
-                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Sarah Johnson</h3>
-                    <p class="text-sm text-trinity-maroon mb-2">Audiologist</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Specialist in hearing disorders and hearing aid technology.
-                    </p>
-                </div>
-            </div>
-
             <!-- Doctor 3 -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/pro-3.webp"
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
                         alt="Dr. Michael Chen"
                         class="w-full h-64 object-cover object-top">
                 </div>
@@ -70,7 +71,7 @@
             <!-- Doctor 4 -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/pro-4.webp"
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
                         alt="Dr. Emily Williams"
                         class="w-full h-64 object-cover object-top">
                 </div>

@@ -187,6 +187,15 @@ get_header(); ?>
                                 <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
                             </div>
                             <div>
+                                <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">Audiology Services</h4>
+                                <p class="text-gray-600">Expert hearing healthcare led by Zambia's first audiologist</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
+                            </div>
+                            <div>
                                 <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">General Health Checkups</h4>
                                 <p class="text-gray-600">Comprehensive health examinations and preventive care services</p>
                             </div>
@@ -198,15 +207,6 @@ get_header(); ?>
                             <div>
                                 <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">Heart Patient Improvement</h4>
                                 <p class="text-gray-600">Specialized cardiovascular care and heart health management</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-trinity-gold rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-gray-800"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-trinity-maroon-dark mb-1">Blood Test Treatment</h4>
-                                <p class="text-gray-600">Advanced laboratory testing and diagnostic services</p>
                             </div>
                         </li>
                     </ul>
