@@ -131,14 +131,14 @@ get_header(); ?>
                 <!-- Founder Signature Section -->
                 <div class="mt-8">
                     <div class="flex items-center space-x-4">
-                        <div class="w-20 h-20 rounded-full overflow-hidden bg-gray-200">
+                        <div class="w-48 h-48 rounded-md overflow-hidden bg-gray-200 bg-cover">
                             <img src="/wp-content/uploads/2025/06/dr-alfred-mwamba.jpg"
                                 alt="Dr. Alfred Mwamba - Founder and Lead Audiologist"
                                 class="w-full h-full object-cover"
                                 onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/doctor-hearing-aid.webp';">
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900">Dr. Alfred Mwamba</h3>
+                            <p class="text-2xl font-bold text-gray-900">Dr. Alfred Mwamba</p>
                             <p class="text-trinity-maroon font-medium">Founder & Lead Audiologist</p>
                             <p class="text-sm text-gray-600 italic">First Audiologist in Zambia</p>
                         </div>
