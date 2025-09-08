@@ -56,158 +56,229 @@ get_header(); ?>
         <!-- Section Title - Left Aligned like Homepage -->
         <div class="mb-12">
             <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Services</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-4">
-                <span class="inline-block animate-letter-spacing">P</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">v</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">d</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">g</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-900">M</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1000">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1100">d</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1200">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1300">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1400">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1500">l</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-1600">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1700">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1800">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1900">e</span>
-            </h2>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
-                <span class="inline-block animate-letter-spacing animation-delay-2000">F</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2100">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2200">r</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-2300">T</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2400">h</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2500">e</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-2600">S</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2700">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2800">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2900">k</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3000">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3100">s</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3200">t</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-3300">I</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3400">n</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-3500">O</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3600">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3700">r</span>
-            </h2>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                <span class="inline-block animate-letter-spacing animation-delay-3800">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-3900">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4000">m</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4100">m</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4200">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4300">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4400">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4500">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-4600">y</span>
-                <span class="inline-block">.</span>
+                Providing Medical Care<br>
+                For The Sickest In Our<br>
+                Community.
             </h2>
         </div>
 
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Audiology Services - First Service -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="ear" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
+                         alt="Audiology Services" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="ear" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Audiology Services</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Audiology Services</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Comprehensive Hearing Tests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Hearing Aid Fitting & Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Tinnitus Management</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Pathology Clinic -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="microscope" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
+                         alt="Pathology Clinic" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="microscope" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Pathology Clinic</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Pathology Clinic</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Molecular Pathology</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Cytogenetics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Immunology</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Laboratory Analysis -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="test-tube" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
+                         alt="Laboratory Analysis" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="test-tube" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Laboratory Analysis</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Analysis</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Comprehensive Test Menu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Timely Turnaround</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Advanced Diagnostic Tests</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Pediatric Clinic -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="baby" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
+                         alt="Pediatric Clinic" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="baby" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Pediatric Clinic</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Pediatric Clinic</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Nutrition Counseling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Pediatric Dermatology</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Developmental Evaluations</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Cardiac Clinic -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="activity" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp" 
+                         alt="Cardiac Clinic" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="activity" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Cardiac Clinic</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Cardiac Clinic</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Heart Failure Program</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Cardiac Rehabilitation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Lipid Management</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Neurology Clinic -->
-            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
-                    <i data-lucide="brain" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
+            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+                <div class="relative h-48 bg-gray-100 overflow-hidden">
+                    <img src="/wp-content/uploads/2025/08/home-hero-3.webp" 
+                         alt="Neurology Clinic" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="brain" class="w-16 h-16 text-white"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Neurology Clinic</h3>
-                <p class="text-gray-600 text-center mb-6 leading-relaxed">
-                    Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
-                </p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                    Read More
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Neurology Clinic</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Epilepsy Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Headache and Migraine Clinic</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-700">Neurological Examinations</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -216,84 +287,77 @@ get_header(); ?>
 <!-- Progressive Medical Clinic Section -->
 <section class="py-16 lg:py-20 bg-gray-50">
     <div class="content-container">
-        <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Why Choose Us</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
-                <span class="inline-block animate-letter-spacing">W</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">A</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">e</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">a</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">P</span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-900">g</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1000">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1100">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1200">s</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1300">s</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1400">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1500">v</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-1700">M</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1800">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1900">d</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2000">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2100">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2200">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2300">l</span>
-            </h2>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                <span class="inline-block animate-letter-spacing animation-delay-2400">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2500">l</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2600">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2700">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2800">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2900">c</span>
-                <span class="inline-block">.</span>
-            </h2>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Qualified Doctors -->
-            <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
-                    <i data-lucide="user-check" class="w-10 h-10 text-trinity-maroon"></i>
-                </div>
-                <h3 class="font-bold text-gray-900 mb-2">Qualified Doctors</h3>
-                <p class="text-sm text-gray-600">Board-certified specialists</p>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div>
+                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Top Service</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                    We Are a Progressive Medical<br>
+                    Clinic.
+                </h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Welcome to our comprehensive medical services designed to cater to your diverse healthcare needs. 
+                    We are committed to delivering top-notch medical care with a patient-centered approach.
+                </p>
             </div>
 
-            <!-- Modern Equipment -->
-            <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
-                    <i data-lucide="monitor" class="w-10 h-10 text-trinity-maroon"></i>
+            <!-- Right Icons Grid -->
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Cardiology -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                        <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
+                             alt="Cardiology" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Cardiology</h3>
+                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Modern Equipment</h3>
-                <p class="text-sm text-gray-600">State-of-the-art technology</p>
-            </div>
 
-            <!-- Emergency Services -->
-            <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
-                    <i data-lucide="truck" class="w-10 h-10 text-trinity-maroon"></i>
+                <!-- Diagnostics -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                        <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
+                             alt="Diagnostics" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Diagnostics</h3>
+                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Emergency Services</h3>
-                <p class="text-sm text-gray-600">24/7 availability</p>
-            </div>
 
-            <!-- Personalized Care -->
-            <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
-                    <i data-lucide="heart-handshake" class="w-10 h-10 text-trinity-maroon"></i>
+                <!-- Virology -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                        <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
+                             alt="Virology" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Virology</h3>
+                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Personalized Care</h3>
-                <p class="text-sm text-gray-600">Tailored treatment plans</p>
+
+                <!-- Therapy -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                        <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
+                             alt="Therapy" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Therapy</h3>
+                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -391,23 +455,7 @@ get_header(); ?>
         <div class="mb-12">
             <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Best Doctor</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                <span class="inline-block animate-letter-spacing">M</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">t</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">O</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">r</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">D</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-900">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1000">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1100">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1200">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1300">s</span>
-                <span class="inline-block">.</span>
+                Meet Our Doctors.
             </h2>
         </div>
 
@@ -419,86 +467,70 @@ get_header(); ?>
 <!-- Infrastructure & Culture Section -->
 <section class="py-16 lg:py-20 bg-gray-50">
     <div class="content-container">
-        <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Facilities</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                <span class="inline-block animate-letter-spacing">O</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">r</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">I</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">f</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">s</span>
-                <span class="inline-block animate-letter-spacing animation-delay-900">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1000">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1100">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1200">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1300">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1400">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1500">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block">&</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-1700">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1800">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1900">l</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2000">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2100">u</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2200">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-2300">e</span>
-            </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Infrastructure Images -->
-            <div class="grid grid-cols-2 gap-4">
-                <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
-                        alt="Medical Facility"
-                        class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
-                        alt="Examination Room"
-                        class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
-                        alt="Waiting Area"
-                        class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-video bg-gray-300 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
-                        alt="Laboratory"
-                        class="w-full h-full object-cover">
-                </div>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div>
+                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Culture</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                    Our Infrastructure & Culture
+                </h2>
+                <p class="text-gray-600 leading-relaxed">
+                    At Trinity Health, we pride ourselves on fostering a culture of care, where every individual's well-being is our utmost priority. 
+                    Our commitment to excellence in healthcare is grounded in state-of-the-art facilities and compassionate service delivery.
+                </p>
             </div>
 
-            <!-- Culture Text -->
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">State-of-the-Art Facilities</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        Our medical center features modern examination rooms, advanced diagnostic equipment, and comfortable patient areas designed to make your visit as pleasant as possible.
-                    </p>
+            <!-- Right Gallery Grid -->
+            <div class="grid grid-cols-5 gap-2">
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
+                         alt="Culture 1" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Patient-Centered Approach</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        We believe in treating every patient with dignity, respect, and compassion. Our team takes the time to listen to your concerns and develop treatment plans tailored to your specific needs.
-                    </p>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
+                         alt="Culture 2" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Continuous Excellence</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Our medical staff regularly participates in continuing education and training programs to stay current with the latest medical advances and treatment options.
-                    </p>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
+                         alt="Culture 3" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
+                         alt="Culture 4" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp" 
+                         alt="Culture 5" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/home-hero-3.webp" 
+                         alt="Culture 6" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
+                         alt="Culture 7" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
+                         alt="Culture 8" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
+                         alt="Culture 9" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
+                         alt="Culture 10" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
             </div>
         </div>
@@ -508,98 +540,16 @@ get_header(); ?>
 <!-- Download App Section -->
 <section class="py-16 lg:py-20 bg-white">
     <div class="content-container">
-        <div class="bg-trinity-maroon rounded-2xl p-12 relative overflow-hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Content -->
-                <div class="text-white space-y-6">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
-                        <span class="inline-block animate-letter-spacing">D</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-100">o</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-200">w</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-300">n</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-400">l</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-500">o</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-600">a</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-700">d</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block animate-letter-spacing animation-delay-800">T</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-900">r</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1000">i</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1100">n</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1200">i</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1300">t</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1400">y</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1500">H</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1700">a</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1800">l</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-1900">t</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2000">h</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2100">A</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2200">p</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2300">p</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block">&</span>
-                    </h2>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
-                        <span class="inline-block animate-letter-spacing animation-delay-2400">G</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2500">e</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2600">t</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2700">F</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2800">r</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-2900">e</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3000">e</span>
-                        <span class="inline-block ml-2"></span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3100">C</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3200">o</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3300">n</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3400">s</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3500">u</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3600">l</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3700">t</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3800">a</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-3900">t</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-4000">i</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-4100">o</span>
-                        <span class="inline-block animate-letter-spacing animation-delay-4200">n</span>
-                        <span class="inline-block">.</span>
-                    </h2>
-                    <p class="text-lg opacity-90">
-                        Access your health records, book appointments, and consult with doctors directly from your smartphone.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="bg-black text-white px-6 py-3 rounded-lg inline-flex items-center justify-center hover:bg-gray-900 transition-colors">
-                            <i data-lucide="apple" class="w-6 h-6 mr-2"></i>
-                            <div class="text-left">
-                                <div class="text-xs">Download on the</div>
-                                <div class="text-sm font-bold">App Store</div>
-                            </div>
-                        </a>
-                        <a href="#" class="bg-black text-white px-6 py-3 rounded-lg inline-flex items-center justify-center hover:bg-gray-900 transition-colors">
-                            <i data-lucide="play" class="w-6 h-6 mr-2"></i>
-                            <div class="text-left">
-                                <div class="text-xs">Get it on</div>
-                                <div class="text-sm font-bold">Google Play</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Phone Mockup -->
-                <div class="flex justify-center lg:justify-end">
-                    <div class="w-64 h-96 bg-white/10 rounded-3xl p-4 backdrop-blur-sm">
-                        <div class="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                            <i data-lucide="smartphone" class="w-24 h-24 text-trinity-maroon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Decorative element -->
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-trinity-gold/20 rounded-full"></div>
+        <div class="text-center mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">App Download</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                Download Trinity Health App &<br>
+                Get Free Consultation.
+            </h2>
+            <p class="text-gray-600 max-w-3xl mx-auto">
+                Welcome to the convenient world of our Medical Website App, where taking control of your health has never been easier. 
+                Download our user-friendly app now to access a wide range of medical services and resources right at your fingertips.
+            </p>
         </div>
     </div>
 </section>

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<!-- Page Hero Section with Animated Typography -->
+<!-- Page Hero Section -->
 <section class="relative bg-trinity-maroon py-24 lg:py-32 overflow-hidden">
     <!-- Subtle gradient overlay for depth -->
     <div class="absolute inset-0 bg-gradient-to-br from-trinity-maroon via-trinity-maroon to-trinity-maroon-dark opacity-90"></div>
@@ -21,19 +21,8 @@ get_header(); ?>
     
     <div class="content-container relative z-10">
         <div class="text-center">
-            <!-- Animated Title with Letter Spacing -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span class="inline-block animate-letter-spacing">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">t</span>
-                <span class="inline-block ml-4"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">U</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">s</span>
-            </h1>
+            <!-- Page Title -->
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
             
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/80">
@@ -99,20 +88,7 @@ get_header(); ?>
         <!-- Section Title - Centered -->
         <div class="text-center mb-12">
             <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Fill The Form</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                <span class="inline-block animate-letter-spacing">C</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">n</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">t</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">a</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">t</span>
-                <span class="inline-block ml-2"></span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">F</span>
-                <span class="inline-block animate-letter-spacing animation-delay-800">o</span>
-                <span class="inline-block animate-letter-spacing animation-delay-900">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-1000">m</span>
-            </h2>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">Contact Form</h2>
         </div>
 
         <div class="max-w-4xl mx-auto">
@@ -216,35 +192,5 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
-<!-- Add Custom CSS for Animations -->
-<style>
-@keyframes letterSpacing {
-    from {
-        letter-spacing: -0.5em;
-        opacity: 0;
-    }
-    to {
-        letter-spacing: normal;
-        opacity: 1;
-    }
-}
-
-.animate-letter-spacing {
-    animation: letterSpacing 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-.animation-delay-100 { animation-delay: 0.1s; }
-.animation-delay-200 { animation-delay: 0.2s; }
-.animation-delay-300 { animation-delay: 0.3s; }
-.animation-delay-400 { animation-delay: 0.4s; }
-.animation-delay-500 { animation-delay: 0.5s; }
-.animation-delay-600 { animation-delay: 0.6s; }
-.animation-delay-700 { animation-delay: 0.7s; }
-.animation-delay-800 { animation-delay: 0.8s; }
-.animation-delay-900 { animation-delay: 0.9s; }
-.animation-delay-1000 { animation-delay: 1.0s; }
-</style>
 
 <?php get_footer(); ?>
