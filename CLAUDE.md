@@ -212,3 +212,4 @@ Invoke the `@agent-design-review` subagent for thorough design validation when:
 ### CLI Tooling Memories
 
 - Please use the `gh` CLI tool when appropriate, create issues, open pull requests, read comments, etc.
+- remember you need to first scroll to the bottom of the inspiration site for all animations to load before taking sreenshots, otherwise you get a distorted version of the screenshots.
