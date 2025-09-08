@@ -2,188 +2,204 @@
 /**
  * Template Name: Services
  * 
- * Custom template for Services page
+ * Services page template for Trinity Health matching MediPro design
  */
 
 get_header(); ?>
 
-<!-- Hero Section -->
-<section class="bg-trinity-maroon py-20 lg:py-24 relative overflow-hidden">
-    <div class="max-w-7xl  px-6 lg:px-8">
-        <div class="text-center text-white">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Services</h1>
-            <p class="text-lg md:text-xl opacity-90">Comprehensive Healthcare Solutions</p>
+<!-- Page Hero Section with Animated Typography -->
+<section class="relative bg-trinity-maroon py-24 lg:py-32 overflow-hidden">
+    <!-- Subtle gradient overlay for depth -->
+    <div class="absolute inset-0 bg-gradient-to-br from-trinity-maroon via-trinity-maroon to-trinity-maroon-dark opacity-90"></div>
+    
+    <!-- Decorative circles pattern -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full"></div>
+        <div class="absolute top-1/2 -right-32 w-96 h-96 bg-white/5 rounded-full"></div>
+        <div class="absolute -bottom-20 left-1/3 w-80 h-80 bg-white/5 rounded-full"></div>
+    </div>
+    
+    <div class="content-container relative z-10">
+        <div class="text-center">
+            <!-- Animated Title with Letter Spacing -->
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <span class="inline-block animate-letter-spacing">S</span>
+                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-200">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-300">v</span>
+                <span class="inline-block animate-letter-spacing animation-delay-400">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-500">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-600">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-700">s</span>
+            </h1>
+            
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center items-center space-x-2 text-white/80">
+                <a href="<?php echo home_url(); ?>" class="hover:text-trinity-gold transition-colors">Home</a>
+                <span>»</span>
+                <span class="text-trinity-gold">Services</span>
+            </nav>
         </div>
     </div>
 </section>
 
-<!-- Services Grid Section -->
-<section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-7xl  px-6 lg:px-8">
-        <div class="text-left mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Providing Medical Care For The Sickest In Our Community
+<!-- Services Intro Section -->
+<section class="py-20 bg-white">
+    <div class="content-container">
+        <!-- Section Title - Left Aligned like Homepage -->
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-4">
+                <span class="inline-block animate-letter-spacing">P</span>
+                <span class="inline-block animate-letter-spacing animation-delay-100">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-200">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-300">v</span>
+                <span class="inline-block animate-letter-spacing animation-delay-400">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-500">d</span>
+                <span class="inline-block animate-letter-spacing animation-delay-600">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-700">n</span>
+                <span class="inline-block animate-letter-spacing animation-delay-800">g</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-900">M</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1000">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1100">d</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1200">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1300">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1400">a</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1500">l</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-1600">C</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1700">a</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1800">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1900">e</span>
             </h2>
-            <p class="text-gray-600 max-w-3xl ">
-                We offer a comprehensive range of medical services to meet all your healthcare needs under one roof.
-            </p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
+                <span class="inline-block animate-letter-spacing animation-delay-2000">F</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2100">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2200">r</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-2300">T</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2400">h</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2500">e</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-2600">S</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2700">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2800">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2900">k</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3000">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3100">s</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3200">t</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-3300">I</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3400">n</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-3500">O</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3600">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3700">r</span>
+            </h2>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                <span class="inline-block animate-letter-spacing animation-delay-3800">C</span>
+                <span class="inline-block animate-letter-spacing animation-delay-3900">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4000">m</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4100">m</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4200">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4300">n</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4400">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4500">t</span>
+                <span class="inline-block animate-letter-spacing animation-delay-4600">y</span>
+                <span class="inline-block">.</span>
+            </h2>
         </div>
 
+        <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Cardiology Care -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+            <!-- Cardiology Clinic -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="heart" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Cardiology Care</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>ECG & Heart Monitoring</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Cardiac Consultations</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Hypertension Management</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Preventive Heart Care</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Cardiology Clinic</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Comprehensive heart health services including diagnostics, treatment, and preventive care for all cardiovascular conditions.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
-            <!-- Pulmonology Care -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="wind" class="w-8 h-8 text-white"></i>
+            <!-- Pathology Clinic -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="microscope" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Pulmonology Care</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Asthma Treatment</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>COPD Management</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Respiratory Infections</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Lung Function Testing</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Pathology Clinic</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
-            <!-- Emergency Consult -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="alert-circle" class="w-8 h-8 text-white"></i>
+            <!-- Laboratory Analysis -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="test-tube" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Emergency Consult</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>24/7 Emergency Care</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Urgent Care Services</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Accident Treatment</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Critical Care Support</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Laboratory Analysis</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
-            <!-- Health Care -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="activity" class="w-8 h-8 text-white"></i>
+            <!-- Pediatric Clinic -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="baby" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Health Care</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>General Health Check-ups</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Preventive Medicine</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Chronic Disease Management</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Health Screenings</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Pediatric Clinic</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
-            <!-- Dental Care -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="smile" class="w-8 h-8 text-white"></i>
+            <!-- Cardiac Clinic -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="activity" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Dental Care</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Routine Dental Check-ups</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Dental Cleaning</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Cavity Treatment</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Cosmetic Dentistry</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Cardiac Clinic</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
-            <!-- Audiology Care -->
-            <div class="bg-trinity-maroon text-white rounded-lg p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="ear" class="w-8 h-8 text-white"></i>
+            <!-- Neurology Clinic -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-trinity-maroon group-hover:scale-110 transition-all duration-300">
+                    <i data-lucide="brain" class="w-10 h-10 text-trinity-maroon group-hover:text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Audiology Care</h3>
-                <ul class="space-y-2 text-white/90">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Hearing Tests & Evaluation</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Hearing Aid Fitting</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Tinnitus Management</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span>Balance Disorders</span>
-                    </li>
-                </ul>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark text-center mb-4">Neurology Clinic</h3>
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
+                </p>
+                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -191,20 +207,53 @@ get_header(); ?>
 
 <!-- Progressive Medical Clinic Section -->
 <section class="py-16 lg:py-20 bg-gray-50">
-    <div class="max-w-7xl  px-6 lg:px-8">
-        <div class="text-left mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                We Are a Progressive Medical Clinic
+    <div class="content-container">
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
+                <span class="inline-block animate-letter-spacing">W</span>
+                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-200">A</span>
+                <span class="inline-block animate-letter-spacing animation-delay-300">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-400">e</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-500">a</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-600">P</span>
+                <span class="inline-block animate-letter-spacing animation-delay-700">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-800">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-900">g</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1000">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1100">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1200">s</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1300">s</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1400">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1500">v</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-1700">M</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1800">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1900">d</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2000">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2100">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2200">a</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2300">l</span>
             </h2>
-            <p class="text-gray-600 max-w-3xl ">
-                Our commitment to excellence and innovation ensures you receive the best possible care using the latest medical technologies and techniques.
-            </p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                <span class="inline-block animate-letter-spacing animation-delay-2400">C</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2500">l</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2600">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2700">n</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2800">i</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2900">c</span>
+                <span class="inline-block">.</span>
+            </h2>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <!-- Qualified Doctors -->
             <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center  mb-4">
+                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
                     <i data-lucide="user-check" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
                 <h3 class="font-bold text-gray-900 mb-2">Qualified Doctors</h3>
@@ -213,7 +262,7 @@ get_header(); ?>
 
             <!-- Modern Equipment -->
             <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center  mb-4">
+                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
                     <i data-lucide="monitor" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
                 <h3 class="font-bold text-gray-900 mb-2">Modern Equipment</h3>
@@ -222,7 +271,7 @@ get_header(); ?>
 
             <!-- Emergency Services -->
             <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center  mb-4">
+                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
                     <i data-lucide="truck" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
                 <h3 class="font-bold text-gray-900 mb-2">Emergency Services</h3>
@@ -231,7 +280,7 @@ get_header(); ?>
 
             <!-- Personalized Care -->
             <div class="text-left">
-                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center  mb-4">
+                <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-4">
                     <i data-lucide="heart-handshake" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
                 <h3 class="font-bold text-gray-900 mb-2">Personalized Care</h3>
@@ -241,21 +290,70 @@ get_header(); ?>
     </div>
 </section>
 
-<?php 
-// Include Meet Our Doctors component
-get_template_part('template-parts/sections/meet-doctors'); 
-?>
+<!-- Meet Our Doctors Section -->
+<section class="py-16 lg:py-20 bg-white">
+    <div class="content-container">
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                <span class="inline-block animate-letter-spacing">M</span>
+                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-200">e</span>
+                <span class="inline-block animate-letter-spacing animation-delay-300">t</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-400">O</span>
+                <span class="inline-block animate-letter-spacing animation-delay-500">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-600">r</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-700">D</span>
+                <span class="inline-block animate-letter-spacing animation-delay-800">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-900">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1000">t</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1100">o</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1200">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1300">s</span>
+                <span class="inline-block">.</span>
+            </h2>
+        </div>
+
+        <!-- Include the doctors template part -->
+        <?php get_template_part('template-parts/sections/meet-doctors'); ?>
+    </div>
+</section>
 
 <!-- Infrastructure & Culture Section -->
 <section class="py-16 lg:py-20 bg-gray-50">
-    <div class="max-w-7xl  px-6 lg:px-8">
-        <div class="text-left mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Infrastructure & Culture
+    <div class="content-container">
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
+                <span class="inline-block animate-letter-spacing">O</span>
+                <span class="inline-block animate-letter-spacing animation-delay-100">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-200">r</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-300">I</span>
+                <span class="inline-block animate-letter-spacing animation-delay-400">n</span>
+                <span class="inline-block animate-letter-spacing animation-delay-500">f</span>
+                <span class="inline-block animate-letter-spacing animation-delay-600">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-700">a</span>
+                <span class="inline-block animate-letter-spacing animation-delay-800">s</span>
+                <span class="inline-block animate-letter-spacing animation-delay-900">t</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1000">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1100">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1200">c</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1300">t</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1400">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1500">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block">&</span>
+                <span class="inline-block ml-2"></span>
+                <span class="inline-block animate-letter-spacing animation-delay-1700">C</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1800">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-1900">l</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2000">t</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2100">u</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2200">r</span>
+                <span class="inline-block animate-letter-spacing animation-delay-2300">e</span>
             </h2>
-            <p class="text-gray-600 max-w-3xl ">
-                Experience world-class healthcare in our modern facilities designed for your comfort and care.
-            </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -312,13 +410,65 @@ get_template_part('template-parts/sections/meet-doctors');
 
 <!-- Download App Section -->
 <section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-7xl  px-6 lg:px-8">
+    <div class="content-container">
         <div class="bg-trinity-maroon rounded-2xl p-12 relative overflow-hidden">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div class="text-white space-y-6">
-                    <h2 class="text-3xl md:text-4xl font-bold">
-                        Download MediPro App & Get 1000 Healthcash
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+                        <span class="inline-block animate-letter-spacing">D</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-100">o</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-200">w</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-300">n</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-400">l</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-500">o</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-600">a</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-700">d</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block animate-letter-spacing animation-delay-800">T</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-900">r</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1000">i</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1100">n</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1200">i</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1300">t</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1400">y</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1500">H</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1600">e</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1700">a</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1800">l</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-1900">t</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2000">h</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2100">A</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2200">p</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2300">p</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block">&</span>
+                    </h2>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+                        <span class="inline-block animate-letter-spacing animation-delay-2400">G</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2500">e</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2600">t</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2700">F</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2800">r</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-2900">e</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3000">e</span>
+                        <span class="inline-block ml-2"></span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3100">C</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3200">o</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3300">n</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3400">s</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3500">u</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3600">l</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3700">t</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3800">a</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-3900">t</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-4000">i</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-4100">o</span>
+                        <span class="inline-block animate-letter-spacing animation-delay-4200">n</span>
+                        <span class="inline-block">.</span>
                     </h2>
                     <p class="text-lg opacity-90">
                         Access your health records, book appointments, and consult with doctors directly from your smartphone.
