@@ -59,58 +59,35 @@ get_header(); ?>
     </iframe>
 </section>
 
-<!-- Contact Information Cards -->
+<!-- Contact Information Cards - MediPro Style -->
 <section class="py-20 bg-white">
     <div class="content-container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-24 relative z-10">
-            <!-- Address Card -->
-            <div class="bg-white p-8 rounded-lg shadow-xl text-center">
-                <div class="w-16 h-16 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="map-pin" class="w-8 h-8 text-trinity-maroon"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Help Line Card -->
+            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="phone" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">Our Location</h3>
-                <p class="text-gray-600">Plot 123, Cairo Road<br>Lusaka, Zambia</p>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Help Line</h3>
+                <p class="text-2xl font-semibold text-gray-800">+260 955 333 007</p>
             </div>
 
-            <!-- Email Card -->
-            <div class="bg-white p-8 rounded-lg shadow-xl text-center">
-                <div class="w-16 h-16 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="mail" class="w-8 h-8 text-trinity-maroon"></i>
+            <!-- Location Card -->
+            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="map-pin" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">Email Us</h3>
-                <p class="text-gray-600">info@trinityhealth.co.zm<br>support@trinityhealth.co.zm</p>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Location</h3>
+                <p class="text-gray-600">4 Suez Road, Lusaka, Zambia</p>
             </div>
 
-            <!-- Phone Card -->
-            <div class="bg-white p-8 rounded-lg shadow-xl text-center">
-                <div class="w-16 h-16 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="phone" class="w-8 h-8 text-trinity-maroon"></i>
+            <!-- Email Address Card -->
+            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
+                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="mail" class="w-10 h-10 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">Call Us</h3>
-                <p class="text-gray-600">+260 211 123 456<br>+260 977 123 456</p>
-            </div>
-        </div>
-
-        <!-- Business Hours -->
-        <div class="mt-12 text-center">
-            <h3 class="text-2xl font-bold text-trinity-maroon-dark mb-4">Business Hours</h3>
-            <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p class="font-semibold text-trinity-maroon">Monday - Friday</p>
-                    <p class="text-gray-600">8:00 AM - 6:00 PM</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p class="font-semibold text-trinity-maroon">Saturday</p>
-                    <p class="text-gray-600">8:00 AM - 2:00 PM</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p class="font-semibold text-trinity-maroon">Sunday</p>
-                    <p class="text-gray-600">Emergency Only</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p class="font-semibold text-trinity-maroon">Emergency</p>
-                    <p class="text-gray-600">24/7 Available</p>
-                </div>
+                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Email Address</h3>
+                <p class="text-gray-600">info@trinityhealth.co.zm</p>
             </div>
         </div>
     </div>
@@ -119,8 +96,9 @@ get_header(); ?>
 <!-- Contact Form Section -->
 <section class="py-20 bg-gray-50">
     <div class="content-container">
-        <!-- Section Title - Left Aligned -->
-        <div class="mb-12">
+        <!-- Section Title - Centered -->
+        <div class="text-center mb-12">
+            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Fill The Form</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                 <span class="inline-block animate-letter-spacing">C</span>
                 <span class="inline-block animate-letter-spacing animation-delay-100">o</span>
@@ -137,10 +115,9 @@ get_header(); ?>
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="max-w-4xl mx-auto">
             <!-- Contact Form -->
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold text-trinity-maroon-dark mb-6">Send Us a Message</h3>
+            <div class="bg-white p-10 rounded-lg shadow-lg">
                 <form method="POST" action="" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Name -->
@@ -192,11 +169,11 @@ get_header(); ?>
                     </div>
 
                     <!-- Submit Button -->
-                    <div>
+                    <div class="text-center">
                         <button type="submit" 
-                                class="w-full bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center justify-center">
-                            Send Message
-                            <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                                class="bg-trinity-gold text-gray-800 px-12 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center">
+                            Book Now
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
                         </button>
                     </div>
 
@@ -235,47 +212,6 @@ get_header(); ?>
                     }
                     ?>
                 </form>
-            </div>
-            
-            <!-- Contact Info Sidebar -->
-            <div class="space-y-8">
-                <!-- Quick Contact -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold text-trinity-maroon-dark mb-6">Quick Contact</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i data-lucide="phone" class="w-5 h-5 text-trinity-maroon mr-3 mt-1"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800">Phone</p>
-                                <p class="text-gray-600">+260 211 123 456</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i data-lucide="mail" class="w-5 h-5 text-trinity-maroon mr-3 mt-1"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800">Email</p>
-                                <p class="text-gray-600">info@trinityhealth.co.zm</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-trinity-maroon mr-3 mt-1"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800">Address</p>
-                                <p class="text-gray-600">Plot 123, Cairo Road, Lusaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Emergency Contact -->
-                <div class="bg-trinity-maroon p-8 rounded-lg shadow-lg text-white">
-                    <h3 class="text-2xl font-bold mb-4">Emergency?</h3>
-                    <p class="mb-4">For medical emergencies, please call our 24/7 hotline immediately.</p>
-                    <a href="tel:+260977123456" class="bg-white text-trinity-maroon px-6 py-3 rounded-full font-semibold hover:bg-trinity-gold transition-all duration-300 inline-flex items-center">
-                        <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i>
-                        +260 977 123 456
-                    </a>
-                </div>
             </div>
         </div>
     </div>

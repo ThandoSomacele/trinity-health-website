@@ -9,57 +9,6 @@
 get_header(); ?>
 
 <style>
-    /* Letter spacing animation */
-    @keyframes letterSpacing {
-        0% {
-            opacity: 0;
-            transform: translateX(-10px);
-            letter-spacing: -0.5em;
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-            letter-spacing: normal;
-        }
-    }
-
-    .animate-letter-spacing {
-        animation: letterSpacing 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .animation-delay-100 {
-        animation-delay: 0.1s;
-    }
-
-    .animation-delay-200 {
-        animation-delay: 0.2s;
-    }
-
-    .animation-delay-300 {
-        animation-delay: 0.3s;
-    }
-
-    .animation-delay-400 {
-        animation-delay: 0.4s;
-    }
-
-    .animation-delay-500 {
-        animation-delay: 0.5s;
-    }
-
-    .animation-delay-600 {
-        animation-delay: 0.6s;
-    }
-
-    .animation-delay-700 {
-        animation-delay: 0.7s;
-    }
-
-    .animation-delay-800 {
-        animation-delay: 0.8s;
-    }
-
     /* Content container fix */
     .content-container {
         max-width: 1280px;
@@ -88,17 +37,8 @@ get_header(); ?>
 
     <div class="content-container relative z-10">
         <div class="text-center">
-            <!-- Animated Title with Letter Spacing -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span class="inline-block animate-letter-spacing">S</span>
-                <span class="inline-block animate-letter-spacing animation-delay-100">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-200">r</span>
-                <span class="inline-block animate-letter-spacing animation-delay-300">v</span>
-                <span class="inline-block animate-letter-spacing animation-delay-400">i</span>
-                <span class="inline-block animate-letter-spacing animation-delay-500">c</span>
-                <span class="inline-block animate-letter-spacing animation-delay-600">e</span>
-                <span class="inline-block animate-letter-spacing animation-delay-700">s</span>
-            </h1>
+            <!-- Page Title -->
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Services</h1>
 
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/80">
