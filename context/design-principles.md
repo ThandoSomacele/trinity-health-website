@@ -1,5 +1,16 @@
 # Trinity Health Design Principles & Checklist
 
+## MediPro-Inspired Design Patterns
+
+### Key Design Elements from MediPro
+- **Animated Typography:** Large headings with letter-spacing animations
+- **Geometric Patterns:** Dot grids and decorative circles for visual interest
+- **Card-Based Layouts:** Clean white cards with subtle shadows
+- **Full-Width Sections:** Alternating background colors for section separation
+- **Icon Integration:** Medical icons prominently featured in service cards
+- **Progressive Disclosure:** Accordion patterns for FAQs and content
+- **Visual Hierarchy:** Clear distinction between primary, secondary, and tertiary content
+
 ## I. Core Design Philosophy & Strategy
 
 - [ ] **Patient-Centered:** Prioritize patients' needs, comfort, and accessibility in every design decision
@@ -106,11 +117,19 @@
 
 ### Hero Sections
 
-- [ ] **Layout:** Grid with text and images
-- [ ] **Typography:** Multi-level hierarchy
-- [ ] **Images:** Circular/oval masks
-- [ ] **Decorative:** Dot patterns
-- [ ] **CTAs:** Multiple action buttons
+- [ ] **Page Heroes (Inner Pages):**
+  - [ ] Full-width background with overlay
+  - [ ] Centered title with animated letter spacing
+  - [ ] Breadcrumb navigation below title
+  - [ ] Minimum height: 300-400px
+  - [ ] Background patterns or gradients
+  
+- [ ] **Homepage Hero:**
+  - [ ] Grid layout with text and images
+  - [ ] Multi-level typography hierarchy
+  - [ ] Circular/oval image masks
+  - [ ] Decorative dot patterns
+  - [ ] Multiple CTA buttons
 
 ### Forms
 
