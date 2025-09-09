@@ -66,210 +66,210 @@ get_header(); ?>
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Audiology Services - First Service -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="ear" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Audiology Services</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Comprehensive Hearing Tests</span>
                     </li>
-                    <li class="flex items-start">
+                    <li class="flex items-start ">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Hearing Aid Fitting & Support</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Tinnitus Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
 
             <!-- Pathology Clinic -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="microscope" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Pathology Clinic</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Molecular Pathology</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Cytogenetics</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Immunology</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
 
             <!-- Laboratory Analysis -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="test-tube" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Laboratory Analysis</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Comprehensive Test Menu</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Timely Turnaround</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Advanced Diagnostic Tests</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
 
             <!-- Pediatric Clinic -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="baby" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Pediatric Clinic</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Nutrition Counseling</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Pediatric Dermatology</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Developmental Evaluations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
 
             <!-- Cardiac Clinic -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="heart" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Cardiac Clinic</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Heart Failure Program</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Cardiac Rehabilitation</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Lipid Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
             </div>
 
             <!-- Neurology Clinic -->
-            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="brain" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Neurology Clinic</h3>
-                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Epilepsy Management</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Headache and Migraine Clinic</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Neurological Examinations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -286,11 +286,11 @@ get_header(); ?>
             <div>
                 <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Top Service</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                    We Are a Progressive Medical<br>
-                    Clinic.
+                    We Are a Progressive<br>
+                    Medical Clinic.
                 </h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Welcome to our comprehensive medical services designed to cater to your diverse healthcare needs. 
+                    Welcome to our comprehensive medical services designed to cater to your diverse healthcare needs.
                     We are committed to delivering top-notch medical care with a patient-centered approach.
                 </p>
             </div>
@@ -300,9 +300,9 @@ get_header(); ?>
                 <!-- Cardiology -->
                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
                     <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
-                        <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
-                             alt="Cardiology" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                            alt="Cardiology"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Cardiology</h3>
@@ -314,9 +314,9 @@ get_header(); ?>
                 <!-- Diagnostics -->
                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
                     <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
-                        <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
-                             alt="Diagnostics" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
+                            alt="Diagnostics"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Diagnostics</h3>
@@ -328,9 +328,9 @@ get_header(); ?>
                 <!-- Virology -->
                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
                     <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
-                        <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
-                             alt="Virology" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                            alt="Virology"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Virology</h3>
@@ -342,101 +342,15 @@ get_header(); ?>
                 <!-- Therapy -->
                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
                     <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
-                        <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
-                             alt="Therapy" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
+                            alt="Therapy"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Therapy</h3>
                     <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- We Provide All Aspects Section -->
-<section class="py-20 bg-white">
-    <div class="content-container">
-        <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Caring For The Health Of You And Your Family.</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
-                We Provide All Aspects Of Medical Practice For Your Whole Family.
-            </h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Welcome to Trinity Health, where we offer comprehensive medical care tailored to every member of your family.</h3>
-                <p class="text-gray-600 mb-6">Our dedicated team of healthcare professionals is committed to providing you and your loved ones with personalized and compassionate healthcare services. We understand the importance of family health.</p>
-                <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-gray-700">Family-Centered Care</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-gray-700">Preventive Services</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-maroon mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-gray-700">Vaccinations and Immunizations</span>
-                    </li>
-                </ul>
-                <a href="<?php echo home_url('/contact'); ?>" class="inline-flex items-center mt-6 bg-trinity-gold text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-colors">
-                    Get Started
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>
-            <div class="grid grid-cols-1 gap-4">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">Patient Information</h4>
-                            <p class="text-gray-600 text-sm">I hereby give consent to and its healthcare professionals to provide medical treatment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">Emergency Contact</h4>
-                            <p class="text-gray-600 text-sm">This application form is for informational purposes only and does not guarantee.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="bg-trinity-gold/20 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6 text-trinity-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">Medical History</h4>
-                            <p class="text-gray-600 text-sm">Our medical history is a vital piece of information that provides healthcare.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -457,7 +371,7 @@ get_header(); ?>
                     Our Infrastructure & Culture
                 </h2>
                 <p class="text-gray-600 leading-relaxed">
-                    At Trinity Health, we pride ourselves on fostering a culture of care, where every individual's well-being is our utmost priority. 
+                    At Trinity Health, we pride ourselves on fostering a culture of care, where every individual's well-being is our utmost priority.
                     Our commitment to excellence in healthcare is grounded in state-of-the-art facilities and compassionate service delivery.
                 </p>
             </div>
@@ -465,78 +379,59 @@ get_header(); ?>
             <!-- Right Gallery Grid -->
             <div class="grid grid-cols-5 gap-2">
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
-                         alt="Culture 1" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                        alt="Culture 1"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
-                         alt="Culture 2" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
+                        alt="Culture 2"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
-                         alt="Culture 3" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                        alt="Culture 3"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
-                         alt="Culture 4" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
+                        alt="Culture 4"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp" 
-                         alt="Culture 5" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
+                        alt="Culture 5"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/home-hero-3.webp" 
-                         alt="Culture 6" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/home-hero-3.webp"
+                        alt="Culture 6"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
-                         alt="Culture 7" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                        alt="Culture 7"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
-                         alt="Culture 8" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
+                        alt="Culture 8"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
-                         alt="Culture 9" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                        alt="Culture 9"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-lg">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
-                         alt="Culture 10" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
+                        alt="Culture 10"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Download App Section -->
-<section class="py-16 lg:py-20 bg-white">
-    <div class="content-container">
-        <div class="text-center mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">App Download</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                Download Trinity Health App &<br>
-                Get Free Consultation.
-            </h2>
-            <p class="text-gray-600 max-w-3xl mx-auto">
-                Welcome to the convenient world of our Medical Website App, where taking control of your health has never been easier. 
-                Download our user-friendly app now to access a wide range of medical services and resources right at your fingertips.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Include Appointment CTA Template Part -->
-<?php get_template_part('template-parts/sections/appointment-cta'); ?>
 
 <?php get_footer(); ?>
