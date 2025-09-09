@@ -305,8 +305,8 @@ get_header(); ?>
                     <h3 class="text-2xl font-semibold text-trinity-maroon-dark mb-6">Medical Services</h3>
 
                     <div class="space-y-4">
-                        <!-- Audiology (Current) -->
-                        <a href="<?php echo home_url('/services/audiology'); ?>"
+                        <!-- Audiology -->
+                        <a href="<?php echo home_url('/audiology-service'); ?>"
                             class="block bg-trinity-maroon text-white rounded-lg p-4 hover:bg-trinity-maroon-dark transition-colors">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -319,7 +319,7 @@ get_header(); ?>
                         </a>
 
                         <!-- General Medicine -->
-                        <a href="<?php echo home_url('/services/general-medicine'); ?>"
+                        <a href="<?php echo home_url('/general-medicine-service'); ?>"
                             class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-trinity-maroon hover:shadow-md transition-all">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-trinity-gold/20 rounded-full flex items-center justify-center">
@@ -332,7 +332,7 @@ get_header(); ?>
                         </a>
 
                         <!-- Laboratory Services -->
-                        <a href="<?php echo home_url('/services/laboratory'); ?>"
+                        <a href="<?php echo home_url('/laboratory-service'); ?>"
                             class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-trinity-maroon hover:shadow-md transition-all">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-trinity-gold/20 rounded-full flex items-center justify-center">
@@ -344,8 +344,8 @@ get_header(); ?>
                             </div>
                         </a>
 
-                        <!-- Pediatrics -->
-                        <a href="<?php echo home_url('/services/pediatrics'); ?>"
+                        <!-- Pediatrics (Current) -->
+                        <a href="<?php echo home_url('/pediatrics-service'); ?>"
                             class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-trinity-maroon hover:shadow-md transition-all">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-trinity-gold/20 rounded-full flex items-center justify-center">
@@ -358,7 +358,7 @@ get_header(); ?>
                         </a>
 
                         <!-- Cardiology -->
-                        <a href="<?php echo home_url('/services/cardiology'); ?>"
+                        <a href="<?php echo home_url('/cardiology-service'); ?>"
                             class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-trinity-maroon hover:shadow-md transition-all">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-trinity-gold/20 rounded-full flex items-center justify-center">
@@ -371,7 +371,7 @@ get_header(); ?>
                         </a>
 
                         <!-- Neurology -->
-                        <a href="<?php echo home_url('/services/neurology'); ?>"
+                        <a href="<?php echo home_url('/neurology-service'); ?>"
                             class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-trinity-maroon hover:shadow-md transition-all">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-trinity-gold/20 rounded-full flex items-center justify-center">
