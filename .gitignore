@@ -109,3 +109,4 @@ web/wp-content/languages/themes/
 
 # Deployment temporary directories
 deploy-temp/
+.playwright-mcp/

@@ -64,221 +64,215 @@ get_header(); ?>
         </div>
 
         <!-- Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Audiology Services - First Service -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp" 
-                         alt="Audiology Services" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="ear" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="ear" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Audiology Services</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Comprehensive Hearing Tests</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Hearing Aid Fitting & Support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Tinnitus Management</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Audiology Services</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia's first audiologist. Comprehensive hearing tests and solutions.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Comprehensive Hearing Tests</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Hearing Aid Fitting & Support</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Tinnitus Management</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
             <!-- Pathology Clinic -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp" 
-                         alt="Pathology Clinic" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="microscope" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="microscope" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Pathology Clinic</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Molecular Pathology</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Cytogenetics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Immunology</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Pathology Clinic</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    Advanced diagnostic testing and laboratory services providing accurate results for informed medical decisions.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Molecular Pathology</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Cytogenetics</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Immunology</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
             <!-- Laboratory Analysis -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp" 
-                         alt="Laboratory Analysis" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="test-tube" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="test-tube" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Analysis</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Comprehensive Test Menu</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Timely Turnaround</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Advanced Diagnostic Tests</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Laboratory Analysis</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    State-of-the-art laboratory equipped with modern technology for precise diagnostic results and health monitoring.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Comprehensive Test Menu</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Timely Turnaround</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Advanced Diagnostic Tests</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
             <!-- Pediatric Clinic -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp" 
-                         alt="Pediatric Clinic" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="baby" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="baby" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Pediatric Clinic</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Nutrition Counseling</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Pediatric Dermatology</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Developmental Evaluations</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Pediatric Clinic</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Nutrition Counseling</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Pediatric Dermatology</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Developmental Evaluations</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
             <!-- Cardiac Clinic -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp" 
-                         alt="Cardiac Clinic" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="activity" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="heart" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Cardiac Clinic</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Heart Failure Program</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Cardiac Rehabilitation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Lipid Management</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Cardiac Clinic</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    Complete cardiovascular care including prevention, diagnosis, treatment, and rehabilitation services.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Heart Failure Program</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Cardiac Rehabilitation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Lipid Management</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
 
             <!-- Neurology Clinic -->
-            <div class="bg-white shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <div class="relative h-48 bg-gray-100 overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/home-hero-3.webp" 
-                         alt="Neurology Clinic" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-trinity-maroon/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i data-lucide="brain" class="w-16 h-16 text-white"></i>
-                    </div>
+            <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-20 h-20 mb-6">
+                    <i data-lucide="brain" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Neurology Clinic</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Epilepsy Management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Headache and Migraine Clinic</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-4 h-4 text-trinity-gold mt-1 mr-2 flex-shrink-0"></i>
-                            <span class="text-sm text-gray-700">Neurological Examinations</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
-                        Read More
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Neurology Clinic</h3>
+                <p class="text-white/90 mb-6 leading-relaxed text-base">
+                    Expert neurological care for brain, spine, and nervous system conditions with advanced diagnostic capabilities.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Epilepsy Management</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Headache and Migraine Clinic</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white/90">Neurological Examinations</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    Read More
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -450,19 +444,7 @@ get_header(); ?>
 </section>
 
 <!-- Meet Our Doctors Section -->
-<section class="py-16 lg:py-20 bg-white">
-    <div class="content-container">
-        <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Best Doctor</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
-                Meet Our Doctors.
-            </h2>
-        </div>
-
-        <!-- Include the doctors template part -->
-        <?php get_template_part('template-parts/sections/meet-doctors'); ?>
-    </div>
-</section>
+<?php get_template_part('template-parts/sections/meet-doctors-unified'); ?>
 
 <!-- Infrastructure & Culture Section -->
 <section class="py-16 lg:py-20 bg-gray-50">

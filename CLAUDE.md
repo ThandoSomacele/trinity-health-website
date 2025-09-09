@@ -151,10 +151,12 @@ wp-content/themes/trinity-health-theme/
 - Maintain brand color consistency (Trinity maroon/gold theme)
 
 ## important-instruction-reminders
-Do what has been asked; nothing more, nothing less.
-NEVER create files unless they're absolutely necessary for achieving your goal.
-ALWAYS prefer editing an existing file to creating a new one.
-NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+- Do what has been asked; nothing more, nothing less.
+- NEVER create files unless they're absolutely necessary for achieving your goal.
+- ALWAYS prefer editing an existing file to creating a new one.
+- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+- remember you need to first scroll to the bottom of the inspiration site for all animations to load before taking sreenshots, otherwise you get a distorted version of the screenshots.
+
 
 ## Visual Development
 
@@ -193,7 +195,6 @@ Invoke the `@agent-design-review` subagent for thorough design validation when:
 - Content moderation tools
 - Export functionality
 - Credits system
-- Multi-tenant architecture with organization support
 
 ### Git Commit Guidelines
 
@@ -212,4 +213,3 @@ Invoke the `@agent-design-review` subagent for thorough design validation when:
 ### CLI Tooling Memories
 
 - Please use the `gh` CLI tool when appropriate, create issues, open pull requests, read comments, etc.
-- remember you need to first scroll to the bottom of the inspiration site for all animations to load before taking sreenshots, otherwise you get a distorted version of the screenshots.

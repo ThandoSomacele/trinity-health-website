@@ -64,16 +64,29 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForms();
     initFAQAccordion();
     
-    // Delay Swiper initialization slightly on mobile for better performance
-    if (isMobile()) {
-        setTimeout(() => {
+    // Initialize Swiper with proper loading check to fix testimonials display issue
+    function tryInitSwipers() {
+        if (typeof Swiper !== 'undefined') {
+            console.log('Swiper loaded, initializing carousels...');
             initTestimonialsSwiper();
             initArticlesSwiper();
-        }, 100);
-    } else {
-        initTestimonialsSwiper();
-        initArticlesSwiper();
+            
+            // Force update after a short delay to ensure proper display
+            setTimeout(() => {
+                const testimonialsSwiper = document.querySelector('.testimonials-swiper');
+                if (testimonialsSwiper && testimonialsSwiper.swiper) {
+                    testimonialsSwiper.swiper.update();
+                    testimonialsSwiper.swiper.slideTo(0, 0);
+                }
+            }, 200);
+        } else {
+            console.log('Swiper not yet loaded, waiting...');
+            setTimeout(tryInitSwipers, 200);
+        }
     }
+    
+    // Start initialization with a small delay
+    setTimeout(tryInitSwipers, 100);
     
     // Re-apply mobile touch support after dynamic content loads
     setTimeout(() => {
@@ -306,6 +319,11 @@ function initTestimonialsSwiper() {
                         spaceBetween: 32,
                     },
                 },
+                
+                // Observer to handle DOM changes and fix loading issues
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
                 
                 // Navigation arrows
                 navigation: {
