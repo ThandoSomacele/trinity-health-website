@@ -88,21 +88,7 @@ get_header(); ?>
     <div class="content-container relative z-10">
         <div class="text-center">
             <!-- Animated Title with Letter Spacing -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <?php
-                $title = "About Us";
-                $letters = str_split($title);
-                $delay = 0;
-                foreach ($letters as $letter) {
-                    if ($letter === ' ') {
-                        echo '<span class="inline-block" style="width: 0.5em;"></span>';
-                    } else {
-                        echo '<span class="inline-block animate-letter-spacing" style="animation-delay: ' . $delay . 'ms; opacity: 0;">' . $letter . '</span>';
-                        $delay += 100;
-                    }
-                }
-                ?>
-            </h1>
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About Us</h1>
 
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/80">
@@ -333,10 +319,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/sections/appointment-cta'); ?>
 
 <!-- Section 5: Meet Our Doctors -->
-<?php 
+<?php
 // Pass gray-50 background to match the original
 $args = ['bg_class' => 'bg-gray-50'];
-get_template_part('template-parts/sections/meet-doctors-unified', null, $args); 
+get_template_part('template-parts/sections/meet-doctors-unified', null, $args);
 ?>
 
 <!-- Include Testimonials Template Part -->
