@@ -317,7 +317,7 @@
                     ));
                     ?>
                     <div class="px-4 pt-4">
-                        <a href="#"
+                        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
                             class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300">
                             <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                         </a>

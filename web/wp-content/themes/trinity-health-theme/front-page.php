@@ -28,7 +28,7 @@ get_header(); ?>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <!-- Primary CTA Button -->
-                    <a href="#"
+                    <a href="<?php echo home_url('/our-services'); ?>"
                         class="group/read bg-trinity-gold text-trinity-maroon border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-transparent hover:text-trinity-gold transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 bg-trinity-maroon rounded-full flex items-center justify-center mr-2 group-hover/read:bg-trinity-gold-dark transition-all duration-300">
                             <i data-lucide="arrow-right" class="w-4 h-4 text-trinity-gold-dark group-hover/read:text-trinity-maroon transition-all duration-300"></i>
@@ -90,7 +90,7 @@ get_header(); ?>
                 <div class="relative z-10">
                     <h2 class="text-2xl text-gray-800 mb-4 leading-tight">Don't <strong>Hesitate</strong> To Contact Us.</h2>
                     <p class="mb-8 opacity-90 text-lg">Get in touch with our healthcare professionals for immediate assistance.</p>
-                    <a href="#"
+                    <a href="<?php echo home_url('/contact'); ?>"
                         class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center">
                         <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
                         Book Appointment
@@ -212,7 +212,7 @@ get_header(); ?>
                     </ul>
 
                     <div class="pt-4">
-                        <a href="#"
+                        <a href="<?php echo home_url('/our-services'); ?>"
                             class="bg-trinity-gold text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center text-lg">
                             Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
@@ -253,7 +253,7 @@ get_header(); ?>
                         </div>
                         <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Audiology Services</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">Professional hearing health services including comprehensive tests and hearing aid fittings.</p>
-                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="<?php echo home_url('/audiology-service'); ?>" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
@@ -270,7 +270,7 @@ get_header(); ?>
                         </div>
                         <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Medical Checkup</h3>
                         <p class="text-gray-600 mb-8 leading-relaxed">Thorough medical checkups with skilled healthcare professionals to monitor and maintain your health.</p>
-                        <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                        <a href="<?php echo home_url('/general-medicine-service'); ?>" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                             Read More
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
@@ -336,7 +336,7 @@ get_header(); ?>
                 </div>
                 <h3 class="text-xl font-bold text-trinity-maroon-dark mb-4">Laboratory Service</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">Advanced laboratory services providing accurate diagnostic testing to guide effective treatment plans.</p>
-                <a href="#" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
+                <a href="<?php echo home_url('/laboratory-service'); ?>" class="w-full bg-trinity-gold hover:bg-trinity-gold-dark text-gray-800 px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>

@@ -94,7 +94,7 @@ get_header(); ?>
                         <span class="text-white/90">Tinnitus Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/audiology-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -129,7 +129,7 @@ get_header(); ?>
                         <span class="text-white/90">Immunology</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/laboratory-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -164,7 +164,7 @@ get_header(); ?>
                         <span class="text-white/90">Advanced Diagnostic Tests</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/laboratory-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -199,7 +199,7 @@ get_header(); ?>
                         <span class="text-white/90">Developmental Evaluations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/pediatrics-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -234,7 +234,7 @@ get_header(); ?>
                         <span class="text-white/90">Lipid Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/cardiology-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -269,7 +269,7 @@ get_header(); ?>
                         <span class="text-white/90">Neurological Examinations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="<?php echo home_url('/neurology-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -306,7 +306,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Cardiology</h3>
-                    <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
+                    <a href="<?php echo home_url('/cardiology-service'); ?>" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
