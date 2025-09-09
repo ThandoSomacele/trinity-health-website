@@ -315,17 +315,6 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- Other Team Members Section -->
-<section class="py-16 bg-gray-50">
-    <div class="content-container">
-        <div class="text-center mb-12">
-            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Meet The Team</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon">Other Team Members</h2>
-        </div>
-        
-        <!-- Include the unified meet doctors component -->
-        <?php get_template_part('template-parts/sections/meet-doctors-unified', null, array('bg_class' => 'bg-gray-50')); ?>
-    </div>
-</section>
+
 
 <?php get_footer(); ?>
