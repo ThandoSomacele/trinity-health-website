@@ -122,13 +122,13 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Team Member 2 - Dr. Sarah Banda -->
+            <!-- Team Member 2 - Dr. Samuel Banda -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
-                        alt="Dr. Sarah Banda"
+                    <img src="/wp-content/uploads/2025/09/dr-emily-carter.webp"
+                        alt="Dr. Samuel Banda"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
-                    <a href="https://www.linkedin.com/in/dr-sarah-banda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
+                    <a href="https://www.linkedin.com/in/dr-samuel-banda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
                             <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -139,7 +139,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">General Practitioner</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="<?php echo home_url('/team-member/?doctor=dr-sarah-banda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Sarah Banda</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-samuel-banda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Samuel Banda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Experienced GP specialising in family medicine and preventive care.
@@ -150,7 +150,7 @@ get_header(); ?>
             <!-- Team Member 3 - Dr. John Chanda -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
+                    <img src="/wp-content/uploads/2025/09/dr-michael-thompson.webp"
                         alt="Dr. John Chanda"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-john-chanda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
@@ -175,7 +175,7 @@ get_header(); ?>
             <!-- Team Member 4 - Dr. Mary Phiri -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
+                    <img src="/wp-content/uploads/2025/09/dr-sarah-williams.webp"
                         alt="Dr. Mary Phiri"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-mary-phiri" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
@@ -200,7 +200,7 @@ get_header(); ?>
             <!-- Team Member 5 - Dr. Peter Mwale -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
+                    <img src="/wp-content/uploads/2025/09/dr-james-mitchell.webp"
                         alt="Dr. Peter Mwale"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-peter-mwale" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
@@ -225,7 +225,7 @@ get_header(); ?>
             <!-- Team Member 6 - Dr. Grace Tembo -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                    <img src="/wp-content/uploads/2025/09/dr-lisa-brown.webp"
                         alt="Dr. Grace Tembo"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-grace-tembo" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
@@ -247,13 +247,13 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Team Member 7 - Dr. Joseph Lungu -->
+            <!-- Team Member 7 - Dr. Jennifer Lungu -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
-                        alt="Dr. Joseph Lungu"
+                    <img src="/wp-content/uploads/2025/09/dr-jennifer-adams.webp"
+                        alt="Dr. Jennifer Lungu"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
-                    <a href="https://www.linkedin.com/in/dr-joseph-lungu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
+                    <a href="https://www.linkedin.com/in/dr-jennifer-lungu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
                             <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -264,7 +264,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">ENT Specialist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="<?php echo home_url('/team-member/?doctor=dr-joseph-lungu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Joseph Lungu</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-jennifer-lungu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Jennifer Lungu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Ear, nose, and throat expert.
@@ -272,13 +272,13 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Team Member 8 - Dr. Elizabeth Zulu -->
+            <!-- Team Member 8 - Dr. Richard Zulu -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
-                        alt="Dr. Elizabeth Zulu"
+                    <img src="/wp-content/uploads/2025/09/dr-richard-davis.webp"
+                        alt="Dr. Richard Zulu"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
-                    <a href="https://www.linkedin.com/in/dr-elizabeth-zulu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
+                    <a href="https://www.linkedin.com/in/dr-richard-zulu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
                             <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -287,12 +287,12 @@ get_header(); ?>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Gynecologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Urologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="<?php echo home_url('/team-member/?doctor=dr-elizabeth-zulu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Elizabeth Zulu</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-richard-zulu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Richard Zulu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        Women's health specialist.
+                        Urinary system and men's health specialist.
                     </p>
                 </div>
             </div>
@@ -300,8 +300,8 @@ get_header(); ?>
             <!-- Team Member 9 - Dr. Michael Kaunda -->
             <div class="team-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
-                        alt="Dr. Michael Kaunda"
+                    <img src="/wp-content/uploads/2025/09/dr-patricia-moore.webp"
+                        alt="Dr. Patrick Kaunda"
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-michael-kaunda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
@@ -314,7 +314,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Neurologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="<?php echo home_url('/team-member/?doctor=dr-michael-kaunda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Michael Kaunda</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-patrick-kaunda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Patrick Kaunda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Treats disorders of the nervous system.

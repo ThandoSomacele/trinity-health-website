@@ -39,12 +39,12 @@
             <!-- Doctor 2 -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
-                        alt="Dr. Mubanga Mwila"
+                    <img src="/wp-content/uploads/2025/09/dr-emily-carter.webp"
+                        alt="Dr. Samuel Carter"
                         class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="py-4">
-                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Mubanga Mwila</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Samuel Carter</h3>
                     <p class="text-sm text-trinity-maroon mb-2">General Practitioner</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         15+ years experience in family medicine and preventive care.
@@ -55,12 +55,12 @@
             <!-- Doctor 3 -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
-                        alt="Dr. Michael Chen"
+                    <img src="/wp-content/uploads/2025/09/dr-michael-thompson.webp"
+                        alt="Dr. Michael Thompson"
                         class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="py-4">
-                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Michael Chen</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Michael Thompson</h3>
                     <p class="text-sm text-trinity-maroon mb-2">Cardiologist</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Expert in cardiovascular health and heart disease prevention.
@@ -71,12 +71,12 @@
             <!-- Doctor 4 -->
             <div class="bg-white group transition-all duration-300">
                 <div class="relative overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/docters-team.webp"
-                        alt="Dr. Emily Williams"
+                    <img src="/wp-content/uploads/2025/09/dr-sarah-williams.webp"
+                        alt="Dr. Sarah Williams"
                         class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="py-4">
-                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Emily Williams</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Sarah Williams</h3>
                     <p class="text-sm text-trinity-maroon mb-2">Pediatrician</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Dedicated to children's health and development care.

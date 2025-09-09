@@ -68,11 +68,11 @@ get_header(); ?>
             else :
                 // Default team members grid
                 $default_members = array(
-                    array('name' => 'Dr. Elizabeth Foster', 'specialty' => 'Compassionate care for all ages', 'title' => 'General Practitioner'),
-                    array('name' => 'Dr. David Lee', 'specialty' => 'Skillful hands, transforming lives', 'title' => 'Surgeon'),
-                    array('name' => 'Dr. Ana White', 'specialty' => 'Specializes in heart-related conditions', 'title' => 'Cardiologist'),
-                    array('name' => 'Dr. Daniel Brown', 'specialty' => 'Focuses on skin, hair disorders', 'title' => 'Dermatologist'),
-                    array('name' => 'Dr. Jennifer Lee', 'specialty' => 'Focuses on autoimmune diseases', 'title' => 'Rheumatologist'),
+                    array('name' => 'Dr. Samuel Carter', 'specialty' => 'Compassionate care for all ages', 'title' => 'General Practitioner', 'image' => '/wp-content/uploads/2025/09/dr-emily-carter.webp'),
+                    array('name' => 'Dr. Michael Thompson', 'specialty' => 'Skillful hands, transforming lives', 'title' => 'Surgeon', 'image' => '/wp-content/uploads/2025/09/dr-michael-thompson.webp'),
+                    array('name' => 'Dr. Sarah Williams', 'specialty' => 'Specializes in heart-related conditions', 'title' => 'Cardiologist', 'image' => '/wp-content/uploads/2025/09/dr-sarah-williams.webp'),
+                    array('name' => 'Dr. James Mitchell', 'specialty' => 'Focuses on skin, hair disorders', 'title' => 'Dermatologist', 'image' => '/wp-content/uploads/2025/09/dr-james-mitchell.webp'),
+                    array('name' => 'Dr. Lisa Brown', 'specialty' => 'Focuses on autoimmune diseases', 'title' => 'Rheumatologist', 'image' => '/wp-content/uploads/2025/09/dr-lisa-brown.webp'),
                     array('name' => 'Dr. Samantha Taylor', 'specialty' => 'Deals with conditions and injuries related', 'title' => 'Orthopedist'),
                     array('name' => 'Dr. Michael Johnson', 'specialty' => 'Treats disorders of the nervous system', 'title' => 'Neurologist'),
                     array('name' => 'Dr. Laura Robinson', 'specialty' => 'Common medical conditions, and refers', 'title' => 'General Practitioner'),
@@ -82,9 +82,17 @@ get_header(); ?>
                 foreach ($default_members as $member) :
             ?>
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                        <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
-                    </div>
+                    <?php if (isset($member['image'])) : ?>
+                        <div class="aspect-square overflow-hidden">
+                            <img src="<?php echo esc_url(home_url($member['image'])); ?>" 
+                                 alt="<?php echo esc_attr($member['name']); ?>" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    <?php else : ?>
+                        <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                            <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
+                        </div>
+                    <?php endif; ?>
                     
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-1"><?php echo esc_html($member['name']); ?></h3>
