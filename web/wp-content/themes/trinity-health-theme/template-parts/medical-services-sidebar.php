@@ -12,8 +12,8 @@ $current_page_slug = get_post_field('post_name', get_post());
 <!-- Medical Services Sidebar -->
 <div class="lg:col-span-1">
     <div id="medical-services-sidebar" class="bg-gray-50 rounded-lg p-6 lg:sticky lg:top-24" style="max-height: calc(100vh - 120px); overflow-y: auto;">
-        <h3 class="text-xl font-bold text-gray-900 mb-6">Medical Services</h3>
-        <div class="space-y-3">
+        <h3 class="text-2xl font-semibold text-trinity-maroon-dark mb-6">Medical Services</h3>
+        <div class="space-y-4">
             <?php
             $services = [
                 [
@@ -58,14 +58,20 @@ $current_page_slug = get_post_field('post_name', get_post());
                 $is_active = ($current_page_slug === $service['slug']);
             ?>
                 <a href="<?php echo esc_url($service['url']); ?>" 
-                   class="<?php echo $is_active ? 'bg-maroon text-white' : 'bg-white hover:bg-gray-100 text-gray-700'; ?> flex items-center p-4 rounded-lg transition-colors group">
-                    <div class="<?php echo $is_active ? 'bg-white/20' : 'bg-gray-100 group-hover:bg-maroon/10'; ?> p-2 rounded-lg mr-3">
-                        <svg class="w-6 h-6 <?php echo $is_active ? 'text-white' : 'text-maroon'; ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   class="block <?php echo $is_active ? 'bg-trinity-maroon text-white hover:bg-trinity-maroon-dark' : 'bg-white border border-gray-200 hover:border-trinity-maroon hover:shadow-md'; ?> rounded-lg p-4 transition-all">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 <?php echo $is_active ? 'bg-white/20' : 'bg-trinity-gold/20'; ?> rounded-full flex items-center justify-center">
+                            <?php if ($service['icon'] === 'stethoscope' && $is_active) : ?>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                </svg>
+                            <?php else : ?>
+                            <svg class="w-6 h-6 <?php echo $is_active ? 'text-white' : 'text-trinity-maroon'; ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <?php
                             // Icon paths based on service type
                             switch($service['icon']) {
                                 case 'stethoscope':
-                                    echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>';
+                                    echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>';
                                     break;
                                 case 'heart':
                                     echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>';
@@ -84,20 +90,22 @@ $current_page_slug = get_post_field('post_name', get_post());
                                     break;
                             }
                             ?>
-                        </svg>
+                            </svg>
+                            <?php endif; ?>
+                        </div>
+                        <span class="font-semibold text-lg <?php echo $is_active ? '' : 'text-gray-800'; ?>"><?php echo esc_html($service['title']); ?></span>
                     </div>
-                    <span class="font-medium"><?php echo esc_html($service['title']); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
         
-        <!-- View All Services Link -->
+        <!-- View All Services Button -->
         <a href="<?php echo esc_url(home_url('/our-services')); ?>" 
-           class="mt-6 flex items-center justify-center text-maroon hover:text-maroon-dark transition-colors group">
-            <svg class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+           class="flex items-center justify-center bg-trinity-gold text-gray-800 px-4 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-colors mt-6">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
-            <span class="font-medium">View All Services</span>
+            View All Services
         </a>
     </div>
 </div>
