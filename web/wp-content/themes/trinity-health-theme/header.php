@@ -15,6 +15,53 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- GLightbox for Video Lightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    
+    <!-- Custom GLightbox Styles -->
+    <style>
+        /* Lightbox overlay background */
+        .goverlay {
+            background: rgba(0, 0, 0, 0.6) !important;
+        }
+        
+        /* Remove borders and shadows from video container */
+        .gslide-video {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        .gslide-media {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        .gslide-inline {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+        
+        /* Remove border from video iframe */
+        .gslide-video iframe,
+        .gslide-video video {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        /* Clean video player wrapper */
+        .plyr {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        .plyr__video-wrapper {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+
     <!-- Navigation and Mobile Menu Styles -->
     <style>
         /* Desktop Navigation Styles */

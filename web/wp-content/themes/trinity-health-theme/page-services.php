@@ -360,6 +360,31 @@ get_header(); ?>
 <!-- Meet Our Doctors Section -->
 <?php get_template_part('template-parts/sections/meet-doctors-unified'); ?>
 
+<!-- Video CTA Section -->
+<section class="py-20 bg-gradient-to-r from-trinity-maroon to-trinity-maroon-dark relative overflow-hidden">
+    <div class="absolute inset-0">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            See Our Services in Action
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+            Discover how Trinity Health is transforming healthcare in Zambia with state-of-the-art facilities and compassionate care.
+        </p>
+        <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4" 
+           class="glightbox-video inline-flex items-center bg-white text-trinity-maroon px-10 py-5 rounded-full font-bold text-lg hover:bg-trinity-gold hover:text-black transform hover:scale-105 transition-all duration-300 shadow-xl group">
+            <div class="w-12 h-12 bg-trinity-maroon rounded-full flex items-center justify-center mr-4 group-hover:bg-black transition-colors">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+            Watch Video Tour
+        </a>
+    </div>
+</section>
+
 <!-- Infrastructure & Culture Section -->
 <section class="py-16 lg:py-20 bg-gray-50">
     <div class="content-container">

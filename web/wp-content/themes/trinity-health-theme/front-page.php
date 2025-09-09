@@ -35,14 +35,14 @@ get_header(); ?>
                         </div>
                         Read More
                     </a>
-                    <!-- Secondary CTA Button -->
-                    <!-- <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>"
-                        class="group/video bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold group-hover/video:bg-white group-hover/video:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
+                    <!-- Secondary CTA Button - Video -->
+                    <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4"
+                        class="glightbox-video group/video bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2 group-hover/video:bg-trinity-maroon transition-colors duration-300">
                             <i data-lucide="play" class="w-5 h-5 text-trinity-maroon group-hover/video:text-white"></i>
                         </div>
                         Watch Video
-                    </a> -->
+                    </a>
                 </div>
             </div>
 

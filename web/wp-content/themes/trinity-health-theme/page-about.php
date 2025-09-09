@@ -100,6 +100,26 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- Video Section -->
+<section class="py-16 bg-gradient-to-br from-trinity-maroon to-trinity-maroon-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="content-container relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Experience Trinity Health</h2>
+            <p class="text-white/90 text-lg mb-8">Watch our video to learn more about our commitment to providing exceptional healthcare services to the Zambian community.</p>
+            <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4" 
+               class="glightbox-video inline-flex items-center justify-center bg-white text-trinity-maroon px-8 py-4 rounded-full font-semibold hover:bg-trinity-gold hover:text-black transition-all duration-300 group">
+                <div class="w-10 h-10 bg-trinity-maroon rounded-full flex items-center justify-center mr-3 group-hover:bg-black transition-colors">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                Watch Our Story
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Section 1: Caring For Health with Doctor Image -->
 <section class="py-20 bg-white">
     <div class="content-container">

@@ -133,6 +133,32 @@
 <script>
     // Initialize Lucide icons
     lucide.createIcons();
+    
+    // Initialize GLightbox for video lightbox
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = GLightbox({
+            selector: '.glightbox-video',
+            plyr: {
+                css: 'https://cdn.plyr.io/3.7.8/plyr.css',
+                js: 'https://cdn.plyr.io/3.7.8/plyr.js',
+                config: {
+                    youtube: {
+                        noCookie: true,
+                        rel: 0,
+                        showinfo: 0,
+                        iv_load_policy: 3
+                    },
+                    vimeo: {
+                        byline: false,
+                        portrait: false,
+                        title: false,
+                        speed: true,
+                        transparent: false
+                    }
+                }
+            }
+        });
+    });
 </script>
 
 </body>
