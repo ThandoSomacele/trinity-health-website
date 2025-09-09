@@ -327,7 +327,7 @@ get_header(); ?>
 </section>
 
 <!-- Call to Action Section -->
-<section class="py-16 bg-trinity-maroon">
+<section class="py-16 bg-trinity-maroon-dark">
     <div class="content-container">
         <div class="text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Meet Our Team?</h2>

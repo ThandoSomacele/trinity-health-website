@@ -148,7 +148,7 @@ get_header(); ?>
                     <!-- Left Circle Image -->
                     <div class="relative top-6">
                         <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                            <img src="/wp-content/uploads/2025/08/girl-smiling-hearing-aid.webp"
                                 alt="Professional Female Doctor"
                                 class="w-full h-full object-cover">
                         </div>
@@ -157,7 +157,7 @@ get_header(); ?>
                     <!-- Right Oval Image -->
                     <div class="relative -top-10">
                         <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
-                            <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                            <img src="/wp-content/uploads/2025/09/life-5.webp"
                                 alt="Healthcare Team"
                                 class="w-full h-full object-cover">
                         </div>
@@ -175,7 +175,7 @@ get_header(); ?>
             <!-- Left Video/Image -->
             <div class="relative">
                 <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden relative">
-                    <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                    <img src="/wp-content/uploads/2025/09/life-4.webp"
                         alt="Trinity Health Facility"
                         class="w-full h-full object-cover"
                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full bg-gradient-to-br from-trinity-gold/10 to-trinity-maroon/10\'><svg class=\'w-32 h-32 text-trinity-maroon/30\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\'/></svg></div>';">
