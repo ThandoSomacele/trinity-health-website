@@ -14,7 +14,7 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
     <div class="content-container">
         <!-- Section Header - Centered -->
         <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Best Doctor</p>
+            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Our Best Doctor</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                 Meet Our Doctors.
             </h2>
@@ -32,9 +32,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
                          onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/doctor-hearing-aid.webp';">
                 </div>
                 <div class="text-left">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Lead Audiologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Lead Audiologist</p>
                     <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">
-                        <a href="/team/dr-alfred-mwamba" class="hover:text-trinity-gold transition-colors">
+                        <a href="/team/dr-alfred-mwamba" class="hover:text-trinity-gold-dark transition-colors">
                             Dr. Alfred Mwamba
                         </a>
                     </h3>
@@ -51,9 +51,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
                          class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Family Physician</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Family Physician</p>
                     <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">
-                        <a href="/team/dr-mubanga-mwila" class="hover:text-trinity-gold transition-colors">
+                        <a href="/team/dr-mubanga-mwila" class="hover:text-trinity-gold-dark transition-colors">
                             Dr. Mubanga Mwila
                         </a>
                     </h3>
@@ -70,9 +70,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
                          class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Cardiologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Cardiologist</p>
                     <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">
-                        <a href="/team/dr-michael-chen" class="hover:text-trinity-gold transition-colors">
+                        <a href="/team/dr-michael-chen" class="hover:text-trinity-gold-dark transition-colors">
                             Dr. Michael Chen
                         </a>
                     </h3>
@@ -89,9 +89,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
                          class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Pediatrician</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Pediatrician</p>
                     <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">
-                        <a href="/team/dr-emily-williams" class="hover:text-trinity-gold transition-colors">
+                        <a href="/team/dr-emily-williams" class="hover:text-trinity-gold-dark transition-colors">
                             Dr. Emily Williams
                         </a>
                     </h3>

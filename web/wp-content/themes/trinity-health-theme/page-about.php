@@ -106,7 +106,7 @@ get_header(); ?>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
             <div>
-                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">About Us</p>
+                <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">About Us</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
                     Caring For The Health & Well Being Of Family.
                 </h2>
@@ -172,7 +172,7 @@ get_header(); ?>
 
             <!-- Right Content -->
             <div>
-                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Who We Are</p>
+                <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Who We Are</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
                     <?php
                     echo 'Improving The Quality Of Your Life Through Better Health.';
@@ -190,7 +190,7 @@ get_header(); ?>
 <section class="py-20 bg-gray-50">
     <div class="content-container">
         <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Top Services</p>
+            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Top Services</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
                 We Are a Progressive Medical Clinic.
             </h2>
@@ -233,7 +233,7 @@ get_header(); ?>
 <section class="py-20 bg-white">
     <div class="content-container">
         <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Caring For The Health Of You And Your Family.</p>
+            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Caring For The Health Of You And Your Family.</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-6">
                 We Provide All Aspects Of Medical Practice For Your Whole Family.
             </h2>

@@ -18,7 +18,7 @@ get_header(); ?>
                     <p class="text-white text-base md:text-lg font-medium tracking-widest uppercase">
                         WELCOME TO TRINITY HEALTH
                     </p>
-                    <h1 class="text-trinity-gold text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
+                    <h1 class="text-trinity-gold-dark text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
                         Expert Care For Your Health Needs
                     </h1>
                 </div>
@@ -29,9 +29,9 @@ get_header(); ?>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <!-- Primary CTA Button -->
                     <a href="#"
-                        class="group/read bg-trinity-gold text-trinity-maroon border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-transparent hover:text-trinity-gold-dark transition-all duration-300 text-center inline-flex items-center justify-center">
+                        class="group/read bg-trinity-gold text-trinity-maroon border-2 border-trinity-gold px-8 py-3 rounded-full font-semibold hover:bg-transparent hover:text-trinity-gold transition-all duration-300 text-center inline-flex items-center justify-center">
                         <div class="w-6 h-6 bg-trinity-maroon rounded-full flex items-center justify-center mr-2 group-hover/read:bg-trinity-gold-dark transition-all duration-300">
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-trinity-gold group-hover/read:text-trinity-maroon transition-all duration-300"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-trinity-gold-dark group-hover/read:text-trinity-maroon transition-all duration-300"></i>
                         </div>
                         Read More
                     </a>
@@ -107,7 +107,7 @@ get_header(); ?>
                     <i data-lucide="clock" class="w-8 h-8 text-white mb-4"></i>
 
                     <div class="text-4xl font-bold mb-2">24</div>
-                    <div class="text-trinity-gold font-semibold text-lg mb-2">Hour Service</div>
+                    <div class="text-trinity-gold-dark font-semibold text-lg mb-2">Hour Service</div>
                     <p class="text-md opacity-80">Emergency care available round the clock for your health needs</p>
                 </div>
                 <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-trinity-gold/10 rounded-full"></div>
@@ -120,7 +120,7 @@ get_header(); ?>
                     <i data-lucide="users" class="w-8 h-8 text-white mb-4"></i>
 
                     <div class="text-4xl font-bold mb-2">15+</div>
-                    <div class="text-trinity-gold font-semibold text-lg mb-2">Expert Doctors</div>
+                    <div class="text-trinity-gold-dark font-semibold text-lg mb-2">Expert Doctors</div>
                     <p class="text-md opacity-80">Qualified healthcare professionals ready to serve you</p>
                 </div>
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-trinity-gold/10 rounded-full"></div>

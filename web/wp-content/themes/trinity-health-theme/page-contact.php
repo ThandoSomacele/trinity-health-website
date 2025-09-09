@@ -102,7 +102,7 @@ get_header(); ?>
     <div class="content-container">
         <!-- Section Title - Centered -->
         <div class="text-center mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Fill The Form</p>
+            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Fill The Form</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon">Contact Form</h2>
         </div>
 

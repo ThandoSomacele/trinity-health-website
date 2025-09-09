@@ -58,7 +58,7 @@ get_header(); ?>
     .team-overlay .linkedin-icon svg {
         width: 24px;
         height: 24px;
-        color: #0077B5;
+        color: #880005;
     }
 </style>
 
@@ -105,16 +105,16 @@ get_header(); ?>
                         onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/docters-team.webp';">
                     <a href="https://www.linkedin.com/in/dr-alfred-mwamba" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Founder & Lead Audiologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Founder & Lead Audiologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Alfred Mwamba</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Alfred Mwamba</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         First Audiologist in Zambia. Specialist in audiology with over 15 years of experience.
@@ -130,16 +130,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-sarah-banda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">General Practitioner</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">General Practitioner</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Sarah Banda</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Sarah Banda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Experienced GP specialising in family medicine and preventive care.
@@ -155,16 +155,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-john-chanda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Cardiologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Cardiologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. John Chanda</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. John Chanda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Specialises in heart-related conditions.
@@ -180,16 +180,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-mary-phiri" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Pediatrician</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Pediatrician</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Mary Phiri</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Mary Phiri</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Dedicated to children's health and development.
@@ -205,16 +205,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-peter-mwale" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Orthopaedic Surgeon</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Orthopaedic Surgeon</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Peter Mwale</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Peter Mwale</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Deals with conditions and injuries related.
@@ -230,16 +230,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-grace-tembo" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Dermatologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Dermatologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Grace Tembo</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Grace Tembo</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Focuses on skin, hair disorders.
@@ -255,16 +255,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-joseph-lungu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">ENT Specialist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">ENT Specialist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Joseph Lungu</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Joseph Lungu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Ear, nose, and throat expert.
@@ -280,16 +280,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-elizabeth-zulu" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Gynecologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Gynecologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Elizabeth Zulu</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Elizabeth Zulu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Women's health specialist.
@@ -305,16 +305,16 @@ get_header(); ?>
                         class="team-image w-full h-80 object-cover transition-transform duration-300">
                     <a href="https://www.linkedin.com/in/dr-michael-kaunda" target="_blank" rel="noopener noreferrer" class="team-overlay absolute inset-0">
                         <div class="linkedin-icon">
-                            <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-6 h-6" fill="#880005" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </div>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold uppercase tracking-wider mb-2">Neurologist</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Neurologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold transition-colors">Dr. Michael Kaunda</a>
+                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Michael Kaunda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Treats disorders of the nervous system.

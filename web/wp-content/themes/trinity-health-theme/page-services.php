@@ -55,7 +55,7 @@ get_header(); ?>
     <div class="content-container">
         <!-- Section Title - Left Aligned like Homepage -->
         <div class="mb-12">
-            <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Services</p>
+            <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Our Services</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                 Providing Medical Care<br>
                 For The Sickest In Our<br>
@@ -76,25 +76,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Comprehensive Hearing Tests</span>
                     </li>
                     <li class="flex items-start ">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Hearing Aid Fitting & Support</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Tinnitus Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -111,25 +111,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Molecular Pathology</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Cytogenetics</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Immunology</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -146,25 +146,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Comprehensive Test Menu</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Timely Turnaround</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Advanced Diagnostic Tests</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -181,25 +181,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Nutrition Counseling</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Pediatric Dermatology</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Developmental Evaluations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -216,25 +216,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Heart Failure Program</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Cardiac Rehabilitation</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Lipid Management</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -251,25 +251,25 @@ get_header(); ?>
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Epilepsy Management</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Headache and Migraine Clinic</span>
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-trinity-gold mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="text-white/90">Neurological Examinations</span>
                     </li>
                 </ul>
-                <a href="#" class="inline-flex items-center text-trinity-gold hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
+                <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-white border-2 border-trinity-gold hover:bg-trinity-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 mt-auto">
                     Read More
                     <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                 </a>
@@ -284,7 +284,7 @@ get_header(); ?>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
             <div>
-                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Top Service</p>
+                <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Top Service</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                     We Are a Progressive<br>
                     Medical Clinic.
@@ -306,7 +306,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Cardiology</h3>
-                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                    <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -320,7 +320,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Diagnostics</h3>
-                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                    <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -334,7 +334,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Virology</h3>
-                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                    <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -348,7 +348,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-trinity-maroon/80 to-transparent"></div>
                     </div>
                     <h3 class="font-bold text-gray-900 mb-2">Therapy</h3>
-                    <a href="#" class="inline-flex items-center text-trinity-gold hover:text-trinity-gold-dark transition-colors">
+                    <a href="#" class="inline-flex items-center text-trinity-gold-dark hover:text-trinity-maroon transition-colors">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -366,7 +366,7 @@ get_header(); ?>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
             <div>
-                <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Our Culture</p>
+                <p class="text-trinity-gold-dark font-medium tracking-wider uppercase mb-4">Our Culture</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">
                     Our Infrastructure & Culture
                 </h2>

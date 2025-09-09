@@ -29,7 +29,7 @@
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Best Hygiene Options For Healthy Living</h3>
                     <p class="text-gray-600 text-sm mb-4 flex-grow">Learn about the best hygiene practices that can significantly improve your overall health...</p>
-                    <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                    <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                         Read More →
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">The Importance of Regular Health Checkups</h3>
                     <p class="text-gray-600 text-sm mb-4 flex-grow">Discover why regular health screenings are crucial for early detection and prevention...</p>
-                    <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                    <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                         Read More →
                     </a>
                 </div>
@@ -59,7 +59,7 @@
                     <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Audiology</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding Hearing Health and Audiology Services</h3>
                     <p class="text-gray-600 text-sm mb-4 flex-grow">Learn about our comprehensive audiology services including hearing tests and fittings...</p>
-                    <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                    <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                         Read More →
                     </a>
                 </div>
@@ -80,7 +80,7 @@
                                 <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 15, 2024 • Health Tips</div>
                                 <h3 class="text-xl font-bold text-gray-800 mb-3">Best Hygiene Options For Healthy Living</h3>
                                 <p class="text-gray-600 text-sm mb-4 flex-grow">Learn about the best hygiene practices that can significantly improve your overall health...</p>
-                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                                <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                                     Read More →
                                 </a>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 10, 2024 • Medical News</div>
                                 <h3 class="text-xl font-bold text-gray-800 mb-3">The Importance of Regular Health Checkups</h3>
                                 <p class="text-gray-600 text-sm mb-4 flex-grow">Discover why regular health screenings are crucial for early detection and prevention...</p>
-                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                                <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                                     Read More →
                                 </a>
                             </div>
@@ -114,7 +114,7 @@
                                 <div class="text-trinity-gold-dark text-sm font-semibold mb-2">May 5, 2024 • Audiology</div>
                                 <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding Hearing Health and Audiology Services</h3>
                                 <p class="text-gray-600 text-sm mb-4 flex-grow">Learn about our comprehensive audiology services including hearing tests and fittings...</p>
-                                <a href="#" class="text-trinity-gold font-semibold hover:text-trinity-gold-dark transition-colors mt-auto">
+                                <a href="#" class="text-trinity-gold-dark font-semibold hover:text-trinity-maroon transition-colors mt-auto">
                                     Read More →
                                 </a>
                             </div>
