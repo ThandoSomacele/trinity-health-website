@@ -114,7 +114,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Founder & Lead Audiologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Alfred Mwamba</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-alfred-mwamba'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Alfred Mwamba</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         First Audiologist in Zambia. Specialist in audiology with over 15 years of experience.
@@ -139,7 +139,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">General Practitioner</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Sarah Banda</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-sarah-banda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Sarah Banda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Experienced GP specialising in family medicine and preventive care.
@@ -164,7 +164,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Cardiologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. John Chanda</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-john-chanda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. John Chanda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Specialises in heart-related conditions.
@@ -189,7 +189,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Pediatrician</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Mary Phiri</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-mary-phiri'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Mary Phiri</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Dedicated to children's health and development.
@@ -214,7 +214,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Orthopaedic Surgeon</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Peter Mwale</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-peter-mwale'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Peter Mwale</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Deals with conditions and injuries related.
@@ -239,7 +239,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Dermatologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Grace Tembo</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-grace-tembo'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Grace Tembo</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Focuses on skin, hair disorders.
@@ -264,7 +264,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">ENT Specialist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Joseph Lungu</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-joseph-lungu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Joseph Lungu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Ear, nose, and throat expert.
@@ -289,7 +289,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Gynecologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Elizabeth Zulu</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-elizabeth-zulu'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Elizabeth Zulu</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Women's health specialist.
@@ -314,7 +314,7 @@ get_header(); ?>
                 <div class="p-6">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Neurologist</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
-                        <a href="#" class="hover:text-trinity-gold-dark transition-colors">Dr. Michael Kaunda</a>
+                        <a href="<?php echo home_url('/team-member/?doctor=dr-michael-kaunda'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Michael Kaunda</a>
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Treats disorders of the nervous system.
