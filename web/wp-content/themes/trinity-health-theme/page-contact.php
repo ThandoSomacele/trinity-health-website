@@ -7,6 +7,21 @@
 
 get_header(); ?>
 
+<style>
+    /* Content container for consistent width matching header/footer */
+    .content-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    @media (min-width: 1280px) {
+        .content-container {
+            padding: 0 2rem;
+        }
+    }
+</style>
+
 <!-- Page Hero Section -->
 <section class="relative bg-trinity-maroon py-24 lg:py-32 overflow-hidden">
     <!-- Subtle gradient overlay for depth -->
@@ -49,33 +64,33 @@ get_header(); ?>
 </section>
 
 <!-- Contact Information Cards - MediPro Style -->
-<section class="py-20 bg-white">
+<section class="py-16 bg-white">
     <div class="content-container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Help Line Card -->
-            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="phone" class="w-10 h-10 text-trinity-maroon"></i>
+            <div class="bg-white p-8 text-center group hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-trinity-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-trinity-gold/20 transition-colors">
+                    <i data-lucide="phone" class="w-8 h-8 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Help Line</h3>
-                <p class="text-2xl font-semibold text-gray-800">+260 955 333 007</p>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Help Line</h3>
+                <p class="text-gray-600">(+260) 955 333 007</p>
             </div>
 
             <!-- Location Card -->
-            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="map-pin" class="w-10 h-10 text-trinity-maroon"></i>
+            <div class="bg-white p-8 text-center group hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-trinity-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-trinity-gold/20 transition-colors">
+                    <i data-lucide="map-pin" class="w-8 h-8 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Location</h3>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Location</h3>
                 <p class="text-gray-600">4 Suez Road, Lusaka, Zambia</p>
             </div>
 
             <!-- Email Address Card -->
-            <div class="bg-white p-8 border border-gray-200 rounded-lg text-center hover:shadow-lg transition-shadow">
-                <div class="w-20 h-20 bg-trinity-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="mail" class="w-10 h-10 text-trinity-maroon"></i>
+            <div class="bg-white p-8 text-center group hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-trinity-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-trinity-gold/20 transition-colors">
+                    <i data-lucide="mail" class="w-8 h-8 text-trinity-maroon"></i>
                 </div>
-                <h3 class="text-xl font-bold text-trinity-maroon-dark mb-3">Email Address</h3>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Email Address</h3>
                 <p class="text-gray-600">info@trinityhealth.co.zm</p>
             </div>
         </div>
@@ -83,112 +98,110 @@ get_header(); ?>
 </section>
 
 <!-- Contact Form Section -->
-<section class="py-20 bg-gray-50">
+<section class="py-16 bg-gray-50">
     <div class="content-container">
         <!-- Section Title - Centered -->
         <div class="text-center mb-12">
             <p class="text-trinity-gold font-medium tracking-wider uppercase mb-4">Fill The Form</p>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon mb-8">Contact Form</h2>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-trinity-maroon">Contact Form</h2>
         </div>
 
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <!-- Contact Form -->
-            <div class="bg-white p-10 rounded-lg shadow-lg">
-                <form method="POST" action="" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Name -->
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Your Name *</label>
-                            <input type="text" 
-                                   name="name" 
-                                   required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                        </div>
-
-                        <!-- Email -->
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Your Email *</label>
-                            <input type="email" 
-                                   name="email" 
-                                   required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Phone -->
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Phone Number *</label>
-                            <input type="tel" 
-                                   name="phone" 
-                                   required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                        </div>
-
-                        <!-- Subject -->
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Subject *</label>
-                            <input type="text" 
-                                   name="subject" 
-                                   required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                        </div>
-                    </div>
-
-                    <!-- Message -->
+            <form method="POST" action="" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Name -->
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2">Your Message *</label>
-                        <textarea name="message" 
-                                  rows="6" 
-                                  required
-                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all resize-none"></textarea>
+                        <input type="text" 
+                               name="name" 
+                               placeholder="Enter Your Full Name"
+                               required
+                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
                     </div>
 
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" 
-                                class="bg-trinity-gold text-gray-800 px-12 py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-flex items-center">
-                            Book Now
-                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                        </button>
+                    <!-- Email -->
+                    <div>
+                        <input type="email" 
+                               name="email" 
+                               placeholder="Enter Your Email"
+                               required
+                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Phone -->
+                    <div>
+                        <input type="tel" 
+                               name="phone" 
+                               placeholder="Enter Your Phone Number"
+                               required
+                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
                     </div>
 
-                    <?php
-                    // Handle form submission
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        // Sanitize form data
-                        $name = sanitize_text_field($_POST['name']);
-                        $email = sanitize_email($_POST['email']);
-                        $phone = sanitize_text_field($_POST['phone']);
-                        $subject = sanitize_text_field($_POST['subject']);
-                        $message = sanitize_textarea_field($_POST['message']);
-                        
-                        // Prepare email
-                        $to = get_option('admin_email');
-                        $email_subject = 'Contact Form: ' . $subject;
-                        $email_body = "Name: $name\n";
-                        $email_body .= "Email: $email\n";
-                        $email_body .= "Phone: $phone\n";
-                        $email_body .= "Subject: $subject\n\n";
-                        $email_body .= "Message:\n$message";
-                        
-                        $headers = array(
-                            'From: ' . $name . ' <' . $email . '>',
-                            'Reply-To: ' . $email
-                        );
-                        
-                        // Send email
-                        $sent = wp_mail($to, $email_subject, $email_body, $headers);
-                        
-                        if ($sent) {
-                            echo '<div class="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">Thank you for your message. We will get back to you soon!</div>';
-                        } else {
-                            echo '<div class="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">Sorry, there was an error sending your message. Please try again later.</div>';
-                        }
-                    }
-                    ?>
-                </form>
-            </div>
+                    <!-- Subject -->
+                    <div>
+                        <input type="text" 
+                               name="subject" 
+                               placeholder="Your Subject"
+                               required
+                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <textarea name="message" 
+                              rows="6" 
+                              placeholder="Type Your Message"
+                              required
+                              class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" 
+                            class="bg-trinity-maroon text-white px-12 py-4 rounded-full font-semibold hover:bg-trinity-maroon-dark transition-all duration-300 inline-flex items-center">
+                        Book Now
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </button>
+                </div>
+            </form>
+
+            <?php
+            // Handle form submission
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Sanitize form data
+                $name = sanitize_text_field($_POST['name']);
+                $email = sanitize_email($_POST['email']);
+                $phone = sanitize_text_field($_POST['phone']);
+                $subject = sanitize_text_field($_POST['subject']);
+                $message = sanitize_textarea_field($_POST['message']);
+                
+                // Prepare email
+                $to = get_option('admin_email');
+                $email_subject = 'Contact Form: ' . $subject;
+                $email_body = "Name: $name\n";
+                $email_body .= "Email: $email\n";
+                $email_body .= "Phone: $phone\n";
+                $email_body .= "Subject: $subject\n\n";
+                $email_body .= "Message:\n$message";
+                
+                $headers = array(
+                    'From: ' . $name . ' <' . $email . '>',
+                    'Reply-To: ' . $email
+                );
+                
+                // Send email
+                $sent = wp_mail($to, $email_subject, $email_body, $headers);
+                
+                if ($sent) {
+                    echo '<div class="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">Thank you for your message. We will get back to you soon!</div>';
+                } else {
+                    echo '<div class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">Sorry, there was an error sending your message. Please try again later.</div>';
+                }
+            }
+            ?>
         </div>
     </div>
 </section>
