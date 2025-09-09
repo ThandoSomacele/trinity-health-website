@@ -133,17 +133,36 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Right Image -->
+            <!-- Services Image -->
             <div class="relative">
-                <div class="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
-                    <img src="/wp-content/uploads/2025/08/doctor-hearing-aid.webp"
-                        alt="Dr. John Mwamba"
-                        class="w-full h-full object-cover"
-                        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full bg-gradient-to-br from-trinity-gold/10 to-trinity-maroon/10\'><svg class=\'w-32 h-32 text-trinity-maroon/30\' fill=\'currentColor\' viewBox=\'0 0 24 24\'><path d=\'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z\'/></svg></div>';">
+                <!-- Decorative dots pattern -->
+                <div class="relative inset-0">
+                    <div class="absolute top-4 md:top-16 left-2/4 md:left-1/3 transform -translate-x-1/2 md:-translate-x-1/3 grid grid-cols-8 md:grid-cols-12 gap-1 md:gap-2 opacity-40">
+                        <?php for ($i = 0; $i < 264; $i++): ?>
+                            <div class="w-1 h-1 bg-trinity-maroon rounded-full"></div>
+                        <?php endfor; ?>
+                    </div>
                 </div>
-                <!-- Decorative elements -->
-                <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-trinity-gold/20 rounded-full -z-10"></div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 bg-trinity-maroon/10 rounded-full -z-10"></div>
+
+                <div class="relative z-10 flex gap-4 sm:gap-8 lg:gap-14 items-center justify-center sm:justify-start">
+                    <!-- Left Circle Image -->
+                    <div class="relative top-6">
+                        <div class="w-44 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/old-man-hearing-aid.webp"
+                                alt="Professional Female Doctor"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Right Oval Image -->
+                    <div class="relative -top-10">
+                        <div class="w-40 h-64 sm:w-44 sm:h-80 lg:w-52 lg:h-96 rounded-full overflow-hidden bg-white">
+                            <img src="/wp-content/uploads/2025/08/home-hero-2.webp"
+                                alt="Healthcare Team"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
