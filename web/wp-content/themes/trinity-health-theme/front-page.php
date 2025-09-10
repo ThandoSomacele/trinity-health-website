@@ -38,8 +38,8 @@ get_header(); ?>
                     <!-- Secondary CTA Button - Video -->
                     <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4"
                         class="glightbox-video group/video bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-trinity-maroon transition-all duration-300 text-center inline-flex items-center justify-center">
-                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2 group-hover/video:bg-trinity-maroon transition-colors duration-300">
-                            <i data-lucide="play" class="w-5 h-5 text-trinity-maroon group-hover/video:text-white"></i>
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center mr-2 group-hover/video:bg-trinity-maroon transition-colors duration-300">
+                            <i data-lucide="play" class="w-5 h-5 text-white group-hover/video:text-trinity-maroon"></i>
                         </div>
                         Watch Video
                     </a>
