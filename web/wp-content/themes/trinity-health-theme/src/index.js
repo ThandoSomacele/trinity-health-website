@@ -53,16 +53,29 @@ function addMobileTouchSupport() {
     }
 }
 
-// DOM Ready
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Trinity Health Theme loaded successfully');
+// Main initialization function
+function initializeTheme() {
+    // Prevent multiple initializations
+    if (window.themeInitialized) {
+        console.log('Theme already initialized, skipping...');
+        return;
+    }
+    window.themeInitialized = true;
+    
+    console.log('Trinity Health Theme initializing...');
     console.log('Is mobile device:', isMobile());
     
     // Add mobile-specific enhancements
     addMobileTouchSupport();
     
-    // Initialize navigation (mobile menu)
-    initNavigation();
+    // Initialize navigation (mobile menu) with a small delay to ensure DOM is ready
+    setTimeout(() => {
+        if (typeof initNavigation === 'function') {
+            initNavigation();
+        } else {
+            console.error('Navigation initialization function not found');
+        }
+    }, 50);
     
     // Initialize theme functionality
     initSmoothScrolling();
@@ -83,21 +96,44 @@ document.addEventListener('DOMContentLoaded', function() {
                     testimonialsSwiper.swiper.update();
                     testimonialsSwiper.swiper.slideTo(0, 0);
                 }
-            }, 200);
+            }, 300);
         } else {
             console.log('Swiper not yet loaded, waiting...');
             setTimeout(tryInitSwipers, 200);
         }
     }
     
-    // Start initialization with a small delay
-    setTimeout(tryInitSwipers, 100);
+    // Start initialization with a delay to ensure all assets are loaded
+    setTimeout(tryInitSwipers, 200);
     
     // Re-apply mobile touch support after dynamic content loads
     setTimeout(() => {
         addMobileTouchSupport();
-    }, 1000);
-});
+    }, 1500);
+}
+
+// Wait for complete page load (including CSS and external resources)
+if (document.readyState === 'complete') {
+    // Page is already fully loaded
+    initializeTheme();
+} else if (document.readyState === 'interactive') {
+    // DOM is ready but resources still loading
+    window.addEventListener('load', initializeTheme);
+} else {
+    // Document still loading
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait for window load to ensure CSS is ready
+        window.addEventListener('load', initializeTheme);
+    });
+}
+
+// Fallback initialization after a delay if nothing else works
+setTimeout(() => {
+    if (!window.themeInitialized) {
+        console.log('Fallback initialization triggered');
+        initializeTheme();
+    }
+}, 3000);
 
 // Make Swiper functions globally available for fallback scenarios
 window.initTestimonialsSwiper = initTestimonialsSwiper;

@@ -75,15 +75,32 @@ function trinity_health_enqueue_assets() {
         TRINITY_THEME_URL . '/build/index.js',
         array_merge($asset['dependencies'], array('swiper-js')),
         $asset['version'],
-        true
+        true // Load in footer
     );
+    
+    // Add defer attribute to main script for better loading
+    add_filter('script_loader_tag', function($tag, $handle) {
+        if ('trinity-health-script' === $handle) {
+            return str_replace(' src', ' defer src', $tag);
+        }
+        return $tag;
+    }, 10, 2);
     
     // Add improved mobile-compatible script loading
     wp_add_inline_script('trinity-health-script', '
-        // Enhanced mobile debugging
+        // Enhanced mobile debugging and initialization
         console.log("Trinity Health theme loading - User agent:", navigator.userAgent);
         console.log("Screen dimensions:", window.innerWidth + "x" + window.innerHeight);
         console.log("Touch support available:", "ontouchstart" in window);
+        
+        // Ensure all resources are loaded before initializing
+        if (document.readyState === "loading") {
+            console.log("Document still loading, waiting for DOM ready...");
+        } else if (document.readyState === "interactive") {
+            console.log("DOM ready but resources still loading...");
+        } else if (document.readyState === "complete") {
+            console.log("Page fully loaded!");
+        }
         
         // Check for Swiper availability with retry mechanism
         let swiperCheckCount = 0;
