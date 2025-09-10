@@ -37,6 +37,7 @@
   "dependencies": {
     "accordion-js": "^3.4.1",
     "heroicons": "^2.2.0",
+    "lottie-web": "^5.13.0",
     "puppeteer": "^24.17.0"
   },
   "browserslist": [

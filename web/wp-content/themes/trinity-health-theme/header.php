@@ -303,6 +303,16 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
+    <!-- Loading Spinner -->
+    <div id="trinity-loader" class="trinity-loader">
+        <div class="loader-inner">
+            <div id="lottie-spinner"></div>
+            <div class="loader-logo">
+                <?php echo trinity_health_get_logo('light'); ?>
+            </div>
+        </div>
+    </div>
+
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
     <header class="site-header bg-trinity-maroon shadow-lg" role="banner">

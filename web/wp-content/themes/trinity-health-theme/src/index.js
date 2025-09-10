@@ -11,6 +11,9 @@ import '../assets/css/src/index.scss';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
+// Import Lottie for animations
+import lottie from 'lottie-web';
+
 // Import and initialize navigation functionality (mobile menu)
 import initNavigation from '../assets/js/src/navigation.js';
 
@@ -50,6 +53,45 @@ function addMobileTouchSupport() {
         });
         
         console.log('Mobile touch support added for accordion only');
+    }
+}
+
+// Initialize loading spinner
+function initLoadingSpinner() {
+    const loaderElement = document.getElementById('lottie-spinner');
+    const loader = document.getElementById('trinity-loader');
+    
+    if (loaderElement && loader) {
+        // Load Lottie animation
+        const animation = lottie.loadAnimation({
+            container: loaderElement,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/wp-content/themes/trinity-health-theme/assets/animations/loading-spinner.json'
+        });
+        
+        // Hide loader after page loads
+        const hideLoader = () => {
+            loader.classList.add('fade-out');
+            document.body.classList.add('loaded');
+            
+            // Remove loader from DOM after transition
+            setTimeout(() => {
+                if (loader && loader.parentNode) {
+                    loader.parentNode.removeChild(loader);
+                }
+            }, 500);
+        };
+        
+        // Hide loader when everything is ready
+        if (document.readyState === 'complete') {
+            setTimeout(hideLoader, 500); // Small delay to show the animation
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(hideLoader, 500);
+            });
+        }
     }
 }
 
@@ -112,6 +154,9 @@ function initializeTheme() {
     }, 1500);
 }
 
+// Initialize loading spinner immediately
+initLoadingSpinner();
+
 // Wait for complete page load (including CSS and external resources)
 if (document.readyState === 'complete') {
     // Page is already fully loaded
@@ -122,6 +167,7 @@ if (document.readyState === 'complete') {
 } else {
     // Document still loading
     document.addEventListener('DOMContentLoaded', function() {
+        initLoadingSpinner(); // Initialize again if missed
         // Wait for window load to ensure CSS is ready
         window.addEventListener('load', initializeTheme);
     });

@@ -80,16 +80,22 @@ function initNavigation() {
             e.stopPropagation();
             console.log('Trinity Health Navigation: Toggle clicked');
             
-            // Toggle the hidden class
+            // Check current state
             const isHidden = mobileMenu.classList.contains('hidden');
             
             if (isHidden) {
-                // Show menu
+                // Show menu with slide-in animation
                 mobileMenu.classList.remove('hidden');
+                // Force browser to recalculate styles
+                mobileMenu.offsetHeight;
+                mobileMenu.classList.add('slide-in');
                 menuToggle.setAttribute('aria-expanded', 'true');
                 console.log('Trinity Health Navigation: Menu shown');
                 
-                // Update icon to X
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = 'hidden';
+                
+                // Update icon to X with rotation animation
                 const icon = menuToggle.querySelector('i[data-lucide]');
                 if (icon) {
                     icon.setAttribute('data-lucide', 'x');
@@ -98,12 +104,20 @@ function initNavigation() {
                     }
                 }
             } else {
-                // Hide menu
-                mobileMenu.classList.add('hidden');
+                // Hide menu with slide-out animation
+                mobileMenu.classList.remove('slide-in');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 console.log('Trinity Health Navigation: Menu hidden');
                 
-                // Update icon to menu
+                // Re-enable body scroll
+                document.body.style.overflow = '';
+                
+                // Add hidden class after animation completes
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 400);
+                
+                // Update icon to menu with rotation animation
                 const icon = menuToggle.querySelector('i[data-lucide]');
                 if (icon) {
                     icon.setAttribute('data-lucide', 'menu');
@@ -118,8 +132,16 @@ function initNavigation() {
         document.addEventListener('click', function(e) {
             if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
                 if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('slide-in');
                     menuToggle.setAttribute('aria-expanded', 'false');
+                    
+                    // Re-enable body scroll
+                    document.body.style.overflow = '';
+                    
+                    // Add hidden class after animation
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 400);
                     
                     const icon = menuToggle.querySelector('i[data-lucide]');
                     if (icon) {
@@ -136,8 +158,16 @@ function initNavigation() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('slide-in');
                     menuToggle.setAttribute('aria-expanded', 'false');
+                    
+                    // Re-enable body scroll
+                    document.body.style.overflow = '';
+                    
+                    // Add hidden class after animation
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 400);
                     
                     const icon = menuToggle.querySelector('i[data-lucide]');
                     if (icon) {
