@@ -56,23 +56,17 @@ function addMobileTouchSupport() {
     }
 }
 
-// Initialize loading spinner
+// Initialize loading spinner with proper error handling
 function initLoadingSpinner() {
     const loaderElement = document.getElementById('lottie-spinner');
     const loader = document.getElementById('trinity-loader');
     
     if (loaderElement && loader) {
-        // Load Lottie animation
-        const animation = lottie.loadAnimation({
-            container: loaderElement,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/wp-content/themes/trinity-health-theme/assets/animations/loading-spinner.json'
-        });
+        console.log('Loading spinner found, initializing...');
         
-        // Hide loader after page loads
+        // Hide loader function
         const hideLoader = () => {
+            console.log('Hiding loading spinner...');
             loader.classList.add('fade-out');
             document.body.classList.add('loaded');
             
@@ -80,18 +74,51 @@ function initLoadingSpinner() {
             setTimeout(() => {
                 if (loader && loader.parentNode) {
                     loader.parentNode.removeChild(loader);
+                    console.log('Loading spinner removed from DOM');
                 }
             }, 500);
         };
         
-        // Hide loader when everything is ready
-        if (document.readyState === 'complete') {
-            setTimeout(hideLoader, 500); // Small delay to show the animation
-        } else {
-            window.addEventListener('load', () => {
-                setTimeout(hideLoader, 500);
+        // Set a maximum timeout to ensure spinner always hides
+        const maxTimeout = setTimeout(() => {
+            console.log('Maximum timeout reached, forcing loader hide');
+            hideLoader();
+        }, 3000); // Hide after 3 seconds max
+        
+        try {
+            // Load Lottie animation with error handling
+            const animation = lottie.loadAnimation({
+                container: loaderElement,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/wp-content/themes/trinity-health-theme/assets/animations/loading-spinner.json'
             });
+            
+            // Add error handler for animation
+            animation.addEventListener('error', () => {
+                console.error('Lottie animation failed to load');
+                clearTimeout(maxTimeout);
+                hideLoader();
+            });
+            
+            // Hide loader when everything is ready
+            if (document.readyState === 'complete') {
+                clearTimeout(maxTimeout);
+                setTimeout(hideLoader, 500); // Small delay to show the animation
+            } else {
+                window.addEventListener('load', () => {
+                    clearTimeout(maxTimeout);
+                    setTimeout(hideLoader, 500);
+                });
+            }
+        } catch (error) {
+            console.error('Error initializing Lottie:', error);
+            clearTimeout(maxTimeout);
+            hideLoader();
         }
+    } else {
+        console.log('Loading spinner element not found in DOM');
     }
 }
 

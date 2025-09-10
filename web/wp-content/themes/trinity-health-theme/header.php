@@ -303,7 +303,19 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <!-- Loading Spinner -->
+    <!-- Loading Spinner (only on frontend pages) -->
+    <?php 
+    // Only show loading spinner on frontend pages, not in admin, login, or AJAX requests
+    $show_loader = !is_admin() 
+        && !is_customize_preview() 
+        && !wp_doing_ajax() 
+        && !wp_doing_cron()
+        && !(isset($_GET['action']) && $_GET['action'] === 'lostpassword')
+        && !is_404()
+        && strpos($_SERVER['REQUEST_URI'], '/wp-login.php') === false
+        && strpos($_SERVER['REQUEST_URI'], '/wp-admin') === false;
+    
+    if ($show_loader): ?>
     <div id="trinity-loader" class="trinity-loader">
         <div class="loader-inner">
             <div id="lottie-spinner"></div>
@@ -312,6 +324,7 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
