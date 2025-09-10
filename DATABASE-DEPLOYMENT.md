@@ -2,66 +2,46 @@
 
 This guide explains how to deploy and manage the database for your Trinity Health WordPress site across different environments.
 
-## Database Deployment Strategies
+## Simplified Database Management
 
-### 1. Initial Database Setup (First Time)
+We use a single unified script (`db-sync.sh`) for all database operations:
 
-When setting up a new environment (staging/production) for the first time:
-
-#### Option A: Command Line (Terminal/SSH Access)
+### Export Database (Local Development)
 ```bash
-# Export from local development
-./scripts/db-export.sh
+# Export full database from DDEV
+./scripts/db-sync.sh export
+```
+This creates a deployment-ready database file with URLs replaced by placeholders.
 
-# Import to staging/production
-./scripts/db-import.sh staging
-# or
-./scripts/db-import.sh production
+### Import Database (Staging/Production)
+```bash
+# Import to staging (uses latest export by default)
+./scripts/db-sync.sh import staging
+
+# Import to production
+./scripts/db-sync.sh import production
+
+# Import specific file
+./scripts/db-sync.sh import staging --file=path/to/backup.sql.gz
 ```
 
-#### Option B: Shared Hosting (phpMyAdmin Access Only)
-```bash
-# 1. Upload database file to server
-./scripts/db-import-remote.sh staging ./backups/database/trinity-health-backup.sql.gz
+## Database Script Overview
 
-# 2. Complete import manually via phpMyAdmin (see section below)
-```
+### db-sync.sh - Unified Database Management
+Our single script handles both export and import operations:
 
-### 2. Content Updates (Ongoing)
+**Export Features:**
+- Exports full database from DDEV
+- Replaces local URLs with `{{SITE_URL}}` placeholders
+- Creates compressed, deployment-ready files
+- Timestamped backups in `./backups/database/`
 
-For ongoing content updates and synchronization:
-
-```bash
-# Sync from local to staging
-./scripts/db-sync.sh staging
-
-# Sync from staging to production
-./scripts/db-sync.sh production --source staging
-```
-
-## Database Scripts Overview
-
-### db-export.sh
-Exports the current database with proper sanitization:
-- Exports all tables
-- Replaces URLs with placeholders
-- Removes sensitive data (user passwords, API keys)
-- Creates timestamped backup file
-
-### db-import.sh
-Imports database to target environment:
-- Creates database backup before import
-- Imports the database
-- Updates URLs for target environment
-- Updates wp-config.php settings
-- Clears caches
-
-### db-sync.sh
-Synchronizes database between environments:
-- Backs up target database
-- Exports source database
-- Imports to target with URL replacement
-- Handles user accounts appropriately
+**Import Features:**
+- Automatically finds latest export or accepts specific file
+- Creates backup before import (use `--no-backup` to skip)
+- Replaces placeholders with target environment URLs
+- Updates WordPress configuration
+- Uses environment variables from `.env` file
 
 ## Environment-Specific Configurations
 
@@ -119,53 +99,42 @@ Some plugins store environment-specific data:
 
 ## Database Deployment Workflows
 
-### Workflow 1: Content-Only Updates
-When you only need to update content (posts, pages, media):
+### Workflow 1: Local to Staging
+Deploy local development database to staging:
 
 ```bash
-# 1. Export content tables only
-./scripts/db-export.sh --content-only
+# 1. Export local database
+./scripts/db-sync.sh export
 
-# 2. Deploy to staging
-./scripts/db-import.sh staging --content-only
+# 2. Upload exported file to server (via FTP/cPanel)
+# File location: ./backups/database/trinity-health-[timestamp]-ready.sql.gz
 
-# 3. Test on staging
-# 4. Deploy to production
-./scripts/db-import.sh production --content-only
+# 3. Import to staging
+./scripts/db-sync.sh import staging
 ```
 
-### Workflow 2: Full Database Migration
-When setting up new environment or major updates:
+### Workflow 2: Staging to Production
+Move tested database from staging to production:
 
 ```bash
-# 1. Full database export
-./scripts/db-export.sh --full
+# 1. Export from staging (run on staging server)
+./scripts/db-sync.sh export
 
-# 2. Deploy with full import
-./scripts/db-import.sh staging --full
+# 2. Transfer file to production server
 
-# 3. Update environment-specific settings
-./scripts/db-configure.sh staging
-
-# 4. Test thoroughly
-# 5. Repeat for production
+# 3. Import to production (run on production server)
+./scripts/db-sync.sh import production
 ```
 
-### Workflow 3: Staging to Production
-For moving tested changes from staging to production:
+### Workflow 3: Quick Deployment
+For rapid deployment without backups:
 
 ```bash
-# 1. Backup production database
-./scripts/db-backup.sh production
+# Export locally
+./scripts/db-sync.sh export
 
-# 2. Sync from staging to production
-./scripts/db-sync.sh production --source staging
-
-# 3. Update production-specific settings
-./scripts/db-configure.sh production
-
-# 4. Clear all caches
-./scripts/db-cache-clear.sh production
+# Import to staging without backup
+./scripts/db-sync.sh import staging --no-backup
 ```
 
 ## Security Best Practices
@@ -253,13 +222,13 @@ For hosting providers without terminal/SSH access, use phpMyAdmin for database m
 
 ### Step-by-Step phpMyAdmin Import
 
-#### 1. Upload Database File to Server
+#### 1. Export and Prepare Database
 ```bash
-# Upload database file using our remote import script
-./scripts/db-import-remote.sh staging ./backups/database/trinity-health-backup.sql.gz
+# Export database with URL placeholders
+./scripts/db-sync.sh export
 ```
 
-This uploads the database file to your staging server at `/staging.object91.co.za/`
+This creates a file at `./backups/database/trinity-health-[timestamp]-ready.sql.gz`
 
 #### 2. Download Database File from Server
 1. **Log into cPanel**
@@ -522,11 +491,11 @@ ddev mysql
 
 ### DDEV to Staging Workflow
 ```bash
-# 1. Export from DDEV
-ddev export-db --file=local-export.sql.gz
+# 1. Export from DDEV with our script
+./scripts/db-sync.sh export
 
-# 2. Use our deployment scripts
-./scripts/db-import.sh staging --source=local-export.sql.gz
+# 2. Import to staging
+./scripts/db-sync.sh import staging
 ```
 
 ## Automation and CI/CD
@@ -538,14 +507,25 @@ For advanced setups, consider:
 - **Migration scripts**: Version-controlled database changes
 - **Health monitoring**: Automated post-deployment checks
 
-### Migration Tracking
-Keep track of database changes:
+### Command Reference
 ```bash
-# Create migration file
-./scripts/db-migration-create.sh "add_custom_fields"
+# Show help
+./scripts/db-sync.sh --help
 
-# Run migrations
-./scripts/db-migration-run.sh staging
+# Export database
+./scripts/db-sync.sh export
+
+# Import to staging
+./scripts/db-sync.sh import staging
+
+# Import to production
+./scripts/db-sync.sh import production
+
+# Import specific file
+./scripts/db-sync.sh import staging --file=backup.sql.gz
+
+# Skip backup during import
+./scripts/db-sync.sh import staging --no-backup
 ```
 
 ## Support and Troubleshooting

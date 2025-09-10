@@ -61,8 +61,8 @@ Best for shared hosting providers:
 
 ```bash
 # IMPORTANT: Run from project root directory
-./deploy-staging.sh                    # Standard deployment (sync changes)
-./deploy-staging.sh --fresh            # Fresh deployment (overwrite all files)
+./scripts/deploy-staging.sh                    # Standard deployment (sync changes)
+./scripts/deploy-staging.sh --fresh            # Fresh deployment (overwrite all files)
 
 # Or using npm from theme directory
 cd web/wp-content/themes/trinity-health
@@ -76,16 +76,7 @@ npm run deploy:staging
 - ⚠️ **Warning**: Overwrites ALL WordPress core files on staging server
 
 ### Option 2: SSH/RSYNC Deployment
-Best for VPS/dedicated servers with SSH access:
-
-```bash
-# IMPORTANT: Run from project root directory
-./deploy-staging-rsync.sh
-
-# Or using npm from theme directory
-cd web/wp-content/themes/trinity-health
-npm run deploy:staging:rsync
-```
+Best for VPS/dedicated servers with SSH access - currently not in use.
 
 ## What Gets Deployed
 
@@ -141,7 +132,7 @@ npm run deploy:staging:rsync
 - Check server error logs
 
 **wp-admin redirect loops or access issues:**
-- Use `./deploy-staging.sh --fresh` to deploy fresh WordPress files
+- Use `./scripts/deploy-staging.sh --fresh` to deploy fresh WordPress files
 - Ensure database URLs are correct (use `--for-staging` export)
 - Check wp-config.php has correct `WP_HOME` and `WP_SITEURL` values
 
@@ -218,19 +209,20 @@ For a full site deployment (files + database):
 
 1. **Deploy Files:**
    ```bash
-   ./deploy-staging.sh                    # Standard deployment
-   ./deploy-staging.sh --fresh            # Fresh deployment (if needed)
-   # or ./deploy-staging-rsync.sh
+   ./scripts/deploy-staging.sh                    # Standard deployment
+   ./scripts/deploy-staging.sh --fresh            # Fresh deployment (if needed)
    ```
 
 2. **Deploy Database:**
    ```bash
-   # Option A: Direct sync (requires terminal access)
-   ./scripts/db-sync.sh staging
+   # Export database
+   ./scripts/db-sync.sh export
+   
+   # Option A: Direct import (requires terminal access)
+   ./scripts/db-sync.sh import staging
    
    # Option B: Manual import via phpMyAdmin (shared hosting)
-   ./scripts/db-export.sh --for-staging    # Export with staging URLs
-   # Then import the .gz file via phpMyAdmin
+   # Upload the exported .gz file from ./backups/database/ via phpMyAdmin
    ```
 
 3. **Verify Deployment:**

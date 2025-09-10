@@ -12,8 +12,7 @@
     "format": "wp-scripts format",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
-    "deploy:staging": "cd ../../../ && ./deploy-staging.sh",
-    "deploy:staging:rsync": "cd ../../../ && ./deploy-staging-rsync.sh"
+    "deploy:staging": "cd ../../../ && ./scripts/deploy-staging.sh"
   },
   "keywords": [
     "wordpress",
