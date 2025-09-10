@@ -159,11 +159,8 @@ export_with_ddev() {
             --add-drop-table \
             --tables="wp_posts,wp_postmeta,wp_terms,wp_termmeta,wp_term_relationships,wp_term_taxonomy,wp_comments,wp_commentmeta"
     else
-        # Full export with staging-compatible options - export directly to backup path
-        ddev exec wp db export "$BACKUP_PATH" \
-            --skip-lock-tables \
-            --single-transaction \
-            --add-drop-table
+        # Full export using ddev export-db which is more reliable
+        ddev export-db --gzip=false > "$BACKUP_PATH"
     fi
 }
 
