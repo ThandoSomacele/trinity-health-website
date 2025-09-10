@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Template Name: Pediatrics Service
+ * Template Name: Paediatrics Service
  * 
- * Individual service page for Pediatrics matching MediPro design
+ * Individual service page for Paediatrics matching MediPro design
  */
 
 get_header(); ?>
@@ -95,23 +95,6 @@ get_header(); ?>
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    /* Video play button */
-    .play-button {
-        width: 80px;
-        height: 80px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .play-button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
 </style>
 
@@ -130,7 +113,7 @@ get_header(); ?>
     <div class="content-container relative z-10">
         <div class="text-center">
             <!-- Page Title -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Pediatric Services</h1>
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Paediatric Services</h1>
 
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/80">
@@ -138,7 +121,7 @@ get_header(); ?>
                 <span>»</span>
                 <a href="<?php echo home_url('/our-services'); ?>" class="hover:text-trinity-gold transition-colors">Services</a>
                 <span>»</span>
-                <span class="text-trinity-gold">Pediatric Services</span>
+                <span class="text-trinity-gold">Paediatric Services</span>
             </nav>
         </div>
     </div>
@@ -150,24 +133,17 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             <!-- Left Column - Main Content -->
             <div class="lg:col-span-2">
-                <!-- Service Image with Video Button -->
+                <!-- Service Image -->
                 <div class="relative rounded-lg overflow-hidden mb-12">
-                    <img src="/wp-content/uploads/2025/08/pediatrics.webp"
-                        alt="Pediatric Services"
+                    <img src="/wp-content/uploads/2025/09/hero-paediatric.webp"
+                        alt="Paediatric Services"
                         class="w-full h-[400px] object-cover">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <button class="play-button" aria-label="Play video">
-                            <svg class="w-8 h-8 text-trinity-maroon ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- Service Description -->
                 <div class="mb-12">
                     <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                        Trinity Health's Pediatric Clinic specializes in comprehensive healthcare for infants, children, and adolescents. Our experienced pediatricians provide compassionate care focused on your child's physical, emotional, and developmental well-being from birth through their teenage years.
+                        Trinity Health's Paediatric Clinic specialises in comprehensive healthcare for infants, children, and adolescents. Our experienced paediatricians provide compassionate care focused on your child's physical, emotional, and developmental well-being from birth through their teenage years.
                     </p>
                     <p class="text-lg text-gray-600 leading-relaxed">
                         We offer preventive care, immunizations, growth monitoring, and treatment for acute and chronic conditions. Our child-friendly environment and dedicated staff ensure that your children receive the best possible medical care in a comfortable and reassuring setting.

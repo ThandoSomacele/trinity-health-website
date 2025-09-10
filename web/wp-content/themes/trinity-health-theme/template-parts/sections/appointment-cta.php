@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Appointment CTA Section Component
  * Reusable call-to-action component for appointment booking
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-3 flex justify-center lg:col-end-10">
-                <a href="#"
+                <a href="/contact/"
                     class="bg-trinity-gold text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300 inline-block text-sm sm:text-base">
                     Book Appointment
                 </a>

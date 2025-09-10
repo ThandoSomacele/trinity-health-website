@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Meet Our Doctors Section - Unified Component
  * Reusable component matching MediPro design for displaying doctor profiles
@@ -26,10 +27,10 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
             <div class="group">
                 <div class="relative overflow-hidden rounded-lg mb-4" style="height: 288px;">
                     <img src="/wp-content/uploads/2025/06/dr-alfred-mwamba.jpg"
-                         alt="Dr. Alfred Mwamba"
-                         style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
-                         class="transform group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/doctor-hearing-aid.webp';">
+                        alt="Dr. Alfred Mwamba"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                        class="transform group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.onerror=null; this.src='/wp-content/uploads/2025/08/doctor-hearing-aid.webp';">
                 </div>
                 <div class="text-left">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Lead Audiologist</p>
@@ -46,9 +47,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
             <div class="group">
                 <div class="relative overflow-hidden rounded-lg mb-4" style="height: 288px;">
                     <img src="/wp-content/uploads/2025/09/dr-emily-carter.webp"
-                         alt="Dr. Samuel Carter"
-                         style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
-                         class="transform group-hover:scale-110 transition-transform duration-500">
+                        alt="Dr. Samuel Carter"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                        class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Family Physician</p>
@@ -65,9 +66,9 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
             <div class="group">
                 <div class="relative overflow-hidden rounded-lg mb-4" style="height: 288px;">
                     <img src="/wp-content/uploads/2025/09/dr-michael-thompson.webp"
-                         alt="Dr. Michael Thompson"
-                         style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
-                         class="transform group-hover:scale-110 transition-transform duration-500">
+                        alt="Dr. Michael Thompson"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                        class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
                     <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Cardiologist</p>
@@ -84,12 +85,12 @@ $section_bg = isset($args['bg_class']) ? $args['bg_class'] : 'bg-white';
             <div class="group">
                 <div class="relative overflow-hidden rounded-lg mb-4" style="height: 288px;">
                     <img src="/wp-content/uploads/2025/09/dr-sarah-williams.webp"
-                         alt="Dr. Sarah Williams"
-                         style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
-                         class="transform group-hover:scale-110 transition-transform duration-500">
+                        alt="Dr. Sarah Williams"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                        class="transform group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-left">
-                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Pediatrician</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Paediatrician</p>
                     <h3 class="text-xl font-bold text-trinity-maroon-dark mb-2">
                         <a href="/team/dr-sarah-williams" class="hover:text-trinity-gold-dark transition-colors">
                             Dr. Sarah Williams

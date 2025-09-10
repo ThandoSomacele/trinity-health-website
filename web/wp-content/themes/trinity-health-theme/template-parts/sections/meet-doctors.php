@@ -77,7 +77,7 @@
                 </div>
                 <div class="py-4">
                     <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Sarah Williams</h3>
-                    <p class="text-sm text-trinity-maroon mb-2">Pediatrician</p>
+                    <p class="text-sm text-trinity-maroon mb-2">Paediatrician</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         Dedicated to children's health and development care.
                     </p>

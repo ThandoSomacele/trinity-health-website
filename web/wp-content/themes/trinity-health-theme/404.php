@@ -107,7 +107,7 @@ get_header();
                         ['title' => 'Audiology', 'url' => '/audiology-service'],
                         ['title' => 'General Medicine', 'url' => '/general-medicine-service'],
                         ['title' => 'Laboratory', 'url' => '/laboratory-service'],
-                        ['title' => 'Pediatrics', 'url' => '/pediatrics-service'],
+                        ['title' => 'Paediatrics', 'url' => '/pediatrics-service'],
                         ['title' => 'Cardiology', 'url' => '/cardiology-service'],
                         ['title' => 'Neurology', 'url' => '/neurology-service'],
                     ];

@@ -35,19 +35,23 @@ show_usage() {
     echo ""
     echo "Commands:"
     echo "  export              Export local database to file"
-    echo "  import staging      Import database file to staging"
-    echo "  import production   Import database file to production"
+    echo "  import staging      Import to staging (auto-exports if needed)"
+    echo "  import production   Import to production (auto-exports if needed)"
     echo ""
     echo "Options:"
     echo "  --file=PATH         Database file to import (for import command)"
     echo "  --no-backup        Skip creating backup before import"
+    echo "  -y, --yes          Auto-confirm import without prompting"
     echo "  --help             Show this help message"
     echo ""
     echo "Examples:"
     echo "  $0 export                           # Export full local database"
-    echo "  $0 import staging                   # Import latest backup to staging"
+    echo "  $0 import staging                   # Auto-export and import to staging"
     echo "  $0 import staging --file=backup.sql # Import specific file to staging"
-    echo "  $0 import production                # Import latest backup to production"
+    echo "  $0 import production                # Auto-export and import to production"
+    echo ""
+    echo "Note: Import commands will automatically export the local database"
+    echo "      if no recent export is found."
 }
 
 # Check arguments
@@ -88,6 +92,7 @@ fi
 # Default options
 CREATE_BACKUP=true
 SOURCE_FILE=""
+AUTO_CONFIRM=false
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -98,6 +103,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --no-backup)
             CREATE_BACKUP=false
+            shift
+            ;;
+        --yes|-y)
+            AUTO_CONFIRM=true
             shift
             ;;
         --help)
@@ -230,12 +239,63 @@ elif [ "$COMMAND" = "import" ]; then
     if [ -z "$SOURCE_FILE" ]; then
         print_status "Looking for latest database export..."
         
-        SOURCE_FILE=$(find "$BACKUP_DIR" -name "*ready.sql.gz" -type f | sort -r | head -n1)
+        SOURCE_FILE=$(find "$BACKUP_DIR" -name "*ready.sql.gz" -type f 2>/dev/null | sort -r | head -n1)
         
         if [ -z "$SOURCE_FILE" ]; then
-            print_error "No suitable database file found in $BACKUP_DIR"
-            print_status "Export a database first with: $0 export"
-            exit 1
+            print_warning "No database export found. Creating one now..."
+            
+            # Check DDEV is running
+            if ! ddev status 2>/dev/null | grep -q "OK"; then
+                print_status "Starting DDEV..."
+                ddev start
+                
+                # Wait for DDEV to be ready
+                sleep 5
+            fi
+            
+            # Export database
+            print_status "Exporting local database..."
+            
+            # Set export filename
+            EXPORT_FILE="$BACKUP_DIR/trinity-health-${TIMESTAMP}.sql"
+            
+            # Full export using ddev export-db
+            if ! ddev export-db --gzip=false > "$EXPORT_FILE" 2>/dev/null; then
+                print_error "Failed to export database"
+                exit 1
+            fi
+            
+            # Check if export was successful
+            if [ ! -f "$EXPORT_FILE" ] || [ ! -s "$EXPORT_FILE" ]; then
+                print_error "Database export failed"
+                exit 1
+            fi
+            
+            # Replace local URLs with placeholders for staging/production
+            print_status "Preparing database for deployment..."
+            
+            # Create processed file
+            PROCESSED_FILE="${EXPORT_FILE%.sql}-ready.sql"
+            cp "$EXPORT_FILE" "$PROCESSED_FILE"
+            
+            # Replace DDEV URLs with placeholder
+            sed -i.bak 's|https://trinity-health-website.ddev.site|{{SITE_URL}}|g' "$PROCESSED_FILE"
+            sed -i.bak 's|http://localhost:8000|{{SITE_URL}}|g' "$PROCESSED_FILE"
+            sed -i.bak 's|http://localhost|{{SITE_URL}}|g' "$PROCESSED_FILE"
+            
+            # Remove backup file
+            rm "${PROCESSED_FILE}.bak" 2>/dev/null || true
+            
+            # Compress the processed file
+            gzip -c "$PROCESSED_FILE" > "${PROCESSED_FILE}.gz"
+            
+            # Remove uncompressed versions
+            rm "$EXPORT_FILE" "$PROCESSED_FILE"
+            
+            SOURCE_FILE="${PROCESSED_FILE}.gz"
+            FILE_SIZE=$(ls -lh "$SOURCE_FILE" | awk '{print $5}')
+            
+            print_success "Database exported successfully! ($FILE_SIZE)"
         fi
     fi
     
@@ -249,13 +309,17 @@ elif [ "$COMMAND" = "import" ]; then
     print_status "Target: $DB_NAME on $DB_HOST"
     print_status "Site URL: $SITE_URL"
     
-    # Confirm before proceeding
-    echo ""
-    read -p "Continue with database import to $TARGET_ENV? [y/N]: " -n 1 -r
-    echo ""
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        print_status "Import cancelled"
-        exit 0
+    # Confirm before proceeding (unless auto-confirm is set)
+    if [ "$AUTO_CONFIRM" = false ]; then
+        echo ""
+        read -p "Continue with database import to $TARGET_ENV? [y/N]: " -n 1 -r
+        echo ""
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            print_status "Import cancelled"
+            exit 0
+        fi
+    else
+        print_status "Auto-confirming import to $TARGET_ENV"
     fi
     
     # Test database connection

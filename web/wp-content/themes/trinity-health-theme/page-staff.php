@@ -187,7 +187,7 @@ get_header(); ?>
                     </a>
                 </div>
                 <div class="p-6">
-                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Pediatrician</p>
+                    <p class="text-sm text-trinity-gold-dark uppercase tracking-wider mb-2">Paediatrician</p>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
                         <a href="<?php echo home_url('/team-member/?doctor=dr-mary-phiri'); ?>" class="hover:text-trinity-gold-dark transition-colors">Dr. Mary Phiri</a>
                     </h3>

@@ -56,8 +56,9 @@ else
     echo "=================================="
 fi
 
-# Get the absolute path to the project root
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Get the absolute path to the project root (parent of scripts directory)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 cd "$PROJECT_ROOT"
 
 echo "Project root: $PROJECT_ROOT"
@@ -66,9 +67,8 @@ echo "Current directory: $(pwd)"
 # Check if we're in the project root directory
 if [ ! -d "web" ]; then
     echo -e "${RED}❌ Error: 'web' directory not found${NC}"
-    echo "Please ensure this script is in the Trinity Health project root directory"
-    echo "Current directory: $(pwd)"
-    ls -la
+    echo "Please ensure the script can find the Trinity Health project structure"
+    echo "Expected to find 'web' directory in: $PROJECT_ROOT"
     exit 1
 fi
 

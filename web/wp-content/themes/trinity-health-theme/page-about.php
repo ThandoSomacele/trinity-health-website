@@ -180,8 +180,8 @@ get_header(); ?>
                         class="w-full h-full object-cover"
                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full bg-gradient-to-br from-trinity-gold/10 to-trinity-maroon/10\'><svg class=\'w-32 h-32 text-trinity-maroon/30\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\'/></svg></div>';">
                     <!-- Play Button Overlay -->
-                    <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4" 
-                       class="glightbox-video absolute inset-0 flex items-center justify-center">
+                    <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4"
+                        class="glightbox-video absolute inset-0 flex items-center justify-center">
                         <div class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors group">
                             <svg class="w-8 h-8 text-trinity-maroon ml-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
@@ -222,7 +222,7 @@ get_header(); ?>
             <?php
             $services = [
                 [
-                    'title' => 'Audiology Services', 
+                    'title' => 'Audiology Services',
                     'desc' => 'Expert hearing healthcare led by Dr. Alfred Mwamba, Zambia\'s first audiologist.',
                     'link' => home_url('/audiology-service'),
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" stroke-width="6">
@@ -230,7 +230,7 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Cardiology Clinic', 
+                    'title' => 'Cardiology Clinic',
                     'desc' => 'Comprehensive heart health services including diagnostics, treatment, and prevention.',
                     'link' => home_url('/cardiology-service'),
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" stroke-width="6">
@@ -240,7 +240,7 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Neurology Clinic', 
+                    'title' => 'Neurology Clinic',
                     'desc' => 'Expert neurological care for brain, spine, and nervous system conditions.',
                     'link' => home_url('/neurology-service'),
                     'svg' => '<svg class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" stroke-width="6">
@@ -252,7 +252,7 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Laboratory Analysis', 
+                    'title' => 'Laboratory Analysis',
                     'desc' => 'State-of-the-art laboratory equipped with modern technology for precise results.',
                     'link' => home_url('/laboratory-service'),
                     'svg' => '<svg class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" stroke-width="6">
@@ -264,7 +264,7 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Pediatric Clinic', 
+                    'title' => 'Paediatric Clinic',
                     'desc' => 'Specialized care for infants, children, and adolescents with a gentle approach.',
                     'link' => home_url('/pediatrics-service'),
                     'svg' => '<svg class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" stroke-width="6">
@@ -277,7 +277,7 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Pathology Clinic', 
+                    'title' => 'Pathology Clinic',
                     'desc' => 'Advanced diagnostic testing and laboratory services for accurate health assessments.',
                     'link' => home_url('/general-medicine-service'),
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" stroke-width="6">

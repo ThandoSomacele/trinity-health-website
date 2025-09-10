@@ -170,12 +170,12 @@ get_header(); ?>
                 </a>
             </div>
 
-            <!-- Pediatric Clinic -->
+            <!-- Paediatric Clinic -->
             <div class="bg-trinity-maroon-dark p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-20 h-20 mb-6">
                     <i data-lucide="baby" class="w-20 h-20 text-white stroke-1"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4">Pediatric Clinic</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">Paediatric Clinic</h3>
                 <p class="text-white/90 mb-6 leading-relaxed text-base flex-grow">
                     Specialized care for infants, children, and adolescents with a gentle, family-centered approach to healthcare.
                 </p>
@@ -190,7 +190,7 @@ get_header(); ?>
                         <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
-                        <span class="text-white/90">Pediatric Dermatology</span>
+                        <span class="text-white/90">Paediatric Dermatology</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="w-5 h-5 text-trinity-gold-dark mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -373,11 +373,11 @@ get_header(); ?>
         <p class="text-xl text-white/90 mb-8">
             Discover how Trinity Health is transforming healthcare in Zambia with state-of-the-art facilities and compassionate care.
         </p>
-        <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4" 
-           class="glightbox-video inline-flex items-center bg-white text-trinity-maroon px-10 py-5 rounded-full font-bold text-lg hover:bg-trinity-gold hover:text-black transform hover:scale-105 transition-all duration-300 shadow-xl group">
+        <a href="/wp-content/uploads/2025/06/hero-montage-video.mp4"
+            class="glightbox-video inline-flex items-center bg-white text-trinity-maroon px-10 py-5 rounded-full font-bold text-lg hover:bg-trinity-gold hover:text-black transform hover:scale-105 transition-all duration-300 shadow-xl group">
             <div class="w-12 h-12 bg-trinity-maroon rounded-full flex items-center justify-center mr-4 group-hover:bg-black transition-colors">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
+                    <path d="M8 5v14l11-7z" />
                 </svg>
             </div>
             Watch Video Tour

@@ -6,23 +6,36 @@ This guide explains how to deploy and manage the database for your Trinity Healt
 
 We use a single unified script (`db-sync.sh`) for all database operations:
 
-### Export Database (Local Development)
+### Quick Deployment (Auto-Export)
+```bash
+# Import to staging (automatically exports if needed)
+./scripts/db-sync.sh import staging
+
+# Import to production (automatically exports if needed)
+./scripts/db-sync.sh import production
+
+# Skip confirmation prompt
+./scripts/db-sync.sh import staging -y
+```
+**Note:** Import commands automatically export the local database if no recent export exists.
+
+### Manual Export
 ```bash
 # Export full database from DDEV
 ./scripts/db-sync.sh export
 ```
 This creates a deployment-ready database file with URLs replaced by placeholders.
 
-### Import Database (Staging/Production)
+### Import Options
 ```bash
-# Import to staging (uses latest export by default)
-./scripts/db-sync.sh import staging
-
-# Import to production
-./scripts/db-sync.sh import production
-
 # Import specific file
 ./scripts/db-sync.sh import staging --file=path/to/backup.sql.gz
+
+# Skip backup creation
+./scripts/db-sync.sh import staging --no-backup
+
+# Auto-confirm without prompting
+./scripts/db-sync.sh import staging --yes
 ```
 
 ## Database Script Overview

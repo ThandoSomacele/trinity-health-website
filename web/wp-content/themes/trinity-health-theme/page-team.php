@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Our Team
  * 
@@ -35,34 +36,34 @@ get_header(); ?>
                 'orderby' => 'menu_order',
                 'order' => 'ASC'
             );
-            
+
             $team_query = new WP_Query($team_args);
-            
+
             if ($team_query->have_posts()) :
                 while ($team_query->have_posts()) : $team_query->the_post();
                     $specialty = get_field('specialty') ?: 'Healthcare Professional';
                     $qualifications = get_field('qualifications');
             ?>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="aspect-square overflow-hidden bg-gray-100">
-                            <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
-                        </div>
-                    <?php else : ?>
-                        <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                            <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1"><?php the_title(); ?></h3>
-                        <p class="text-trinity-maroon font-medium mb-3"><?php echo esc_html($specialty); ?></p>
-                        <?php if ($qualifications) : ?>
-                            <p class="text-sm text-gray-600"><?php echo esc_html($qualifications); ?></p>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="aspect-square overflow-hidden bg-gray-100">
+                                <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
+                            </div>
+                        <?php else : ?>
+                            <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
+                            </div>
                         <?php endif; ?>
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1"><?php the_title(); ?></h3>
+                            <p class="text-trinity-maroon font-medium mb-3"><?php echo esc_html($specialty); ?></p>
+                            <?php if ($qualifications) : ?>
+                                <p class="text-sm text-gray-600"><?php echo esc_html($qualifications); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-            <?php
+                <?php
                 endwhile;
                 wp_reset_postdata();
             else :
@@ -70,7 +71,7 @@ get_header(); ?>
                 $default_members = array(
                     array('name' => 'Dr. Samuel Carter', 'specialty' => 'Compassionate care for all ages', 'title' => 'General Practitioner', 'image' => '/wp-content/uploads/2025/09/dr-emily-carter.webp'),
                     array('name' => 'Dr. Michael Thompson', 'specialty' => 'Skillful hands, transforming lives', 'title' => 'Surgeon', 'image' => '/wp-content/uploads/2025/09/dr-michael-thompson.webp'),
-                    array('name' => 'Dr. Sarah Williams', 'specialty' => 'Specializes in heart-related conditions', 'title' => 'Cardiologist', 'image' => '/wp-content/uploads/2025/09/dr-sarah-williams.webp'),
+                    array('name' => 'Dr. Sarah Williams', 'specialty' => 'specialises in heart-related conditions', 'title' => 'Cardiologist', 'image' => '/wp-content/uploads/2025/09/dr-sarah-williams.webp'),
                     array('name' => 'Dr. James Mitchell', 'specialty' => 'Focuses on skin, hair disorders', 'title' => 'Dermatologist', 'image' => '/wp-content/uploads/2025/09/dr-james-mitchell.webp'),
                     array('name' => 'Dr. Lisa Brown', 'specialty' => 'Focuses on autoimmune diseases', 'title' => 'Rheumatologist', 'image' => '/wp-content/uploads/2025/09/dr-lisa-brown.webp'),
                     array('name' => 'Dr. Samantha Taylor', 'specialty' => 'Deals with conditions and injuries related', 'title' => 'Orthopedist'),
@@ -78,28 +79,28 @@ get_header(); ?>
                     array('name' => 'Dr. Laura Robinson', 'specialty' => 'Common medical conditions, and refers', 'title' => 'General Practitioner'),
                     array('name' => 'Dr. Robert Jones', 'specialty' => 'Provides primary care and guiding', 'title' => 'Family Physician')
                 );
-                
+
                 foreach ($default_members as $member) :
-            ?>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <?php if (isset($member['image'])) : ?>
-                        <div class="aspect-square overflow-hidden">
-                            <img src="<?php echo esc_url(home_url($member['image'])); ?>" 
-                                 alt="<?php echo esc_attr($member['name']); ?>" 
-                                 class="w-full h-full object-cover">
+                ?>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <?php if (isset($member['image'])) : ?>
+                            <div class="aspect-square overflow-hidden">
+                                <img src="<?php echo esc_url(home_url($member['image'])); ?>"
+                                    alt="<?php echo esc_attr($member['name']); ?>"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        <?php else : ?>
+                            <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1"><?php echo esc_html($member['name']); ?></h3>
+                            <p class="text-trinity-maroon font-medium mb-3"><?php echo esc_html($member['title']); ?></p>
+                            <p class="text-sm text-gray-600"><?php echo esc_html($member['specialty']); ?></p>
                         </div>
-                    <?php else : ?>
-                        <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                            <i data-lucide="user" class="w-32 h-32 text-gray-400"></i>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1"><?php echo esc_html($member['name']); ?></h3>
-                        <p class="text-trinity-maroon font-medium mb-3"><?php echo esc_html($member['title']); ?></p>
-                        <p class="text-sm text-gray-600"><?php echo esc_html($member['specialty']); ?></p>
                     </div>
-                </div>
             <?php
                 endforeach;
             endif;
@@ -148,11 +149,11 @@ get_header(); ?>
                 <p class="mb-4">Subscribe to Our Newsletter</p>
                 <p class="mb-4 text-sm opacity-90">Stay informed and never miss out on the latest news, health tips.</p>
                 <form class="flex">
-                    <input type="email" 
-                           placeholder="Enter Your Email" 
-                           class="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-trinity-gold">
-                    <button type="submit" 
-                            class="bg-trinity-gold text-trinity-maroon px-6 py-3 rounded-r-lg font-bold hover:bg-white transition-colors">
+                    <input type="email"
+                        placeholder="Enter Your Email"
+                        class="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-trinity-gold">
+                    <button type="submit"
+                        class="bg-trinity-gold text-trinity-maroon px-6 py-3 rounded-r-lg font-bold hover:bg-white transition-colors">
                         Send
                     </button>
                 </form>
@@ -175,7 +176,7 @@ get_header(); ?>
                     <i data-lucide="facebook" class="w-5 h-5"></i>
                 </a>
             </div>
-            
+
             <p class="text-sm opacity-75">
                 Copyright <?php echo date('Y'); ?> © MediPro All Rights Reserved.
             </p>

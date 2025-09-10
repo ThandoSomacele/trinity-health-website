@@ -95,23 +95,6 @@ get_header(); ?>
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    /* Video play button */
-    .play-button {
-        width: 80px;
-        height: 80px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .play-button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
 </style>
 
@@ -150,18 +133,11 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             <!-- Left Column - Main Content -->
             <div class="lg:col-span-2">
-                <!-- Service Image with Video Button -->
+                <!-- Service Image -->
                 <div class="relative rounded-lg overflow-hidden mb-12">
-                    <img src="/wp-content/uploads/2025/08/general-medicine.webp"
+                    <img src="/wp-content/uploads/2025/09/hero-gp.webp"
                         alt="General Medicine"
                         class="w-full h-[400px] object-cover">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <button class="play-button" aria-label="Play video">
-                            <svg class="w-8 h-8 text-trinity-maroon ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- Service Description -->
