@@ -11,6 +11,9 @@ import '../assets/css/src/index.scss';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
+// Import and initialize navigation functionality (mobile menu)
+import initNavigation from '../assets/js/src/navigation.js';
+
 // Mobile device detection
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
@@ -58,8 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add mobile-specific enhancements
     addMobileTouchSupport();
     
+    // Initialize navigation (mobile menu)
+    initNavigation();
+    
     // Initialize theme functionality
-    // NOTE: Mobile menu is handled by dedicated navigation.js file to avoid conflicts
     initSmoothScrolling();
     initContactForms();
     initFAQAccordion();

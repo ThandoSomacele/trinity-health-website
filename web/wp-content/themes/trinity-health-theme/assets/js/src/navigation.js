@@ -3,25 +3,60 @@
  * Handles mobile menu toggle and submenu functionality
  */
 
-(function() {
+// Initialize everything when both DOM and Lucide are ready
+function initNavigation() {
     'use strict';
-
-    // Initialize everything when both DOM and Lucide are ready
-    function init() {
-        console.log('Trinity Health Navigation: Initializing...');
+    console.log('Trinity Health Navigation: Initializing...');
+    
+    // Initialize Lucide icons if available
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+        console.log('Trinity Health Navigation: Lucide icons created');
+    }
+    
+    // Set up mobile navigation
+    setupMobileNavigation();
+    
+    // Set up submenus
+    setupSubMenus();
+    
+    /**
+     * Handle window resize
+     */
+    function handleResize() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
         
-        // Initialize Lucide icons if available
+        // Close mobile menu on resize to desktop
+        if (window.innerWidth >= 1024 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            if (menuToggle) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                const icon = menuToggle.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
+            }
+        }
+    }
+
+    // Debounced resize handler
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(handleResize, 250);
+    });
+    
+    // Also initialize when window loads (ensures all resources are ready)
+    window.addEventListener('load', function() {
+        console.log('Trinity Health Navigation: Window loaded, ensuring initialization');
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
-            console.log('Trinity Health Navigation: Lucide icons created');
         }
-        
-        // Set up mobile navigation
-        setupMobileNavigation();
-        
-        // Set up submenus
-        setupSubMenus();
-    }
+    });
 
     /**
      * Set up mobile navigation toggle
@@ -231,50 +266,7 @@
         }
     }
 
-    /**
-     * Handle window resize
-     */
-    function handleResize() {
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        
-        // Close mobile menu on resize to desktop
-        if (window.innerWidth >= 1024 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            if (menuToggle) {
-                menuToggle.setAttribute('aria-expanded', 'false');
-                const icon = menuToggle.querySelector('i[data-lucide]');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'menu');
-                    if (typeof lucide !== 'undefined') {
-                        lucide.createIcons();
-                    }
-                }
-            }
-        }
-    }
+}
 
-    // Debounced resize handler
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(handleResize, 250);
-    });
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        // DOM is already loaded
-        init();
-    }
-    
-    // Also initialize when window loads (ensures all resources are ready)
-    window.addEventListener('load', function() {
-        console.log('Trinity Health Navigation: Window loaded, ensuring initialization');
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    });
-
-})();
+// Export the navigation initialization function
+export default initNavigation;

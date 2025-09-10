@@ -34,31 +34,40 @@ function trinity_health_enqueue_assets() {
         $asset['version']
     );
     
-    // Enqueue Swiper CSS from CDN
+    // Enqueue Swiper CSS - Try CDN first, with local fallback
+    $swiper_css_cdn = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+    $swiper_css_local = TRINITY_THEME_URL . '/assets/vendor/swiper-bundle.min.css';
+    
+    // For staging/production, prefer local version for reliability
+    $use_local = (strpos(get_site_url(), 'staging') !== false || strpos(get_site_url(), 'object91') !== false);
+    
     wp_enqueue_style(
         'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        $use_local ? $swiper_css_local : $swiper_css_cdn,
         array(),
         '11.0.0'
     );
     
-    // Enqueue Swiper JavaScript from CDN with proper loading
+    // Enqueue Swiper JavaScript - Local for staging/production, CDN for dev
+    $swiper_js_cdn = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+    $swiper_js_local = TRINITY_THEME_URL . '/assets/vendor/swiper-bundle.min.js';
+    
     wp_enqueue_script(
         'swiper-js',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        $use_local ? $swiper_js_local : $swiper_js_cdn,
         array(),
         '11.0.0',
         true
     );
     
-    // Enqueue navigation JavaScript
-    wp_enqueue_script(
-        'trinity-health-navigation',
-        TRINITY_THEME_URL . '/assets/js/src/navigation.js',
-        array(),
-        TRINITY_THEME_VERSION,
-        true
-    );
+    // Navigation is bundled in main index.js
+    // wp_enqueue_script(
+    //     'trinity-health-navigation',
+    //     TRINITY_THEME_URL . '/assets/js/src/navigation.js',
+    //     array(),
+    //     TRINITY_THEME_VERSION,
+    //     true
+    // );
     
     // Enqueue main JavaScript with Swiper dependency
     wp_enqueue_script(
