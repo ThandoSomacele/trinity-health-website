@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Audiology Service
+ * Template Name: Audiology Services
  * 
  * Individual service page for Audiology matching MediPro design
  */
