@@ -18,44 +18,44 @@
     <!-- GLightbox for Video Lightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    
+
     <!-- Custom GLightbox Styles -->
     <style>
         /* Lightbox overlay background */
         .goverlay {
             background: rgba(0, 0, 0, 0.6) !important;
         }
-        
+
         /* Remove borders and shadows from video container */
         .gslide-video {
             border: none !important;
             box-shadow: none !important;
         }
-        
+
         .gslide-media {
             border: none !important;
             box-shadow: none !important;
         }
-        
+
         .gslide-inline {
             border: none !important;
             box-shadow: none !important;
             background: transparent !important;
         }
-        
+
         /* Remove border from video iframe */
         .gslide-video iframe,
         .gslide-video video {
             border: none !important;
             box-shadow: none !important;
         }
-        
+
         /* Clean video player wrapper */
         .plyr {
             border: none !important;
             box-shadow: none !important;
         }
-        
+
         .plyr__video-wrapper {
             border: none !important;
             box-shadow: none !important;
@@ -157,9 +157,11 @@
             background-color: #880005 !important;
             overflow: hidden;
             transition: all 0.4s ease-in-out;
-            z-index: 999 !important;
-            max-height: calc(100vh - 80px) !important; /* Prevent covering entire screen */
-            overflow-y: auto !important; /* Allow scrolling if content is too tall */
+            z-index: 800 !important;
+            max-height: calc(100vh - 80px) !important;
+            /* Prevent covering entire screen */
+            overflow-y: auto !important;
+            /* Allow scrolling if content is too tall */
         }
 
         .mobile-menu>div {
@@ -311,26 +313,26 @@
     <?php wp_body_open(); ?>
 
     <!-- Loading Spinner (only on frontend pages) -->
-    <?php 
+    <?php
     // Only show loading spinner on frontend pages, not in admin, login, or AJAX requests
-    $show_loader = !is_admin() 
-        && !is_customize_preview() 
-        && !wp_doing_ajax() 
+    $show_loader = !is_admin()
+        && !is_customize_preview()
+        && !wp_doing_ajax()
         && !wp_doing_cron()
         && !(isset($_GET['action']) && $_GET['action'] === 'lostpassword')
         && !is_404()
         && strpos($_SERVER['REQUEST_URI'], '/wp-login.php') === false
         && strpos($_SERVER['REQUEST_URI'], '/wp-admin') === false;
-    
+
     if ($show_loader): ?>
-    <div id="trinity-loader" class="trinity-loader">
-        <div class="loader-inner">
-            <div id="lottie-spinner"></div>
-            <div class="loader-logo">
-                <?php echo trinity_health_get_logo('light'); ?>
+        <div id="trinity-loader" class="trinity-loader">
+            <div class="loader-inner">
+                <div id="lottie-spinner"></div>
+                <div class="loader-logo">
+                    <?php echo trinity_health_get_logo('light'); ?>
+                </div>
             </div>
         </div>
-    </div>
     <?php endif; ?>
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
@@ -377,7 +379,7 @@
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle lg:hidden text-white p-2 hover:text-trinity-gold transition-colors" aria-controls="primary-menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e('Menu', 'trinity-health'); ?></span>
-                    <i data-lucide="menu" class="w-7 h-7"></i>
+                    <i data-lucide="menu" class="w-10 h-10"></i>
                 </button>
             </div>
 
