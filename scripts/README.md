@@ -1,113 +1,265 @@
 # Trinity Health - Deployment Scripts
 
-This directory contains deployment and diagnostic scripts for the Trinity Health website.
+Modular deployment scripts for the Trinity Health website with granular control over what gets deployed.
 
-## Scripts Overview
+## Main Deployment Script
 
-### 🗄️ database-deploy.sh
-**Purpose:** Export and import database with proper URL handling  
+### `deploy.sh`
+
+Modular deployment script with component-based deployment options.
+
 **Usage:**
+
 ```bash
-# Export database with staging URLs
-./database-deploy.sh export-staging
-
-# Export database with production URLs  
-./database-deploy.sh export-production
-
-# Import database to staging (requires server access)
-./database-deploy.sh import-staging --file=backup.sql.gz
+./scripts/deploy.sh [environment] [component] [options]
 ```
 
-### 🚀 deploy-staging.sh
-**Purpose:** Deploy WordPress files and theme to staging server via FTP  
-**Usage:**
+**Environments:**
+
+- `staging` - Deploy to staging server
+- `production` - Deploy to production server
+
+**Components:**
+
+- `theme` - Deploy theme files only
+- `plugins` - Deploy all plugins
+- `media` - Deploy media/uploads
+- `core` - Deploy WordPress core files
+- `database` - Export and prepare database
+- `full` - Deploy everything (core + theme + plugins)
+
+**Options:**
+
+- `--build` - Build assets before deployment (for theme)
+- `--no-backup` - Skip creating backups
+- `--dry-run` - Show what would be deployed without deploying
+- `-y, --yes` - Auto-confirm deployment
+
+**Examples:**
+
 ```bash
-# Deploy everything to staging
-./deploy-staging.sh
-```
-This script:
-- Loads configuration from .env (STAGING_HOST, STAGING_USER, STAGING_PASS, STAGING_PATH)
-- Builds theme assets (npm run build)
-- Deploys WordPress core files
-- Deploys theme files
-- Creates/updates .htaccess
+# Build and deploy theme to staging
+./scripts/deploy.sh staging theme --build
 
-### 🚀 deploy-production.sh
-**Purpose:** Deploy WordPress files and theme to production server via FTP  
+# Deploy plugins to staging
+./scripts/deploy.sh staging plugins
+
+# Sync media files to staging
+./scripts/deploy.sh staging media
+
+# Full deployment to production (with confirmation)
+./scripts/deploy.sh production full -y
+
+# Export database for staging
+./scripts/deploy.sh staging database
+
+# Dry run to see what would be deployed
+./scripts/deploy.sh staging theme --dry-run
+```
+
+## Specialized Scripts
+
+### `deploy-staging.sh` (Legacy)
+
+**Deprecated:** Use `deploy.sh staging full` instead.
+
+Legacy script for full staging deployment. Kept for backward compatibility.
+
+### `database-deploy.sh`
+
+Database export/import with URL replacement and table prefix conversion.
+
 **Usage:**
+
 ```bash
-# Deploy everything to production (requires confirmation)
-./deploy-production.sh
+# Export with staging URLs
+./scripts/database-deploy.sh export-staging
+
+# Export with production URLs
+./scripts/database-deploy.sh export-production
+
+# Import to staging
+./scripts/database-deploy.sh import-staging
+
+# Import to production
+./scripts/database-deploy.sh import-production
 ```
-This script:
-- Loads configuration from .env (PRODUCTION_HOST, PRODUCTION_USER, PRODUCTION_PASS, PRODUCTION_PATH)
-- Requires explicit confirmation before deploying
-- Builds theme assets (npm run build)
-- Deploys WordPress core files
-- Deploys theme files
-- Creates/updates .htaccess with production security headers
 
-### 🔧 deploy-common.sh
-**Purpose:** Shared deployment functions used by staging and production scripts  
-**Usage:** Sourced by other deployment scripts, not run directly  
-Contains reusable functions for:
-- Environment variable loading
-- Asset building
-- File deployment
-- Verification
+**Features:**
 
-### 📤 staging-db-import.php
-**Purpose:** Server-side PHP script to import database on staging server  
+- Automatic URL replacement based on .env configuration
+- Table prefix conversion (`wp_` to `wpyn_` for staging)
+- Database backup before import
+- Malformed URL cleanup (removes :33001 and /wp suffixes)
+- No placeholder URLs - uses actual environment URLs
+
+## PHP Import Scripts
+
+### `db-import.php`
+
+Universal database import script for use on remote servers.
+
+**Upload to server and run:**
+
+```bash
+# Import to staging
+php db-import.php staging database-file.sql.gz
+
+# Import to production
+php db-import.php production database-file.sql.gz
+
+# Auto-detect latest export
+php db-import.php staging
+```
+
+**Features:**
+
+- Uses .env configuration for database credentials
+- Automatic table prefix detection and conversion
+- URL replacement from local to target environment
+- Creates backup before import
+
+### `staging-db-import.php`
+
+Specialized import script for staging server with hardcoded credentials.
+
 **Usage:**
+
 ```bash
-# Upload to staging server then run:
-php staging-db-import.php trinity-health-20250911-staging.sql.gz
+php staging-db-import.php database-file.sql.gz
 ```
-Note: This script must be run on the staging server, not locally.
 
-### 🔍 wp-diagnostics.php
-**Purpose:** Comprehensive WordPress health check and diagnostics  
-**Usage:**
+## Environment Configuration
+
+All scripts use the `.env` file for configuration. No hardcoded values!
+
+**Required Variables:**
+
 ```bash
-# Run diagnostic checks
-php wp-diagnostics.php
+# FILE DEPLOYMENT
+STAGING_HOST=ftp.example.com
+STAGING_USER=username
+STAGING_PASS=password
+STAGING_PATH=/path/to/site
+STAGING_PORT=21
+
+PRODUCTION_HOST=ftp.example.com
+PRODUCTION_USER=username
+PRODUCTION_PASS=password
+PRODUCTION_PATH=/path/to/site
+PRODUCTION_PORT=22
+
+# DATABASE DEPLOYMENT
+STAGING_DB_HOST=localhost
+STAGING_DB_NAME=database_name
+STAGING_DB_USER=db_user
+STAGING_DB_PASS=db_password
+
+PRODUCTION_DB_HOST=localhost
+PRODUCTION_DB_NAME=database_name
+PRODUCTION_DB_USER=db_user
+PRODUCTION_DB_PASS=db_password
+
+# URL CONFIGURATION
+LOCAL_URL=https://trinity-health-website.ddev.site
+STAGING_URL=https://staging.example.com
+PRODUCTION_URL=https://production.com
 ```
-Checks:
-- PHP configuration
-- WordPress settings
-- Database connectivity
-- Theme integrity
-- Plugin status
-- File permissions
 
-## Deployment Workflow
+## Deployment Workflows
 
-### To Deploy to Staging:
+### Quick Theme Update
 
-1. **Export database with staging URLs:**
+```bash
+# Build and deploy theme only
+./scripts/deploy.sh staging theme --build
+```
+
+### Full Staging Deployment
+
+```bash
+# 1. Export database with staging URLs
+./scripts/database-deploy.sh export-staging
+
+# 2. Deploy all files
+./scripts/deploy.sh staging full --build
+
+# 3. Import database on server
+php db-import.php staging
+```
+
+### Production Deployment
+
+```bash
+# 1. Export database with production URLs
+./scripts/database-deploy.sh export-production
+
+# 2. Deploy everything with confirmation
+./scripts/deploy.sh production full --build
+
+# 3. Import database on server
+php db-import.php production
+```
+
+### Media Sync
+
+```bash
+# Sync media files to staging
+./scripts/deploy.sh staging media
+```
+
+### Plugin Updates
+
+```bash
+# Deploy plugins only
+./scripts/deploy.sh staging plugins
+```
+
+## Best Practices
+
+1. **Always Test on Staging First**
+
    ```bash
-   ./database-deploy.sh export-staging
+   ./scripts/deploy.sh staging full --dry-run
    ```
 
-2. **Deploy files to staging:**
+2. **Build Assets Before Theme Deployment**
+
    ```bash
-   ./deploy-staging.sh
+   ./scripts/deploy.sh staging theme --build
    ```
 
-3. **Import database on staging server:**
-   - Upload the database export and `staging-db-import.php` to server
-   - SSH into staging server
-   - Run: `php staging-db-import.php [database-file.sql.gz]`
+3. **Use Dry Run to Preview**
 
-### Environment Configuration
+   ```bash
+   ./scripts/deploy.sh production full --dry-run
+   ```
 
-All scripts use the `.env` file in the project root for configuration:
-- FTP credentials
-- Database credentials  
-- URL configurations
-- Server paths
+4. **Auto-confirm for CI/CD**
 
-See main project `.env` file for configuration.
+   ```bash
+   ./scripts/deploy.sh staging full --build -y
+   ```
+
+## Troubleshooting
+
+### FTP Connection Issues
+
+- Check credentials in `.env`
+- Verify `STAGING_PATH` or `PRODUCTION_PATH` is correct
+- Ensure FTP/FTPS is enabled on server
+
+### Database Import Issues
+
+- **WordPress Installation Prompt**: Table prefix mismatch - check `wp_` vs `wpyn_`
+- **URLs Not Updated**: Verify .env URLs are correct
+- **Import Fails**: Check database credentials and permissions
+
+### Deployment Issues
+
+- **Files Not Uploaded**: Check FTP path configuration
+- **Theme Not Working**: Ensure assets were built with `--build`
+- **Plugins Missing**: Deploy plugins separately or use `full` deployment
 
 ## Requirements
 
