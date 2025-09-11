@@ -53,7 +53,7 @@ set net:timeout 60
 set net:max-retries 3
 set mirror:parallel-transfer-count 3
 open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST
-cd /public_html
+cd /staging.object91.co.za
 lcd $WP_ROOT
 mirror -R --verbose --parallel=3 wp-admin wp-admin
 mirror -R --verbose --parallel=3 wp-includes wp-includes
@@ -87,7 +87,7 @@ set ftp:ssl-protect-data true
 set net:timeout 30
 set net:max-retries 3
 open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST
-cd /public_html/wp-content/themes/trinity-health-theme
+cd /staging.object91.co.za/wp-content/themes/trinity-health-theme
 mirror -R --verbose --parallel=3 --exclude node_modules/ --exclude .git/ --exclude .DS_Store . .
 bye
 " || {
@@ -131,7 +131,7 @@ set ftp:ssl-allow yes
 set ftp:ssl-force true
 set ftp:ssl-protect-data true
 open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST
-cd /public_html
+cd /staging.object91.co.za
 put /tmp/staging-htaccess -o .htaccess
 bye
 " || {
