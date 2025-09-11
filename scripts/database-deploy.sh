@@ -167,13 +167,24 @@ export_database() {
         sed -i.bak "s|http://localhost|${TARGET_URL}|g" "$TEMP_FILE"
         sed -i.bak "s|http://trinity-health-website.ddev.site|${TARGET_URL}|g" "$TEMP_FILE"
         
-        # Clean up any URLs with port numbers or /wp paths
+        # Clean up any URLs with port numbers
         sed -i.bak "s|${TARGET_URL}:33001|${TARGET_URL}|g" "$TEMP_FILE"
-        sed -i.bak "s|${TARGET_URL}/wp|${TARGET_URL}|g" "$TEMP_FILE"
+        
+        # Fix placeholder URLs
         sed -i.bak "s|{{SITE_URL}}:33001/wp|${TARGET_URL}|g" "$TEMP_FILE"
-        sed -i.bak "s|{{SITE_URL}}:33001|${TARGET_URL}|g" "$TEMP_FILE"
         sed -i.bak "s|{{SITE_URL}}/wp|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|{{SITE_URL}}:33001|${TARGET_URL}|g" "$TEMP_FILE"
         sed -i.bak "s|{{SITE_URL}}|${TARGET_URL}|g" "$TEMP_FILE"
+        
+        # Fix media paths - ensure consistent wp-content/uploads path
+        print_status "Fixing media upload paths..."
+        sed -i.bak "s|/app/uploads/|/wp-content/uploads/|g" "$TEMP_FILE"
+        
+        # Remove /wp suffix from URLs but preserve /wp-content paths
+        # This is more specific to avoid breaking /wp-content URLs
+        sed -i.bak "s|${TARGET_URL}/wp/|${TARGET_URL}/|g" "$TEMP_FILE"
+        sed -i.bak "s|${TARGET_URL}/wp\"|${TARGET_URL}\"|g" "$TEMP_FILE"
+        sed -i.bak "s|${TARGET_URL}/wp'|${TARGET_URL}'|g" "$TEMP_FILE"
         
         # Replace email addresses with staging domain
         if [ "$TARGET_ENV" = "staging" ]; then

@@ -141,6 +141,17 @@ if ($url_count > 0) {
     }
 }
 
+// Fix media paths - ensure consistent wp-content/uploads path
+print_status("Fixing media upload paths...");
+exec("sed -i 's|/app/uploads/|/wp-content/uploads/|g' {$temp_sql}");
+
+// Fix any broken URLs from bad replacements
+print_status("Fixing URL formatting...");
+// Remove /wp suffix but preserve /wp-content, /wp-admin, /wp-includes
+exec("sed -i 's|{$site_url}/wp/|{$site_url}/|g' {$temp_sql}");
+exec("sed -i 's|{$site_url}/wp\"|{$site_url}\"|g' {$temp_sql}");
+exec("sed -i \"s|{$site_url}/wp'|{$site_url}'|g\" {$temp_sql}");
+
 // Import database
 print_status("Importing database...");
 print_warning("This may take a few minutes for large databases...");

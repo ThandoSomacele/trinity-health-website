@@ -212,7 +212,14 @@ foreach ($replacements as $search => $replace) {
 print_status("Cleaning up malformed URLs...");
 exec("sed -i 's|{$site_url}:33001/wp|{$site_url}|g' {$temp_sql}");
 exec("sed -i 's|{$site_url}:33001|{$site_url}|g' {$temp_sql}");
-exec("sed -i 's|{$site_url}/wp|{$site_url}|g' {$temp_sql}");
+// Remove /wp suffix but preserve /wp-content, /wp-admin, /wp-includes
+exec("sed -i 's|{$site_url}/wp/|{$site_url}/|g' {$temp_sql}");
+exec("sed -i 's|{$site_url}/wp\"|{$site_url}\"|g' {$temp_sql}");
+exec("sed -i \"s|{$site_url}/wp'|{$site_url}'|g\" {$temp_sql}");
+
+// Fix media paths - ensure consistent wp-content/uploads path
+print_status("Fixing media upload paths...");
+exec("sed -i 's|/app/uploads/|/wp-content/uploads/|g' {$temp_sql}");
 
 // Replace email domains
 $local_domain = parse_url($local_url, PHP_URL_HOST);
