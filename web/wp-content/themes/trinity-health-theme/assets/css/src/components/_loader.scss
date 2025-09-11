@@ -159,43 +159,4 @@ body.loaded .trinity-loader {
   }
 }
 
-// Navigation slide-in from top on page load
-.site-header {
-  animation: slide-down 0.6s ease-out;
-  animation-delay: 0.2s;
-  animation-fill-mode: both;
-}
-
-@keyframes slide-down {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-// Add stagger effect for nav items
-.nav-menu > li {
-  animation: fade-in-up 0.5s ease-out;
-  animation-fill-mode: both;
-  
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{0.3 + ($i * 0.05)}s;
-    }
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+// Removed navbar slide-down animation on page load - navbar is always visible now

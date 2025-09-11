@@ -131,8 +131,14 @@
 <?php wp_footer(); ?>
 
 <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    // Initialize Lucide icons (but skip menu icon as we're using CSS hamburger)
+    document.querySelectorAll('[data-lucide]:not(.mobile-menu-toggle [data-lucide])').forEach(function(el) {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons({
+                nodes: [el]
+            });
+        }
+    });
     
     // Initialize GLightbox for video lightbox
     document.addEventListener('DOMContentLoaded', function() {

@@ -144,165 +144,174 @@
         }
     </style>
 
-    <!-- Mobile Menu Styles -->
+    <!-- Mobile Navigation Styles -->
     <style>
-        /* Mobile menu visibility and transitions */
-        .mobile-menu {
-            position: absolute !important;
-            top: 100% !important;
-            left: 0 !important;
-            right: 0 !important;
-            background: #880005 !important;
-            /* Trinity maroon */
-            background-color: #880005 !important;
-            overflow: hidden;
-            transition: all 0.4s ease-in-out;
-            z-index: 800 !important;
-            max-height: calc(100vh - 80px) !important;
-            /* Prevent covering entire screen */
-            overflow-y: auto !important;
-            /* Allow scrolling if content is too tall */
+        /* Fixed header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
         }
 
-        .mobile-menu>div {
-            background: #880005 !important;
-            /* Trinity maroon */
-            background-color: #880005 !important;
+        /* Add padding to main content to account for fixed header */
+        body {
+            padding-top: 80px;
         }
 
-        .mobile-menu.hidden {
-            display: none !important;
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
-        .mobile-menu:not(.hidden) {
-            display: block !important;
-            animation: slideDown 0.4s ease-in-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .mobile-menu {
-                display: none !important;
-            }
-        }
-
-        /* Prevent clicks on icon children */
-        .mobile-menu-toggle * {
-            pointer-events: none;
-        }
-
-        /* Mobile menu link styles */
-        .mobile-nav-menu {
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            background: transparent !important;
-        }
-
-        .mobile-nav-menu li {
-            border-bottom: 1px solid rgba(229, 208, 172, 0.2) !important;
-            /* Trinity gold with opacity */
-            background: transparent !important;
-        }
-
-        .mobile-nav-menu li:last-child {
-            border-bottom: none !important;
-        }
-
-        .mobile-nav-menu li a {
-            display: block !important;
-            padding: 12px 16px !important;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            font-weight: 500 !important;
-            transition: all 0.3s ease !important;
-            background: transparent !important;
-        }
-
-        .mobile-nav-menu li a:hover,
-        .mobile-nav-menu li a:focus {
-            background: rgba(229, 208, 172, 0.1) !important;
-            /* Trinity gold hover */
-            color: #E5D0AC !important;
-            /* Trinity gold */
-            padding-left: 24px !important;
-        }
-
-        /* Mobile Book Appointment button */
-        .mobile-menu .book-appointment-btn {
-            margin: 16px !important;
-            display: block !important;
-            text-align: center !important;
-            background: transparent !important;
-            border: 2px solid #E5D0AC !important;
-            color: #E5D0AC !important;
-            padding: 12px 24px !important;
-            border-radius: 9999px !important;
-            font-weight: 600 !important;
-            transition: all 0.3s ease !important;
-            text-decoration: none !important;
-        }
-
-        .mobile-menu .book-appointment-btn:hover,
-        .mobile-menu .book-appointment-btn:focus {
-            background: #E5D0AC !important;
-            color: #880005 !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 4px 12px rgba(229, 208, 172, 0.3) !important;
-        }
-
-        .mobile-menu .book-appointment-btn i {
-            color: inherit !important;
-        }
-
-        /* Submenu styles for mobile */
-        .mobile-nav-menu .sub-menu {
-            margin-left: 20px;
-            border-left: 2px solid rgba(229, 208, 172, 0.2);
-        }
-
-        .mobile-nav-menu .sub-menu li a {
-            font-size: 14px;
-            padding: 10px 16px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .mobile-nav-menu .sub-menu li a:hover {
+        .mobile-menu-toggle:hover {
             color: #E5D0AC;
         }
 
-        /* Current page indicator */
-        .mobile-nav-menu .current-menu-item>a {
-            color: #E5D0AC !important;
-            background: rgba(229, 208, 172, 0.1) !important;
+        .mobile-menu-toggle .menu-icon,
+        .mobile-menu-toggle .close-icon {
+            width: 24px;
+            height: 24px;
         }
 
-        /* Override any conflicting Tailwind classes */
-        .mobile-menu * {
-            color: inherit;
+        .mobile-menu-toggle .close-icon {
+            display: none;
         }
 
-        .mobile-menu .bg-white,
-        .mobile-menu .bg-gray-50,
-        .mobile-menu .bg-gray-100 {
-            background: transparent !important;
+        .mobile-menu-toggle[aria-expanded="true"] .menu-icon {
+            display: none;
         }
 
-        .mobile-menu .text-gray-600,
-        .mobile-menu .text-gray-800,
-        .mobile-menu .text-black {
-            color: #ffffff !important;
+        .mobile-menu-toggle[aria-expanded="true"] .close-icon {
+            display: block;
+        }
+
+        /* Mobile Navigation Container */
+        .mobile-nav {
+            position: fixed;
+            top: 100;
+            left: 0;
+            right: 0;
+            background: #880005;
+            z-index: 999;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .mobile-nav.is-open {
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav-container {
+            padding: 1rem 0;
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-menu li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .mobile-nav-menu a:hover,
+        .mobile-nav-menu a:focus {
+            background-color: rgba(229, 208, 172, 0.1);
+            padding-left: 2rem;
+        }
+
+        .mobile-nav-menu .current-menu-item>a,
+        .mobile-nav-menu .current_page_item>a {
+            background-color: rgba(229, 208, 172, 0.1);
+            color: #E5D0AC;
+        }
+
+        /* Mobile Submenu */
+        .mobile-nav-menu .sub-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav-menu .sub-menu a {
+            padding-left: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile CTA Button */
+        .mobile-nav-cta {
+            padding: 1rem 1.5rem;
+        }
+
+        .mobile-book-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid #E5D0AC;
+            color: #E5D0AC;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-book-btn:hover,
+        .mobile-book-btn:focus {
+            background: #E5D0AC;
+            color: #880005;
+            transform: translateY(-2px);
+        }
+
+        /* Hide mobile elements on desktop */
+        @media (min-width: 1024px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        /* Body overflow control when menu is open */
+        body.mobile-menu-open {
+            overflow: hidden;
         }
     </style>
 
@@ -337,7 +346,7 @@
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
-    <header class="site-header bg-trinity-maroon shadow-lg relative" role="banner">
+    <header class="site-header bg-trinity-maroon shadow-lg" role="banner">
         <div class="max-w-7xl mx-auto px-6 relative">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Section -->
@@ -377,33 +386,109 @@
                 </nav>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle lg:hidden text-white p-2 hover:text-trinity-gold transition-colors" aria-controls="primary-menu" aria-expanded="false">
+                <button class="mobile-menu-toggle lg:hidden" aria-label="Toggle menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e('Menu', 'trinity-health'); ?></span>
-                    <i data-lucide="menu" class="w-10 h-10"></i>
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
                 </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div class="mobile-menu lg:hidden hidden">
-                <div class="py-4">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'menu_class'     => 'mobile-nav-menu',
-                        'container'      => false,
-                        'fallback_cb'    => 'trinity_health_primary_menu_fallback',
-                        'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    ));
-                    ?>
-                    <div class="px-4 pt-4">
-                        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                            class="block w-full text-center bg-transparent border-2 border-trinity-gold text-trinity-gold px-6 py-3 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300">
-                            <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav-container">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'menu_class'     => 'mobile-nav-menu',
+                'container'      => false,
+                'fallback_cb'    => 'trinity_health_primary_menu_fallback',
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            ));
+            ?>
+            <div class="mobile-nav-cta">
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="mobile-book-btn">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const body = document.body;
+
+            if (!toggleButton || !mobileNav) return;
+
+            // Toggle mobile menu
+            toggleButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isOpen = mobileNav.classList.contains('is-open');
+
+                if (isOpen) {
+                    // Close menu
+                    mobileNav.classList.remove('is-open');
+                    toggleButton.setAttribute('aria-expanded', 'false');
+                    body.classList.remove('mobile-menu-open');
+                } else {
+                    // Open menu
+                    mobileNav.classList.add('is-open');
+                    toggleButton.setAttribute('aria-expanded', 'true');
+                    body.classList.add('mobile-menu-open');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!toggleButton.contains(e.target) && !mobileNav.contains(e.target)) {
+                    if (mobileNav.classList.contains('is-open')) {
+                        mobileNav.classList.remove('is-open');
+                        toggleButton.setAttribute('aria-expanded', 'false');
+                        body.classList.remove('mobile-menu-open');
+                    }
+                }
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+                    mobileNav.classList.remove('is-open');
+                    toggleButton.setAttribute('aria-expanded', 'false');
+                    body.classList.remove('mobile-menu-open');
+                    toggleButton.focus();
+                }
+            });
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth >= 1024 && mobileNav.classList.contains('is-open')) {
+                        mobileNav.classList.remove('is-open');
+                        toggleButton.setAttribute('aria-expanded', 'false');
+                        body.classList.remove('mobile-menu-open');
+                    }
+                }, 250);
+            });
+
+            // Initialize Lucide icons if available
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
 
     <main id="main" class="site-main" role="main">
