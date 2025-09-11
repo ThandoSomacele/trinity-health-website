@@ -220,7 +220,7 @@ $target_domain = parse_url($site_url, PHP_URL_HOST);
 exec("sed -i 's|@{$local_domain}|@{$target_domain}|g' {$temp_sql}");
 
 // Convert table prefix if needed
-$source_prefix = 'wp_'; // Assume local uses wp_
+$source_prefix = 'wp_'; // Local and staging both use wp_ now
 if ($table_prefix !== $source_prefix) {
     print_status("Converting table prefix from {$source_prefix} to {$table_prefix}...");
     

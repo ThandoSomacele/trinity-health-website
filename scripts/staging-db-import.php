@@ -11,7 +11,7 @@ $db_name = 'objecxuk_wp19';
 $db_user = 'objecxuk_wp19';
 $db_pass = '812Sm@F[Pp';
 $site_url = 'https://staging.object91.co.za';
-$table_prefix = 'wpyn_'; // Staging table prefix
+$table_prefix = 'wp_'; // Staging table prefix (now using standard wp_)
 
 // Colors for output
 $red = "\033[0;31m";
