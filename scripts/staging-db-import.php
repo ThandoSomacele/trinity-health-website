@@ -7,10 +7,11 @@
 
 // Database configuration
 $db_host = 'localhost';
-$db_name = 'objecxuk_wp303';
-$db_user = 'objecxuk_wp303';
-$db_pass = 'H)W1S11p@9';
+$db_name = 'objecxuk_wp19';
+$db_user = 'objecxuk_wp19';
+$db_pass = '812Sm@F[Pp';
 $site_url = 'https://staging.object91.co.za';
+$table_prefix = 'wpyn_'; // Staging table prefix
 
 // Colors for output
 $red = "\033[0;31m";

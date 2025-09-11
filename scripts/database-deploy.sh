@@ -178,6 +178,11 @@ export_database() {
         # Replace email addresses with staging domain
         if [ "$TARGET_ENV" = "staging" ]; then
             sed -i.bak "s|@trinity-health-website.ddev.site|@staging.object91.co.za|g" "$TEMP_FILE"
+            # Replace table prefix for staging (wp_ to wpyn_)
+            print_status "Converting table prefix from wp_ to wpyn_ for staging..."
+            sed -i.bak "s|'wp_|'wpyn_|g" "$TEMP_FILE"
+            sed -i.bak "s|\`wp_|\`wpyn_|g" "$TEMP_FILE"
+            sed -i.bak "s| wp_| wpyn_|g" "$TEMP_FILE"
         elif [ "$TARGET_ENV" = "production" ]; then
             sed -i.bak "s|@trinity-health-website.ddev.site|@trinityhealth.co.zm|g" "$TEMP_FILE"
         fi
