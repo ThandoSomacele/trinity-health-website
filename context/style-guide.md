@@ -9,7 +9,8 @@
 
 ### Primary Colors
 
-- **Trinity Maroon** (#A31D1D): Primary brand color - modern flat maroon
+- **Trinity Maroon** (#A31D1D): Primary brand color - modern flat maroon for web
+  - *Original Brand Color:* #880005 (deep traditional maroon, preserved in CSS variables)
 - **Trinity Maroon Light** (#E5D0AC): Warm accent for hover states  
 - **Trinity Maroon Dark** (#6D2323): Deep maroon for emphasis
 

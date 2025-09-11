@@ -107,6 +107,7 @@ STAGING_URL=https://staging.object91.co.za
 - [**Development Guide**](docs/DEVELOPMENT.md) - Local setup, coding standards, theme development
 - [**Deployment Guide**](docs/DEPLOYMENT.md) - Complete deployment procedures and troubleshooting
 - [**Maintenance Guide**](docs/MAINTENANCE.md) - Caching, performance, backups, updates
+- [**Brand Guidelines**](docs/BRAND-GUIDELINES.md) - Colors, typography, voice & tone, visual standards
 
 ## 🛠️ Available Scripts
 
