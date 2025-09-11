@@ -201,7 +201,6 @@ deploy_theme() {
         return 0
     fi
     
-    cd "$THEME_DIR"
     lftp -c "
     set ssl:verify-certificate no
     set ftp:ssl-allow yes
@@ -213,15 +212,15 @@ deploy_theme() {
     cd $DEPLOY_PATH/wp-content/themes
     mkdir -p trinity-health-theme
     cd trinity-health-theme
-    lcd $THEME_DIR
+    lcd \"$THEME_DIR\"
     mirror -R --verbose --parallel=3 \
-        --exclude node_modules/ \
-        --exclude .git/ \
-        --exclude .DS_Store \
-        --exclude src/ \
-        --exclude assets/css/src/ \
-        --exclude .cache/ \
-        --exclude package-lock.json \
+        --exclude-glob=node_modules/ \
+        --exclude-glob=.git/ \
+        --exclude-glob=.DS_Store \
+        --exclude-glob=src/ \
+        --exclude-glob=assets/css/src/ \
+        --exclude-glob=.cache/ \
+        --exclude-glob=package-lock.json \
         . .
     bye
     " || {
@@ -251,7 +250,6 @@ deploy_plugins() {
         return 0
     fi
     
-    cd "$WP_ROOT"
     lftp -c "
     set ssl:verify-certificate no
     set ftp:ssl-allow yes
@@ -262,13 +260,13 @@ deploy_plugins() {
     set mirror:parallel-transfer-count 2
     open ftp://$DEPLOY_USER:$DEPLOY_PASS@$DEPLOY_HOST
     cd $DEPLOY_PATH/wp-content
-    lcd $WP_ROOT/wp-content
+    lcd \"$PLUGINS_DIR\"
     mirror -R --verbose --parallel=2 \
-        --exclude .git/ \
-        --exclude .DS_Store \
-        --exclude *.log \
-        --exclude cache/ \
-        plugins plugins
+        --exclude-glob=.git/ \
+        --exclude-glob=.DS_Store \
+        --exclude-glob=*.log \
+        --exclude-glob=cache/ \
+        . plugins
     bye
     " || {
         print_warning "Some plugins may have failed to upload"
@@ -308,7 +306,6 @@ deploy_media() {
         fi
     fi
     
-    cd "$WP_ROOT"
     lftp -c "
     set ssl:verify-certificate no
     set ftp:ssl-allow yes
@@ -319,12 +316,12 @@ deploy_media() {
     set mirror:parallel-transfer-count 2
     open ftp://$DEPLOY_USER:$DEPLOY_PASS@$DEPLOY_HOST
     cd $DEPLOY_PATH/wp-content
-    lcd $WP_ROOT/wp-content
+    lcd \"$UPLOADS_DIR\"
     mirror -R --verbose --parallel=2 \
-        --exclude .DS_Store \
-        --exclude *.log \
-        --exclude _wpallimport/ \
-        uploads uploads
+        --exclude-glob=.DS_Store \
+        --exclude-glob=*.log \
+        --exclude-glob=_wpallimport/ \
+        . uploads
     bye
     " || {
         print_warning "Some media files may have failed to upload"
@@ -346,7 +343,6 @@ deploy_core() {
         return 0
     fi
     
-    cd "$WP_ROOT"
     lftp -c "
     set ssl:verify-certificate no
     set ftp:ssl-allow yes
@@ -357,7 +353,7 @@ deploy_core() {
     set mirror:parallel-transfer-count 3
     open ftp://$DEPLOY_USER:$DEPLOY_PASS@$DEPLOY_HOST
     cd $DEPLOY_PATH
-    lcd $WP_ROOT
+    lcd \"$WP_ROOT\"
     mirror -R --verbose --parallel=3 wp-admin wp-admin
     mirror -R --verbose --parallel=3 wp-includes wp-includes
     put index.php
