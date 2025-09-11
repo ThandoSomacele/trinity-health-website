@@ -15,7 +15,9 @@ Check our tracker in docs folder when we continue with our development.
 - Tailwind CSS for utility-first styling
 - SCSS for custom components and complex styling
 - Modern Block Editor (Gutenberg) integration with theme.json
-- Trinity Health brand colors: Primary #880005 (maroon), with professional healthcare palette
+- Trinity Health brand colors: Primary #A31D1D (modern flat maroon), with professional healthcare palette
+  - Original brand: #880005 (deep maroon)
+  - Updated for web: #A31D1D (flat UI maroon), #E5D0AC (warm accent), #6D2323 (dark maroon)
 - Light/dark theme support via Tailwind
 - Fully responsive components with mobile-first approach
 - WCAG accessibility compliance

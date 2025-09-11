@@ -154,6 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
 - **SCSS** - For complex components only
 - **BEM Naming** - For custom classes
 - **Mobile First** - Responsive design
+- **Brand Colors** - Trinity Health palette:
+  - Primary: `#A31D1D` (modern flat maroon)
+  - Light: `#E5D0AC` (warm accent)
+  - Dark: `#6D2323` (deep maroon)
+  - Background: `#FEF9E1` (warm cream)
+  - Original brand: `#880005` (preserved in CSS variable)
 
 #### Example SCSS
 ```scss
