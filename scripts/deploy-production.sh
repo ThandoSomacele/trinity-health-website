@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Trinity Health - Full Staging Deployment
-# Deploys WordPress core files and theme to staging
+# Trinity Health - Production Deployment Script
+# Deploys WordPress core files and theme to production
 
 set -e
 
-echo -e "\033[0;32m🚀 Trinity Health - Full Staging Deployment\033[0m"
+echo -e "\033[0;32m🚀 Trinity Health - Production Deployment\033[0m"
 echo "====================================="
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -22,15 +22,24 @@ fi
 source .env
 
 # Validate required environment variables
-if [ -z "$STAGING_HOST" ] || [ -z "$STAGING_USER" ] || [ -z "$STAGING_PASS" ] || [ -z "$STAGING_PATH" ]; then
+if [ -z "$PRODUCTION_HOST" ] || [ -z "$PRODUCTION_USER" ] || [ -z "$PRODUCTION_PASS" ] || [ -z "$PRODUCTION_PATH" ]; then
     echo -e "\033[31m❌ Missing required environment variables\033[0m"
-    echo "Required: STAGING_HOST, STAGING_USER, STAGING_PASS, STAGING_PATH"
+    echo "Required: PRODUCTION_HOST, PRODUCTION_USER, PRODUCTION_PASS, PRODUCTION_PATH"
     exit 1
 fi
 
 echo "Project root: $PROJECT_ROOT"
 echo "WordPress root: $WP_ROOT"
 echo "Theme directory: $THEME_DIR"
+echo "Production path: $PRODUCTION_PATH"
+
+# Confirm production deployment
+echo -e "\033[1;33m⚠️  WARNING: This will deploy to PRODUCTION!\033[0m"
+read -p "Are you sure you want to deploy to production? (yes/no): " -r
+if [[ ! $REPLY =~ ^[Yy][Ee][Ss]$ ]]; then
+    echo "Deployment cancelled"
+    exit 0
+fi
 
 # Build theme assets first
 echo -e "\033[1;33m📦 Building theme assets...\033[0m"
@@ -47,7 +56,7 @@ fi
 cd "$WP_ROOT"
 
 # Deploy WordPress core files
-echo -e "\033[1;33m🌐 Deploying WordPress core files to staging...\033[0m"
+echo -e "\033[1;33m🌐 Deploying WordPress core files to production...\033[0m"
 echo "This will deploy:"
 echo "  - wp-admin/ directory"
 echo "  - wp-includes/ directory"
@@ -63,8 +72,8 @@ set ftp:ssl-protect-data true
 set net:timeout 60
 set net:max-retries 3
 set mirror:parallel-transfer-count 3
-open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST
-cd $STAGING_PATH
+open ftp://$PRODUCTION_USER:$PRODUCTION_PASS@$PRODUCTION_HOST
+cd $PRODUCTION_PATH
 lcd $WP_ROOT
 mirror -R --verbose --parallel=3 wp-admin wp-admin
 mirror -R --verbose --parallel=3 wp-includes wp-includes
@@ -87,7 +96,7 @@ bye
 }
 
 # Deploy theme
-echo -e "\033[1;33m🎨 Deploying theme to staging...\033[0m"
+echo -e "\033[1;33m🎨 Deploying theme to production...\033[0m"
 cd "$THEME_DIR"
 
 lftp -c "
@@ -97,8 +106,8 @@ set ftp:ssl-force true
 set ftp:ssl-protect-data true
 set net:timeout 30
 set net:max-retries 3
-open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST
-cd $STAGING_PATH/wp-content/themes/trinity-health-theme
+open ftp://$PRODUCTION_USER:$PRODUCTION_PASS@$PRODUCTION_HOST
+cd $PRODUCTION_PATH/wp-content/themes/trinity-health-theme
 mirror -R --verbose --parallel=3 --exclude node_modules/ --exclude .git/ --exclude .DS_Store . .
 bye
 " || {
@@ -107,7 +116,7 @@ bye
 
 # Create/update .htaccess for WordPress
 echo -e "\033[1;33m📝 Creating .htaccess file...\033[0m"
-cat > /tmp/staging-htaccess << 'EOF'
+cat > /tmp/production-htaccess << 'EOF'
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -124,6 +133,7 @@ RewriteRule . /index.php [L]
 Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "SAMEORIGIN"
 Header set X-XSS-Protection "1; mode=block"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # Prevent directory browsing
@@ -134,6 +144,12 @@ Options -Indexes
 order allow,deny
 deny from all
 </files>
+
+# Disable XML-RPC
+<Files xmlrpc.php>
+order deny,allow
+deny from all
+</Files>
 EOF
 
 lftp -c "
@@ -141,9 +157,9 @@ set ssl:verify-certificate no
 set ftp:ssl-allow yes
 set ftp:ssl-force true
 set ftp:ssl-protect-data true
-open ftp://$STAGING_USER:$STAGING_PASS@$STAGING_HOST
-cd $STAGING_PATH
-put /tmp/staging-htaccess -o .htaccess
+open ftp://$PRODUCTION_USER:$PRODUCTION_PASS@$PRODUCTION_HOST
+cd $PRODUCTION_PATH
+put /tmp/production-htaccess -o .htaccess
 bye
 " || {
     echo -e "\033[33m⚠ Failed to upload .htaccess\033[0m"
@@ -152,10 +168,11 @@ bye
 echo -e "\033[1;33m🔍 Verifying deployment...\033[0m"
 
 # Test various endpoints
+PRODUCTION_URL=${PRODUCTION_URL:-https://trinityhealth.co.zm}
 endpoints=(
-    "https://staging.object91.co.za/"
-    "https://staging.object91.co.za/wp-login.php"
-    "https://staging.object91.co.za/wp-includes/js/jquery/jquery.min.js"
+    "$PRODUCTION_URL/"
+    "$PRODUCTION_URL/wp-login.php"
+    "$PRODUCTION_URL/wp-includes/js/jquery/jquery.min.js"
 )
 
 for url in "${endpoints[@]}"; do
@@ -168,18 +185,20 @@ for url in "${endpoints[@]}"; do
 done
 
 echo -e "\033[0;32m========================================"
-echo -e "✅ Full Deployment Complete!"
+echo -e "✅ Production Deployment Complete!"
 echo -e "========================================\033[0m"
 echo ""
-echo "Site URL: https://staging.object91.co.za"
-echo "Admin URL: https://staging.object91.co.za/wp-admin/"
+echo "Site URL: $PRODUCTION_URL"
+echo "Admin URL: $PRODUCTION_URL/wp-admin/"
 echo ""
-echo -e "\033[1;33mNext steps:\033[0m"
-echo "1. Clear your browser cache"
-echo "2. Test the site functionality"
-echo "3. If wp-admin still redirects, check server configuration"
+echo -e "\033[1;33mPost-deployment checklist:\033[0m"
+echo "1. Clear all caches"
+echo "2. Test critical functionality"
+echo "3. Monitor error logs"
+echo "4. Verify SSL certificate"
+echo "5. Check database connectivity"
 echo ""
-echo -e "\033[1;33mIf issues persist:\033[0m"
-echo "- Check PHP error logs on server"
-echo "- Verify database connection settings"
-echo "- Ensure SSL certificates are properly configured"
+echo -e "\033[1;31mIMPORTANT:\033[0m"
+echo "- Monitor the site closely for the next hour"
+echo "- Have a rollback plan ready"
+echo "- Keep backups accessible"

@@ -26,10 +26,35 @@ This directory contains deployment and diagnostic scripts for the Trinity Health
 ./deploy-staging.sh
 ```
 This script:
+- Loads configuration from .env (STAGING_HOST, STAGING_USER, STAGING_PASS, STAGING_PATH)
 - Builds theme assets (npm run build)
 - Deploys WordPress core files
 - Deploys theme files
 - Creates/updates .htaccess
+
+### 🚀 deploy-production.sh
+**Purpose:** Deploy WordPress files and theme to production server via FTP  
+**Usage:**
+```bash
+# Deploy everything to production (requires confirmation)
+./deploy-production.sh
+```
+This script:
+- Loads configuration from .env (PRODUCTION_HOST, PRODUCTION_USER, PRODUCTION_PASS, PRODUCTION_PATH)
+- Requires explicit confirmation before deploying
+- Builds theme assets (npm run build)
+- Deploys WordPress core files
+- Deploys theme files
+- Creates/updates .htaccess with production security headers
+
+### 🔧 deploy-common.sh
+**Purpose:** Shared deployment functions used by staging and production scripts  
+**Usage:** Sourced by other deployment scripts, not run directly  
+Contains reusable functions for:
+- Environment variable loading
+- Asset building
+- File deployment
+- Verification
 
 ### 📤 staging-db-import.php
 **Purpose:** Server-side PHP script to import database on staging server  
