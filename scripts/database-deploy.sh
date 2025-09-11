@@ -167,6 +167,14 @@ export_database() {
         sed -i.bak "s|http://localhost|${TARGET_URL}|g" "$TEMP_FILE"
         sed -i.bak "s|http://trinity-health-website.ddev.site|${TARGET_URL}|g" "$TEMP_FILE"
         
+        # Clean up any URLs with port numbers or /wp paths
+        sed -i.bak "s|${TARGET_URL}:33001|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|${TARGET_URL}/wp|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|{{SITE_URL}}:33001/wp|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|{{SITE_URL}}:33001|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|{{SITE_URL}}/wp|${TARGET_URL}|g" "$TEMP_FILE"
+        sed -i.bak "s|{{SITE_URL}}|${TARGET_URL}|g" "$TEMP_FILE"
+        
         # Replace email addresses with staging domain
         if [ "$TARGET_ENV" = "staging" ]; then
             sed -i.bak "s|@trinity-health-website.ddev.site|@staging.object91.co.za|g" "$TEMP_FILE"
@@ -325,6 +333,14 @@ import_database() {
         sed -i.bak "s|${LOCAL_URL}|${SITE_URL}|g" "$TEMP_SQL"
         rm -f "$TEMP_SQL.bak"
     fi
+    
+    # Clean up any malformed URLs with ports or /wp paths
+    print_status "Cleaning up any malformed URLs..."
+    sed -i.bak "s|${SITE_URL}:33001/wp|${SITE_URL}|g" "$TEMP_SQL"
+    sed -i.bak "s|${SITE_URL}:33001|${SITE_URL}|g" "$TEMP_SQL"
+    sed -i.bak "s|${SITE_URL}/wp|${SITE_URL}|g" "$TEMP_SQL"
+    sed -i.bak "s|{{SITE_URL}}|${SITE_URL}|g" "$TEMP_SQL"
+    rm -f "$TEMP_SQL.bak"
     
     print_status "Database contains $TARGET_COUNT correct URLs for $TARGET_ENV"
     
