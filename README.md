@@ -1,219 +1,137 @@
-# Trinity Health Zambia - Website Development
+# Trinity Health Zambia - Website
 
-Modern WordPress development environment using Bedrock + Sage, with automated build and deployment tools for production hosting.
+Modern healthcare website for Trinity Health Zambia built with WordPress, featuring general health services and audiology specialization.
 
 ## 🏥 Project Overview
 
-Trinity Health Zambia is a comprehensive healthcare website built with:
-- **Bedrock** - WordPress boilerplate with Composer dependency management
-- **Sage v11** - Modern WordPress theme framework with Laravel Blade templating
-- **Vite** - Fast build tool with Hot Module Replacement (HMR)
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **DDEV** - Containerized development environment
+**Tech Stack:**
+- **WordPress** - Custom theme with modern development practices
+- **DDEV** - Local containerized development environment
+- **Build System** - @wordpress/scripts (Webpack-based)
+- **Styling** - Tailwind CSS + SCSS
+- **JavaScript** - ES6+ with WordPress block editor APIs
+- **Deployment** - FTP-based deployment to staging/production
 
 ## 🚀 Quick Start
 
-### Development Environment
+### Local Development
 ```bash
-# Start development environment
+# Start DDEV environment
 ddev start
 
-# Install theme dependencies and build assets
-ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm install
-ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run build
+# Install dependencies
+ddev npm install
 
-# Start development server with HMR
-ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
+# Build assets
+ddev npm run build
+
+# Watch for changes during development
+ddev npm run start
 ```
 
-### Production Deployment
-```bash
-# Configure FTP credentials (one-time setup)
-cp ftp-config.example.sh ftp-config.sh
-# Edit ftp-config.sh with your hosting details
+### Access Points
+- **Local Site**: https://trinity-health-website.ddev.site
+- **Admin Panel**: https://trinity-health-website.ddev.site/wp-admin/
+- **Staging Site**: https://staging.object91.co.za
 
-# Build and deploy automatically
-source ftp-config.sh && ./build-production.sh --deploy
+## 📦 Deployment
+
+### Deploy to Staging
+```bash
+# 1. Export database with staging URLs
+./scripts/database-deploy.sh export-staging
+
+# 2. Deploy files to staging
+./scripts/deploy-staging.sh
+
+# 3. Import database on server (requires SSH access)
+ssh user@staging.object91.co.za
+php staging-db-import.php trinity-health-[timestamp]-staging.sql.gz
+```
+
+### Deploy to Production
+```bash
+# 1. Export database with production URLs
+./scripts/database-deploy.sh export-production
+
+# 2. Deploy files (configure production script first)
+./scripts/deploy-production.sh
+```
+
+## 📁 Project Structure
+
+```
+trinity-health-website/
+├── web/                              # WordPress root
+│   ├── wp-admin/                    # WordPress admin
+│   ├── wp-content/                  
+│   │   ├── themes/                  
+│   │   │   └── trinity-health-theme/  # Custom theme
+│   │   │       ├── assets/          # Compiled assets
+│   │   │       ├── src/             # Source files
+│   │   │       ├── inc/             # PHP includes
+│   │   │       ├── template-parts/  # Template partials
+│   │   │       └── build/           # Built assets
+│   │   ├── plugins/                 # WordPress plugins
+│   │   └── uploads/                 # Media files
+│   └── wp-config.php               # WordPress configuration
+├── scripts/                         # Deployment & utility scripts
+│   ├── database-deploy.sh          # Database export/import
+│   ├── deploy-staging.sh           # File deployment to staging
+│   ├── staging-db-import.php       # Server-side DB import
+│   └── wp-diagnostics.php          # WordPress health checks
+├── backups/                         # Database backups
+├── docs/                            # Additional documentation
+└── .env                            # Environment configuration
+```
+
+## 🔧 Configuration
+
+### Environment Variables (.env)
+```bash
+# Copy template and configure
+cp .env.example .env
+
+# Required variables:
+STAGING_HOST=ftp.object91.co.za
+STAGING_USER=your-username
+STAGING_PASS=your-password
+STAGING_DB_NAME=database-name
+STAGING_DB_USER=db-username
+STAGING_DB_PASS=db-password
+STAGING_URL=https://staging.object91.co.za
 ```
 
 ## 📚 Documentation
 
-| Document | Description |
-|----------|-------------|
-| [**DEPLOYMENT-GUIDE.md**](docs/DEPLOYMENT-GUIDE.md) | Complete deployment documentation |
-| [**QUICK-REFERENCE.md**](docs/QUICK-REFERENCE.md) | Command cheatsheet and quick deploy |
-| [**HOSTING-PROVIDERS.md**](docs/HOSTING-PROVIDERS.md) | Provider-specific configurations |
-| [**Development Tracker**](docs/trinity-health-website-Development-phases-checklists-plan.md) | Project progress and phase tracking |
+- [**Development Guide**](docs/DEVELOPMENT.md) - Local setup, coding standards, theme development
+- [**Deployment Guide**](docs/DEPLOYMENT.md) - Complete deployment procedures and troubleshooting
+- [**Maintenance Guide**](docs/MAINTENANCE.md) - Caching, performance, backups, updates
 
-## 🛠️ Build & Deployment Tools
+## 🛠️ Available Scripts
 
-### Build Script (`build-production.sh`)
+| Script | Purpose |
+|--------|---------|
+| `ddev start` | Start local development environment |
+| `ddev npm run build` | Build production assets |
+| `ddev npm run start` | Watch mode for development |
+| `./scripts/database-deploy.sh` | Database management |
+| `./scripts/deploy-staging.sh` | Deploy to staging |
+| `php scripts/wp-diagnostics.php` | Run health checks |
 
-Converts modern development stack to traditional WordPress:
-
-```bash
-# Manual build (for FTP/manual upload)
-./build-production.sh
-
-# Automatic build and FTP deployment
-./build-production.sh --deploy
-
-# View all options
-./build-production.sh --help
-```
-
-**What it does:**
-- Converts Sage Blade templates → Traditional PHP templates
-- Compiles Vite assets → Production CSS/JS
-- Exports database → SQL file with import instructions  
-- Creates wp-content folder → Ready for upload
-- Optional FTP deployment → Automatic upload to hosting
-
-### FTP Configuration
-
-**Secure method (recommended):**
-```bash
-# Copy and configure FTP credentials
-cp ftp-config.example.sh ftp-config.sh
-# Edit with your hosting details
-```
-
-**Supported hosting providers:**
-- Afrihost, Hetzner, SiteGround, Bluehost, GoDaddy, and more
-- See [HOSTING-PROVIDERS.md](docs/HOSTING-PROVIDERS.md) for specific configurations
-
-## 🏗️ Project Structure
-
-```
-trinity-health-website/
-├── web/                          # Document root
-│   ├── app/                      # WordPress content
-│   │   ├── themes/trinity-health/   # Sage theme
-│   │   ├── plugins/              # Managed plugins
-│   │   └── uploads/              # Media files
-│   └── wp/                       # WordPress core (Composer)
-├── build-production.sh           # Build & deployment script
-├── ftp-config.example.sh         # FTP configuration template
-├── docs/                         # Documentation
-└── dist-production/              # Build output (created by script)
-    ├── wp-content/               # Upload to hosting
-    ├── database-export.sql       # Import via phpMyAdmin
-    └── import-database.txt       # Database import instructions
-```
-
-## 🎯 Development Workflow
-
-### Daily Development
-```bash
-# Start environment
-ddev start
-
-# Start development server with HMR
-ddev exec --dir=/var/www/html/web/app/themes/trinity-health npm run dev
-
-# Make changes to:
-# - resources/views/ (Blade templates)
-# - resources/styles/ (CSS/Tailwind)
-# - resources/scripts/ (JavaScript)
-```
-
-### Content Management
-```bash
-# Add new plugins
-ddev composer require wpackagist-plugin/plugin-name
-
-# WordPress CLI commands
-ddev wp theme list
-ddev wp plugin activate plugin-name
-ddev wp db export backup.sql
-```
-
-### Deployment
-```bash
-# Build and deploy changes
-source ftp-config.sh && ./build-production.sh --deploy
-```
-
-## 🔧 Technology Stack
-
-### Development
-- **PHP 8.2+** - Required for Sage v11
-- **Node.js 18+** - For Vite build system
-- **DDEV** - Containerized development environment
-- **Composer** - PHP dependency management
-
-### Frontend
-- **Sage v11** - WordPress theme framework
-- **Laravel Blade** - Template engine
-- **Vite** - Build tool with HMR
-- **Tailwind CSS v4** - Utility-first CSS
-- **JavaScript ES6+** - Modern JavaScript
-
-### Backend
-- **WordPress 6.7.1** - Content management system
-- **Bedrock** - WordPress boilerplate
-- **Advanced Custom Fields** - Custom content fields
-- **Contact Form 7** - Contact forms
-- **Rank Math SEO** - Search engine optimization
-
-## 🏥 Healthcare Features
-
-### Custom Post Types
-- **Health Services** - General medical services
-- **Audiology Services** - Hearing healthcare specialization
-- **Team Members** - Staff profiles and credentials
-- **Locations** - Clinic information (Lusaka & Kitwe)
-- **Testimonials** - Patient reviews and feedback
-
-### Trinity Health Branding
-- **Primary Color:** #880005 (Trinity maroon)
-- **Typography:** Inter font family
-- **Design:** Mayo Clinic inspired healthcare design
-- **Content:** Dr. Alfred Mwamba and Trinity Health messaging
-
-## 🔒 Security Features
-
-- **Bedrock security** - wp-config.php outside document root
-- **Composer-managed plugins** - No admin plugin installations
-- **Environment-based configuration** - Separate dev/production configs
-- **Database security** - Custom table prefix `th_`
-- **SSL enforcement** - HTTPS redirect and secure headers
-- **File permissions** - Proper WordPress file permissions
-
-## 📊 Performance Optimizations
-
-- **Vite build system** - Fast asset compilation and HMR
-- **Tailwind CSS purging** - Removes unused CSS in production
-- **Image optimization** - WebP conversion and lazy loading
-- **Caching headers** - Browser and server-side caching
-- **CDN ready** - Assets optimized for content delivery networks
-
-## 🆘 Support & Troubleshooting
+## 🚨 Troubleshooting
 
 ### Common Issues
-- **Requirements check failed** → `ddev start && ddev wp core is-installed`
-- **Theme assets not built** → `npm run build` in theme directory
-- **FTP connection failed** → Check credentials in `ftp-config.sh`
-- **Database import error** → Use phpMyAdmin in hosting control panel
+- **Scripts not loading**: Run `ddev npm run build` and clear cache
+- **Database import fails**: Check credentials in `.env`
+- **FTP timeout**: Reduce parallel connections in deploy script
+- **Redirect loops**: Clear browser cache and WordPress transients
 
-### Getting Help
-1. Check [DEPLOYMENT-GUIDE.md](docs/DEPLOYMENT-GUIDE.md) troubleshooting section
-2. Review error logs in hosting control panel
-3. Test changes locally with DDEV before deploying
-4. Contact hosting provider for server-specific issues
+### Get Help
+- Check [Deployment Guide](docs/DEPLOYMENT.md) for detailed instructions
+- Run `php scripts/wp-diagnostics.php` for system health check
+- Review server logs for specific errors
 
-## 📈 Project Status
+## 📝 License
 
-**Current Phase:** Phase 2B - Build Script for Shared Hosting ✅  
-**Next Phase:** Phase 3 - Theme Development (Mayo Clinic Inspired)
-
-See [Development Tracker](docs/trinity-health-website-Development-phases-checklists-plan.md) for detailed progress.
-
-## 🤝 Contributing
-
-This is a client project for Trinity Health Zambia. Development follows the established Bedrock + Sage workflow with modern WordPress best practices.
-
----
-
-**Built with ❤️ for Trinity Health Zambia**  
-*Professional healthcare website development using modern WordPress stack*
+© 2025 Trinity Health Zambia. All rights reserved.
