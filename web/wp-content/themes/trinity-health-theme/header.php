@@ -166,8 +166,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 72px;
-            height: 72px;
+            width: 48px;
+            height: 48px;
             padding: 0;
             background: transparent;
             border: none;
@@ -182,8 +182,8 @@
 
         .mobile-menu-toggle .menu-icon,
         .mobile-menu-toggle .close-icon {
-            width: 72px;
-            height: 72px;
+            width: 36px;
+            height: 36px;
         }
 
         .mobile-menu-toggle .close-icon {
@@ -388,14 +388,14 @@
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle lg:hidden" aria-label="Toggle menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e('Menu', 'trinity-health'); ?></span>
-                    <svg class="menu-icon" width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <svg class="menu-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
                     </svg>
-                    <svg class="close-icon" width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <svg class="close-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
