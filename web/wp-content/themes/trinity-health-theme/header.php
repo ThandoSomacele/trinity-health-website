@@ -148,11 +148,18 @@
     <style>
         /* Mobile menu visibility and transitions */
         .mobile-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
             background: #880005 !important;
             /* Trinity maroon */
             background-color: #880005 !important;
             overflow: hidden;
             transition: all 0.4s ease-in-out;
+            z-index: 999 !important;
+            max-height: calc(100vh - 80px) !important; /* Prevent covering entire screen */
+            overflow-y: auto !important; /* Allow scrolling if content is too tall */
         }
 
         .mobile-menu>div {
@@ -328,8 +335,8 @@
 
     <a class="skip-links screen-reader-text" href="#main"><?php esc_html_e('Skip to main content', 'trinity-health'); ?></a>
 
-    <header class="site-header bg-trinity-maroon shadow-lg" role="banner">
-        <div class="max-w-7xl mx-auto px-6">
+    <header class="site-header bg-trinity-maroon shadow-lg relative" role="banner">
+        <div class="max-w-7xl mx-auto px-6 relative">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Section -->
                 <div class="site-logo flex items-center">
@@ -376,7 +383,7 @@
 
             <!-- Mobile Menu -->
             <div class="mobile-menu lg:hidden hidden">
-                <div class="py-4 border-t border-trinity-maroon-light">
+                <div class="py-4">
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
