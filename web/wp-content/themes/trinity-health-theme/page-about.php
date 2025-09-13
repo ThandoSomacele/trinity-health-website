@@ -264,9 +264,9 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Paediatric Clinic',
+                    'title' => 'Paediatrics Clinic',
                     'desc' => 'Specialized care for infants, children, and adolescents with a gentle approach.',
-                    'link' => home_url('/pediatrics-service'),
+                    'link' => home_url('/paediatrics-service'),
                     'svg' => '<svg class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" stroke-width="6">
                         <path d="m14.078 12.617c0.1875 0.24219 0.46875 0.37109 0.75391 0.37109 0.20312 0 0.40625-0.0625 0.57812-0.19531 0.41406-0.32031 0.49219-0.91797 0.17188-1.332l-6.707-8.7188c-0.32031-0.41406-0.91406-0.49219-1.332-0.17188-0.41406 0.32031-0.49219 0.91797-0.17188 1.332z" />
                         <path d="m23.492 2.2383c-0.14453-0.50391-0.67188-0.79688-1.1719-0.65234-0.50391 0.14453-0.79687 0.66797-0.65234 1.1758l1.8477 6.4883c0.11719 0.41797 0.5 0.69141 0.91406 0.69141 0.085937 0 0.17578-0.011718 0.26172-0.035156 0.50391-0.14453 0.79688-0.66797 0.65234-1.1758z" />
@@ -277,8 +277,8 @@ get_header(); ?>
                     </svg>'
                 ],
                 [
-                    'title' => 'Pathology Clinic',
-                    'desc' => 'Advanced diagnostic testing and laboratory services for accurate health assessments.',
+                    'title' => 'General Medicine',
+                    'desc' => 'Comprehensive primary care services for diagnosis, treatment, and prevention of common conditions.',
                     'link' => home_url('/general-medicine-service'),
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" class="w-10 h-10 text-trinity-maroon group-hover:text-white" fill="currentColor" stroke-width="6">
                         <path d="m91.805 38.656c0.52344 0 0.94922-0.42578 0.94922-0.94922 0-5.0273-4.0898-9.1172-9.1172-9.1172-0.52344 0-0.94922 0.42578-0.94922 0.94922 0 0.52344 0.42578 0.94922 0.94922 0.94922 3.9805 0 7.2188 3.2383 7.2188 7.2188-0.003907 0.52344 0.42188 0.94922 0.94922 0.94922z" />

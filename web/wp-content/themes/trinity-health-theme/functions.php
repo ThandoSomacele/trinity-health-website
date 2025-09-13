@@ -60,6 +60,78 @@ function trinity_reading_time() {
     $reading_time = ceil($word_count / 200); // Average reading speed of 200 words per minute
     return $reading_time;
 }
+
+/**
+ * Convert markdown content to HTML with styled lists
+ * 
+ * @param string $content The content to convert
+ * @return string Converted HTML content
+ */
+function trinity_convert_markdown_to_html($content) {
+    // Convert headers
+    $content = preg_replace('/^### (.*?)$/m', '<h3>$1</h3>', $content);
+    $content = preg_replace('/^## (.*?)$/m', '<h2>$1</h2>', $content);
+    $content = preg_replace('/^# (.*?)$/m', '<h1>$1</h1>', $content);
+    
+    // Convert bold text
+    $content = preg_replace('/\*\*(.*?)\*\*/s', '<strong>$1</strong>', $content);
+    
+    // Convert italic text
+    $content = preg_replace('/\*(.*?)\*/s', '<em>$1</em>', $content);
+    
+    // Convert unordered lists with styled-list class
+    $content = preg_replace_callback('/^((?:- .*\n?)+)/m', function($matches) {
+        $items = explode("\n", trim($matches[1]));
+        $html = '<ul class="styled-list">';
+        foreach ($items as $item) {
+            if (trim($item)) {
+                $item = preg_replace('/^- /', '', $item);
+                $html .= '<li>' . trim($item) . '</li>';
+            }
+        }
+        $html .= '</ul>';
+        return $html;
+    }, $content);
+    
+    // Convert ordered lists with styled-list class
+    $content = preg_replace_callback('/^((?:\d+\. .*\n?)+)/m', function($matches) {
+        $items = explode("\n", trim($matches[1]));
+        $html = '<ol class="styled-list">';
+        foreach ($items as $item) {
+            if (trim($item)) {
+                $item = preg_replace('/^\d+\. /', '', $item);
+                $html .= '<li>' . trim($item) . '</li>';
+            }
+        }
+        $html .= '</ol>';
+        return $html;
+    }, $content);
+    
+    // Convert paragraphs
+    $paragraphs = explode("\n\n", $content);
+    $html = '';
+    foreach ($paragraphs as $paragraph) {
+        $paragraph = trim($paragraph);
+        if ($paragraph && !preg_match('/^<[^>]+>/', $paragraph)) {
+            $html .= '<p>' . $paragraph . '</p>';
+        } else {
+            $html .= $paragraph;
+        }
+    }
+    
+    return $html;
+}
+
+/**
+ * Filter the content to convert markdown to HTML
+ */
+function trinity_filter_content($content) {
+    if (is_single() && in_the_loop() && is_main_query()) {
+        return trinity_convert_markdown_to_html($content);
+    }
+    return $content;
+}
+add_filter('the_content', 'trinity_filter_content', 5);
 require_once TRINITY_THEME_PATH . '/inc/custom-post-types.php'; // Services, Team, Testimonials
 require_once TRINITY_THEME_PATH . '/inc/acf-fields.php';     // Advanced Custom Fields setup
 

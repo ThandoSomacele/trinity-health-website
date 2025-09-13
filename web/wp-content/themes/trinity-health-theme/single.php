@@ -108,16 +108,45 @@ get_header(); ?>
                     .prose h6 {
                         color: #111827;
                         font-weight: 700;
-                        margin-top: 2rem;
-                        margin-bottom: 1rem;
+                        margin-top: 2.5rem;
+                        margin-bottom: 1.25rem;
+                        line-height: 1.3;
+                    }
+
+                    .prose h1 {
+                        font-size: 2.25rem;
+                        color: #111827;
                     }
 
                     .prose h2 {
                         font-size: 1.875rem;
+                        color: #A31D1D;
                     }
 
                     .prose h3 {
                         font-size: 1.5rem;
+                        color: #6D2323;
+                        margin-top: 2rem;
+                    }
+
+                    .prose h4 {
+                        font-size: 1.25rem;
+                        color: #374151;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.025em;
+                    }
+
+                    .prose h5 {
+                        font-size: 1.125rem;
+                        color: #4b5563;
+                        font-weight: 600;
+                    }
+
+                    .prose h6 {
+                        font-size: 1rem;
+                        color: #6b7280;
+                        font-weight: 600;
                     }
 
                     .prose p {
@@ -159,8 +188,22 @@ get_header(); ?>
                     }
 
                     .prose strong {
-                        color: #111827;
-                        font-weight: 600;
+                        color: #A31D1D;
+                        font-weight: 700;
+                        background: linear-gradient(to bottom, transparent 60%, #FEF3C7 60%);
+                        padding: 0 2px;
+                    }
+
+                    .prose em {
+                        color: #6D2323;
+                        font-style: italic;
+                    }
+
+                    .prose strong em,
+                    .prose em strong {
+                        color: #A31D1D;
+                        font-weight: 700;
+                        font-style: italic;
                     }
 
                     .prose code {
@@ -196,6 +239,96 @@ get_header(); ?>
                     .prose td {
                         padding: 0.75rem;
                         border-bottom: 1px solid #e5e7eb;
+                    }
+
+                    /* Styled list styles */
+                    .styled-list {
+                        margin: 2rem 0;
+                        padding: 1.5rem;
+                        padding-left: 1rem;
+                        list-style: none;
+                        background: linear-gradient(135deg, #FEF3C7 0%, #FEF9E7 100%);
+                        border-left: 4px solid #A31D1D;
+                        border-radius: 0.5rem;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .styled-list li {
+                        position: relative;
+                        padding-left: 2rem;
+                        margin-bottom: 0.75rem;
+                        line-height: 1.75;
+                        color: #374151;
+                        font-size: 1.0625rem;
+                    }
+
+                    .styled-list li:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    /* Custom bullet for unordered lists */
+                    ul.styled-list li::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0.625rem;
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background-color: #A31D1D;
+                        border-radius: 50%;
+                    }
+
+                    /* Custom numbering for ordered lists */
+                    ol.styled-list {
+                        counter-reset: styled-counter;
+                    }
+
+                    ol.styled-list li {
+                        counter-increment: styled-counter;
+                    }
+
+                    ol.styled-list li::before {
+                        content: counter(styled-counter);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        background-color: #A31D1D;
+                        color: white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        font-size: 0.875rem;
+                    }
+
+                    /* Nested lists */
+                    .styled-list .styled-list {
+                        margin-top: 0.75rem;
+                        margin-bottom: 0.75rem;
+                        padding: 1rem;
+                        background: rgba(255, 255, 255, 0.5);
+                        border-left: 3px solid #E5D0AC;
+                    }
+
+                    .styled-list .styled-list li {
+                        padding-left: 1.5rem;
+                        font-size: 1rem;
+                    }
+
+                    ul.styled-list ul.styled-list li::before {
+                        width: 0.375rem;
+                        height: 0.375rem;
+                        background-color: #6D2323;
+                        top: 0.75rem;
+                    }
+
+                    /* Hover effects for list items */
+                    .styled-list li:hover {
+                        color: #111827;
+                        transition: color 0.2s ease;
                     }
                 </style>
 

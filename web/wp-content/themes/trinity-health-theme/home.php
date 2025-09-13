@@ -22,28 +22,41 @@ get_header(); ?>
 </style>
 
 <!-- Page Hero Section -->
-<section class="relative bg-gradient-to-r from-trinity-maroon to-trinity-maroon-dark py-20 lg:py-24">
+<section class="relative bg-trinity-maroon py-24 lg:py-32 overflow-hidden">
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-trinity-maroon via-trinity-maroon to-trinity-maroon-dark opacity-90"></div>
+    
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full"></div>
+        <div class="absolute top-1/2 -right-32 w-96 h-96 bg-white/5 rounded-full"></div>
+        <div class="absolute -bottom-20 left-1/3 w-80 h-80 bg-white/5 rounded-full"></div>
+    </div>
+    
     <div class="content-container relative z-10">
         <div class="text-center">
-            <h1 class="text-white text-4xl md:text-5xl font-bold mb-4">
-                <?php
-                if (is_category()) {
-                    single_cat_title();
-                } elseif (is_tag()) {
-                    single_tag_title();
-                } elseif (is_author()) {
-                    echo 'Articles by ' . get_the_author();
-                } elseif (is_date()) {
-                    echo 'Archives';
-                } else {
-                    echo 'Latest Articles';
-                }
-                ?>
+            <!-- Blog Badge -->
+            <div class="mb-4">
+                <span class="bg-trinity-gold text-black px-4 py-2 rounded-full text-sm font-semibold inline-block">
+                    Health Blog
+                </span>
+            </div>
+            
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Health & Wellness Articles
             </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-white/80 text-lg max-w-2xl mx-auto mb-6">
+                Expert health advice, medical insights, and wellness tips from Trinity Health's team of healthcare professionals
+            </p>
 
             <!-- Breadcrumbs -->
             <nav class="flex justify-center items-center space-x-2 text-white/90 text-sm">
-                <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Home</a>
+                <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors flex items-center">
+                    <i data-lucide="home" class="w-4 h-4 mr-1"></i>
+                    Home
+                </a>
                 <span class="text-white/60">/</span>
                 <span>Blog</span>
             </nav>
