@@ -277,16 +277,16 @@ get_header(); ?>
 
                     <div class="space-y-4">
                         <div class="flex justify-between py-3 border-b border-gray-200">
-                            <span class="text-gray-700 font-medium">Monday - Friday</span>
-                            <span class="text-trinity-maroon font-semibold">8:00 AM - 5:00 PM</span>
+                            <span class="text-sm text-gray-700 font-medium">Monday - Friday</span>
+                            <span class="text-sm text-trinity-maroon font-semibold">8:00 AM - 5:00 PM</span>
                         </div>
                         <div class="flex justify-between py-3 border-b border-gray-200">
-                            <span class="text-gray-700 font-medium">Saturday</span>
-                            <span class="text-trinity-maroon font-semibold">9:00 AM - 2:00 PM</span>
+                            <span class="text-sm text-gray-700 font-medium">Saturday</span>
+                            <span class="text-sm text-trinity-maroon font-semibold">9:00 AM - 2:00 PM</span>
                         </div>
                         <div class="flex justify-between py-3">
-                            <span class="text-gray-700 font-medium">Sunday</span>
-                            <span class="text-trinity-maroon font-semibold">Closed</span>
+                            <span class="text-sm text-gray-700 font-medium">Sunday</span>
+                            <span class="text-sm text-trinity-maroon font-semibold">Closed</span>
                         </div>
                     </div>
 
