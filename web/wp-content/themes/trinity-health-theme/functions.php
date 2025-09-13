@@ -50,6 +50,75 @@ require_once TRINITY_THEME_PATH . '/inc/setup.php';          // Theme setup and 
 require_once TRINITY_THEME_PATH . '/inc/enqueue.php';        // Asset loading (CSS, JS)
 
 /**
+ * Add Open Graph meta tags for social media sharing
+ */
+function trinity_add_open_graph_tags() {
+    // Default values
+    $og_title = get_bloginfo('name');
+    $og_description = get_bloginfo('description');
+    $og_url = home_url('/');
+    $og_image = home_url('/wp-content/uploads/2025/09/hero-audiology-1.webp');
+    $og_type = 'website';
+    
+    // For single posts and pages
+    if (is_single() || is_page()) {
+        $og_title = get_the_title();
+        $og_url = get_permalink();
+        $og_type = is_single() ? 'article' : 'website';
+        
+        // Get excerpt or custom description
+        if (has_excerpt()) {
+            $og_description = get_the_excerpt();
+        } else {
+            $content = get_the_content();
+            $og_description = wp_trim_words(strip_tags($content), 30, '...');
+        }
+        
+        // Check for featured image
+        if (has_post_thumbnail()) {
+            $thumbnail_id = get_post_thumbnail_id();
+            $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
+            if ($thumbnail) {
+                $og_image = $thumbnail[0];
+            }
+        }
+    }
+    
+    // For archive pages
+    if (is_archive()) {
+        if (is_category()) {
+            $og_title = single_cat_title('', false) . ' - ' . get_bloginfo('name');
+            $og_description = category_description();
+        } elseif (is_tag()) {
+            $og_title = single_tag_title('', false) . ' - ' . get_bloginfo('name');
+            $og_description = tag_description();
+        }
+    }
+    
+    // Output Open Graph meta tags
+    ?>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="<?php echo esc_attr($og_title); ?>" />
+    <meta property="og:description" content="<?php echo esc_attr($og_description); ?>" />
+    <meta property="og:url" content="<?php echo esc_url($og_url); ?>" />
+    <meta property="og:image" content="<?php echo esc_url($og_image); ?>" />
+    <meta property="og:type" content="<?php echo esc_attr($og_type); ?>" />
+    <meta property="og:site_name" content="<?php echo esc_attr(get_bloginfo('name')); ?>" />
+    <meta property="og:locale" content="<?php echo esc_attr(get_locale()); ?>" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<?php echo esc_attr($og_title); ?>" />
+    <meta name="twitter:description" content="<?php echo esc_attr($og_description); ?>" />
+    <meta name="twitter:image" content="<?php echo esc_url($og_image); ?>" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="<?php echo esc_attr($og_description); ?>" />
+    <?php
+}
+add_action('wp_head', 'trinity_add_open_graph_tags', 5);
+
+/**
  * Calculate reading time for posts
  * 
  * @return int Reading time in minutes
