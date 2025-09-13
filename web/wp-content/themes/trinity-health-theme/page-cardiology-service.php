@@ -219,7 +219,7 @@ get_header(); ?>
                                 </svg>
                             </div>
                             <div class="faq-answer text-base">
-                                Call us at +260 955 333 007 or visit our contact page to book your appointment online. We offer flexible scheduling to accommodate your needs.
+                                Call us at <a href="tel:+260955333007" class="text-trinity-maroon hover:text-trinity-maroon-dark font-semibold">+260 955 333 007</a> or visit our contact page to book your appointment online. We offer flexible scheduling to accommodate your needs.
                             </div>
                         </div>
 

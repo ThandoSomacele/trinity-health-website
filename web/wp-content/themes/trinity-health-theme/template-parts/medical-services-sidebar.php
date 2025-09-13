@@ -38,8 +38,8 @@ $current_page_slug = get_post_field('post_name', get_post());
                 [
                     'title' => 'Paediatric Clinic',
                     'icon' => 'baby',
-                    'slug' => 'pediatrics-service',
-                    'url' => home_url('/pediatrics-service')
+                    'slug' => 'paediatrics-service',
+                    'url' => home_url('/paediatrics-service')
                 ],
                 [
                     'title' => 'Cardiac Clinic',

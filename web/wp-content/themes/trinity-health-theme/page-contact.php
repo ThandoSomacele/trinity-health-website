@@ -73,7 +73,7 @@ get_header(); ?>
                     <i data-lucide="phone" class="w-8 h-8 text-trinity-maroon"></i>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Help Line</h3>
-                <p class="text-gray-600">(+260) 955 333 007</p>
+                <a href="tel:+260955333007" class="text-gray-600 hover:text-trinity-maroon transition-colors block">(+260) 955 333 007</a>
             </div>
 
             <!-- Location Card -->
@@ -91,7 +91,7 @@ get_header(); ?>
                     <i data-lucide="mail" class="w-8 h-8 text-trinity-maroon"></i>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Email Address</h3>
-                <p class="text-gray-600">info@trinityhealth.co.zm</p>
+                <a href="mailto:info@trinityhealth.co.zm" class="text-gray-600 hover:text-trinity-maroon transition-colors block">info@trinityhealth.co.zm</a>
             </div>
         </div>
     </div>
