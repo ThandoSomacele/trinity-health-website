@@ -31,7 +31,7 @@ function trinity_health_enqueue_assets() {
         'trinity-health-style',
         TRINITY_THEME_URL . '/build/index.css',
         array(),
-        $asset['version']
+        $asset['version'] . '.' . time() // Add timestamp for cache busting
     );
     
     // Enqueue Swiper CSS - Try CDN first, with local fallback

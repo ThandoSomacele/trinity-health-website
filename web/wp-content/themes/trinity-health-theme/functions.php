@@ -48,6 +48,18 @@ function trinity_health_get_logo($background_type = 'dark')
  */
 require_once TRINITY_THEME_PATH . '/inc/setup.php';          // Theme setup and WordPress feature support
 require_once TRINITY_THEME_PATH . '/inc/enqueue.php';        // Asset loading (CSS, JS)
+
+/**
+ * Calculate reading time for posts
+ * 
+ * @return int Reading time in minutes
+ */
+function trinity_reading_time() {
+    $content = get_post_field('post_content', get_the_ID());
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // Average reading speed of 200 words per minute
+    return $reading_time;
+}
 require_once TRINITY_THEME_PATH . '/inc/custom-post-types.php'; // Services, Team, Testimonials
 require_once TRINITY_THEME_PATH . '/inc/acf-fields.php';     // Advanced Custom Fields setup
 

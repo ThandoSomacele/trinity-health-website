@@ -379,7 +379,8 @@
 
                     <!-- Book Appointment Button -->
                     <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>"
-                        class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center ml-4">
+                        class="book-appointment-btn bg-transparent border-2 border-trinity-gold text-trinity-gold px-4 py-2 rounded-full hover:bg-trinity-gold hover:text-black transition-all duration-300 inline-flex items-center"
+                        style="margin-left: 2.5rem;">
                         <i data-lucide="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
                         <?php esc_html_e('Book Appointment', 'trinity-health'); ?>
                     </a>

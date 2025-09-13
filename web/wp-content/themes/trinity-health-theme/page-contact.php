@@ -107,101 +107,118 @@ get_header(); ?>
         </div>
 
         <div class="max-w-5xl mx-auto">
-            <!-- Contact Form -->
-            <form method="POST" action="" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Name -->
-                    <div>
-                        <input type="text" 
-                               name="name" 
-                               placeholder="Enter Your Full Name"
-                               required
-                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                    </div>
-
-                    <!-- Email -->
-                    <div>
-                        <input type="email" 
-                               name="email" 
-                               placeholder="Enter Your Email"
-                               required
-                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Phone -->
-                    <div>
-                        <input type="tel" 
-                               name="phone" 
-                               placeholder="Enter Your Phone Number"
-                               required
-                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                    </div>
-
-                    <!-- Subject -->
-                    <div>
-                        <input type="text" 
-                               name="subject" 
-                               placeholder="Your Subject"
-                               required
-                               class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all">
-                    </div>
-                </div>
-
-                <!-- Message -->
-                <div>
-                    <textarea name="message" 
-                              rows="6" 
-                              placeholder="Type Your Message"
-                              required
-                              class="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent transition-all resize-none"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="text-center">
-                    <button type="submit" 
-                            class="bg-trinity-maroon text-white px-12 py-4 rounded-full font-semibold hover:bg-trinity-maroon-dark transition-all duration-300 inline-flex items-center">
-                        Book Now
-                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                    </button>
-                </div>
-            </form>
-
-            <?php
-            // Handle form submission
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Sanitize form data
-                $name = sanitize_text_field($_POST['name']);
-                $email = sanitize_email($_POST['email']);
-                $phone = sanitize_text_field($_POST['phone']);
-                $subject = sanitize_text_field($_POST['subject']);
-                $message = sanitize_textarea_field($_POST['message']);
-                
-                // Prepare email
-                $to = get_option('admin_email');
-                $email_subject = 'Contact Form: ' . $subject;
-                $email_body = "Name: $name\n";
-                $email_body .= "Email: $email\n";
-                $email_body .= "Phone: $phone\n";
-                $email_body .= "Subject: $subject\n\n";
-                $email_body .= "Message:\n$message";
-                
-                $headers = array(
-                    'From: ' . $name . ' <' . $email . '>',
-                    'Reply-To: ' . $email
-                );
-                
-                // Send email
-                $sent = wp_mail($to, $email_subject, $email_body, $headers);
-                
-                if ($sent) {
-                    echo '<div class="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">Thank you for your message. We will get back to you soon!</div>';
-                } else {
-                    echo '<div class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">Sorry, there was an error sending your message. Please try again later.</div>';
+            <!-- Contact Form 7 Integration -->
+            <div class="trinity-contact-form">
+                <?php echo do_shortcode('[contact-form-7 id="06b1488" title="Contact form 1" html_class="trinity-cf7-form"]'); ?>
+            </div>
+            
+            <style>
+                /* Style Contact Form 7 to match your design */
+                .trinity-contact-form .wpcf7-form {
+                    display: block;
                 }
-            }
-            ?>
+                
+                .trinity-contact-form .wpcf7-form p {
+                    margin-bottom: 1.5rem;
+                }
+                
+                .trinity-contact-form .wpcf7-form .wpcf7-form-control-wrap {
+                    display: block;
+                    width: 100%;
+                }
+                
+                .trinity-contact-form input[type="text"],
+                .trinity-contact-form input[type="email"],
+                .trinity-contact-form input[type="tel"],
+                .trinity-contact-form textarea {
+                    width: 100%;
+                    padding: 1rem 1.25rem;
+                    background: white;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 0.5rem;
+                    color: #111827;
+                    font-size: 1rem;
+                    transition: all 0.3s;
+                }
+                
+                .trinity-contact-form input[type="text"]:focus,
+                .trinity-contact-form input[type="email"]:focus,
+                .trinity-contact-form input[type="tel"]:focus,
+                .trinity-contact-form textarea:focus {
+                    outline: none;
+                    border-color: #E5D0AC;
+                    box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
+                }
+                
+                .trinity-contact-form input[type="submit"] {
+                    background-color: #A31D1D;
+                    color: white;
+                    padding: 1rem 3rem;
+                    border-radius: 9999px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    border: none;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                
+                .trinity-contact-form input[type="submit"]:hover {
+                    background-color: #6D2323;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 25px rgba(163, 29, 29, 0.2);
+                }
+                
+                /* Response messages */
+                .trinity-contact-form .wpcf7-response-output {
+                    margin: 1.5rem 0;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    font-weight: 500;
+                }
+                
+                .trinity-contact-form .wpcf7-mail-sent-ok {
+                    background-color: #d1fae5;
+                    border: 1px solid #6ee7b7;
+                    color: #065f46;
+                }
+                
+                .trinity-contact-form .wpcf7-mail-sent-ng,
+                .trinity-contact-form .wpcf7-validation-errors,
+                .trinity-contact-form .wpcf7-spam-blocked {
+                    background-color: #fee2e2;
+                    border: 1px solid #fca5a5;
+                    color: #991b1b;
+                }
+                
+                /* Validation errors */
+                .trinity-contact-form .wpcf7-not-valid-tip {
+                    color: #ef4444;
+                    font-size: 0.875rem;
+                    margin-top: 0.25rem;
+                }
+                
+                /* Grid layout for form fields */
+                .trinity-contact-form .cf7-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+                
+                @media (min-width: 768px) {
+                    .trinity-contact-form .cf7-grid-2 {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                /* Submit button container */
+                .trinity-contact-form .cf7-submit-wrapper {
+                    text-align: center;
+                    margin-top: 1.5rem;
+                }
+            </style>
         </div>
     </div>
 </section>
