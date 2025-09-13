@@ -90,7 +90,7 @@ get_header(); ?>
                             </p>
 
                             <!-- Read More -->
-                            <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-trinity-maroon font-medium hover:text-trinity-maroon-dark hover:gap-3 transition-all">
+                            <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-trinity-maroon font-medium hover:text-trinity-maroon-dark transition-all">
                                 <i data-lucide="circle-arrow-right" class="w-5 h-5 mr-2"></i>
                                 Read More
                             </a>
