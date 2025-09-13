@@ -369,28 +369,6 @@ get_header(); ?>
         </div>
     </article>
 
-    <!-- Author Bio -->
-    <section class="py-12 bg-gray-50">
-        <div class="content-container">
-            <div class="article-content">
-                <div class="bg-white rounded-xl p-8 shadow-lg">
-                    <div class="flex flex-col md:flex-row gap-6 items-center md:items-start">
-                        <?php echo get_avatar(get_the_author_meta('ID'), 120, '', '', ['class' => 'w-24 h-24 rounded-full']); ?>
-                        <div class="flex-1 text-center md:text-left">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">About <?php the_author(); ?></h3>
-                            <p class="text-gray-600 mb-4">
-                                <?php echo get_the_author_meta('description'); ?>
-                            </p>
-                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="inline-flex items-center text-trinity-maroon font-semibold hover:text-trinity-maroon-dark transition-colors">
-                                View all posts
-                                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Related Posts -->
     <section class="py-12 bg-white">
