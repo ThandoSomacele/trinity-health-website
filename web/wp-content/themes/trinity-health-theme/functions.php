@@ -13,7 +13,13 @@ if (!defined('ABSPATH')) {
 }
 
 // Theme constants
-define('TRINITY_THEME_VERSION', '1.0.0');
+// Dynamic versioning based on theme modification time for cache busting
+$theme_version = '1.0.0'; // Base version
+$theme_mod_time = filemtime(get_template_directory() . '/style.css');
+if ($theme_mod_time) {
+    $theme_version .= '.' . $theme_mod_time;
+}
+define('TRINITY_THEME_VERSION', $theme_version);
 define('TRINITY_THEME_URL', get_template_directory_uri());
 define('TRINITY_THEME_PATH', get_template_directory());
 

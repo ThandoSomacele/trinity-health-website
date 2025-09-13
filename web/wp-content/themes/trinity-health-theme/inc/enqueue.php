@@ -31,7 +31,7 @@ function trinity_health_enqueue_assets() {
         'trinity-health-style',
         TRINITY_THEME_URL . '/build/index.css',
         array(),
-        $asset['version'] . '.' . time() // Add timestamp for cache busting
+        TRINITY_THEME_VERSION // Use dynamic version for cache busting
     );
     
     // Enqueue Swiper CSS - Try CDN first, with local fallback
@@ -74,7 +74,7 @@ function trinity_health_enqueue_assets() {
         'trinity-health-script',
         TRINITY_THEME_URL . '/build/index.js',
         array_merge($asset['dependencies'], array('swiper-js')),
-        $asset['version'],
+        TRINITY_THEME_VERSION,
         true // Load in footer
     );
     
@@ -171,7 +171,7 @@ function trinity_health_enqueue_block_editor_assets() {
         'trinity-health-block-editor',
         TRINITY_THEME_URL . '/build/editor.css',
         array(),
-        $asset['version']
+        TRINITY_THEME_VERSION
     );
     
     // Enqueue block editor JavaScript
@@ -179,7 +179,7 @@ function trinity_health_enqueue_block_editor_assets() {
         'trinity-health-block-editor',
         TRINITY_THEME_URL . '/build/editor.js',
         $asset['dependencies'],
-        $asset['version'],
+        TRINITY_THEME_VERSION,
         true
     );
 }
@@ -206,8 +206,8 @@ add_filter('script_loader_tag', 'trinity_health_add_script_attributes', 10, 3);
  * Preload critical assets
  */
 function trinity_health_preload_assets() {
-    // Preload main CSS file
-    echo '<link rel="preload" href="' . TRINITY_THEME_URL . '/build/index.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+    // Preload main CSS file with version for cache busting
+    echo '<link rel="preload" href="' . TRINITY_THEME_URL . '/build/index.css?ver=' . TRINITY_THEME_VERSION . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
     
     // Preload critical fonts if any
     // echo '<link rel="preload" href="' . TRINITY_THEME_URL . '/assets/fonts/font-file.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
