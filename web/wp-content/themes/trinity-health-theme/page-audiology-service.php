@@ -130,9 +130,9 @@ get_header(); ?>
 <!-- Main Content Section -->
 <section class="py-16 bg-white">
     <div class="content-container">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12 items-start">
             <!-- Left Column - Main Content -->
-            <div class="lg:col-span-2">
+            <div class="md:col-span-2 lg:col-span-2">
                 <!-- Service Image -->
                 <div class="relative rounded-lg overflow-hidden mb-12">
                     <img src="/wp-content/uploads/2025/09/hero-audiology-1.webp"

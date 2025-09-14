@@ -11,8 +11,8 @@ $current_page_slug = get_post_field('post_name', get_post());
 ?>
 
 <!-- Medical Services Sidebar -->
-<div class="hidden lg:block lg:col-span-1">
-    <div id="medical-services-sidebar" class="bg-gray-50 rounded-lg p-6 lg:sticky lg:top-24" style="max-height: calc(100vh - 120px); overflow-y: auto;">
+<div class="hidden md:block md:col-span-1 lg:col-span-1">
+    <div id="medical-services-sidebar" class="bg-gray-50 rounded-lg p-6 md:sticky md:top-24" style="max-height: calc(100vh - 120px); overflow-y: auto;">
         <h3 class="text-2xl font-semibold text-trinity-maroon-dark mb-6">Medical Services</h3>
         <div class="space-y-4">
             <?php
