@@ -539,17 +539,109 @@ get_template_part('template-parts/sections/latest-news');
 
             </div>
             <div class="bg-trinity-maroon p-6 lg:p-28 lg:col-span-2 h-full">
-                <form class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 placeholder-opacity-50">
-                        <input type="text" placeholder="Name" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
-                        <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
-                    </div>
-                    <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50">
-                    <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-trinity-gold bg-transparent text-white placeholder-white placeholder-opacity-50"></textarea>
-                    <button type="submit" class="bg-trinity-gold text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-trinity-gold-dark transition-all duration-300">
-                        Send Message
-                    </button>
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="303" title="Trinity Health Contact Form" html_class="homepage-contact-form"]'); ?>
+
+                <style>
+                    /* Home Page Contact Form Styling */
+                    .homepage-contact-form .wpcf7-form {
+                        display: block;
+                    }
+
+                    .homepage-contact-form .wpcf7-form p {
+                        margin-bottom: 1rem;
+                    }
+
+                    .homepage-contact-form .cf7-grid {
+                        display: grid;
+                        gap: 1rem;
+                    }
+
+                    .homepage-contact-form .cf7-grid-2 {
+                        grid-template-columns: 1fr;
+                    }
+
+                    @media (min-width: 768px) {
+                        .homepage-contact-form .cf7-grid-2 {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+
+                    .homepage-contact-form input[type="text"],
+                    .homepage-contact-form input[type="email"],
+                    .homepage-contact-form textarea {
+                        width: 100%;
+                        padding: 0.75rem 1rem;
+                        background: transparent;
+                        border: 1px solid #fff;
+                        border-radius: 0.5rem;
+                        color: #fff;
+                        font-size: 1rem;
+                        transition: all 0.3s;
+                    }
+
+                    .homepage-contact-form input[type="text"]::placeholder,
+                    .homepage-contact-form input[type="email"]::placeholder,
+                    .homepage-contact-form textarea::placeholder {
+                        color: rgba(255, 255, 255, 0.7);
+                    }
+
+                    .homepage-contact-form input[type="text"]:focus,
+                    .homepage-contact-form input[type="email"]:focus,
+                    .homepage-contact-form textarea:focus {
+                        outline: none;
+                        border-color: #E5D0AC;
+                        box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
+                    }
+
+                    .homepage-contact-form .submit-btn {
+                        background-color: #E5D0AC;
+                        color: #1f2937;
+                        padding: 0.75rem 2rem;
+                        border-radius: 9999px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        border: none;
+                        display: inline-block;
+                    }
+
+                    .homepage-contact-form .submit-btn:hover {
+                        background-color: #D4BF9A;
+                        transform: translateY(-2px);
+                    }
+
+                    .homepage-contact-form .wpcf7-response-output {
+                        margin: 1rem 0;
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+
+                    .homepage-contact-form .wpcf7-mail-sent-ok {
+                        background-color: rgba(209, 250, 229, 0.2);
+                        border: 1px solid #6ee7b7;
+                        color: #d1fae5;
+                    }
+
+                    .homepage-contact-form .wpcf7-validation-errors,
+                    .homepage-contact-form .wpcf7-mail-sent-ng {
+                        background-color: rgba(254, 226, 226, 0.2);
+                        border: 1px solid #fca5a5;
+                        color: #fee2e2;
+                    }
+
+                    .homepage-contact-form .wpcf7-not-valid-tip {
+                        color: #fca5a5;
+                        font-size: 0.875rem;
+                        margin-top: 0.25rem;
+                    }
+
+                    .homepage-contact-form .cf7-submit-wrapper {
+                        text-align: left;
+                        margin-top: 1rem;
+                    }
+                </style>
             </div>
 
 

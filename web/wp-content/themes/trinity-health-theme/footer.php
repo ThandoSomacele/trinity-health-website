@@ -100,18 +100,93 @@
                 </div>
 
                 <!-- Newsletter Form -->
-                <form class="newsletter-form" action="#" method="post">
-                    <div class="flex">
-                        <input type="email"
-                            placeholder="<?php esc_attr_e('Enter Your Email', 'trinity-health'); ?>"
-                            class="flex-1 px-3 py-2 text-sm bg-white bg-opacity-10 border border-gray-100 rounded-l-md text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:border-transparent"
-                            required>
-                        <button type="submit"
-                            class="px-4 py-2 text-sm bg-trinity-gold hover:bg-trinity-gold-dark text-black rounded-r-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:ring-offset-2 focus:ring-offset-green-900">
-                            <?php esc_html_e('Send', 'trinity-health'); ?>
-                        </button>
-                    </div>
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="304" title="Trinity Health Newsletter" html_class="footer-newsletter-form"]'); ?>
+
+                <style>
+                    /* Footer Newsletter Form Styling */
+                    .footer-newsletter-form .wpcf7-form {
+                        display: block;
+                    }
+
+                    .footer-newsletter-form .newsletter-cf7-form {
+                        display: flex;
+                        gap: 0;
+                    }
+
+                    .footer-newsletter-form .wpcf7-form p {
+                        margin: 0;
+                        flex: 1;
+                    }
+
+                    .footer-newsletter-form .newsletter-email-input {
+                        flex: 1;
+                        padding: 0.5rem 0.75rem;
+                        font-size: 0.875rem;
+                        background: rgba(255, 255, 255, 0.1);
+                        border: 1px solid rgba(229, 231, 235, 0.3);
+                        border-radius: 0.375rem 0 0 0.375rem;
+                        color: #fff;
+                        transition: all 0.3s;
+                        width: 100%;
+                    }
+
+                    .footer-newsletter-form .newsletter-email-input::placeholder {
+                        color: rgba(229, 231, 235, 0.7);
+                    }
+
+                    .footer-newsletter-form .newsletter-email-input:focus {
+                        outline: none;
+                        border-color: #E5D0AC;
+                        box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
+                    }
+
+                    .footer-newsletter-form .newsletter-submit-btn {
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        background-color: #E5D0AC;
+                        color: #000;
+                        border-radius: 0 0.375rem 0.375rem 0;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        border: none;
+                        white-space: nowrap;
+                    }
+
+                    .footer-newsletter-form .newsletter-submit-btn:hover {
+                        background-color: #D4BF9A;
+                    }
+
+                    .footer-newsletter-form .wpcf7-response-output {
+                        margin: 0.5rem 0 0 0;
+                        padding: 0.5rem;
+                        border-radius: 0.375rem;
+                        font-size: 0.875rem;
+                        text-align: center;
+                    }
+
+                    .footer-newsletter-form .wpcf7-mail-sent-ok {
+                        background-color: rgba(209, 250, 229, 0.2);
+                        border: 1px solid #6ee7b7;
+                        color: #d1fae5;
+                    }
+
+                    .footer-newsletter-form .wpcf7-validation-errors,
+                    .footer-newsletter-form .wpcf7-mail-sent-ng {
+                        background-color: rgba(254, 226, 226, 0.2);
+                        border: 1px solid #fca5a5;
+                        color: #fee2e2;
+                    }
+
+                    .footer-newsletter-form .wpcf7-not-valid-tip {
+                        color: #fca5a5;
+                        font-size: 0.75rem;
+                        margin-top: 0.25rem;
+                    }
+
+                    .footer-newsletter-form .wpcf7-spinner {
+                        display: none;
+                    }
+                </style>
             </div>
         </div>
 
