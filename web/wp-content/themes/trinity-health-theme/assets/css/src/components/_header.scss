@@ -7,7 +7,7 @@
   // Constrain the logo link container to a consistent width
   .custom-logo-link {
     display: inline-block;
-    max-width: 200px; // Match the width defined in setup.php
+    max-width: 200px; // Consistent logo width
     width: 100%;
     height: auto;
   }
@@ -16,7 +16,7 @@
     width: 100% !important;
     height: auto !important; // Maintain aspect ratio
     max-width: 200px !important; // Ensure logo never exceeds this width
-    max-height: 60px !important; // Match the height defined in setup.php
+    max-height: 60px !important; // Proportional height increase
     object-fit: contain;
   }
 }
@@ -25,79 +25,79 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  
+
   // Mobile menu toggle functionality
   .mobile-menu-toggle {
     @apply p-2 text-white hover:text-trinity-gold-light focus:outline-none focus:ring-2 focus:ring-trinity-gold focus:ring-offset-2 focus:ring-offset-trinity-maroon transition-colors;
-    
+
     // Ensure child elements don't block clicks
     * {
       pointer-events: none;
     }
   }
-  
+
   // Mobile menu - JavaScript controls visibility via .hidden class
   .mobile-menu {
     transition: all 0.3s ease-in-out;
-    
+
     // Hide on large screens regardless of .hidden class
     @screen lg {
       display: none !important;
     }
-    
+
     // When hidden class is present, hide the menu
     &.hidden {
       display: none !important;
     }
-    
+
     // When hidden class is removed, show as block
     &:not(.hidden) {
       display: block !important;
     }
-    
+
     a {
       @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-trinity-maroon-light transition-colors;
     }
   }
-  
+
   // Navigation menu styling
   .main-navigation {
     .nav-menu {
       @apply flex items-center space-x-6 list-none m-0 p-0;
-      
+
       li {
         @apply relative;
-        
+
         a {
           @apply text-white hover:text-trinity-gold-light transition-colors duration-300 px-2 py-2 font-medium text-base;
         }
-        
+
         // Dropdown menus
         ul.sub-menu {
           @apply absolute top-full left-0 bg-trinity-maroon-dark shadow-lg rounded-md py-2 min-w-48;
           display: none;
-          
+
           li {
             @apply w-full;
-            
+
             a {
               @apply px-4 py-3 hover:bg-trinity-maroon-light text-sm;
             }
           }
         }
-        
+
         &:hover > ul.sub-menu {
           @apply block;
         }
       }
     }
   }
-  
+
   // Mobile navigation
   .mobile-menu {
     .mobile-nav-menu {
       @apply list-none m-0 p-0;
-      
+
       li {
         a {
           @apply block py-2 px-4 text-white hover:text-trinity-gold-light hover:bg-trinity-maroon-light transition-colors;
@@ -105,7 +105,7 @@
       }
     }
   }
-  
+
   // Book appointment button
   .book-appointment-btn {
     @apply inline-flex items-center justify-center font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
