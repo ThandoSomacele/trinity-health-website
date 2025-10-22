@@ -99,27 +99,27 @@
                 </div>
 
                 <!-- Newsletter Form -->
-                <?php echo do_shortcode('[contact-form-7 id="304" title="Trinity Health Newsletter"]'); ?>
+                <div class="footer-newsletter-form">
+                    <?php echo do_shortcode('[contact-form-7 id="304" title="Trinity Health Newsletter"]'); ?>
+                </div>
 
                 <style>
                     /* Footer Newsletter Form Styling */
                     .footer-newsletter-form .wpcf7-form {
-                        display: block;
-                    }
-
-                    .footer-newsletter-form .newsletter-cf7-form {
                         display: flex;
                         gap: 0;
+                        align-items: flex-start;
                     }
 
                     .footer-newsletter-form .wpcf7-form p {
                         margin: 0;
                         flex: 1;
+                        display: flex;
                     }
 
-                    .footer-newsletter-form .newsletter-email-input {
+                    .footer-newsletter-form input[type="email"] {
                         flex: 1;
-                        padding: 0.5rem 0.75rem;
+                        padding: 0.625rem 0.75rem;
                         font-size: 0.875rem;
                         background: rgba(255, 255, 255, 0.1);
                         border: 1px solid rgba(229, 231, 235, 0.3);
@@ -129,18 +129,18 @@
                         width: 100%;
                     }
 
-                    .footer-newsletter-form .newsletter-email-input::placeholder {
+                    .footer-newsletter-form input[type="email"]::placeholder {
                         color: rgba(229, 231, 235, 0.7);
                     }
 
-                    .footer-newsletter-form .newsletter-email-input:focus {
+                    .footer-newsletter-form input[type="email"]:focus {
                         outline: none;
                         border-color: #E5D0AC;
                         box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
                     }
 
-                    .footer-newsletter-form .newsletter-submit-btn {
-                        padding: 0.5rem 1rem;
+                    .footer-newsletter-form input[type="submit"] {
+                        padding: 0.625rem 1.25rem;
                         font-size: 0.875rem;
                         background-color: #E5D0AC;
                         color: #000;
@@ -149,9 +149,10 @@
                         transition: all 0.3s;
                         border: none;
                         white-space: nowrap;
+                        font-weight: 600;
                     }
 
-                    .footer-newsletter-form .newsletter-submit-btn:hover {
+                    .footer-newsletter-form input[type="submit"]:hover {
                         background-color: #D4BF9A;
                     }
 

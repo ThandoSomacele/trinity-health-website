@@ -539,7 +539,9 @@ get_template_part('template-parts/sections/latest-news');
 
             </div>
             <div class="bg-trinity-maroon p-6 lg:p-28 lg:col-span-2 h-full">
-                <?php echo do_shortcode('[contact-form-7 id="303" title="Trinity Health Contact Form"]'); ?>
+                <div class="homepage-contact-form">
+                    <?php echo do_shortcode('[contact-form-7 id="303" title="Trinity Health Contact Form"]'); ?>
+                </div>
 
                 <style>
                     /* Home Page Contact Form Styling */
@@ -551,28 +553,13 @@ get_template_part('template-parts/sections/latest-news');
                         margin-bottom: 1rem;
                     }
 
-                    .homepage-contact-form .cf7-grid {
-                        display: grid;
-                        gap: 1rem;
-                    }
-
-                    .homepage-contact-form .cf7-grid-2 {
-                        grid-template-columns: 1fr;
-                    }
-
-                    @media (min-width: 768px) {
-                        .homepage-contact-form .cf7-grid-2 {
-                            grid-template-columns: repeat(2, 1fr);
-                        }
-                    }
-
                     .homepage-contact-form input[type="text"],
                     .homepage-contact-form input[type="email"],
                     .homepage-contact-form textarea {
                         width: 100%;
-                        padding: 0.75rem 1rem;
+                        padding: 0.875rem 1rem;
                         background: transparent;
-                        border: 1px solid #fff;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 0.5rem;
                         color: #fff;
                         font-size: 1rem;
@@ -582,7 +569,7 @@ get_template_part('template-parts/sections/latest-news');
                     .homepage-contact-form input[type="text"]::placeholder,
                     .homepage-contact-form input[type="email"]::placeholder,
                     .homepage-contact-form textarea::placeholder {
-                        color: rgba(255, 255, 255, 0.7);
+                        color: rgba(255, 255, 255, 0.6);
                     }
 
                     .homepage-contact-form input[type="text"]:focus,
@@ -590,24 +577,32 @@ get_template_part('template-parts/sections/latest-news');
                     .homepage-contact-form textarea:focus {
                         outline: none;
                         border-color: #E5D0AC;
+                        background: rgba(255, 255, 255, 0.05);
                         box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
                     }
 
-                    .homepage-contact-form .submit-btn {
+                    .homepage-contact-form textarea {
+                        min-height: 120px;
+                        resize: vertical;
+                    }
+
+                    .homepage-contact-form input[type="submit"] {
                         background-color: #E5D0AC;
                         color: #1f2937;
-                        padding: 0.75rem 2rem;
+                        padding: 0.875rem 2.5rem;
                         border-radius: 9999px;
                         font-weight: 600;
+                        font-size: 1rem;
                         cursor: pointer;
                         transition: all 0.3s;
                         border: none;
                         display: inline-block;
                     }
 
-                    .homepage-contact-form .submit-btn:hover {
+                    .homepage-contact-form input[type="submit"]:hover {
                         background-color: #D4BF9A;
                         transform: translateY(-2px);
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                     }
 
                     .homepage-contact-form .wpcf7-response-output {
@@ -637,9 +632,8 @@ get_template_part('template-parts/sections/latest-news');
                         margin-top: 0.25rem;
                     }
 
-                    .homepage-contact-form .cf7-submit-wrapper {
-                        text-align: left;
-                        margin-top: 1rem;
+                    .homepage-contact-form .wpcf7-spinner {
+                        display: none;
                     }
                 </style>
             </div>
