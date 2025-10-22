@@ -9,10 +9,9 @@
                 <!-- Logo -->
                 <div class="mb-6">
                     <a href="#" class="flex items-center text-white hover:text-trinity-gold-light transition-colors">
-                        <div class="w-28 h-28 mr-3 flex items-center justify-center">
+                        <div class="w-52 h-16 mr-3 flex items-center justify-center">
                             <?php echo trinity_health_get_logo('dark'); ?>
                         </div>
-                        <span class="text-xl font-semibold"><?php bloginfo('name'); ?></span>
                     </a>
                 </div>
 
@@ -214,7 +213,7 @@
             });
         }
     });
-    
+
     // Initialize GLightbox for video lightbox
     document.addEventListener('DOMContentLoaded', function() {
         const lightbox = GLightbox({

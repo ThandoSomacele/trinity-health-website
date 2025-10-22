@@ -359,7 +359,6 @@
                             <div class="w-16 h-16 mr-3 flex items-center justify-center">
                                 <?php echo trinity_health_get_logo('dark'); ?>
                             </div>
-                            <span class="text-xl font-semibold"><?php bloginfo('name'); ?></span>
                         </a>
                     <?php endif; ?>
                 </div>
