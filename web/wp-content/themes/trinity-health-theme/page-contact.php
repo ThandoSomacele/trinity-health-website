@@ -110,7 +110,7 @@ get_header(); ?>
         <div class="max-w-5xl mx-auto">
             <!-- Contact Form 7 Integration -->
             <div class="trinity-contact-form">
-                <?php echo do_shortcode('[contact-form-7 id="5664c15" title="Trinity Health Contact Form"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="303" title="Trinity Health Contact Form"]'); ?>
             </div>
 
             <style>

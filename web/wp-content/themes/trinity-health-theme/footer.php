@@ -99,7 +99,7 @@
                 </div>
 
                 <!-- Newsletter Form -->
-                <?php echo do_shortcode('[contact-form-7 id="9b49bb6" title="Trinity Health Newsletter"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="304" title="Trinity Health Newsletter"]'); ?>
 
                 <style>
                     /* Footer Newsletter Form Styling */
