@@ -539,7 +539,7 @@ get_template_part('template-parts/sections/latest-news');
 
             </div>
             <div class="bg-trinity-maroon p-6 lg:p-28 lg:col-span-2 h-full">
-                <?php echo do_shortcode('[contact-form-7 id="303" title="Trinity Health Contact Form" html_class="homepage-contact-form"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="5664c15" title="Trinity Health Contact Form"]'); ?>
 
                 <style>
                     /* Home Page Contact Form Styling */
