@@ -549,18 +549,39 @@ get_template_part('template-parts/sections/latest-news');
                         display: block;
                     }
 
-                    .homepage-contact-form .wpcf7-form p {
-                        margin-bottom: 1rem;
+                    .homepage-contact-form .wpcf7-form > p {
+                        margin-bottom: 1.25rem;
+                    }
+
+                    /* Grid layout for Name and Email fields */
+                    .homepage-contact-form .cf7-grid {
+                        display: grid;
+                        gap: 1.25rem;
+                        margin-bottom: 1.25rem;
+                    }
+
+                    .homepage-contact-form .cf7-grid-2 {
+                        grid-template-columns: 1fr;
+                    }
+
+                    @media (min-width: 768px) {
+                        .homepage-contact-form .cf7-grid-2 {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+
+                    .homepage-contact-form .cf7-grid p {
+                        margin: 0;
                     }
 
                     .homepage-contact-form input[type="text"],
                     .homepage-contact-form input[type="email"],
                     .homepage-contact-form textarea {
                         width: 100%;
-                        padding: 0.875rem 1rem;
-                        background: transparent;
-                        border: 1px solid rgba(255, 255, 255, 0.3);
-                        border-radius: 0.5rem;
+                        padding: 1rem 1.25rem;
+                        background: rgba(139, 32, 32, 0.3);
+                        border: 1.5px solid rgba(255, 255, 255, 0.5);
+                        border-radius: 0.75rem;
                         color: #fff;
                         font-size: 1rem;
                         transition: all 0.3s;
@@ -569,7 +590,7 @@ get_template_part('template-parts/sections/latest-news');
                     .homepage-contact-form input[type="text"]::placeholder,
                     .homepage-contact-form input[type="email"]::placeholder,
                     .homepage-contact-form textarea::placeholder {
-                        color: rgba(255, 255, 255, 0.6);
+                        color: rgba(255, 255, 255, 0.7);
                     }
 
                     .homepage-contact-form input[type="text"]:focus,
@@ -577,26 +598,27 @@ get_template_part('template-parts/sections/latest-news');
                     .homepage-contact-form textarea:focus {
                         outline: none;
                         border-color: #E5D0AC;
-                        background: rgba(255, 255, 255, 0.05);
-                        box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.2);
+                        background: rgba(139, 32, 32, 0.4);
+                        box-shadow: 0 0 0 3px rgba(229, 208, 172, 0.15);
                     }
 
                     .homepage-contact-form textarea {
-                        min-height: 120px;
+                        min-height: 180px;
                         resize: vertical;
                     }
 
                     .homepage-contact-form input[type="submit"] {
                         background-color: #E5D0AC;
                         color: #1f2937;
-                        padding: 0.875rem 2.5rem;
+                        padding: 1rem 3rem;
                         border-radius: 9999px;
                         font-weight: 600;
-                        font-size: 1rem;
+                        font-size: 1.125rem;
                         cursor: pointer;
                         transition: all 0.3s;
                         border: none;
                         display: inline-block;
+                        margin-top: 0.5rem;
                     }
 
                     .homepage-contact-form input[type="submit"]:hover {
